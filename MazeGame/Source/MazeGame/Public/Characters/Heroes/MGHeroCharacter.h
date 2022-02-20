@@ -38,6 +38,12 @@ protected:
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "MazeGame|Camera")
 	class UCameraComponent* FirstPersonCamera;
 
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Camera")
+	TSubclassOf<class UCameraShakeBase> WalkCameraShake;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Camera")
+	TSubclassOf<class UCameraShakeBase> SprintCameraShake;
+
 	virtual void BeginPlay() override;
 
 	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
@@ -57,4 +63,11 @@ protected:
 	void BindASCInput();
 
 	virtual void OnRep_PlayerState() override;
+
+private:
+	bool bDoOnceMoveForwardStartShake;
+	bool bDoOnceMoveForwardStopShake;
+
+	bool bDoOnceMoveRightStartShake;
+	bool bDoOnceMoveRightStopShake;
 };

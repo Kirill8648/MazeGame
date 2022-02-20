@@ -6,6 +6,7 @@
 #include "MGAbilitySystemComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 
 AMGHeroCharacter::AMGHeroCharacter()
@@ -83,6 +84,27 @@ void AMGHeroCharacter::MoveForward(float Value)
 		else
 		{
 			AddMovementInput(UKismetMathLibrary::GetForwardVector(FRotator(0, GetControlRotation().Yaw, 0)), Value);
+			if (!GetMovementComponent()->IsFlying())
+			{
+				if (GetVelocity().X > 1.0f || GetVelocity().X < -1.0f || GetVelocity().Y > 1.0f || GetVelocity().Y < -1.0f)
+				{
+					if (!bDoOnceMoveForwardStartShake)
+					{
+						bDoOnceMoveForwardStartShake = true;
+						bDoOnceMoveForwardStopShake = false;
+						UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StartCameraShake(WalkCameraShake);
+					}
+				}
+				else
+				{
+					if (!bDoOnceMoveForwardStopShake)
+					{
+						bDoOnceMoveForwardStartShake = false;
+						bDoOnceMoveForwardStopShake = true;
+						UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StopAllCameraShakes(false);
+					}
+				}
+			}
 		}
 	}
 }

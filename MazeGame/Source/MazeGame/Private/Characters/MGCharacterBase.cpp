@@ -6,7 +6,6 @@
 #include "MGAttributeSetBase.h"
 #include "MGGameplayAbilityBase.h"
 
-// Sets default values
 AMGCharacterBase::AMGCharacterBase()
 {
 	PrimaryActorTick.bCanEverTick = false;
@@ -63,7 +62,6 @@ float AMGCharacterBase::GetHealthRegenRate() const
 	return 0.0f;
 }
 
-// Called when the game starts or when spawned
 void AMGCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
@@ -96,7 +94,6 @@ void AMGCharacterBase::InitializeAttributes()
 		return;
 	}
 
-	// Can run on Server and Client
 	FGameplayEffectContextHandle EffectContext = AbilitySystemComponent->MakeEffectContext();
 	EffectContext.AddSourceObject(this);
 
