@@ -3,6 +3,9 @@
 
 #include "Maze/MGMazeGenerator.h"
 
+#include "GameFramework/Character.h"
+#include "Kismet/GameplayStatics.h"
+
 AMGMazeGenerator::AMGMazeGenerator()
 {
 	PrimaryActorTick.bCanEverTick = false;
@@ -89,7 +92,7 @@ void AMGMazeGenerator::GenerateMazeWithSeed(int32 Seed, int32 YSize, int32 XSize
 		for (int32 i = 0; i < IterationNearCells.Num(); i++)
 			if (IterationNearCells[i]->bIsVisited) IterationNearCells.RemoveAt(i);
 
-		int32 R = Stream.RandRange(0, IterationNearCells.Num());
+		const int32 R = Stream.RandRange(0, IterationNearCells.Num());
 		/*if (IterationNearCells.Num() == 0||IterationNearCells.Num() == 1) R = 0;
 		else R = Stream.RandRange(1, IterationNearCells.Num());*/
 		for (int32 i = R; i > 0; i--)
@@ -107,6 +110,7 @@ void AMGMazeGenerator::GenerateMazeWithSeed(int32 Seed, int32 YSize, int32 XSize
 
 		DesiredCells.Remove(CurrentCell);
 
+		/*//Older
 		if (DesiredCells.IsEmpty())
 		{
 			bool bBreak = false;
@@ -131,20 +135,95 @@ void AMGMazeGenerator::GenerateMazeWithSeed(int32 Seed, int32 YSize, int32 XSize
 				}
 				if (bBreak) break;
 			}
+		}*/
+
+		if (DesiredCells.IsEmpty())
+		{
+			TArray<MazeItem*> NotVisitedCells;
+			for (auto& MazeItemY : MazeMatrix)
+				for (auto& MazeItemX : MazeItemY)
+					if (MazeItemX.bIsVisited != true && MazeItemX.MazeItemState == Cell)
+						for (const auto& NearCell : GetNearCellsByIndexes(MazeItemX.IndexY, MazeItemX.IndexX, true))
+							if (NearCell->bIsVisited == true)
+							{
+								NotVisitedCells.Emplace(&MazeItemX);
+								break;
+							}
+			//bool bIsCellOK = false;
+
+			/*while (!bIsCellOK)
+			{*/
+			if (NotVisitedCells.Num() != 0)
+			{
+				const int32 RandomizedCellIndex = Stream.RandRange(0, NotVisitedCells.Num() - 1);
+				TArray<MazeItem*> NearVisitedCellsForRandomizedCell = GetNearCellsByIndexes(NotVisitedCells[RandomizedCellIndex]->IndexY,
+				                                                                            NotVisitedCells[RandomizedCellIndex]->IndexX, true);
+
+				//TODO add seeded NearVisitedCellsForRandomizedCell array shuffle
+
+				for (const auto& NearCellForRandomizedCell : NearVisitedCellsForRandomizedCell)
+					if (NearCellForRandomizedCell->bIsVisited == true)
+					{
+						BreakWallBetweenCellsByIndexes(NotVisitedCells[RandomizedCellIndex]->IndexY, NotVisitedCells[RandomizedCellIndex]->IndexX,
+						                               NearCellForRandomizedCell->IndexY, NearCellForRandomizedCell->IndexX);
+						break;
+					}
+				DesiredCells.Emplace(NotVisitedCells[RandomizedCellIndex]);
+				/*bIsCellOK = true;
+			}*/
+			}
 		}
 	}
 	while (!DesiredCells.IsEmpty());
+}
+
+void AMGMazeGenerator::SpawnGeneratedMaze()
+{
+	for (auto& MazeItemY : MazeMatrix)
+	{
+		for (const auto& MazeItemX : MazeItemY)
+		{
+			if (MazeItemX.MazeItemState == VerticalEdge)
+			{
+				if (MazeItemX.bIsUnbreakable == true)
+
+					GetWorld()->SpawnActor<AActor>(UnbreakableMazeWall, FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f),
+					                               FRotator(0.0f, 90.0f, 0.0f));
+				else
+					GetWorld()->SpawnActor<AActor>(CommonMazeWall, FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f),
+					                               FRotator(0.0f, 90.0f, 0.0f));
+			}
+			else if (MazeItemX.MazeItemState == HorizontalEdge)
+			{
+				if (MazeItemX.bIsUnbreakable == true)
+					GetWorld()->SpawnActor<AActor>(UnbreakableMazeWall, FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f),
+					                               FRotator(0.0f, 0.0f, 0.0f));
+				else
+					GetWorld()->SpawnActor<AActor>(CommonMazeWall, FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f),
+					                               FRotator(0.0f, 0.0f, 0.0f));
+			}
+		}
+	}
+
+	const MazeItem* FurthestRoom = &MazeMatrix[0][0];
+	for (auto& MazeItemY : MazeMatrix)
+		for (auto& MazeItemX : MazeItemY)
+			if (MazeItemX.Distance > FurthestRoom->Distance)
+				FurthestRoom = &MazeItemX;
+
+	UGameplayStatics::GetPlayerCharacter(GetWorld(), 0)->TeleportTo(FVector(FurthestRoom->IndexX, FurthestRoom->IndexY, 0), FRotator(), false, true);
 }
 
 void AMGMazeGenerator::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GenerateMazeWithSeed(12345, 15, 15);
+	GenerateMazeWithSeed(MGSeed, MGYSize, MGXSize);
 	PrintMazeMatrixToLog();
 	if (bIsMistakeHappened && GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, INFINITY, FColor::Red,
 		                                 FString::Printf(TEXT("Errors occurred during generation! Check the log for more details.")));
+	SpawnGeneratedMaze();
 }
 
 void AMGMazeGenerator::PrintMazeMatrixToLog()
@@ -274,7 +353,7 @@ void AMGMazeGenerator::BreakWallBetweenCellsByIndexes(int32 IndexY1, int32 Index
 		bIsMistakeHappened = true;
 		return;
 	}
-
+	//TODO add check for not place empty knots
 	if (IndexY1 > IndexY2 && IndexX1 == IndexX2)
 		MazeMatrix[IndexY1 - 1][IndexX1].MazeItemState = None;
 	else if (IndexY1 < IndexY2 && IndexX1 == IndexX2)

@@ -36,6 +36,22 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
 	void GenerateMazeWithSeed(int32 Seed, int32 XSize, int32 YSize);
 
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
+	void SpawnGeneratedMaze();
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|MGMazeGenerator")
+	TSubclassOf<AActor> CommonMazeWall;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|MGMazeGenerator")
+	TSubclassOf<AActor> UnbreakableMazeWall;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|MGMazeGenerator")
+	int32 MGSeed;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|MGMazeGenerator")
+	int32 MGXSize;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|MGMazeGenerator")
+	int32 MGYSize;
+
 protected:
 	TArray<TArray<MazeItem>> MazeMatrix;
 
