@@ -25,6 +25,12 @@ struct MazeItem
 	int32 IndexX;
 };
 
+struct Pair
+{
+	int32 Y;
+	int32 X;
+};
+
 UCLASS()
 class MAZEGAME_API AMGMazeGenerator : public AActor
 {
@@ -37,13 +43,24 @@ public:
 	void GenerateMazeWithSeed(int32 Seed, int32 XSize, int32 YSize);
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
-	void SpawnGeneratedMaze();
+	void SimpleSpawnGeneratedMaze();
 
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|MGMazeGenerator")
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
+	void SpawnWithInstances();
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SimpleSpawn")
 	TSubclassOf<AActor> CommonMazeWall;
 
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|MGMazeGenerator")
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SimpleSpawn")
 	TSubclassOf<AActor> UnbreakableMazeWall;
+
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SpawnWithInstances")
+	TSubclassOf<class AMGInstancedMeshActor> InstancedMeshCommonWalls;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SpawnWithInstances")
+	TSubclassOf<AMGInstancedMeshActor> InstancedMeshUnbreakableWalls;
+
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|MGMazeGenerator")
 	int32 MGSeed;
@@ -51,6 +68,7 @@ public:
 	int32 MGXSize;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|MGMazeGenerator")
 	int32 MGYSize;
+
 
 protected:
 	TArray<TArray<MazeItem>> MazeMatrix;
@@ -65,6 +83,10 @@ private:
 	void PlaceWallBetweenCellsByIndexes(int32 IndexY1, int32 IndexX1, int32 IndexY2, int32 IndexX2);
 
 	void BreakWallBetweenCellsByIndexes(int32 IndexY1, int32 IndexX1, int32 IndexY2, int32 IndexX2);
+
+	void ShuffleArrayByStream(TArray<MazeItem*>& ArrayToShuffle, FRandomStream& Stream);
+
+	void ShuffleArrayByStream(TArray<TArray<MazeItem*>>& ArrayToShuffle, FRandomStream& Stream);
 
 	bool bIsMistakeHappened = false;
 };
