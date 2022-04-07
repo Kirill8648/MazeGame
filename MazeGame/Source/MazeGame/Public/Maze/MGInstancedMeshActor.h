@@ -15,13 +15,19 @@ public:
 	AMGInstancedMeshActor();
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGInstansedMeshActor")
-	TArray<AActor*> ReplaceInstancesWithActorsBySphereOverlap();
+	TArray<AActor*> ReplaceInstancesWithActorsBySphereOverlap(FVector Center, float Radius);
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGInstansedMeshActor")
-	TArray<AActor*> ReplaceInstancesWithActorsByBoxOverlap();
+	TArray<AActor*> ReplaceInstancesWithActorsByBoxOverlap(FBox Box);
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|MGInstansedMeshActor")
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "MazeGame|MGInstansedMeshActor")
 	UHierarchicalInstancedStaticMeshComponent* HierarchicalInstancedMesh;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|MGInstansedMeshActor")
+	TSubclassOf<AActor> ReplacementActor;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|MGInstancedMeshActor")
+	float ReplacementActorZOffset;
 
 protected:
 	virtual void BeginPlay() override;
