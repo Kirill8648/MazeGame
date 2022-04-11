@@ -3,10 +3,62 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "MGPlayerDataSubsystem.h"
+#include "MGGameplayAbilityBase.h"
 #include "GameFramework/SaveGame.h"
 #include "MGSaveGame.generated.h"
 
+USTRUCT(BlueprintType)
+struct FSavedAbilityInfo
+{
+	GENERATED_BODY()
+	FSavedAbilityInfo()
+	{
+		AbilityInfo = NULL;
+	}
+
+	FSavedAbilityInfo(FText AbilityName, int32 AbilityInfo): AbilityName(AbilityName), AbilityInfo(AbilityInfo)
+	{
+	}
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FText AbilityName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 AbilityInfo;
+};
+
+USTRUCT(BlueprintType)
+struct FAbilityLevelPrices : public FTableRowBase
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FText AbilityName;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl1Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl2Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl3Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl4Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl5Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl6Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl7Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl8Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl9Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 Lvl10Cost;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<UTexture2D> AbilityIcon;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TSubclassOf<UMGGameplayAbilityBase> Ability;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UDataTable* AbilityStatsTable;
+};
 
 /**
  * 
@@ -16,19 +68,39 @@ class MAZEGAME_API UMGSaveGame : public USaveGame
 {
 	GENERATED_BODY()
 public:
-	UMGSaveGame()
-	{
-	};
+	UMGSaveGame();
 
-	UPROPERTY(VisibleAnywhere, Category = "MazeGame|SaveGame")
-	int32 PlayerCoinsNumber;
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|SaveGame")
+	void SetDateTime();
 
-	UPROPERTY(VisibleAnywhere, Category = "MazeGame|SaveGame")
-	TArray<FSavedAbilityInfo> AbilitiesArray;
+	/*????????????????
+	int32 MaxHealth;
+	int32 MaxStamina;
+	int32 MaxEnergy;*/
 
-	UPROPERTY(VisibleAnywhere, Category = "MazeGame|SaveGame")
+	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|SaveGame")
+	int32 PlayerCurrentCoinsNumber;
+
+	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|SaveGame")
+	int32 PlayerAccumulatedCoinsNumber;
+
+	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|SaveGame")
+	TArray<FSavedAbilityInfo> AbilitiesLevels;
+
+	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|SaveGame")
+	TArray<FSavedAbilityInfo> AbilitiesSlotsNumbers;
+
+	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|SaveGame")
 	int32 LastXMazeSize;
 
-	UPROPERTY(VisibleAnywhere, Category = "MazeGame|SaveGame")
+	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|SaveGame")
 	int32 LastYMazeSize;
+
+	//Meta
+	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|SaveGame")
+	int32 SlotIndex;
+	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|SaveGame")
+	FString Date;
+	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|SaveGame")
+	FString Time;
 };

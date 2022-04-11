@@ -23,4 +23,7 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="Ability")
 	EMGAbilityInputID AbilityID = EMGAbilityInputID::None;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="Ability")
+	UDataTable* StatsTable;
 };
