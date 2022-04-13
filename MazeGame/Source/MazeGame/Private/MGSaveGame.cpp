@@ -21,7 +21,7 @@ UMGSaveGame::UMGSaveGame()
 			if (Row->AbilityName.ToString().Equals("Raise Walls"))
 				AbilitiesLevels.Emplace(FSavedAbilityInfo(FText::FromString("Raise Walls"), 1));
 			else
-				AbilitiesLevels.Emplace(FSavedAbilityInfo(Row->AbilityName, 0));
+				AbilitiesLevels.Emplace(FSavedAbilityInfo(Row->AbilityName, 1));
 	}
 
 	AbilitiesSlotsNumbers.Emplace(FSavedAbilityInfo(FText::FromString("Raise Walls"), 0));

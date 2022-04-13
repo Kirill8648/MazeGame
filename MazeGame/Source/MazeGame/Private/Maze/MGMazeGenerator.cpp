@@ -100,7 +100,7 @@ void AMGMazeGenerator::BeginPlay()
 
 	if (MazeGenerationProgressWidgetRef)
 	{
-		MazeGenerationProgressWidgetRef->AddToViewport(0);
+		MazeGenerationProgressWidgetRef->AddToViewport(1);
 	}
 
 	LaunchAsyncMazeGeneration(MGSeed, MGXSize, MGYSize);

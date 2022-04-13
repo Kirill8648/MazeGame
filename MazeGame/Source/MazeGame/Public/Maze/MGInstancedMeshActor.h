@@ -20,9 +20,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGInstansedMeshActor")
 	TArray<AActor*> ReplaceInstancesWithActorsByBoxOverlap(FBox Box);
 
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "MazeGame|MGInstansedMeshActor")
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "MazeGame|MGInstansedMeshActorStatic")
 	UHierarchicalInstancedStaticMeshComponent* HierarchicalInstancedMesh;
-
+	
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|MGInstansedMeshActor")
 	TSubclassOf<AActor> ReplacementActor;
 

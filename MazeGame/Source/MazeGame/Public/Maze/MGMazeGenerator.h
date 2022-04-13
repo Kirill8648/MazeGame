@@ -42,10 +42,6 @@ class MAZEGAME_API AMGMazeGenerator : public AActor
 
 public:
 	AMGMazeGenerator();
-
-	FBoolDelegate MatrixGenerationFinishedDelegate;
-	FStringDelegate DrawGenerationProgressUIDelegate;
-
 	
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
 	void LaunchAsyncMazeGeneration(int32 Seed, int32 XSize, int32 YSize);
@@ -85,6 +81,9 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
+	FBoolDelegate MatrixGenerationFinishedDelegate;
+	FStringDelegate DrawGenerationProgressUIDelegate;
+	
 	void PrintMazeMatrixToLog();
 
 	void ContinueGeneration(bool bIsMistakeHappenedInAsync);
