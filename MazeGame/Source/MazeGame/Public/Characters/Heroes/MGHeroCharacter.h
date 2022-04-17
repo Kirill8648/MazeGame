@@ -23,6 +23,9 @@ public:
 
 	virtual void PossessedBy(AController* NewController) override;
 
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|Player")
+	void UpdateAbilities();
+
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Camera")
 	float BaseTurnRate;

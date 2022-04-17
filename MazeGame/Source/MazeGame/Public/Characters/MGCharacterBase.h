@@ -21,9 +21,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase")
 	virtual bool IsAlive() const;
 
-	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase")
-	virtual int32 GetAbilityLevel(EMGAbilityInputID AbilityID) const;
-
 	/*virtual void RemoveCharacterAbilities();
 
 	virtual void Die();*/
@@ -39,6 +36,24 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase|Attributes")
 	float GetHealthRegenRate() const;
+
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase|Attributes")
+	float GetEnergy() const;
+
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase|Attributes")
+	float GetMaxEnergy() const;
+
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase|Attributes")
+	float GetEnergyRegenRate() const;
+
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase|Attributes")
+	float GetStamina() const;
+
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase|Attributes")
+	float GetMaxStamina() const;
+
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase|Attributes")
+	float GetStaminaRegenRate() const;
 
 protected:
 	UPROPERTY()

@@ -18,15 +18,16 @@ UMGSaveGame::UMGSaveGame()
 		TArray<FAbilityLevelPrices*> Rows;
 		AbilitiesTable.Object->GetAllRows("Error trying to GetAllRows() in MGSaveGame.cpp", Rows);
 		for (const FAbilityLevelPrices* Row : Rows)
-			if (Row->AbilityName.ToString().Equals("Raise Walls"))
-				AbilitiesLevels.Emplace(FSavedAbilityInfo(FText::FromString("Raise Walls"), 1));
+			if (Row->AbilityKey.Equals("RaiseWalls"))
+				AbilitiesLevels.Emplace(FSavedAbilityInfo("RaiseWalls", 1));
 			else
-				AbilitiesLevels.Emplace(FSavedAbilityInfo(Row->AbilityName, 1));
+				//TEMP
+				AbilitiesLevels.Emplace(FSavedAbilityInfo(Row->AbilityKey, 0));
 	}
 
-	AbilitiesSlotsNumbers.Emplace(FSavedAbilityInfo(FText::FromString("Raise Walls"), 0));
+	AbilitiesSlotsNumbers.Emplace(FSavedAbilityInfo("RaiseWalls", 0));
 	for (int i = 1; i < 5; i++)
-		AbilitiesSlotsNumbers.Emplace(FSavedAbilityInfo(FText::FromString(""), i));
+		AbilitiesSlotsNumbers.Emplace(FSavedAbilityInfo("", i));
 }
 
 void UMGSaveGame::SetDateTime()

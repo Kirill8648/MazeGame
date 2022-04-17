@@ -22,7 +22,4 @@ public:
 
 	UFUNCTION(Exec)
 	void UnlockAbilities() const;
-
-	UFUNCTION(Exec)
-	void FlyMode();
 };

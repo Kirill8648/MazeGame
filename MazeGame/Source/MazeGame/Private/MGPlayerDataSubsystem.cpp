@@ -15,12 +15,20 @@ void UMGPlayerDataSubsystem::CreateNewSaveFileAndSave(const int32 SlotIndex, con
 {
 	if (!UGameplayStatics::DoesSaveGameExist(FString::Printf(TEXT("SaveGame%d"), SlotIndex), 0) || bIsOverriding)
 		if (UMGSaveGame* SaveGameInstance = Cast<UMGSaveGame>(UGameplayStatics::CreateSaveGameObject(UMGSaveGame::StaticClass())))
+		{
+			SaveGameInstance->SlotIndex = SlotIndex;
 			UGameplayStatics::SaveGameToSlot(SaveGameInstance, FString::Printf(TEXT("SaveGame%d"), SlotIndex), 0);
+		}
 }
 
 void UMGPlayerDataSubsystem::DeleteSaveFileBySlot(const int32 SlotIndex)
 {
 	UGameplayStatics::DeleteGameInSlot(FString::Printf(TEXT("SaveGame%d"), SlotIndex), 0);
+}
+
+void UMGPlayerDataSubsystem::UnloadGameFromPlayerDataSubsystem()
+{
+	CurrentlyLoadedSaveGameObject = nullptr;
 }
 
 void UMGPlayerDataSubsystem::LoadGameFromSlotAsync(const int32 SlotIndex)

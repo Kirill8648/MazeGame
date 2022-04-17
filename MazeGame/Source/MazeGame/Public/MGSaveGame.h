@@ -16,12 +16,12 @@ struct FSavedAbilityInfo
 		AbilityInfo = NULL;
 	}
 
-	FSavedAbilityInfo(FText AbilityName, int32 AbilityInfo): AbilityName(AbilityName), AbilityInfo(AbilityInfo)
+	FSavedAbilityInfo(FString AbilityKey, int32 AbilityInfo): AbilityKey(AbilityKey), AbilityInfo(AbilityInfo)
 	{
 	}
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FText AbilityName;
+	FString AbilityKey;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 AbilityInfo;
 };
@@ -31,7 +31,7 @@ struct FAbilityLevelPrices : public FTableRowBase
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FText AbilityName;
+	FString AbilityKey;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 Lvl1Cost;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -53,9 +53,14 @@ struct FAbilityLevelPrices : public FTableRowBase
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 Lvl10Cost;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int32 MaxLvl;
+	//
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<UTexture2D> AbilityIcon;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<UMGGameplayAbilityBase> Ability;
+	//
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UDataTable* AbilityStatsTable;
 };

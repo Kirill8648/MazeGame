@@ -20,10 +20,13 @@ public:
 	UMGPlayerDataSubsystem();
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|PlayerSubsystem")
-	void CreateNewSaveFileAndSave(int32 SlotIndex,bool bIsOverriding);
+	void CreateNewSaveFileAndSave(int32 SlotIndex, bool bIsOverriding);
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|PlayerSubsystem")
 	void DeleteSaveFileBySlot(int32 SlotIndex);
+
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|PlayerSubsystem")
+	void UnloadGameFromPlayerDataSubsystem();
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|PlayerSubsystem")
 	void LoadGameFromSlotAsync(int32 SlotIndex);

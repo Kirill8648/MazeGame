@@ -15,5 +15,6 @@ enum class EMGAbilityInputID : uint8
 	ActivateFirst UMETA(DisplayName = "ActivateFirst"),
 	ActivateSecond UMETA(DisplayName = "ActivateSecond"),
 	ActivateThird UMETA(DisplayName = "ActivateThird"),
-	ActivateFourth UMETA(DisplayName = "ActivateFourth")
+	ActivateFourth UMETA(DisplayName = "ActivateFourth"),
+	ActivateFifth UMETA(DisplayName = "ActivateFifth")
 };

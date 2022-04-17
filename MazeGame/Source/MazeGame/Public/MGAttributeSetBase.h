@@ -38,6 +38,30 @@ public:
 	FGameplayAttributeData HealthRegenRate;
 	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, HealthRegenRate);
 
+	UPROPERTY(BlueprintReadOnly, Category="Energy", ReplicatedUsing=OnRep_Energy)
+	FGameplayAttributeData Energy;
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Energy);
+
+	UPROPERTY(BlueprintReadOnly, Category="Energy", ReplicatedUsing=OnRep_MaxEnergy)
+	FGameplayAttributeData MaxEnergy;
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, MaxEnergy);
+
+	UPROPERTY(BlueprintReadOnly, Category="Energy", ReplicatedUsing=OnRep_EnergyRegenRate)
+	FGameplayAttributeData EnergyRegenRate;
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, EnergyRegenRate);
+
+	UPROPERTY(BlueprintReadOnly, Category="Stamina", ReplicatedUsing=OnRep_Stamina)
+	FGameplayAttributeData Stamina;
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Stamina);
+
+	UPROPERTY(BlueprintReadOnly, Category="Stamina", ReplicatedUsing=OnRep_MaxStamina)
+	FGameplayAttributeData MaxStamina;
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, MaxStamina);
+
+	UPROPERTY(BlueprintReadOnly, Category="Stamina", ReplicatedUsing=OnRep_StaminaRegenRate)
+	FGameplayAttributeData StaminaRegenRate;
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, StaminaRegenRate);
+
 private:
 	UFUNCTION()
 	virtual void OnRep_Health(const FGameplayAttributeData& OldHealth);
@@ -47,4 +71,22 @@ private:
 
 	UFUNCTION()
 	virtual void OnRep_HealthRegenRate(const FGameplayAttributeData& OldHealthRegenRate);
+
+	UFUNCTION()
+	virtual void OnRep_Energy(const FGameplayAttributeData& OldEnergy);
+
+	UFUNCTION()
+	virtual void OnRep_MaxEnergy(const FGameplayAttributeData& OldMaxEnergy);
+
+	UFUNCTION()
+	virtual void OnRep_EnergyRegenRate(const FGameplayAttributeData& OldEnergyRegenRate);
+
+	UFUNCTION()
+	virtual void OnRep_Stamina(const FGameplayAttributeData& OldStamina);
+
+	UFUNCTION()
+	virtual void OnRep_MaxStamina(const FGameplayAttributeData& OldMaxStamina);
+
+	UFUNCTION()
+	virtual void OnRep_StaminaRegenRate(const FGameplayAttributeData& OldStaminaRegenRate);
 };

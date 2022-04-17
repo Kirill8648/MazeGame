@@ -39,16 +39,11 @@ void UMGCheatManager::UnlockAbilities() const
 	if (const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>())
 		if (PlayerDataSubsystem->CurrentlyLoadedSaveGameObject)
 		{
-			for (FSavedAbilityInfo AbilitiesLevel : PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->AbilitiesLevels)
+			for (FSavedAbilityInfo& AbilitiesLevel : PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->AbilitiesLevels)
 				if (AbilitiesLevel.AbilityInfo == 0)
 					AbilitiesLevel.AbilityInfo = 1;
 			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Abilities unlocked, redraw UI to see changes");
 		}
 		//else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "Error during unlocking. CurrentlyLoadedSaveGameObject is null");
 	//else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "Error during unlocking. PlayerDataSubsystem is null");
-}
-
-void UMGCheatManager::FlyMode()
-{
-	Fly();
 }

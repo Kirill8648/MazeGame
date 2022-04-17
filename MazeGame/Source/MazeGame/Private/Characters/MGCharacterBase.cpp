@@ -24,12 +24,6 @@ bool AMGCharacterBase::IsAlive() const
 	return GetHealth() > 0.0f;
 }
 
-int32 AMGCharacterBase::GetAbilityLevel(EMGAbilityInputID AbilityID) const
-{
-	// TODO
-	return 1;
-}
-
 void AMGCharacterBase::FinishDying()
 {
 	Destroy();
@@ -62,6 +56,60 @@ float AMGCharacterBase::GetHealthRegenRate() const
 	return 0.0f;
 }
 
+float AMGCharacterBase::GetEnergy() const
+{
+	if (IsValid(AttributeSetBase))
+	{
+		return AttributeSetBase->GetEnergy();
+	}
+	return 0.0f;
+}
+
+float AMGCharacterBase::GetMaxEnergy() const
+{
+	if (IsValid(AttributeSetBase))
+	{
+		return AttributeSetBase->GetMaxEnergy();
+	}
+	return 0.0f;
+}
+
+float AMGCharacterBase::GetEnergyRegenRate() const
+{
+	if (IsValid(AttributeSetBase))
+	{
+		return AttributeSetBase->GetEnergyRegenRate();
+	}
+	return 0.0f;
+}
+
+float AMGCharacterBase::GetStamina() const
+{
+	if (IsValid(AttributeSetBase))
+	{
+		return AttributeSetBase->GetStamina();
+	}
+	return 0.0f;
+}
+
+float AMGCharacterBase::GetMaxStamina() const
+{
+	if (IsValid(AttributeSetBase))
+	{
+		return AttributeSetBase->GetMaxStamina();
+	}
+	return 0.0f;
+}
+
+float AMGCharacterBase::GetStaminaRegenRate() const
+{
+	if (IsValid(AttributeSetBase))
+	{
+		return AttributeSetBase->GetStaminaRegenRate();
+	}
+	return 0.0f;
+}
+
 void AMGCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
@@ -71,10 +119,7 @@ void AMGCharacterBase::AddCharacterAbilities()
 {
 	for (TSubclassOf<UMGGameplayAbilityBase>& StartupAbility : CharacterAbilities)
 	{
-		AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(StartupAbility,
-		                                                         GetAbilityLevel(StartupAbility.GetDefaultObject()->AbilityID),
-		                                                         static_cast<int32>(StartupAbility.GetDefaultObject()->AbilityInputID),
-		                                                         this));
+		AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(StartupAbility, 1, static_cast<int32>(StartupAbility.GetDefaultObject()->AbilityInputID), this));
 	}
 
 	AbilitySystemComponent->bCharacterAbilitiesGiven = true;

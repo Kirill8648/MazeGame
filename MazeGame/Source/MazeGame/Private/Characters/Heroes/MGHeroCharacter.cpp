@@ -4,6 +4,7 @@
 #include "Characters/Heroes/MGHeroCharacter.h"
 
 #include "MGAbilitySystemComponent.h"
+#include "MGPlayerDataSubsystem.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -45,7 +46,58 @@ void AMGHeroCharacter::PossessedBy(AController* NewController)
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 	InitializeAttributes();
 	AddStartupEffects();
+	UpdateAbilities();
+	//AddCharacterAbilities();
+}
+
+void AMGHeroCharacter::UpdateAbilities()
+{
+	AbilitySystemComponent->ClearAllAbilities();
+
 	AddCharacterAbilities();
+
+	const UMGPlayerDataSubsystem* PlayerDataSubsystem = GetGameInstance()->GetSubsystem<UMGPlayerDataSubsystem>();
+
+	if (PlayerDataSubsystem && PlayerDataSubsystem->CurrentlyLoadedSaveGameObject)
+		for (FSavedAbilityInfo AbilitySlotNumber : PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->AbilitiesSlotsNumbers)
+		{
+			if (!AbilitySlotNumber.AbilityKey.IsEmpty())
+			{
+				for (FSavedAbilityInfo AbilityLevel : PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->AbilitiesLevels)
+				{
+					if (AbilityLevel.AbilityKey.Equals(AbilitySlotNumber.AbilityKey))
+					{
+						EMGAbilityInputID AbilityInputID;
+						switch (AbilitySlotNumber.AbilityInfo)
+						{
+						case 0:
+							AbilityInputID = EMGAbilityInputID::ActivateFirst;
+							break;
+						case 1:
+							AbilityInputID = EMGAbilityInputID::ActivateSecond;
+							break;
+						case 2:
+							AbilityInputID = EMGAbilityInputID::ActivateThird;
+							break;
+						case 3:
+							AbilityInputID = EMGAbilityInputID::ActivateFourth;
+							break;
+						case 4:
+							AbilityInputID = EMGAbilityInputID::ActivateFifth;
+							break;
+						default:
+							AbilityInputID = EMGAbilityInputID::None;
+							GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "ERROR: Given ability will not have an input ID");
+						}
+
+						AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(
+							PlayerDataSubsystem->AbilitiesTable->FindRow<FAbilityLevelPrices>(FName(*AbilityLevel.AbilityKey), FString())->Ability, AbilityLevel.AbilityInfo,
+							static_cast<int32>(AbilityInputID), this));
+						break;
+					}
+				}
+			}
+		}
 }
 
 void AMGHeroCharacter::BeginPlay()
