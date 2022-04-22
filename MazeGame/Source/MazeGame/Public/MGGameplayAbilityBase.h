@@ -25,5 +25,18 @@ public:
 	EMGAbilityInputID AbilityID = EMGAbilityInputID::None;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="Ability")
+	FString AbilityKey;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category="Ability")
 	UDataTable* StatsTable;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Ability", DisplayName = "OnAbilityAdded")
+	void K2_OnAbilityAdded();
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Ability", DisplayName = "OnAbilityRemoved")
+	void K2_OnAbilityRemoved();
+	
+protected:
+	virtual void OnGiveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) override;
+	virtual void OnRemoveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) override;
 };

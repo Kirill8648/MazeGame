@@ -16,7 +16,4 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "MazeGame|MGInstansedMeshActorStatic")
 	UHierarchicalInstancedStaticMeshComponent* HierarchicalInstancedMesh;
-
-protected:
-	virtual void BeginPlay() override;
 };

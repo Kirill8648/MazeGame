@@ -90,9 +90,13 @@ void AMGHeroCharacter::UpdateAbilities()
 							GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "ERROR: Given ability will not have an input ID");
 						}
 
-						AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(
+						FGameplayAbilitySpec NewSpec = FGameplayAbilitySpec(
 							PlayerDataSubsystem->AbilitiesTable->FindRow<FAbilityLevelPrices>(FName(*AbilityLevel.AbilityKey), FString())->Ability, AbilityLevel.AbilityInfo,
-							static_cast<int32>(AbilityInputID), this));
+							static_cast<int32>(AbilityInputID), this);
+						Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
+						Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;
+
+						AbilitySystemComponent->GiveAbility(NewSpec);
 						break;
 					}
 				}

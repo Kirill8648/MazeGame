@@ -3,11 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "MGInstancedMeshActorStatic.h"
 #include "GameFramework/Actor.h"
 #include "MGInstancedMeshActor.generated.h"
 
 UCLASS()
-class MAZEGAME_API AMGInstancedMeshActor : public AActor
+class MAZEGAME_API AMGInstancedMeshActor : public AMGInstancedMeshActorStatic
 {
 	GENERATED_BODY()
 
@@ -19,9 +20,6 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGInstansedMeshActor")
 	TArray<AActor*> ReplaceInstancesWithActorsByBoxOverlap(FBox Box);
-
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "MazeGame|MGInstansedMeshActorStatic")
-	UHierarchicalInstancedStaticMeshComponent* HierarchicalInstancedMesh;
 	
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|MGInstansedMeshActor")
 	TSubclassOf<AActor> ReplacementActor;

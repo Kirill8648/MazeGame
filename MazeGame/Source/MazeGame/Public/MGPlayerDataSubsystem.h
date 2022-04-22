@@ -44,13 +44,16 @@ public:
 	void SaveGameToLastSlot();*/
 
 	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|PlayerSubsystem")
-	int32 CurrentRunSeed;
+	int32 CurrentRunSeed = 0;
 
 	UPROPERTY(BlueprintReadWrite, Category = "MazeGame|PlayerSubsystem")
 	UMGSaveGame* CurrentlyLoadedSaveGameObject;
 
 	UPROPERTY(BlueprintReadOnly, Category = "MazeGame|PlayerSubsystem")
-	UDataTable* AbilitiesTable;
+	UDataTable* AbilitiesTable = FindObject<UDataTable>(nullptr, TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"));;
+
+	UPROPERTY(BlueprintReadOnly, Category = "MazeGame|PlayerSubsystem")
+	TSoftClassPtr<UDataTable> AbilitiesTableSoftClassPtr = TSoftClassPtr<UDataTable>(FSoftObjectPath(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'")));
 
 private:
 	//int32 LastSlotIndex;

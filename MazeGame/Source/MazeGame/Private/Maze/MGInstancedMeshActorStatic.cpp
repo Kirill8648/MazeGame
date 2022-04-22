@@ -13,8 +13,3 @@ AMGInstancedMeshActorStatic::AMGInstancedMeshActorStatic()
 	HierarchicalInstancedMesh->SetGenerateOverlapEvents(false);
 	HierarchicalInstancedMesh->CanCharacterStepUpOn = ECB_No;
 }
-
-void AMGInstancedMeshActorStatic::BeginPlay()
-{
-	Super::BeginPlay();
-}

@@ -3,6 +3,9 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "MGInstancedCollectibleActor.h"
+#include "MGInstancedMeshActor.h"
+#include "MGMazeGenerationGameMode.h"
 #include "GameFramework/Actor.h"
 #include "UI/MGMazeGenerationProgressWidget.h"
 #include "MGMazeGenerator.generated.h"
@@ -10,6 +13,7 @@
 DECLARE_DELEGATE_OneParam(FBoolDelegate, bool)
 DECLARE_DELEGATE_OneParam(FStringDelegate, FString)
 
+UENUM()
 enum EMazeItemState
 {
 	None,
@@ -17,6 +21,26 @@ enum EMazeItemState
 	VerticalEdge,
 	HorizontalEdge,
 	Knot,
+};
+
+USTRUCT()
+struct FSeparateSpawnedActorInfo
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> SpawnedActor;
+	//None not allowed
+	UPROPERTY(EditAnywhere)
+	TEnumAsByte<EMazeItemState> ActorType;
+	UPROPERTY(EditAnywhere, meta = (UIMin = "0.0"))
+	float SpawnRate;
+	//Is SpawnRate simply means the amount of actors regardless of the size of the maze
+	UPROPERTY(EditAnywhere)
+	bool bIsSpawnRateAsCount;
+	UPROPERTY(EditAnywhere)
+	FVector OptionalOffset;
+	UPROPERTY(EditAnywhere)
+	FRotator OptionalRotation;
 };
 
 struct MazeItem
@@ -35,6 +59,32 @@ struct Pair
 	int32 X;
 };
 
+USTRUCT()
+struct FInstancedWallInfo
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AMGInstancedMeshActorStatic> InstancedActor;
+	UPROPERTY(EditAnywhere)
+	float HorizontalSpawnRate;
+	UPROPERTY(EditAnywhere)
+	float VerticalSpawnRate;
+	UPROPERTY(EditAnywhere)
+	FVector OptionalOffset;
+};
+
+USTRUCT()
+struct FInstancedCollectibleInfo
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AMGInstancedMeshActorStatic> InstancedActor;
+	UPROPERTY(EditAnywhere)
+	float SpawnRate;
+	UPROPERTY(EditAnywhere)
+	FVector OptionalOffset;
+};
+
 UCLASS()
 class MAZEGAME_API AMGMazeGenerator : public AActor
 {
@@ -42,38 +92,55 @@ class MAZEGAME_API AMGMazeGenerator : public AActor
 
 public:
 	AMGMazeGenerator();
-	
-	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
-	void LaunchAsyncMazeGeneration(int32 Seed, int32 XSize, int32 YSize);
-	
-	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
+
+	//UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
+	void LaunchAsyncMazeGeneration(int32 Seed, int32 XSize, int32 YSize, FString2Delegate& ChangeLoadingScreenTextDelegate, FDelegate& AllFinishedDelegate);
+
+	/*UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
 	void SimpleSpawnGeneratedMaze();
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
-	void SpawnWithInstances();
-	
+	void SpawnWithInstances();*/
 
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SimpleSpawn")
+	/*UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SimpleSpawn")
 	TSubclassOf<AActor> CommonMazeWall;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SimpleSpawn")
 	TSubclassOf<AActor> UnbreakableMazeWall;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SpawnWithInstances")
-	TSubclassOf<class AMGInstancedMeshActor> InstancedMeshCommonWalls;
+	TSubclassOf<AMGInstancedMeshActor> InstancedMeshCommonWalls;*/
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SpawnWithInstances")
-	TSubclassOf<AMGInstancedMeshActor> InstancedMeshUnbreakableWalls;
-
+	TSubclassOf<AMGInstancedMeshActorStatic> InstancedMeshUnbreakableWalls;
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Parameters")
-	int32 MGSeed;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Parameters")
-	int32 MGXSize;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Parameters")
-	int32 MGYSize;
+	int32 DistanceBetweenWalls;
 
 	UPROPERTY(EditAnywhere, Category = "MazeGame|Widgets")
+	TSubclassOf<UMGMazeGenerationProgressWidget> MazeGenerationProgressWidget;
+
+	UPROPERTY(BlueprintReadOnly, Category = "MazeGame|Widgets")
 	UMGMazeGenerationProgressWidget* MazeGenerationProgressWidgetRef;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
+	TSubclassOf<AMGInstancedCollectibleActor> InstancedMeshCoins;
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
+	TSubclassOf<AActor> AbilityCollectibleActor;
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
+	int32 NumOfSpawnedAbilityCollectibleActor;
+
+	//Actors that will be spawned as separate actors using a percentage (SpawnRate)
+	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
+	TArray<FSeparateSpawnedActorInfo> SeparateActors;
+	//Different possible walls meshes
+	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
+	TArray<FInstancedWallInfo> InstancedWallsVariations;
+	//Collectibles EXCLUDING coins!
+	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
+	TArray<FInstancedCollectibleInfo> InstancedCollectibles;
+	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
+	float CoinsSpawnRate;
 
 protected:
 	TArray<TArray<MazeItem>> MazeMatrix;
@@ -83,14 +150,20 @@ protected:
 private:
 	FBoolDelegate MatrixGenerationFinishedDelegate;
 	FStringDelegate DrawGenerationProgressUIDelegate;
-	
+	bool bIsMistakeHappened = false;
+
+	FString2Delegate ChangeLoadingScreenTextDelegate;
+	FDelegate AllFinishedDelegate;
+
 	void PrintMazeMatrixToLog();
 
 	void ContinueGeneration(bool bIsMistakeHappenedInAsync);
 
 	void DrawGenerationProgressUI(FString StringToDisplay);
 
-	bool bIsMistakeHappened = false;
+	void SpawnObjects();
+	void ShuffleArray(TArray<int32> &Array,FRandomStream& Stream);
+	int32 Seed;
 };
 
 

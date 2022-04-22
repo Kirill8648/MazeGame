@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Game\n"
-"POT-Creation-Date: 2022-04-14 23:21\n"
-"PO-Revision-Date: 2022-04-14 23:21\n"
+"POT-Creation-Date: 2022-04-17 16:02\n"
+"PO-Revision-Date: 2022-04-17 16:02\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -20,103 +20,82 @@ msgctxt ",0073929F46D4CBA1918F6395F8C05AE1"
 msgid "SaveGame0"
 msgstr "SaveGame0"
 
-#. Key:	012423FB44C3CDA152ED4F964EC208BE
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MAX
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MAX
-msgctxt ",012423FB44C3CDA152ED4F964EC208BE"
-msgid "MAX"
-msgstr "MAX"
-
-#. Key:	025EE1E64649A5A7C1D5948644F8B8E4
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_33.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_33.Text
-msgctxt ",025EE1E64649A5A7C1D5948644F8B8E4"
-msgid "Vignette"
-msgstr "Vignette"
-
-#. Key:	07ED26EE473A1F951013F2937FC39A8B
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_39.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_39.Text
-msgctxt ",07ED26EE473A1F951013F2937FC39A8B"
-msgid "-"
-msgstr "-"
-
-#. Key:	08A28D0D42EA7DE8355BC6A83C53591F
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.FullscreenSettings(0).FullscreenSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.FullscreenSettings(0).FullscreenSettings
-msgctxt ",08A28D0D42EA7DE8355BC6A83C53591F"
-msgid "Windowed"
-msgstr "Windowed"
-
-#. Key:	0A03FAB54C2BB0E6E0EE7F95034B1B5A
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:GetText_14 [Script Bytecode]
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:GetText_14 [Script Bytecode]
-msgctxt ",0A03FAB54C2BB0E6E0EE7F95034B1B5A"
+#. Key:	00C24BB84A1F8F0FD70E61921CC4F29F
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.OnOffSettings(0).OnOffSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.OnOffSettings(0).OnOffSettings
+msgctxt ",00C24BB84A1F8F0FD70E61921CC4F29F"
 msgid "OFF"
 msgstr "OFF"
 
-#. Key:	0E472134475B64F28EEEFD933C114F12
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.LanguageText.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.LanguageText.Text
-msgctxt ",0E472134475B64F28EEEFD933C114F12"
-msgid "Language"
-msgstr "Language"
+#. Key:	06DDE01245DE2648F6ECD1B7DA4709AD
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_34.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_34.Text
+msgctxt ",06DDE01245DE2648F6ECD1B7DA4709AD"
+msgid "Bloom"
+msgstr "Bloom"
 
-#. Key:	1352CD3A46F4B2340020248B52EF94E6
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_46.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_46.Text
-msgctxt ",1352CD3A46F4B2340020248B52EF94E6"
-msgid "-"
-msgstr "-"
+#. Key:	0CED0BE64E6571BF0355AB92F5FFE14F
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_3.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_3.Text
+msgctxt ",0CED0BE64E6571BF0355AB92F5FFE14F"
+msgid "Audio"
+msgstr "Audio"
 
-#. Key:	13B1147E41AC9407775B82831B6FCEE9
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test6.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test6.AbilityName
-msgctxt ",13B1147E41AC9407775B82831B6FCEE9"
-msgid "Test6"
-msgstr "Test6"
-
-#. Key:	14B5C71246950BB83F4D2387913511B1
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.EditableTextBox_2.HintText
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.EditableTextBox_2.HintText
-msgctxt ",14B5C71246950BB83F4D2387913511B1"
-msgid "Random seed"
-msgstr "Random seed"
-
-#. Key:	17EF8D8349BEB8523FEEE09E6640E7EE
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(5).MainSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(5).MainSettings
-msgctxt ",17EF8D8349BEB8523FEEE09E6640E7EE"
-msgid "PSYCHO"
-msgstr "PSYCHO"
-
-#. Key:	1A63DD304C871FABE2DF44B141D20A52
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_44.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_44.Text
-msgctxt ",1A63DD304C871FABE2DF44B141D20A52"
-msgid "-"
-msgstr "-"
-
-#. Key:	1BE39C27499649A9FB0D3D9A5C85E545
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test2.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test2.AbilityName
-msgctxt ",1BE39C27499649A9FB0D3D9A5C85E545"
-msgid "Test2"
-msgstr "Test2"
-
-#. Key:	1F943B5346603C8680F29E912497EA12
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(2).MainSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(2).MainSettings
-msgctxt ",1F943B5346603C8680F29E912497EA12"
-msgid "HIGH"
-msgstr "HIGH"
-
-#. Key:	23394EEF428915ACBCA81DAAAC112460
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_36.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_36.Text
-msgctxt ",23394EEF428915ACBCA81DAAAC112460"
+#. Key:	10C513D947F135854DE165877EEBC39A
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_36.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_36.Text
+msgctxt ",10C513D947F135854DE165877EEBC39A"
 msgid "Motion Blur"
 msgstr "Motion Blur"
+
+#. Key:	10DB0E844B6D162E7CFE93BA729799D4
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(4).MainSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(4).MainSettings
+msgctxt ",10DB0E844B6D162E7CFE93BA729799D4"
+msgid "CINEMATIC"
+msgstr "CINEMATIC"
+
+#. Key:	12843A0D459386FB43129FA81BA821DC
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:WidgetTree.TextBlock_285.Text
+#: /Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:WidgetTree.TextBlock_285.Text
+msgctxt ",12843A0D459386FB43129FA81BA821DC"
+msgid "Resume"
+msgstr "Resume"
+
+#. Key:	14DFADF14CA8E45F4B8DA8BA9D207F7E
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.FullscreenSettings(0).FullscreenSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.FullscreenSettings(0).FullscreenSettings
+msgctxt ",14DFADF14CA8E45F4B8DA8BA9D207F7E"
+msgid "Windowed"
+msgstr "Windowed"
+
+#. Key:	156D795F48BF10EF1EF70D86EBE7AFE1
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_9.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_9.Text
+msgctxt ",156D795F48BF10EF1EF70D86EBE7AFE1"
+msgid "Graphics  Preset"
+msgstr "Graphics  Preset"
+
+#. Key:	19EB55404469317B9BD1F3AC41E00228
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_45.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_45.Text
+msgctxt ",19EB55404469317B9BD1F3AC41E00228"
+msgid "Eye Adaptation"
+msgstr "Eye Adaptation"
+
+#. Key:	1BD2C14A4952A10D2A094489102E5929
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_OkMessage.WBP_OkMessage_C:WidgetTree.TextBlock_91.Text
+#: /Game/MazeGame/UI/Widgets/Elements/WBP_OkMessage.WBP_OkMessage_C:WidgetTree.TextBlock_91.Text
+msgctxt ",1BD2C14A4952A10D2A094489102E5929"
+msgid "Message"
+msgstr "Message"
+
+#. Key:	27D886774AC613000BECA4BFBB70AC6C
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_RunSettings.WBP_RunSettings_C:WidgetTree.TextBlock_118.Text
+#: /Game/MazeGame/UI/Widgets/WBP_RunSettings.WBP_RunSettings_C:WidgetTree.TextBlock_118.Text
+msgctxt ",27D886774AC613000BECA4BFBB70AC6C"
+msgid "Start Run"
+msgstr "Start Run"
 
 #. Key:	2976AD184C874266C8729DB09C3C1D39
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.WBP_AbilityUpgradeElement_C:ExecuteUbergraph_WBP_AbilityUpgradeElement [Script Bytecode]
@@ -153,61 +132,40 @@ msgctxt ",2C222EB445378F6CF47A7C8B3F471F53"
 msgid "Are you sure you want to delete this slot?\r\nAll progress saved in it will be lost!"
 msgstr "Are you sure you want to delete this slot?\r\nAll progress saved in it will be lost!"
 
-#. Key:	2DAA96D041238DE16745CDAF4E6FC503
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_13.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_13.Text
-msgctxt ",2DAA96D041238DE16745CDAF4E6FC503"
-msgid "Foliage"
-msgstr "Foliage"
+#. Key:	3725C09047CFE154A3C416842DF933FE
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:ExecuteUbergraph_WBP_PauseMenu [Script Bytecode]
+#: /Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:ExecuteUbergraph_WBP_PauseMenu [Script Bytecode]
+msgctxt ",3725C09047CFE154A3C416842DF933FE"
+msgid "Current Seed: "
+msgstr "Current Seed: "
 
-#. Key:	39D0CEB84965955326610CA4ED90E99C
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_24.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_24.Text
-msgctxt ",39D0CEB84965955326610CA4ED90E99C"
-msgid "-"
-msgstr "-"
+#. Key:	3FB1DEA5430596C0280962B70CF3947C
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.FullscreenSettings(1).FullscreenSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.FullscreenSettings(1).FullscreenSettings
+msgctxt ",3FB1DEA5430596C0280962B70CF3947C"
+msgid "Windowed Fullscreen"
+msgstr "Windowed Fullscreen"
 
-#. Key:	3D52CD2949838DD13EBB009B1AA92EF8
-#. SourceLocation:	/Game/MazeGame/Core/TestGameMode.TestGameMode_C:ExecuteUbergraph_TestGameMode [Script Bytecode]
-#: /Game/MazeGame/Core/TestGameMode.TestGameMode_C:ExecuteUbergraph_TestGameMode [Script Bytecode]
-msgctxt ",3D52CD2949838DD13EBB009B1AA92EF8"
-msgid "Maze generation"
-msgstr "Maze generation"
+#. Key:	40B98D714015904B38B2CE9C4F896A19
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(7).MainSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(7).MainSettings
+msgctxt ",40B98D714015904B38B2CE9C4F896A19"
+msgid "CUSTOM"
+msgstr "CUSTOM"
 
-#. Key:	3DED8E9B4215C95A07D00990E7F89339
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_22.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_22.Text
-msgctxt ",3DED8E9B4215C95A07D00990E7F89339"
-msgid "-"
-msgstr "-"
+#. Key:	44ACFE3D4B4BC1D6FED369A19DCCC8ED
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(3).MainSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(3).MainSettings
+msgctxt ",44ACFE3D4B4BC1D6FED369A19DCCC8ED"
+msgid "ULTRA"
+msgstr "ULTRA"
 
-#. Key:	3E24DE0A4DA1B3EA3DF565A444116D6E
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_32.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_32.Text
-msgctxt ",3E24DE0A4DA1B3EA3DF565A444116D6E"
-msgid "-"
-msgstr "-"
-
-#. Key:	3EC7FCEB4C815701E228F98C194D15DF
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_16.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_16.Text
-msgctxt ",3EC7FCEB4C815701E228F98C194D15DF"
-msgid "FPS Limit"
-msgstr "FPS Limit"
-
-#. Key:	41CBD430411762300E1D85AD8019A876
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.OnOffSettings(0).OnOffSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.OnOffSettings(0).OnOffSettings
-msgctxt ",41CBD430411762300E1D85AD8019A876"
-msgid "OFF"
-msgstr "OFF"
-
-#. Key:	43FD80AB41A35D7E7F2CDDBBEFAC804F
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_4.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_4.Text
-msgctxt ",43FD80AB41A35D7E7F2CDDBBEFAC804F"
-msgid "Back"
-msgstr "Back"
+#. Key:	46DC2DB449D270EE88C1CDA04F7DA8DD
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_5.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_5.Text
+msgctxt ",46DC2DB449D270EE88C1CDA04F7DA8DD"
+msgid "Controls"
+msgstr "Controls"
 
 #. Key:	46F3E18F4DB174DD983CFFA499AB49B1
 #. SourceLocation:	/Game/MazeGame/Core/TestGameMode.TestGameMode_C:SetLoadingScreenInfo [Script Bytecode]
@@ -216,26 +174,26 @@ msgctxt ",46F3E18F4DB174DD983CFFA499AB49B1"
 msgid "Objects generation"
 msgstr "Objects generation"
 
-#. Key:	492D627C484A386EC314D7AF9775B6CF
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test3.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test3.AbilityName
-msgctxt ",492D627C484A386EC314D7AF9775B6CF"
-msgid "Test3"
-msgstr "Test3"
+#. Key:	4BFE5E924D774179B06C5A97EEF000F8
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_RunSettings.WBP_RunSettings_C:WidgetTree.TextBlock_59.Text
+#: /Game/MazeGame/UI/Widgets/WBP_RunSettings.WBP_RunSettings_C:WidgetTree.TextBlock_59.Text
+msgctxt ",4BFE5E924D774179B06C5A97EEF000F8"
+msgid "Seed: "
+msgstr "Seed: "
 
-#. Key:	500E1D7145B05F8D0E791E91F4CE5AD6
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_1.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_1.Text
-msgctxt ",500E1D7145B05F8D0E791E91F4CE5AD6"
+#. Key:	4E0CCE034B3F1E7B29671DAA6FB9D08A
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_1.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_1.Text
+msgctxt ",4E0CCE034B3F1E7B29671DAA6FB9D08A"
 msgid "Graphics"
 msgstr "Graphics"
 
-#. Key:	50E15DD84202301AC82D7FA7B4867DB4
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_390.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_390.Text
-msgctxt ",50E15DD84202301AC82D7FA7B4867DB4"
-msgid "View Distance"
-msgstr "View Distance"
+#. Key:	4EFB74BF443D7DE0003C61BC4F81AE23
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_4.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_4.Text
+msgctxt ",4EFB74BF443D7DE0003C61BC4F81AE23"
+msgid "Back"
+msgstr "Back"
 
 #. Key:	5110EB3C46C56FD69143A1B479599FB9
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.WBP_AbilityUpgradeElement_C:Get_Button_ToolTipText_0 [Script Bytecode]
@@ -244,61 +202,12 @@ msgctxt ",5110EB3C46C56FD69143A1B479599FB9"
 msgid "Not enough coins"
 msgstr "Not enough coins"
 
-#. Key:	52937B52418EF0D9B0B46ABB6CDDA9F3
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.OnOffSettings(1).OnOffSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.OnOffSettings(1).OnOffSettings
-msgctxt ",52937B52418EF0D9B0B46ABB6CDDA9F3"
-msgid "ON"
-msgstr "ON"
-
-#. Key:	53501D8E4DCFAD831E07FEBF49D4B074
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_333.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_333.Text
-msgctxt ",53501D8E4DCFAD831E07FEBF49D4B074"
-msgid "test 2"
-msgstr "test 2"
-
-#. Key:	536CB9FB4FB57BE0ED72B18829475506
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_9.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_9.Text
-msgctxt ",536CB9FB4FB57BE0ED72B18829475506"
-msgid "Graphics  Preset"
-msgstr "Graphics  Preset"
-
-#. Key:	55ADFFD64B63488FB2007993A992F4A1
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_15.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_15.Text
-msgctxt ",55ADFFD64B63488FB2007993A992F4A1"
-msgid "-"
-msgstr "-"
-
-#. Key:	58164C4245A06493BC0421887E8ED63E
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_29.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_29.Text
-msgctxt ",58164C4245A06493BC0421887E8ED63E"
-msgid "Ambient Occlusion"
-msgstr "Ambient Occlusion"
-
-#. Key:	5957EE714955453E2884DFB30EF3987B
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_42.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_42.Text
-msgctxt ",5957EE714955453E2884DFB30EF3987B"
-msgid "Post Process Preset"
-msgstr "Post Process Preset"
-
-#. Key:	5A9D5AC8480971CF437D7686979D2688
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_2.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_2.Text
-msgctxt ",5A9D5AC8480971CF437D7686979D2688"
-msgid "Post effects"
-msgstr "Post effects"
-
-#. Key:	5CB191B448080D416E3B0FA83BE4AA3E
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_37.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_37.Text
-msgctxt ",5CB191B448080D416E3B0FA83BE4AA3E"
-msgid "-"
-msgstr "-"
+#. Key:	5725856646D2652004D692BFED814366
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:GetText_17 [Script Bytecode]
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:GetText_17 [Script Bytecode]
+msgctxt ",5725856646D2652004D692BFED814366"
+msgid "OFF"
+msgstr "OFF"
 
 #. Key:	5CEB4F684B4F86543353C78F899FB183
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_LoadGameSlot.WBP_LoadGameSlot_C:WidgetTree.TextBlock_Coins.Text
@@ -307,26 +216,33 @@ msgctxt ",5CEB4F684B4F86543353C78F899FB183"
 msgid "Coins spended: 0"
 msgstr "Coins spended: 0"
 
-#. Key:	5E299036463243F3AAFB84A26D267044
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_12.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_12.Text
-msgctxt ",5E299036463243F3AAFB84A26D267044"
-msgid "Effects and Materials"
-msgstr "Effects and Materials"
+#. Key:	61E66001496EB8EAAC5F47A962B474CC
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_38.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_38.Text
+msgctxt ",61E66001496EB8EAAC5F47A962B474CC"
+msgid "Depth of Field"
+msgstr "Depth of Field"
 
-#. Key:	61DE5C00400655B884C28484F18AE850
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.RaiseWalls.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.RaiseWalls.AbilityName
-msgctxt ",61DE5C00400655B884C28484F18AE850"
-msgid "Raise Walls"
-msgstr "Raise Walls"
+#. Key:	61EB3BAD4EAC8D1857B3BC933A13DEF8
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_207.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_207.Text
+msgctxt ",61EB3BAD4EAC8D1857B3BC933A13DEF8"
+msgid "Main"
+msgstr "Main"
 
-#. Key:	6533CF5B4E04CF6E72C9198FB40CDA62
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_14.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_14.Text
-msgctxt ",6533CF5B4E04CF6E72C9198FB40CDA62"
+#. Key:	620295DF43BAEA42CD43A2853047A75C
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_14.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_14.Text
+msgctxt ",620295DF43BAEA42CD43A2853047A75C"
 msgid "Screen Mode"
 msgstr "Screen Mode"
+
+#. Key:	6551AF474E1AA4321778079E98E2215F
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_42.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_42.Text
+msgctxt ",6551AF474E1AA4321778079E98E2215F"
+msgid "Post Process Preset"
+msgstr "Post Process Preset"
 
 #. Key:	671A7F7840A62F08B6CD49AA3F4741D7
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_233.Text
@@ -335,12 +251,33 @@ msgctxt ",671A7F7840A62F08B6CD49AA3F4741D7"
 msgid "Back"
 msgstr "Back"
 
-#. Key:	6A76474347E226435716ED9DE0ECBF42
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_35.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_35.Text
-msgctxt ",6A76474347E226435716ED9DE0ECBF42"
-msgid "-"
-msgstr "-"
+#. Key:	6747A93D4449EC6ABCA85D820B5B96A6
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_13.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_13.Text
+msgctxt ",6747A93D4449EC6ABCA85D820B5B96A6"
+msgid "Foliage"
+msgstr "Foliage"
+
+#. Key:	68397196403A8705E93F2BB76437A70B
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:GetText_15 [Script Bytecode]
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:GetText_15 [Script Bytecode]
+msgctxt ",68397196403A8705E93F2BB76437A70B"
+msgid "OFF"
+msgstr "OFF"
+
+#. Key:	6C4D8A434C13F42562CC61AF66B6DCEB
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_8.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_8.Text
+msgctxt ",6C4D8A434C13F42562CC61AF66B6DCEB"
+msgid "Anti-Aliasing and SSR"
+msgstr "Anti-Aliasing and SSR"
+
+#. Key:	6E6078BF443F9E2FE32CE7B804CC0022
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(0).MainSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(0).MainSettings
+msgctxt ",6E6078BF443F9E2FE32CE7B804CC0022"
+msgid "LOW"
+msgstr "LOW"
 
 #. Key:	6EF748434A30A15DE6255D8C013E5AA8
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_LoadGameSlot.WBP_LoadGameSlot_C:WidgetTree.Button_125.ToolTipText
@@ -349,19 +286,40 @@ msgctxt ",6EF748434A30A15DE6255D8C013E5AA8"
 msgid "DELETE THIS SAVE SLOT"
 msgstr "DELETE THIS SAVE SLOT"
 
-#. Key:	6FC62C2A4B00CC32071F99AABB923269
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_391.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_391.Text
-msgctxt ",6FC62C2A4B00CC32071F99AABB923269"
-msgid "Resolution"
-msgstr "Resolution"
+#. Key:	730A671647251B3EE5CB1193340E0244
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_29.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_29.Text
+msgctxt ",730A671647251B3EE5CB1193340E0244"
+msgid "Ambient Occlusion"
+msgstr "Ambient Occlusion"
 
-#. Key:	702415D14D68E8E0D33FC0A7B837B4FE
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_23.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_23.Text
-msgctxt ",702415D14D68E8E0D33FC0A7B837B4FE"
-msgid "-"
-msgstr "-"
+#. Key:	739C341041F7B41BE6FD5E8439890C81
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:WidgetTree.TextBlock_155.Text
+#: /Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:WidgetTree.TextBlock_155.Text
+msgctxt ",739C341041F7B41BE6FD5E8439890C81"
+msgid "MAZE GAME"
+msgstr "MAZE GAME"
+
+#. Key:	7447556043025997A4E9E6A0C7C738E1
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_10.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_10.Text
+msgctxt ",7447556043025997A4E9E6A0C7C738E1"
+msgid "Shadows"
+msgstr "Shadows"
+
+#. Key:	74B030434F5696BB067E92BF6A466D88
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_40.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_40.Text
+msgctxt ",74B030434F5696BB067E92BF6A466D88"
+msgid "Lens Flare"
+msgstr "Lens Flare"
+
+#. Key:	74DA939C435442E3F84FD8BB80094969
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.LanguageText.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.LanguageText.Text
+msgctxt ",74DA939C435442E3F84FD8BB80094969"
+msgid "Language"
+msgstr "Language"
 
 #. Key:	75808AD14A3D00BC32019882075F3A43
 #. SourceLocation:	/Game/MazeGame/Core/TestGameMode.TestGameMode_C:SetLoadingScreenInfo [Script Bytecode]
@@ -370,33 +328,12 @@ msgctxt ",75808AD14A3D00BC32019882075F3A43"
 msgid "Maze generation"
 msgstr "Maze generation"
 
-#. Key:	81A58BA641311186E8DEC0AEEAC20193
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test11.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test11.AbilityName
-msgctxt ",81A58BA641311186E8DEC0AEEAC20193"
-msgid "test11"
-msgstr "test11"
-
-#. Key:	81C6199E4FB778236D404EBEE0CA983D
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Scream.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Scream.AbilityName
-msgctxt ",81C6199E4FB778236D404EBEE0CA983D"
-msgid "Scream"
-msgstr "Scream"
-
-#. Key:	85230EA34057E2A13D4579B5588C72D6
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:GetText_17 [Script Bytecode]
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:GetText_17 [Script Bytecode]
-msgctxt ",85230EA34057E2A13D4579B5588C72D6"
-msgid "OFF"
-msgstr "OFF"
-
-#. Key:	8AF3DB6347D6C875C07F0A8E92FFD5CA
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_19.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_19.Text
-msgctxt ",8AF3DB6347D6C875C07F0A8E92FFD5CA"
-msgid "100"
-msgstr "100"
+#. Key:	7F5312164536D834034159B8D118E7E5
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_18.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_18.Text
+msgctxt ",7F5312164536D834034159B8D118E7E5"
+msgid "Screen Percentage"
+msgstr "Screen Percentage"
 
 #. Key:	8AF61E0E4A6971E68130E6BC4548B81B
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_346.Text
@@ -405,20 +342,6 @@ msgctxt ",8AF61E0E4A6971E68130E6BC4548B81B"
 msgid "Settings"
 msgstr "Settings"
 
-#. Key:	8C1134F84370343162EFB98331A381FA
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_25.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_25.Text
-msgctxt ",8C1134F84370343162EFB98331A381FA"
-msgid "-"
-msgstr "-"
-
-#. Key:	8D60FE0E49F8FCF23AEF109B4B986071
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_21.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_21.Text
-msgctxt ",8D60FE0E49F8FCF23AEF109B4B986071"
-msgid "-"
-msgstr "-"
-
 #. Key:	8DDBB973413A1F6305D27B9AD873F064
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.WBP_AbilityUpgradeElement_C:ExecuteUbergraph_WBP_AbilityUpgradeElement [Script Bytecode]
 #: /Game/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.WBP_AbilityUpgradeElement_C:ExecuteUbergraph_WBP_AbilityUpgradeElement [Script Bytecode]
@@ -426,33 +349,40 @@ msgctxt ",8DDBB973413A1F6305D27B9AD873F064"
 msgid "<Small>Max lvl</>"
 msgstr "<Small>Max lvl</>"
 
-#. Key:	917F83514AF21A997941CF91EC62A022
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test9.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test9.AbilityName
-msgctxt ",917F83514AF21A997941CF91EC62A022"
-msgid "test9"
-msgstr "test9"
+#. Key:	8ECE3F3E4C9373FDA18A059FE78CE654
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.OnOffSettings(1).OnOffSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.OnOffSettings(1).OnOffSettings
+msgctxt ",8ECE3F3E4C9373FDA18A059FE78CE654"
+msgid "ON"
+msgstr "ON"
 
-#. Key:	92C3C99144DFF4099194828CFF48EBCE
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test5.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test5.AbilityName
-msgctxt ",92C3C99144DFF4099194828CFF48EBCE"
-msgid "Test5"
-msgstr "Test5"
+#. Key:	92AA490A4310B9A411DE7E8C8B15E8B9
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:GetText_16 [Script Bytecode]
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:GetText_16 [Script Bytecode]
+msgctxt ",92AA490A4310B9A411DE7E8C8B15E8B9"
+msgid "OFF"
+msgstr "OFF"
 
-#. Key:	92CAB9024C12A0AE1601F28FDFE5591F
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_27.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_27.Text
-msgctxt ",92CAB9024C12A0AE1601F28FDFE5591F"
-msgid "VSync"
-msgstr "VSync"
+#. Key:	9307165B4CAFAF6EA2B492BEFC504EC0
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_AbilitySlot.WBP_AbilitySlot_C:WidgetTree.KeyText.Text
+#: /Game/MazeGame/UI/Widgets/Elements/WBP_AbilitySlot.WBP_AbilitySlot_C:WidgetTree.KeyText.Text
+msgctxt ",9307165B4CAFAF6EA2B492BEFC504EC0"
+msgid "4"
+msgstr "4"
 
-#. Key:	92CB62734F8A77898ED87B8EEB5A84B1
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_132.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_132.Text
-msgctxt ",92CB62734F8A77898ED87B8EEB5A84B1"
-msgid "Play"
-msgstr "Play"
+#. Key:	934454F649BE802EC32C9F9E029C746E
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(1).MainSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(1).MainSettings
+msgctxt ",934454F649BE802EC32C9F9E029C746E"
+msgid "MEDIUM"
+msgstr "MEDIUM"
+
+#. Key:	93BFD52141E431B8DB45C78C4369D1A1
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_33.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_33.Text
+msgctxt ",93BFD52141E431B8DB45C78C4369D1A1"
+msgid "Vignette"
+msgstr "Vignette"
 
 #. Key:	968BD92F4A87B53709839985CC0CC1C4
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_AbilitySlot.WBP_AbilitySlot_C:WidgetTree.Button.ToolTipText
@@ -461,12 +391,12 @@ msgctxt ",968BD92F4A87B53709839985CC0CC1C4"
 msgid "Clear"
 msgstr "Clear"
 
-#. Key:	975A01C544BDF1B5A1D870B8465DDE9F
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_20.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_20.Text
-msgctxt ",975A01C544BDF1B5A1D870B8465DDE9F"
-msgid "-"
-msgstr "-"
+#. Key:	97DCCACA41E4A47D1E84C6B8D8378E9D
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_RunSettings.WBP_RunSettings_C:WidgetTree.EditableTextBox.HintText
+#: /Game/MazeGame/UI/Widgets/WBP_RunSettings.WBP_RunSettings_C:WidgetTree.EditableTextBox.HintText
+msgctxt ",97DCCACA41E4A47D1E84C6B8D8378E9D"
+msgid "Random Seed"
+msgstr "Random Seed"
 
 #. Key:	994765FD4BC5A41831EBB7A5D4C30D31
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_LoadGameSlot.WBP_LoadGameSlot_C:WidgetTree.TextBlock_30.Text
@@ -475,33 +405,19 @@ msgctxt ",994765FD4BC5A41831EBB7A5D4C30D31"
 msgid "✖"
 msgstr "✖"
 
-#. Key:	99EDC3774739ECFEAC8D5D90B9D51C0F
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_594.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_594.Text
-msgctxt ",99EDC3774739ECFEAC8D5D90B9D51C0F"
-msgid "-"
-msgstr "-"
+#. Key:	9968C96F4B3F652CEFBFE78A9D7E2A6D
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_16.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_16.Text
+msgctxt ",9968C96F4B3F652CEFBFE78A9D7E2A6D"
+msgid "FPS Limit"
+msgstr "FPS Limit"
 
-#. Key:	9C3B52224EF1466EF9851CB1657C2016
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test1.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test1.AbilityName
-msgctxt ",9C3B52224EF1466EF9851CB1657C2016"
-msgid "Test1"
-msgstr "Test1"
-
-#. Key:	A143A2DA4AB2E726B58035A4853543A3
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test7.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test7.AbilityName
-msgctxt ",A143A2DA4AB2E726B58035A4853543A3"
-msgid "test7"
-msgstr "test7"
-
-#. Key:	A3071EB7473A4B3C6D46FDA3BED44D49
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.FullscreenSettings(2).FullscreenSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.FullscreenSettings(2).FullscreenSettings
-msgctxt ",A3071EB7473A4B3C6D46FDA3BED44D49"
-msgid "Fullscreen"
-msgstr "Fullscreen"
+#. Key:	9B40225F4E4D21B4F3A32DABDC5E69CF
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_391.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_391.Text
+msgctxt ",9B40225F4E4D21B4F3A32DABDC5E69CF"
+msgid "Resolution"
+msgstr "Resolution"
 
 #. Key:	A56EAC1B4A2E394C0AA5ED9ACF6BDC66
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_LoadingScreen.Default__WBP_LoadingScreen_C.LoadingInfo
@@ -510,33 +426,12 @@ msgctxt ",A56EAC1B4A2E394C0AA5ED9ACF6BDC66"
 msgid "Default loading Text"
 msgstr "Default loading Text"
 
-#. Key:	A834E1EE4875F17390FFD2A381EDD41A
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test4.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test4.AbilityName
-msgctxt ",A834E1EE4875F17390FFD2A381EDD41A"
-msgid "Test4"
-msgstr "Test4"
-
-#. Key:	AF30805F423FFD73DD2F57A540D5D236
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_28.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_28.Text
-msgctxt ",AF30805F423FFD73DD2F57A540D5D236"
-msgid "-"
-msgstr "-"
-
-#. Key:	AFD4283C41B149A589F8E69DD5DC3021
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_26.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_26.Text
-msgctxt ",AFD4283C41B149A589F8E69DD5DC3021"
-msgid "-"
-msgstr "-"
-
-#. Key:	B00A1E6443C3679491795595FF4BF6A4
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test8.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test8.AbilityName
-msgctxt ",B00A1E6443C3679491795595FF4BF6A4"
-msgid "test8"
-msgstr "test8"
+#. Key:	AB0AC9C84B614CBAF7D2818DA0CBA6F3
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:GetText_14 [Script Bytecode]
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:GetText_14 [Script Bytecode]
+msgctxt ",AB0AC9C84B614CBAF7D2818DA0CBA6F3"
+msgid "OFF"
+msgstr "OFF"
 
 #. Key:	B4FF94074A4337C85B67A6B2148BEBDC
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_LoadGameSlot.WBP_LoadGameSlot_C:WidgetTree.TextBlock_Date.Text
@@ -545,40 +440,26 @@ msgctxt ",B4FF94074A4337C85B67A6B2148BEBDC"
 msgid "10.04.2022"
 msgstr "10.04.2022"
 
-#. Key:	BA7A54184BA6BB7CD9C4A69D216CFBF2
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(0).MainSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(0).MainSettings
-msgctxt ",BA7A54184BA6BB7CD9C4A69D216CFBF2"
-msgid "LOW"
-msgstr "LOW"
+#. Key:	BAB1A53B456B289AC25870BEE88E38DE
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_390.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_390.Text
+msgctxt ",BAB1A53B456B289AC25870BEE88E38DE"
+msgid "View Distance"
+msgstr "View Distance"
 
-#. Key:	BB446FA24ACE90E28CAC4BB3CD0EDB4D
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_45.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_45.Text
-msgctxt ",BB446FA24ACE90E28CAC4BB3CD0EDB4D"
-msgid "Eye Adaptation"
-msgstr "Eye Adaptation"
+#. Key:	BD73EE5A478180D4F1341786C5F1FC41
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:WidgetTree.TextBlock_31.Text
+#: /Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:WidgetTree.TextBlock_31.Text
+msgctxt ",BD73EE5A478180D4F1341786C5F1FC41"
+msgid "Save and Quit"
+msgstr "Save and Quit"
 
-#. Key:	BD39D50043FE68140CA4168D3160BD5E
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_10.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_10.Text
-msgctxt ",BD39D50043FE68140CA4168D3160BD5E"
-msgid "Shadows"
-msgstr "Shadows"
-
-#. Key:	BFE95D7E46568E17D8ADE19848BE911F
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(7).MainSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(7).MainSettings
-msgctxt ",BFE95D7E46568E17D8ADE19848BE911F"
-msgid "CUSTOM"
-msgstr "CUSTOM"
-
-#. Key:	C1E8D6D147018E67B140FBB8F979260A
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_40.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_40.Text
-msgctxt ",C1E8D6D147018E67B140FBB8F979260A"
-msgid "Lens Flare"
-msgstr "Lens Flare"
+#. Key:	C1F37ACA4D037539A8C29E8FA7B9E99B
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(6).MainSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(6).MainSettings
+msgctxt ",C1F37ACA4D037539A8C29E8FA7B9E99B"
+msgid "UNREAL"
+msgstr "UNREAL"
 
 #. Key:	C2A7FB11407952DF24F732AD4073E977
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_AbilitySlot.WBP_AbilitySlot_C:WidgetTree.Image.ToolTipText
@@ -587,13 +468,6 @@ msgctxt ",C2A7FB11407952DF24F732AD4073E977"
 msgid "Drag any ability here"
 msgstr "Drag any ability here"
 
-#. Key:	C3F463C84E5D1C262D46F2A66A1EE724
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_17.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_17.Text
-msgctxt ",C3F463C84E5D1C262D46F2A66A1EE724"
-msgid "120"
-msgstr "120"
-
 #. Key:	C657F99B4D25C154045FA2AA9360B07A
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.WBP_AbilityUpgradeElement_C:ExecuteUbergraph_WBP_AbilityUpgradeElement [Script Bytecode]
 #: /Game/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.WBP_AbilityUpgradeElement_C:ExecuteUbergraph_WBP_AbilityUpgradeElement [Script Bytecode]
@@ -601,61 +475,33 @@ msgctxt ",C657F99B4D25C154045FA2AA9360B07A"
 msgid "Upgrade "
 msgstr "Upgrade "
 
-#. Key:	C6A735AB41A58D4A7661478A88F6E78C
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.MasterVolume.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.MasterVolume.Text
-msgctxt ",C6A735AB41A58D4A7661478A88F6E78C"
-msgid "Master Volume"
-msgstr "Master Volume"
+#. Key:	C6908E7741FFACBCA9F214970A08FF02
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_12.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_12.Text
+msgctxt ",C6908E7741FFACBCA9F214970A08FF02"
+msgid "Effects and Materials"
+msgstr "Effects and Materials"
 
-#. Key:	C8E79BE94EDD4B96E5D9FEB77F25DD0C
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_43.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_43.Text
-msgctxt ",C8E79BE94EDD4B96E5D9FEB77F25DD0C"
-msgid "-"
-msgstr "-"
+#. Key:	C9E9553D45B3759AB2D15FAB3AC0EA68
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:ExecuteUbergraph_WBP_PauseMenu [Script Bytecode]
+#: /Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:ExecuteUbergraph_WBP_PauseMenu [Script Bytecode]
+msgctxt ",C9E9553D45B3759AB2D15FAB3AC0EA68"
+msgid "Are you sure you want to exit?\r\nAll progress in this run will be lost!"
+msgstr "Are you sure you want to exit?\r\nAll progress in this run will be lost!"
 
-#. Key:	CBE2B9A24F1A3EC9217EB4AC23A8983E
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_207.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_207.Text
-msgctxt ",CBE2B9A24F1A3EC9217EB4AC23A8983E"
-msgid "Main"
-msgstr "Main"
+#. Key:	CE6CE8E14B4DD1593424629A46458A24
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.ShadingText.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.ShadingText.Text
+msgctxt ",CE6CE8E14B4DD1593424629A46458A24"
+msgid "Shading"
+msgstr "Shading"
 
-#. Key:	CD1789EA49638CCA5476C59B0030D1C1
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(3).MainSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(3).MainSettings
-msgctxt ",CD1789EA49638CCA5476C59B0030D1C1"
-msgid "ULTRA"
-msgstr "ULTRA"
-
-#. Key:	CD9A26C245883D69DC890EA1A0D1B3CD
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock.Text
-msgctxt ",CD9A26C245883D69DC890EA1A0D1B3CD"
-msgid "OPTIONS"
-msgstr "OPTIONS"
-
-#. Key:	CDA7871A47C65C43730CE5A4CBA70DFB
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_41.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_41.Text
-msgctxt ",CDA7871A47C65C43730CE5A4CBA70DFB"
-msgid "-"
-msgstr "-"
-
-#. Key:	CF0D0DCA41B6CF93B5DD749E99EDB1B2
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_11.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_11.Text
-msgctxt ",CF0D0DCA41B6CF93B5DD749E99EDB1B2"
-msgid "Textures"
-msgstr "Textures"
-
-#. Key:	D2F596394DAC3B27A7B448AA12A45335
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_38.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_38.Text
-msgctxt ",D2F596394DAC3B27A7B448AA12A45335"
-msgid "Depth of Field"
-msgstr "Depth of Field"
+#. Key:	D3AEEFDE4A21956CE3578ABAC612820C
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MAX
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MAX
+msgctxt ",D3AEEFDE4A21956CE3578ABAC612820C"
+msgid "MAX"
+msgstr "MAX"
 
 #. Key:	D50B8A8A480D0CF7C7C1019A739B0B26
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_155.Text
@@ -663,13 +509,6 @@ msgstr "Depth of Field"
 msgctxt ",D50B8A8A480D0CF7C7C1019A739B0B26"
 msgid "MAZE GAME"
 msgstr "MAZE GAME"
-
-#. Key:	D573A045481948DE14CE018CAEBD1AAD
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_30.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_30.Text
-msgctxt ",D573A045481948DE14CE018CAEBD1AAD"
-msgid "-"
-msgstr "-"
 
 #. Key:	D7CCE40F487DA25F02C24B93215F26DF
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/Elements/WBP_AbilitySlot.WBP_AbilitySlot_C:WidgetTree.TextBlock.Text
@@ -685,54 +524,26 @@ msgctxt ",D7D3CEA7426F7860E802E5BDFC5A723B"
 msgid "Play"
 msgstr "Play"
 
-#. Key:	D85585B74021DC9CA81B568D9308F8BF
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:GetText_16 [Script Bytecode]
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:GetText_16 [Script Bytecode]
-msgctxt ",D85585B74021DC9CA81B568D9308F8BF"
-msgid "OFF"
-msgstr "OFF"
+#. Key:	DBAEED3E4DA2011FD0C64BA363ED7ECA
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.MasterVolume.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.MasterVolume.Text
+msgctxt ",DBAEED3E4DA2011FD0C64BA363ED7ECA"
+msgid "Master Volume"
+msgstr "Master Volume"
 
-#. Key:	D878D4AB4E4CDE22070596A8E8492E38
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test10.AbilityName
-#: /Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities.Test10.AbilityName
-msgctxt ",D878D4AB4E4CDE22070596A8E8492E38"
-msgid "test10"
-msgstr "test10"
+#. Key:	DD0250284CB19625194DDC810429A293
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_2.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_2.Text
+msgctxt ",DD0250284CB19625194DDC810429A293"
+msgid "Post effects"
+msgstr "Post effects"
 
-#. Key:	D9C91EBC4D8BAF1A233128BCE7579CF8
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.ShadingText.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.ShadingText.Text
-msgctxt ",D9C91EBC4D8BAF1A233128BCE7579CF8"
-msgid "Shading"
-msgstr "Shading"
-
-#. Key:	DA10C66148A59266127DAF98C01687FB
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:GetText_15 [Script Bytecode]
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:GetText_15 [Script Bytecode]
-msgctxt ",DA10C66148A59266127DAF98C01687FB"
-msgid "OFF"
-msgstr "OFF"
-
-#. Key:	DAFE00904C6F60E37330228FD9CB331D
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.FullscreenSettings(1).FullscreenSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.FullscreenSettings(1).FullscreenSettings
-msgctxt ",DAFE00904C6F60E37330228FD9CB331D"
-msgid "Windowed Fullscreen"
-msgstr "Windowed Fullscreen"
-
-#. Key:	DBF5DDCE48693670893C1DBF2E48D74C
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_34.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_34.Text
-msgctxt ",DBF5DDCE48693670893C1DBF2E48D74C"
-msgid "Bloom"
-msgstr "Bloom"
-
-#. Key:	DDE29D914AFAF127B9FB26A8AE9E7E59
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_18.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_18.Text
-msgctxt ",DDE29D914AFAF127B9FB26A8AE9E7E59"
-msgid "Screen Percentage"
-msgstr "Screen Percentage"
+#. Key:	DF74F6034FBD2E291CD9F3AC1799B84D
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_27.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_27.Text
+msgctxt ",DF74F6034FBD2E291CD9F3AC1799B84D"
+msgid "VSync"
+msgstr "VSync"
 
 #. Key:	E062B2D9454C2237649FBCB89BF5D1C1
 #. SourceLocation:	/Game/MazeGame/Core/TestGameMode.TestGameMode_C:SetLoadingScreenInfo [Script Bytecode]
@@ -741,12 +552,26 @@ msgctxt ",E062B2D9454C2237649FBCB89BF5D1C1"
 msgid "Objects spawning"
 msgstr "Objects spawning"
 
+#. Key:	E18FAAE248D89C7DF7EEC98BEFCA5732
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(5).MainSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(5).MainSettings
+msgctxt ",E18FAAE248D89C7DF7EEC98BEFCA5732"
+msgid "PSYCHO"
+msgstr "PSYCHO"
+
 #. Key:	E20BCD1349C9CF8527C77EB0900DDE19
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_LoadingScreen.WBP_LoadingScreen_C:WidgetTree.TextBlock_46.Text
 #: /Game/MazeGame/UI/Widgets/WBP_LoadingScreen.WBP_LoadingScreen_C:WidgetTree.TextBlock_46.Text
 msgctxt ",E20BCD1349C9CF8527C77EB0900DDE19"
 msgid "TextBlock"
 msgstr "TextBlock"
+
+#. Key:	E696F1C646C2D9DE247718ABD97D038E
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_11.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock_11.Text
+msgctxt ",E696F1C646C2D9DE247718ABD97D038E"
+msgid "Textures"
+msgstr "Textures"
 
 #. Key:	E916CB4349346C40642427AEA6D52A0B
 #. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_86.Text
@@ -755,82 +580,201 @@ msgctxt ",E916CB4349346C40642427AEA6D52A0B"
 msgid "New Game"
 msgstr "New Game"
 
-#. Key:	E985996847ACB85E7F747E827CC59C3A
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_3.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_3.Text
-msgctxt ",E985996847ACB85E7F747E827CC59C3A"
-msgid "Audio"
-msgstr "Audio"
+#. Key:	E9AAC6CD47BC9D9C06096683D203AA48
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock.Text
+#: /Game/MazeGame/UI/Widgets/WBP_Options.WBP_Options_C:WidgetTree.TextBlock.Text
+msgctxt ",E9AAC6CD47BC9D9C06096683D203AA48"
+msgid "OPTIONS"
+msgstr "OPTIONS"
 
-#. Key:	EACDB1BD41EB7AC1AE1172BEB1EB8B82
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(6).MainSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(6).MainSettings
-msgctxt ",EACDB1BD41EB7AC1AE1172BEB1EB8B82"
-msgid "UNREAL"
-msgstr "UNREAL"
+#. Key:	EDA00B92455B081364B5459680001975
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:ExecuteUbergraph_WBP_PauseMenu [Script Bytecode]
+#: /Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:ExecuteUbergraph_WBP_PauseMenu [Script Bytecode]
+msgctxt ",EDA00B92455B081364B5459680001975"
+msgid "Exit"
+msgstr "Exit"
 
-#. Key:	ECFBD1994FCE1F69F4F2D2A876219D2C
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(1).MainSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(1).MainSettings
-msgctxt ",ECFBD1994FCE1F69F4F2D2A876219D2C"
-msgid "MEDIUM"
-msgstr "MEDIUM"
+#. Key:	EEE152604C6FE4DD6FCCFCA6A124F339
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:WidgetTree.TextBlock_346.Text
+#: /Game/MazeGame/UI/Widgets/WBP_PauseMenu.WBP_PauseMenu_C:WidgetTree.TextBlock_346.Text
+msgctxt ",EEE152604C6FE4DD6FCCFCA6A124F339"
+msgid "Settings"
+msgstr "Settings"
 
-#. Key:	EE29735644C00C7EC5E0C3B7887BAB2B
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_429.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_429.Text
-msgctxt ",EE29735644C00C7EC5E0C3B7887BAB2B"
-msgid "test 1"
-msgstr "test 1"
+#. Key:	EF056A1940CE370FC200FCA87AE47EDC
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.FullscreenSettings(2).FullscreenSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.FullscreenSettings(2).FullscreenSettings
+msgctxt ",EF056A1940CE370FC200FCA87AE47EDC"
+msgid "Fullscreen"
+msgstr "Fullscreen"
 
-#. Key:	F03FD0FD4AF04008B54F718E236399D1
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(4).MainSettings
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.Default__WBP_MainMenu_C.MainSettings(4).MainSettings
-msgctxt ",F03FD0FD4AF04008B54F718E236399D1"
-msgid "CINEMATIC"
-msgstr "CINEMATIC"
-
-#. Key:	F9B134904553D21B88DD32AEDE6BA99C
-#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_8.Text
-#: /Game/MazeGame/UI/Widgets/WBP_MainMenu.WBP_MainMenu_C:WidgetTree.TextBlock_8.Text
-msgctxt ",F9B134904553D21B88DD32AEDE6BA99C"
-msgid "Anti-Aliasing and SSR"
-msgstr "Anti-Aliasing and SSR"
+#. Key:	FE07F0804B72CEFAD74E60B9D9F8078B
+#. SourceLocation:	/Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(2).MainSettings
+#: /Game/MazeGame/UI/Widgets/WBP_Options.Default__WBP_Options_C.MainSettings(2).MainSettings
+msgctxt ",FE07F0804B72CEFAD74E60B9D9F8078B"
+msgid "HIGH"
+msgstr "HIGH"
 
 #. Key:	RaiseWalls
 #. SourceLocation:	/Game/MazeGame/Data/ST_AbilitiesDescriptions.ST_AbilitiesDescriptions
 #: /Game/MazeGame/Data/ST_AbilitiesDescriptions.ST_AbilitiesDescriptions
-msgctxt "AbilitiesDescriptions,RaiseWalls"
+msgctxt "ST_AbilitiesDescriptions,RaiseWalls"
 msgid "@TODO RAISE WALLS DESCRIPTION"
 msgstr "@TODO RAISE WALLS DESCRIPTION"
 
 #. Key:	Scream
 #. SourceLocation:	/Game/MazeGame/Data/ST_AbilitiesDescriptions.ST_AbilitiesDescriptions
 #: /Game/MazeGame/Data/ST_AbilitiesDescriptions.ST_AbilitiesDescriptions
-msgctxt "AbilitiesDescriptions,Scream"
+msgctxt "ST_AbilitiesDescriptions,Scream"
 msgid "@TODO SCREAM DESCRIPTION"
 msgstr "@TODO SCREAM DESCRIPTION"
 
-#. Key:	Cost_StatName
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_RaiseWallsStats.DT_RaiseWallsStats.Cost.StatName_67_B088EC33445E05852BC32BA5E21DBE44
-#: /Game/MazeGame/Data/DataTables/DT_RaiseWallsStats.DT_RaiseWallsStats.Cost.StatName_67_B088EC33445E05852BC32BA5E21DBE44
-msgctxt "DT_RaiseWallsStats,Cost_StatName"
+#. Key:	CostRW
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilitiesStats.ST_AbilitiesStats
+#: /Game/MazeGame/Data/ST_AbilitiesStats.ST_AbilitiesStats
+msgctxt "ST_AbilitiesStats,CostRW"
 msgid "Cost"
 msgstr "Cost"
 
-#. Key:	Radius_StatName
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_RaiseWallsStats.DT_RaiseWallsStats.Radius.StatName_67_B088EC33445E05852BC32BA5E21DBE44
-#: /Game/MazeGame/Data/DataTables/DT_RaiseWallsStats.DT_RaiseWallsStats.Radius.StatName_67_B088EC33445E05852BC32BA5E21DBE44
-msgctxt "DT_RaiseWallsStats,Radius_StatName"
+#. Key:	RadiusRW
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilitiesStats.ST_AbilitiesStats
+#: /Game/MazeGame/Data/ST_AbilitiesStats.ST_AbilitiesStats
+msgctxt "ST_AbilitiesStats,RadiusRW"
 msgid "Radius"
 msgstr "Radius"
 
-#. Key:	TimeInAir_StatName
-#. SourceLocation:	/Game/MazeGame/Data/DataTables/DT_RaiseWallsStats.DT_RaiseWallsStats.TimeInAir.StatName_67_B088EC33445E05852BC32BA5E21DBE44
-#: /Game/MazeGame/Data/DataTables/DT_RaiseWallsStats.DT_RaiseWallsStats.TimeInAir.StatName_67_B088EC33445E05852BC32BA5E21DBE44
-msgctxt "DT_RaiseWallsStats,TimeInAir_StatName"
+#. Key:	TimeInAirRW
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilitiesStats.ST_AbilitiesStats
+#: /Game/MazeGame/Data/ST_AbilitiesStats.ST_AbilitiesStats
+msgctxt "ST_AbilitiesStats,TimeInAirRW"
 msgid "Time In Air"
 msgstr "Time In Air"
+
+#. Key:	RaiseWalls
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,RaiseWalls"
+msgid "Raise Walls"
+msgstr "Raise Walls"
+
+#. Key:	Scream
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Scream"
+msgid "Scream"
+msgstr "Scream"
+
+#. Key:	Test1
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test1"
+msgid "Test1"
+msgstr "Test1"
+
+#. Key:	Test10
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test10"
+msgid "Test10"
+msgstr "Test10"
+
+#. Key:	Test11
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test11"
+msgid "Test11"
+msgstr "Test11"
+
+#. Key:	Test2
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test2"
+msgid "Test2"
+msgstr "Test2"
+
+#. Key:	Test3
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test3"
+msgid "Test3"
+msgstr "Test3"
+
+#. Key:	Test4
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test4"
+msgid "Test4"
+msgstr "Test4"
+
+#. Key:	Test5
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test5"
+msgid "Test5"
+msgstr "Test5"
+
+#. Key:	Test6
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test6"
+msgid "Test6"
+msgstr "Test6"
+
+#. Key:	Test7
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test7"
+msgid "Test7"
+msgstr "Test7"
+
+#. Key:	Test8
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test8"
+msgid "Test8"
+msgstr "Test8"
+
+#. Key:	Test9
+#. SourceLocation:	/Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+#: /Game/MazeGame/Data/ST_AbilititiesNames.ST_AbilititiesNames
+msgctxt "ST_AbilititiesNames,Test9"
+msgid "Test9"
+msgstr "Test9"
+
+#. Key:	ActivateFifth
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,ActivateFifth"
+msgid "Activate Fifth ability"
+msgstr "Activate Fifth ability"
+
+#. Key:	ActivateFirst
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,ActivateFirst"
+msgid "Activate First ability"
+msgstr "Activate First ability"
+
+#. Key:	ActivateFourth
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,ActivateFourth"
+msgid "Activate Fourth ability"
+msgstr "Activate Fourth ability"
+
+#. Key:	ActivateSecond
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,ActivateSecond"
+msgid "Activate Second ability"
+msgstr "Activate Second ability"
+
+#. Key:	ActivateThird
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,ActivateThird"
+msgid "Activate Third ability"
+msgstr "Activate Third ability"
 
 #. Key:	AreYouShure
 #. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
@@ -845,6 +789,20 @@ msgstr "Are you shure?"
 msgctxt "Text,Cancel"
 msgid "Cancel"
 msgstr "Cancel"
+
+#. Key:	Jump
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,Jump"
+msgid "Jump"
+msgstr "Jump"
+
+#. Key:	KeyInUse
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,KeyInUse"
+msgid "Selected key is already in use!"
+msgstr "Selected key is already in use!"
 
 #. Key:	LockedAbilityDescription
 #. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
@@ -867,12 +825,96 @@ msgctxt "Text,Lvl"
 msgid "Lvl"
 msgstr "Lvl"
 
+#. Key:	MazeGeneration
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,MazeGeneration"
+msgid "Maze Generation"
+msgstr "Maze Generation"
+
+#. Key:	MazeLength
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,MazeLength"
+msgid "Maze Length: "
+msgstr "Maze Length: "
+
+#. Key:	MazeWidth
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,MazeWidth"
+msgid "Maze Width: "
+msgstr "Maze Width: "
+
+#. Key:	MoveForward-1
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,MoveForward-1"
+msgid "Move Backwards"
+msgstr "Move Backwards"
+
+#. Key:	MoveForward1
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,MoveForward1"
+msgid "Move Forward"
+msgstr "Move Forward"
+
+#. Key:	MoveRight-1
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,MoveRight-1"
+msgid "Move Left"
+msgstr "Move Left"
+
+#. Key:	MoveRight1
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,MoveRight1"
+msgid "Move Right"
+msgstr "Move Right"
+
+#. Key:	ObjectPlacement
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,ObjectPlacement"
+msgid "Object Placement"
+msgstr "Object Placement"
+
+#. Key:	ObjectsGeneration
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,ObjectsGeneration"
+msgid "Objects Generation"
+msgstr "Objects Generation"
+
 #. Key:	Ok
 #. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
 #: /Game/MazeGame/Data/ST_Texts.ST_Texts
 msgctxt "Text,Ok"
 msgid "Ok"
 msgstr "Ok"
+
+#. Key:	Open/CloseAbilitiesMenu
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,Open/CloseAbilitiesMenu"
+msgid "Open/Close Abilities Menu"
+msgstr "Open/Close Abilities Menu"
+
+#. Key:	Open/ClosePauseMenu
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,Open/ClosePauseMenu"
+msgid "Open/Close Pause Menu"
+msgstr "Open/Close Pause Menu"
+
+#. Key:	Open/CloseRunSettingsMenu
+#. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts
+#: /Game/MazeGame/Data/ST_Texts.ST_Texts
+msgctxt "Text,Open/CloseRunSettingsMenu"
+msgid "Open/Close Run Settings Menu"
+msgstr "Open/Close Run Settings Menu"
 
 #. Key:	SpendedCoins
 #. SourceLocation:	/Game/MazeGame/Data/ST_Texts.ST_Texts

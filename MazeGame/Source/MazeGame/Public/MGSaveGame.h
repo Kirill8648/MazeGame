@@ -31,38 +31,38 @@ struct FAbilityLevelPrices : public FTableRowBase
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString AbilityKey;
+	FString AbilityKey = "";
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl1Cost;
+	int32 Lvl1Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl2Cost;
+	int32 Lvl2Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl3Cost;
+	int32 Lvl3Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl4Cost;
+	int32 Lvl4Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl5Cost;
+	int32 Lvl5Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl6Cost;
+	int32 Lvl6Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl7Cost;
+	int32 Lvl7Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl8Cost;
+	int32 Lvl8Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl9Cost;
+	int32 Lvl9Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 Lvl10Cost;
+	int32 Lvl10Cost = 0;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 MaxLvl;
+	int32 MaxLvl = 0;
 	//
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	TObjectPtr<UTexture2D> AbilityIcon;
+	TObjectPtr<UTexture2D> AbilityIcon = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<UMGGameplayAbilityBase> Ability;
 	//
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	UDataTable* AbilityStatsTable;
+	UDataTable* AbilityStatsTable = nullptr;
 };
 
 /**

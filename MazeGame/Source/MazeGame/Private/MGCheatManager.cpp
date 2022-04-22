@@ -23,13 +23,20 @@
 
 void UMGCheatManager::AddMoney(const int Amount) const
 {
-	GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Money Added");
 	const UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(GetWorld());
 	const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>();
 
 	//UGameplayStatics::GetGameInstance(GetWorld())->GetSubsystem<UMGPlayerDataSubsystem>()->CurrentlyLoadedSaveGameObject->PlayerCurrentCoinsNumber += Amount;
 
-	PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->PlayerCurrentCoinsNumber += Amount;
+	if (PlayerDataSubsystem)
+	{
+		if (PlayerDataSubsystem->CurrentlyLoadedSaveGameObject)
+		{
+			PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->PlayerCurrentCoinsNumber += Amount;
+			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Money Added");
+		}
+		else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "No save file loaded");
+	}
 }
 
 void UMGCheatManager::UnlockAbilities() const
@@ -44,6 +51,6 @@ void UMGCheatManager::UnlockAbilities() const
 					AbilitiesLevel.AbilityInfo = 1;
 			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Abilities unlocked, redraw UI to see changes");
 		}
-		//else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "Error during unlocking. CurrentlyLoadedSaveGameObject is null");
+		else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "No save file loaded");
 	//else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "Error during unlocking. PlayerDataSubsystem is null");
 }

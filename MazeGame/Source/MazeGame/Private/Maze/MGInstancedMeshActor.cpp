@@ -7,11 +7,6 @@
 
 AMGInstancedMeshActor::AMGInstancedMeshActor()
 {
-	PrimaryActorTick.bCanEverTick = false;
-	HierarchicalInstancedMesh = CreateDefaultSubobject<UHierarchicalInstancedStaticMeshComponent>(FName("HierarchicalInstancedMesh"));
-	HierarchicalInstancedMesh->SetupAttachment(RootComponent);
-	HierarchicalInstancedMesh->SetGenerateOverlapEvents(false);
-	HierarchicalInstancedMesh->CanCharacterStepUpOn = ECB_No;
 }
 
 TArray<AActor*> AMGInstancedMeshActor::ReplaceInstancesWithActorsBySphereOverlap(FVector Center, float Radius)

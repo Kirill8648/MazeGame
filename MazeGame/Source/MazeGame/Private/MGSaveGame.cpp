@@ -2,8 +2,8 @@
 
 
 #include "MGSaveGame.h"
-
-#include "MazeGame/MazeGame.h"
+#include "Runtime/CoreUObject/Public/UObject/ConstructorHelpers.h"
+#include "Engine/DataTable.h"
 
 UMGSaveGame::UMGSaveGame()
 {
@@ -12,8 +12,8 @@ UMGSaveGame::UMGSaveGame()
 	LastXMazeSize = 100;
 	LastYMazeSize = 100;
 	SetDateTime();
-
-	if (static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable(TEXT("/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities")); AbilitiesTable.Succeeded())
+	if (static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'")); AbilitiesTable.
+		Succeeded())
 	{
 		TArray<FAbilityLevelPrices*> Rows;
 		AbilitiesTable.Object->GetAllRows("Error trying to GetAllRows() in MGSaveGame.cpp", Rows);
