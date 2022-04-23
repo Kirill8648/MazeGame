@@ -46,13 +46,22 @@ void AMGHeroCharacter::PossessedBy(AController* NewController)
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 	InitializeAttributes();
 	AddStartupEffects();
-	UpdateAbilities();
+	if (!AbilitySystemComponent->bCharacterAbilitiesGiven) UpdateAbilities();
 	//AddCharacterAbilities();
 }
 
 void AMGHeroCharacter::UpdateAbilities()
 {
-	AbilitySystemComponent->ClearAllAbilities();
+	//AbilitySystemComponent->ClearAllAbilities();
+
+	TArray<FGameplayAbilitySpecHandle> Handles;
+	AbilitySystemComponent->GetAllAbilities(Handles);
+	for (FGameplayAbilitySpecHandle Handle : Handles)
+	{
+		//Cast<UMGGameplayAbilityBase>(AbilitySystemComponent->FindAbilitySpecFromHandle(Handle)->Ability)->K2_OnAbilityRemoved();
+		K2_RemoveAbilitySlotFromHUD(Cast<UMGGameplayAbilityBase>(AbilitySystemComponent->FindAbilitySpecFromHandle(Handle)->Ability)->AbilityInputID);
+		AbilitySystemComponent->ClearAbility(Handle);
+	}
 
 	AddCharacterAbilities();
 
@@ -93,8 +102,11 @@ void AMGHeroCharacter::UpdateAbilities()
 						FGameplayAbilitySpec NewSpec = FGameplayAbilitySpec(
 							PlayerDataSubsystem->AbilitiesTable->FindRow<FAbilityLevelPrices>(FName(*AbilityLevel.AbilityKey), FString())->Ability, AbilityLevel.AbilityInfo,
 							static_cast<int32>(AbilityInputID), this);
-						Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
-						Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;
+
+						CastChecked<UMGGameplayAbilityBase, UGameplayAbility>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
+						CastChecked<UMGGameplayAbilityBase, UGameplayAbility>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;
+						/*Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
+						Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;*/
 
 						AbilitySystemComponent->GiveAbility(NewSpec);
 						break;
@@ -102,11 +114,13 @@ void AMGHeroCharacter::UpdateAbilities()
 				}
 			}
 		}
+	AbilitySystemComponent->bCharacterAbilitiesGiven = true;
 }
 
 void AMGHeroCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	UpdateAbilities();
 }
 
 void AMGHeroCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)

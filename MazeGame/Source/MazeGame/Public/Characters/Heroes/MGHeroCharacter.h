@@ -26,6 +26,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|Player")
 	void UpdateAbilities();
 
+	UFUNCTION(BlueprintImplementableEvent, Category = "MazeGame|HUD")
+	void K2_RemoveAbilitySlotFromHUD(EMGAbilityInputID const& SlotID);
+
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Camera")
 	float BaseTurnRate;
@@ -42,10 +45,10 @@ protected:
 	class UCameraComponent* FirstPersonCamera;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Camera")
-	TSubclassOf<class UCameraShakeBase> WalkCameraShake;
+	TSubclassOf<UCameraShakeBase> WalkCameraShake;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Camera")
-	TSubclassOf<class UCameraShakeBase> SprintCameraShake;
+	TSubclassOf<UCameraShakeBase> SprintCameraShake;
 
 	virtual void BeginPlay() override;
 
