@@ -35,8 +35,16 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "Ability", DisplayName = "OnAbilityRemoved")
 	void K2_OnAbilityRemoved();
-	
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Ability", DisplayName = "OnAbilityCheckCost")
+	void K2_OnAbilityCheckCost(bool ReturnValue) const;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Ability", DisplayName = "OnAbilityCheckCooldown")
+	void K2_OnAbilityCheckCooldown(bool ReturnValue) const;
+
 protected:
 	virtual void OnGiveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) override;
 	virtual void OnRemoveAbility(const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilitySpec& Spec) override;
+	virtual bool CheckCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, FGameplayTagContainer* OptionalRelevantTags) const override;
+	virtual bool CheckCooldown(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,FGameplayTagContainer* OptionalRelevantTags) const override;
 };

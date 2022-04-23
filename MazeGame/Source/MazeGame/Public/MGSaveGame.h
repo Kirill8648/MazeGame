@@ -65,6 +65,34 @@ struct FAbilityLevelPrices : public FTableRowBase
 	UDataTable* AbilityStatsTable = nullptr;
 };
 
+USTRUCT(BlueprintType)
+struct FAbilityStatsByLevels : public FTableRowBase
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString StatKey = "";
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl1Value = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl2Value = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl3Value = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl4Value = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl5Value = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl6Value = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl7Value = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl8Value = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl9Value = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Lvl10Value = 0;
+};
+
 /**
  * 
  */

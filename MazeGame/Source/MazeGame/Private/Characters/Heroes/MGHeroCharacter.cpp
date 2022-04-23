@@ -103,12 +103,14 @@ void AMGHeroCharacter::UpdateAbilities()
 							PlayerDataSubsystem->AbilitiesTable->FindRow<FAbilityLevelPrices>(FName(*AbilityLevel.AbilityKey), FString())->Ability, AbilityLevel.AbilityInfo,
 							static_cast<int32>(AbilityInputID), this);
 
-						CastChecked<UMGGameplayAbilityBase, UGameplayAbility>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
-						CastChecked<UMGGameplayAbilityBase, UGameplayAbility>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;
-						/*Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
-						Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;*/
-
-						AbilitySystemComponent->GiveAbility(NewSpec);
+						if (NewSpec.Ability)
+						{
+							CastChecked<UMGGameplayAbilityBase, UGameplayAbility>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
+							CastChecked<UMGGameplayAbilityBase, UGameplayAbility>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;
+							/*Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
+							Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;*/
+							AbilitySystemComponent->GiveAbility(NewSpec);
+						}
 						break;
 					}
 				}
