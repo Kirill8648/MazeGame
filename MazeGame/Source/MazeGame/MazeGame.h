@@ -11,6 +11,7 @@ enum class EMGAbilityInputID : uint8
 	None UMETA(DisplayName = "None"),
 	Confirm UMETA(DisplayName = "Confirm"),
 	Cancel UMETA(DisplayName = "Cancel"),
+	Sprint UMETA(DisplayName = "Sprint"),
 	ActivateFirst UMETA(DisplayName = "ActivateFirst"),
 	ActivateSecond UMETA(DisplayName = "ActivateSecond"),
 	ActivateThird UMETA(DisplayName = "ActivateThird"),

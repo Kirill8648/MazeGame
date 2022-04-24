@@ -46,7 +46,8 @@ void AMGHeroCharacter::PossessedBy(AController* NewController)
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 	InitializeAttributes();
 	AddStartupEffects();
-	if (!AbilitySystemComponent->bCharacterAbilitiesGiven) UpdateAbilities();
+	//if (!AbilitySystemComponent->bCharacterAbilitiesGiven) UpdateAbilities();
+	//UpdateAbilities();
 	//AddCharacterAbilities();
 }
 
@@ -107,6 +108,8 @@ void AMGHeroCharacter::UpdateAbilities()
 						{
 							CastChecked<UMGGameplayAbilityBase, UGameplayAbility>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
 							CastChecked<UMGGameplayAbilityBase, UGameplayAbility>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;
+							/*CastChecked<UMGGameplayAbilityBase, UGameplayAbility>(NewSpec.Ability)->MaxLvl = PlayerDataSubsystem->AbilitiesTable->FindRow<FAbilityLevelPrices>(
+								*AbilityLevel.AbilityKey, "")->MaxLvl;*/
 							/*Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityInputID = AbilityInputID;
 							Cast<UMGGameplayAbilityBase>(NewSpec.Ability)->AbilityKey = AbilityLevel.AbilityKey;*/
 							AbilitySystemComponent->GiveAbility(NewSpec);
@@ -122,7 +125,7 @@ void AMGHeroCharacter::UpdateAbilities()
 void AMGHeroCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	UpdateAbilities();
+	//UpdateAbilities();
 }
 
 void AMGHeroCharacter::EndPlay(const EEndPlayReason::Type EndPlayReason)

@@ -85,6 +85,23 @@ struct FInstancedCollectibleInfo
 	FVector OptionalOffset;
 };
 
+USTRUCT()
+struct FSeparateSpawnedFloorActorInfo
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> SpawnedFloorActor;
+	UPROPERTY(EditAnywhere, meta = (UIMin = "0.0"))
+	float SpawnRate;
+	//Is SpawnRate simply means the amount of actors regardless of the size of the maze
+	UPROPERTY(EditAnywhere)
+	bool bIsSpawnRateAsCount;
+	UPROPERTY(EditAnywhere)
+	FVector OptionalOffset;
+	UPROPERTY(EditAnywhere)
+	FRotator OptionalRotation;
+};
+
 UCLASS()
 class MAZEGAME_API AMGMazeGenerator : public AActor
 {
@@ -111,7 +128,7 @@ public:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SpawnWithInstances")
 	TSubclassOf<AMGInstancedMeshActor> InstancedMeshCommonWalls;*/
 
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SpawnWithInstances")
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|UnbreakableWalls")
 	TSubclassOf<AMGInstancedMeshActorStatic> InstancedMeshUnbreakableWalls;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Parameters")
@@ -125,6 +142,8 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
 	TSubclassOf<AMGInstancedCollectibleActor> InstancedMeshCoins;
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
+	FVector OptionalInstancedMeshCoinsOffset;
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
 	TSubclassOf<AActor> AbilityCollectibleActor;
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
@@ -141,6 +160,11 @@ public:
 	TArray<FInstancedCollectibleInfo> InstancedCollectibles;
 	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
 	float CoinsSpawnRate;
+
+	UPROPERTY(EditAnywhere, Category = "MazeGame|Floor")
+	TArray<FInstancedCollectibleInfo> InstancedFloorVariations;
+	UPROPERTY(EditAnywhere, Category = "MazeGame|Floor")
+	TArray<FSeparateSpawnedFloorActorInfo> FloorActors;
 
 protected:
 	TArray<TArray<MazeItem>> MazeMatrix;

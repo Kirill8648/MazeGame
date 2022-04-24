@@ -47,7 +47,6 @@ void AMGMazeGenerationGameMode::BeginPlay()
 
 void AMGMazeGenerationGameMode::OnMatchStateSet()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Blue, "State Changed");
 	if (MatchState == MatchState::WaitingToStart)
 	{
 		LoadingScreenWidgetRef = CreateWidget(UGameplayStatics::GetPlayerController(GetWorld(), 0), LoadingScreenWidget);

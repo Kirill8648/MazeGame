@@ -2,7 +2,6 @@
 
 
 #include "Characters/Abilities/MGMMC_HeroAbilityCost.h"
-
 #include "MGGameplayAbilityBase.h"
 #include "MGSaveGame.h"
 
@@ -14,7 +13,6 @@ float UMGMMC_HeroAbilityCost::CalculateBaseMagnitude_Implementation(const FGamep
 	{
 		return 0.0f;
 	}
-	
 	if (const FAbilityStatsByLevels* CostStruct = Ability->StatsTable->FindRow<FAbilityStatsByLevels>(TEXT("Cost"), ""))
 	{
 		switch (Ability->GetAbilityLevel())

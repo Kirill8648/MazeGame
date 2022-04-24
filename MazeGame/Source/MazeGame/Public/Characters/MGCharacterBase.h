@@ -55,6 +55,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase|Attributes")
 	float GetStaminaRegenRate() const;
 
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase|Attributes")
+	float GetCoins() const;
+
 protected:
 	UPROPERTY()
 	class UMGAbilitySystemComponent* AbilitySystemComponent;
@@ -72,7 +75,7 @@ protected:
 	TSubclassOf<class UGameplayEffect> DefaultAttributes;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Abilities")
-	TArray<TSubclassOf<class UGameplayEffect>> StartupEffects;
+	TArray<TSubclassOf<UGameplayEffect>> StartupEffects;
 
 	virtual void BeginPlay() override;
 

@@ -59,6 +59,7 @@ void UMGAttributeSetBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& 
 	DOREPLIFETIME_CONDITION_NOTIFY(UMGAttributeSetBase, Stamina, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UMGAttributeSetBase, MaxStamina, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(UMGAttributeSetBase, StaminaRegenRate, COND_None, REPNOTIFY_Always);
+	DOREPLIFETIME_CONDITION_NOTIFY(UMGAttributeSetBase, Coins, COND_None, REPNOTIFY_Always);
 }
 
 void UMGAttributeSetBase::AdjustAttributeForMaxChange(FGameplayAttributeData& AffectedAttribute, const FGameplayAttributeData& MaxAttribute, float NewMaxValue,
@@ -119,4 +120,9 @@ void UMGAttributeSetBase::OnRep_MaxStamina(const FGameplayAttributeData& OldMaxS
 void UMGAttributeSetBase::OnRep_StaminaRegenRate(const FGameplayAttributeData& OldStaminaRegenRate)
 {
 	GAMEPLAYATTRIBUTE_REPNOTIFY(UMGAttributeSetBase, StaminaRegenRate, OldStaminaRegenRate);
+}
+
+void UMGAttributeSetBase::OnRep_Coins(const FGameplayAttributeData& OldCoins)
+{
+	GAMEPLAYATTRIBUTE_REPNOTIFY(UMGAttributeSetBase, Coins, OldCoins);
 }

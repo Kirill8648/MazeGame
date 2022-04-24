@@ -243,10 +243,9 @@ void AMGMazeGenerator::SpawnObjects()
 	int32 CellCount = (x - 1) / 2 * ((y - 1) / 2);
 	int32 KnotCount = (y - 3) / 2 * ((x - 3) / 2);
 
-
 	//-----SPAWN UNBREAKABLE WALLS-----
 	AMGInstancedMeshActorStatic* InstancedMeshUnbreakableWallsActor = GetWorld()->SpawnActor<AMGInstancedMeshActorStatic>(
-		InstancedMeshUnbreakableWalls, FVector(0.0f, 0.0f, 250.0f), FRotator(0.0f, 0.0f, 0.0f));
+		InstancedMeshUnbreakableWalls, FVector(0.0f, 0.0f, 0.0f), FRotator(0.0f, 0.0f, 0.0f));
 	for (auto& MazeItemY : MazeMatrix)
 	{
 		for (auto& MazeItemX : MazeItemY)
@@ -336,16 +335,12 @@ void AMGMazeGenerator::SpawnObjects()
 	{
 		TArray<int32> CollectibleIndexesToSpawn;
 		int32 CollectibleAmount = FMath::RoundHalfToZero(InstancedCollectible.SpawnRate * CellCount);
-		GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Yellow,
-		                                 FString::Printf(TEXT("Need to spawn %d collectibles, with CellIndexes.Num(): %d; (spawnrate: %f)"), CollectibleAmount,
-		                                                 CellIndexes.Num(), InstancedCollectible.SpawnRate));
 		int32 Temp = CellIndexes.Num();
 		for (int32 i = Temp - 1; i > Temp - 1 - CollectibleAmount /*&& i >= 0*/; i--)
 		{
 			CollectibleIndexesToSpawn.Emplace(CellIndexes[i]);
 			CellIndexes.RemoveAt(i);
 		}
-		GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Yellow, FString::Printf(TEXT("CollectibleIndexesToSpawn.Num(): %d"), CollectibleIndexesToSpawn.Num()));
 		AMGInstancedMeshActorStatic* InstancedMeshCollectibleActor = GetWorld()->SpawnActor<AMGInstancedMeshActorStatic>(
 			InstancedCollectible.InstancedActor, InstancedCollectible.OptionalOffset, FRotator(0.0f, 0.0f, 0.0f));
 		int32 Counter = 0;
@@ -394,18 +389,14 @@ void AMGMazeGenerator::SpawnObjects()
 
 	TArray<int32> CoinsIndexesToSpawn;
 	int32 CoinsAmount = FMath::RoundHalfToZero(CoinsSpawnRate * CellCount) - CellAmountCorrectionAppliedToCoins;
-	GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Yellow,
-	                                 FString::Printf(TEXT("Need to spawn %d coins, with CellIndexes.Num(): %d; (spawnrate: %f)"), CoinsAmount, CellIndexes.Num(),
-	                                                 CoinsSpawnRate));
 	int32 Temp = CellIndexes.Num();
 	for (int32 i = Temp - 1; i > Temp - 1 - CoinsAmount /*&& i >= 0*/; i--)
 	{
 		CoinsIndexesToSpawn.Emplace(CellIndexes[i]);
 		CellIndexes.RemoveAt(i);
 	}
-	GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Yellow, FString::Printf(TEXT("CoinsIndexesToSpawn.Num(): %d"), CoinsIndexesToSpawn.Num()));
-	AMGInstancedCollectibleActor* InstancedMeshEnergyActor = GetWorld()->SpawnActor<AMGInstancedCollectibleActor>(
-		InstancedMeshCoins, FVector(0.0f, 0.0f, 0.0f), FRotator(0.0f, 0.0f, 0.0f));
+	AMGInstancedCollectibleActor* InstancedMeshCoinsActor = GetWorld()->SpawnActor<AMGInstancedCollectibleActor>(
+		InstancedMeshCoins, OptionalInstancedMeshCoinsOffset, FRotator(0.0f, 0.0f, 0.0f));
 	int32 Counter = 0;
 	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 	{
@@ -415,7 +406,7 @@ void AMGMazeGenerator::SpawnObjects()
 			{
 				if (CoinsIndexesToSpawn.Contains(Counter))
 				{
-					InstancedMeshEnergyActor->HierarchicalInstancedMesh->AddInstance(
+					InstancedMeshCoinsActor->HierarchicalInstancedMesh->AddInstance(
 						FTransform(FRotator(0.0f, 0.0f, 0.0f), FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f)));
 				}
 				Counter++;
@@ -424,12 +415,14 @@ void AMGMazeGenerator::SpawnObjects()
 	}
 	//--------------------------------
 
+
 	int32 VEdgeCount = 0; /* = (y - 3) / 2 * (x - 2);*/
 	int32 HEdgeCount = 0; /* = (x - 3) / 2 * (y - 2);*/
 	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
 			if (MazeMatrix[IndexY][IndexX].MazeItemState == HorizontalEdge) HEdgeCount++;
 			else if (MazeMatrix[IndexY][IndexX].MazeItemState == VerticalEdge) VEdgeCount++;
+
 
 	//-----------SPAWN EDGES----------
 	//каждый из массивов перемешать и разделить на куски(проценты), которые написаны в входных массивах
@@ -472,9 +465,6 @@ void AMGMazeGenerator::SpawnObjects()
 					ActorIndexesToSpawn.Emplace(HEdgeIndexes[i]);
 					HEdgeIndexes.RemoveAt(i);
 				}
-				GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Red,
-				                                 FString::Printf(TEXT("Need to spawn %f horizontaledges, with ActorIndexesToSpawn.Num(): %d"), SeparateActorInfo.SpawnRate,
-				                                                 ActorIndexesToSpawn.Num()));
 			}
 			int32 Counter1 = 0;
 			for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
@@ -485,7 +475,6 @@ void AMGMazeGenerator::SpawnObjects()
 					{
 						if (ActorIndexesToSpawn.Contains(Counter1))
 						{
-							//GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Red, FString::Printf(TEXT("Spawning HorizontalEdge...")));
 							GetWorld()->SpawnActor<AActor>(SeparateActorInfo.SpawnedActor.GetDefaultObject()->GetClass(),
 							                               FTransform(SeparateActorInfo.OptionalRotation,
 							                                          FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + SeparateActorInfo.
@@ -519,9 +508,6 @@ void AMGMazeGenerator::SpawnObjects()
 					ActorIndexesToSpawn.Emplace(VEdgeIndexes[i]);
 					VEdgeIndexes.RemoveAt(i);
 				}
-				GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Red,
-				                                 FString::Printf(TEXT("Need to spawn %f verticaledges, with ActorIndexesToSpawn.Num(): %d"), SeparateActorInfo.SpawnRate,
-				                                                 ActorIndexesToSpawn.Num()));
 			}
 			int32 Counter1 = 0;
 			for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
@@ -532,7 +518,6 @@ void AMGMazeGenerator::SpawnObjects()
 					{
 						if (ActorIndexesToSpawn.Contains(Counter1))
 						{
-							//GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Red, FString::Printf(TEXT("Spawning VerticalEdge...")));
 							GetWorld()->SpawnActor<AActor>(SeparateActorInfo.SpawnedActor.GetDefaultObject()->GetClass(),
 							                               FTransform(SeparateActorInfo.OptionalRotation,
 							                                          FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + SeparateActorInfo.
@@ -562,13 +547,13 @@ void AMGMazeGenerator::SpawnObjects()
 		}
 
 		int32 Temp1 = HEdgeIndexes.Num();
-		for (int32 j = Temp1 - 1; j > Temp1 - 1 - HWallsAmount /*&& j >= 0*/; j--)
+		for (int32 j = Temp1 - 1; j > Temp1 - 1 - HWallsAmount && j >= 0; j--)
 		{
 			HWallsIndexesToSpawn.Emplace(HEdgeIndexes[j]);
 			HEdgeIndexes.RemoveAt(j);
 		}
 		Temp1 = VEdgeIndexes.Num();
-		for (int32 j = Temp1 - 1; j > Temp1 - 1 - VWallsAmount /*&& j >= 0*/; j--)
+		for (int32 j = Temp1 - 1; j > Temp1 - 1 - VWallsAmount && j >= 0; j--)
 		{
 			VWallsIndexesToSpawn.Emplace(VEdgeIndexes[j]);
 			VEdgeIndexes.RemoveAt(j);
@@ -604,16 +589,103 @@ void AMGMazeGenerator::SpawnObjects()
 			}
 		}
 	}
-
-	GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Red,
-	                                 FString::Printf(TEXT("HEdgeIndexes.Num(): %d\nVEdgeIndexes.Num(): %d"), HEdgeIndexes.Num(), VEdgeIndexes.Num()));
 	//--------------------------------
+
+
+	//----------SPAWN FLOORS----------
+	TArray<int32> FloorIndexes;
+	FloorIndexes.SetNum(CellCount);
+	for (int32 i = 0; i < CellCount; i++)
+		FloorIndexes[i] = i;
+	ShuffleArray(FloorIndexes, Stream);
+	int32 FloorAmountCorrectionApplied = 0;
+
+	//TODO TArray<TArray<bool>> isFloorSpawned;
+
+	for (FSeparateSpawnedFloorActorInfo SeparateActorInfo : FloorActors)
+	{
+		TArray<int32> FloorIndexesToSpawn;
+		if (!SeparateActorInfo.bIsSpawnRateAsCount)
+		{
+			int32 ActorAmount = FMath::RoundHalfToZero(SeparateActorInfo.SpawnRate * CellCount);
+			int32 Temp1 = FloorIndexes.Num();
+			for (int32 i = Temp1 - 1; i > Temp1 - 1 - ActorAmount /*&& i >= 0*/; i--)
+			{
+				FloorIndexesToSpawn.Emplace(FloorIndexes[i]);
+				FloorIndexes.RemoveAt(i);
+			}
+		}
+		else
+		{
+			FloorAmountCorrectionApplied += SeparateActorInfo.SpawnRate;
+			int32 ActorAmount = SeparateActorInfo.SpawnRate;
+			int32 Temp1 = FloorIndexes.Num();
+			for (int32 i = Temp1 - 1; i > Temp1 - 1 - ActorAmount /*&& i >= 0*/; i--)
+			{
+				FloorIndexesToSpawn.Emplace(FloorIndexes[i]);
+				FloorIndexes.RemoveAt(i);
+			}
+		}
+		int32 Counter1 = 0;
+		for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
+		{
+			for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
+			{
+				if (MazeMatrix[IndexY][IndexX].MazeItemState == Cell)
+				{
+					if (FloorIndexesToSpawn.Contains(Counter1))
+					{
+						GetWorld()->SpawnActor<AActor>(SeparateActorInfo.SpawnedFloorActor.GetDefaultObject()->GetClass(),
+						                               FTransform(SeparateActorInfo.OptionalRotation,
+						                                          FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + SeparateActorInfo.
+						                                          OptionalOffset, FVector(1.0f, 1.0f, 1.0f)));
+					}
+					Counter1++;
+				}
+			}
+		}
+	}
+
+	for (int32 i = 0; i < InstancedFloorVariations.Num(); i++)
+	{
+		TArray<int32> FloorIndexesToSpawn;
+		int32 FloorAmount;
+		if (i == 0) FloorAmount = FMath::RoundHalfToZero(InstancedFloorVariations[i].SpawnRate * CellCount) - FloorAmountCorrectionApplied;
+		else FloorAmount = FMath::RoundHalfToZero(InstancedFloorVariations[i].SpawnRate * CellCount);
+
+		int32 Temp1 = FloorIndexes.Num();
+		for (int32 j = Temp1 - 1; j > Temp1 - 1 - FloorAmount /*&& j >= 0*/; j--)
+		{
+			FloorIndexesToSpawn.Emplace(FloorIndexes[j]);
+			FloorIndexes.RemoveAt(j);
+		}
+
+		AMGInstancedMeshActorStatic* InstancedFloorWallActor = GetWorld()->SpawnActor<AMGInstancedMeshActorStatic>(
+			InstancedFloorVariations[i].InstancedActor, InstancedFloorVariations[i].OptionalOffset, FRotator(0.0f, 0.0f, 0.0f));
+
+		int32 Counter1 = 0;
+		for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
+		{
+			for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
+			{
+				if (MazeMatrix[IndexY][IndexX].MazeItemState == Cell)
+				{
+					if (FloorIndexesToSpawn.Contains(Counter1))
+					{
+						InstancedFloorWallActor->HierarchicalInstancedMesh->AddInstance(
+							FTransform(FRotator(0.0f, 0.0f, 0.0f), FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f)));
+					}
+					Counter1++;
+				}
+			}
+		}
+	}
+	//--------------------------------
+
 
 	//TODO добавить генерацию узлов, разделить инстанс меши
 	//потом TArray<int32> KnotIndexes;
 
-
-	//----spawn sep actors---
 	/*
 	for (FSeparateSpawnedActorInfo SeparateActorInfo : SeparateActors)
 	{
@@ -643,7 +715,7 @@ void AMGMazeGenerator::SpawnObjects()
 						GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "SepActors not spawned properly, None enum encountered in SeparateActors array");
 						return;
 					}
-
+	
 					int32 Counter = 1;
 					for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 					{
@@ -740,7 +812,7 @@ void AMGMazeGenerator::SpawnObjects()
 						GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "SepActors not spawned properly, None enum encountered in SeparateActors array");
 						return;
 					}
-
+	
 					int32 Counter = 1;
 					for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 					{
@@ -785,24 +857,24 @@ void AMGMazeGenerator::SpawnObjects()
 			}
 		}
 	}
-
+	
 	//---spawn walls---------
-
+	
 	for (FInstancedActorInfo InstancedWallVariation : InstancedWallsVariations)
 	{
 		AMGInstancedMeshActor* InstancedMeshCommonWallsActor = GetWorld()->SpawnActor<AMGInstancedMeshActor>(
 			InstancedWallVariation.InstancedActor, InstancedWallVariation.OptionalOffset, FRotator(0.0f, 0.0f, 0.0f));
-
+	
 		int32 VerticalAmount = VEdgeCount * InstancedWallVariation.SpawnRate;
 		int32 HorizontalAmount = HEdgeCount * InstancedWallVariation.SpawnRate;
-
+	
 		/*for (int32 i = 0; i < VerticalAmount; i++)
 		{
 			bool bIsSpawned = false;
 			do
 			{
 				int32 RandomPlace = Stream.RandRange(1, VEdgeCount);
-
+	
 				int32 Counter = 1;
 				for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 				{
@@ -815,7 +887,7 @@ void AMGMazeGenerator::SpawnObjects()
 								InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(FTransform(
 									FRotator(0.0f, 90.0f, 0.0f),
 									FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + InstancedWallVariation.OptionalOffset));
-
+	
 								VEdgeCount--;
 								MazeMatrix[IndexY][IndexX].MazeItemState = None;
 								bIsSpawned = true;
@@ -827,7 +899,7 @@ void AMGMazeGenerator::SpawnObjects()
 			}
 			while (!bIsSpawned);
 		}#1#
-
+	
 		TArray<int32> RandomHEdgeIndexes;
 		RandomHEdgeIndexes.SetNum(HEdgeCount);
 		for (int32 i = 0; i < HEdgeCount; i++)
@@ -851,7 +923,7 @@ void AMGMazeGenerator::SpawnObjects()
 						InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(FTransform(
 							FRotator(0.0f, 0.0f, 0.0f),
 							FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + InstancedWallVariation.OptionalOffset));
-
+	
 						//HEdgeCount--;
 						MazeMatrix[IndexY][IndexX].MazeItemState = None;
 					}
@@ -859,7 +931,7 @@ void AMGMazeGenerator::SpawnObjects()
 				}
 			}
 		}
-
+	
 		TArray<int32> RandomVEdgeIndexes;
 		RandomVEdgeIndexes.SetNum(VEdgeCount);
 		for (int32 i = 0; i < VEdgeCount; i++)
@@ -883,7 +955,7 @@ void AMGMazeGenerator::SpawnObjects()
 						InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(FTransform(
 							FRotator(0.0f, 90.0f, 0.0f),
 							FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + InstancedWallVariation.OptionalOffset));
-
+	
 						//VEdgeCount--;
 						MazeMatrix[IndexY][IndexX].MazeItemState = None;
 					}
@@ -891,14 +963,14 @@ void AMGMazeGenerator::SpawnObjects()
 				}
 			}
 		}
-
+	
 		/*for (int32 i = 0; i < HorizontalAmount; i++)
 		{
 			bool bIsSpawned = false;
 			do
 			{
 				int32 RandomPlace = Stream.RandRange(1, HEdgeCount);
-
+	
 				int32 Counter = 1;
 				for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 				{
@@ -911,7 +983,7 @@ void AMGMazeGenerator::SpawnObjects()
 								InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(FTransform(
 									FRotator(0.0f, 0.0f, 0.0f),
 									FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + InstancedWallVariation.OptionalOffset));
-
+	
 								HEdgeCount--;
 								MazeMatrix[IndexY][IndexX].MazeItemState = None;
 								bIsSpawned = true;
@@ -925,10 +997,6 @@ void AMGMazeGenerator::SpawnObjects()
 		}#1#
 	}
 	*/
-
-
-	//---spawn collectibles--
-	//---spawn Floor?--------
 }
 
 void AMGMazeGenerator::ShuffleArray(TArray<int32>& Array, FRandomStream& Stream)

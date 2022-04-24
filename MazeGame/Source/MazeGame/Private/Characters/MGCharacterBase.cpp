@@ -110,6 +110,15 @@ float AMGCharacterBase::GetStaminaRegenRate() const
 	return 0.0f;
 }
 
+float AMGCharacterBase::GetCoins() const
+{
+	if (IsValid(AttributeSetBase))
+	{
+		return AttributeSetBase->GetCoins();
+	}
+	return 0.0f;
+}
+
 void AMGCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
