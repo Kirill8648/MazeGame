@@ -161,13 +161,17 @@ void AMGHeroCharacter::MoveForward(float Value)
 			AddMovementInput(UKismetMathLibrary::GetForwardVector(FRotator(0, GetControlRotation().Yaw, 0)), Value);
 			if (!GetMovementComponent()->IsFlying())
 			{
-				if (GetVelocity().X > 1.0f || GetVelocity().X < -1.0f || GetVelocity().Y > 1.0f || GetVelocity().Y < -1.0f)
+				if (!GetMovementComponent()->IsFalling() && (GetVelocity().X > 1.0f || GetVelocity().X < -1.0f || GetVelocity().Y > 1.0f || GetVelocity().Y < -1.0f))
 				{
 					if (!bDoOnceMoveForwardStartShake)
 					{
 						bDoOnceMoveForwardStartShake = true;
 						bDoOnceMoveForwardStopShake = false;
-						UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StartCameraShake(WalkCameraShake);
+
+						/*GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, FString::Printf(TEXT("Playing walk shake")));
+						UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StopAllCameraShakes(false);
+						UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StartCameraShake(WalkCameraShake.Get());*/
+						StartWalkCameraShake(1);
 					}
 				}
 				else
@@ -176,7 +180,10 @@ void AMGHeroCharacter::MoveForward(float Value)
 					{
 						bDoOnceMoveForwardStartShake = false;
 						bDoOnceMoveForwardStopShake = true;
-						UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StopAllCameraShakes(false);
+
+						/*GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, FString::Printf(TEXT("Stoping walk shake")));
+						UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StopAllCameraShakes(false);*/
+						StopWalkCameraShake(1, 1);
 					}
 				}
 			}

@@ -9,7 +9,7 @@ UMGPlayerDataSubsystem::UMGPlayerDataSubsystem()
 {
 	static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable1(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"));
 	AbilitiesTable = AbilitiesTable1.Object;
-	
+
 	/*static ConstructorHelpers::FObjectFinder<UDataTable> Table(TEXT("/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities"));
 	AbilitiesTable = Table.Object;
 	CurrentlyLoadedSaveGameObject = nullptr;*/
