@@ -678,148 +678,148 @@
 "C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/Geometry/Meshes/1M_Cube_Chamfer.uexp" 677
 "C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/Meshes/CubeMaterialOverride.uasset" 678
 "C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/Meshes/CubeMaterialOverride.uexp" 679
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/WalkCameraAnimationSequence.uasset" 680
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/WalkCameraAnimationSequence.uexp" 681
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/BP_WalkCameraShake.uasset" 682
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/BP_WalkCameraShake.uexp" 683
-"../../../Engine/Content/EngineMaterials/DefaultDecalMaterial.uasset" 684
-"../../../Engine/Content/EngineMaterials/DefaultDecalMaterial.uexp" 685
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/SM_MazeWallBase_500x500.uasset" 686
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/SM_MazeWallBase_500x500.uexp" 687
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/SM_MazeWallBase_500x500.uasset" 688
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/SM_MazeWallBase_500x500.uexp" 689
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilititiesNames.uasset" 690
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilititiesNames.uexp" 691
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilitiesStats.uasset" 692
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilitiesStats.uexp" 693
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilitiesDescriptions.uasset" 694
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilitiesDescriptions.uexp" 695
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/coin.uasset" 696
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/coin.uexp" 697
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_RichTextDecorator.uasset" 698
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_RichTextDecorator.uexp" 699
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/Scream.ubulk" 700
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/Scream.uasset" 701
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/Scream.uexp" 702
-"../../../Engine/Content/EngineFonts/Faces/RobotoLight.uexp" 703
-"../../../Engine/Content/EngineFonts/Faces/RobotoLight.uasset" 704
-"../../../Engine/Content/EngineFonts/Faces/RobotoLight.ufont" 705
-"../../../Engine/Content/EngineFonts/Faces/RobotoBold.uexp" 706
-"../../../Engine/Content/EngineFonts/Faces/RobotoBold.uasset" 707
-"../../../Engine/Content/EngineFonts/Faces/RobotoBold.ufont" 708
-"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.uexp" 709
-"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.uasset" 710
-"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.ufont" 711
-"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.uexp" 712
-"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.uasset" 713
-"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.ufont" 714
-"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.uexp" 715
-"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.uasset" 716
-"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.ufont" 717
-"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.uexp" 718
-"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.uasset" 719
-"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.ufont" 720
-"../../../Engine/Content/EngineFonts/Roboto.uasset" 721
-"../../../Engine/Content/EngineFonts/Roboto.uexp" 722
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_RichTextStyles.uasset" 723
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_RichTextStyles.uexp" 724
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/HUD/WBP_HUDAbilitySlot.uasset" 725
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/HUD/WBP_HUDAbilitySlot.uexp" 726
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/HUD/WBP_HUDProgressBars.uasset" 727
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/HUD/WBP_HUDProgressBars.uexp" 728
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_Texts.uasset" 729
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_Texts.uexp" 730
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_ConfirmAction.uasset" 731
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_ConfirmAction.uexp" 732
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_LoadGameSlot.uasset" 733
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_LoadGameSlot.uexp" 734
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_MainMenu.uasset" 735
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_MainMenu.uexp" 736
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/SaveMenu.uasset" 737
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/SaveMenu.uexp" 738
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_OkMessage.uasset" 739
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_OkMessage.uexp" 740
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_KeyBinding.uasset" 741
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_KeyBinding.uexp" 742
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_Options.uasset" 743
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_Options.uexp" 744
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_PauseMenu.uasset" 745
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_PauseMenu.uexp" 746
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_EnergyRegen.uasset" 747
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_EnergyRegen.uexp" 748
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GE_SprintCost.uasset" 749
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GE_SprintCost.uexp" 750
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GE_StandartSprint.uasset" 751
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GE_StandartSprint.uexp" 752
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GA_Sprint.uasset" 753
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GA_Sprint.uexp" 754
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_StaminaRegen.uasset" 755
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_StaminaRegen.uexp" 756
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_HealthRegen.uasset" 757
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_HealthRegen.uexp" 758
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_MGHeroDefaultAttributes.uasset" 759
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_MGHeroDefaultAttributes.uexp" 760
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/BP_MGHeroCharacter.uasset" 761
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/BP_MGHeroCharacter.uexp" 762
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/BP_MGHUD.uasset" 763
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/BP_MGHUD.uexp" 764
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GA_WithUIBase.uasset" 765
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GA_WithUIBase.uexp" 766
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Scream/GA_Scream.uasset" 767
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Scream/GA_Scream.uexp" 768
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/RaiseWalls.ubulk" 769
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/RaiseWalls.uasset" 770
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/RaiseWalls.uexp" 771
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/RaiseWalls/DT_RaiseWallsStats.uasset" 772
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/RaiseWalls/DT_RaiseWallsStats.uexp" 773
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GE_CostMeta.uasset" 774
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GE_CostMeta.uexp" 775
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/Geometry/Meshes/1M_Cube.ubulk" 776
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/Geometry/Meshes/1M_Cube.uasset" 777
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/Geometry/Meshes/1M_Cube.uexp" 778
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/BP_MazeWallBase.uasset" 779
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/BP_MazeWallBase.uexp" 780
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GE_CooldownMeta.uasset" 781
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GE_CooldownMeta.uexp" 782
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/RaiseWalls/GA_RaiseWalls.uasset" 783
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/RaiseWalls/GA_RaiseWalls.uexp" 784
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_Abilities.uasset" 785
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_Abilities.uexp" 786
-"../../../Engine/Content/EngineFonts/Faces/DroidSansMono.uexp" 787
-"../../../Engine/Content/EngineFonts/Faces/DroidSansMono.uasset" 788
-"../../../Engine/Content/EngineFonts/Faces/DroidSansMono.ufont" 789
-"../../../Engine/Content/EngineFonts/DroidSansMono.uasset" 790
-"../../../Engine/Content/EngineFonts/DroidSansMono.uexp" 791
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_MazeGenerationProgress.uasset" 792
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_MazeGenerationProgress.uexp" 793
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Backups/WBP_PauseMenu_Backup.uasset" 794
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Backups/WBP_PauseMenu_Backup.uexp" 795
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Backups/WBP_MainMenu_Backup.uasset" 796
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Backups/WBP_MainMenu_Backup.uexp" 797
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/equipped.ubulk" 798
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/equipped.uasset" 799
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/equipped.uexp" 800
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/1223.ubulk" 801
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/1223.uasset" 802
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/1223.uexp" 803
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/BP_HISM_Test.uasset" 804
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/BP_HISM_Test.uexp" 805
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Acrylic_Render__1_.uasset" 806
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Acrylic_Render__1_.uexp" 807
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21.uasset" 808
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21.uexp" 809
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst1.uasset" 810
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst1.uexp" 811
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst.uasset" 812
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst.uexp" 813
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall2v2.ubulk" 814
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall2v2.uasset" 815
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall2v2.uexp" 816
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM3.uasset" 817
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM3.uexp" 818
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall3v2.ubulk" 819
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall3v2.uasset" 820
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall3v2.uexp" 821
+"../../../Engine/Content/EngineFonts/Faces/DroidSansMono.uexp" 680
+"../../../Engine/Content/EngineFonts/Faces/DroidSansMono.uasset" 681
+"../../../Engine/Content/EngineFonts/Faces/DroidSansMono.ufont" 682
+"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.uexp" 683
+"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.uasset" 684
+"../../../Engine/Content/EngineFonts/Faces/DroidSansFallback.ufont" 685
+"../../../Engine/Content/EngineFonts/DroidSansMono.uasset" 686
+"../../../Engine/Content/EngineFonts/DroidSansMono.uexp" 687
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_MazeGenerationProgress.uasset" 688
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_MazeGenerationProgress.uexp" 689
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/SaveMenu.uasset" 690
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/SaveMenu.uexp" 691
+"../../../Engine/Content/EngineFonts/Faces/RobotoLight.uexp" 692
+"../../../Engine/Content/EngineFonts/Faces/RobotoLight.uasset" 693
+"../../../Engine/Content/EngineFonts/Faces/RobotoLight.ufont" 694
+"../../../Engine/Content/EngineFonts/Faces/RobotoBold.uexp" 695
+"../../../Engine/Content/EngineFonts/Faces/RobotoBold.uasset" 696
+"../../../Engine/Content/EngineFonts/Faces/RobotoBold.ufont" 697
+"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.uexp" 698
+"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.uasset" 699
+"../../../Engine/Content/EngineFonts/Faces/RobotoRegular.ufont" 700
+"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.uexp" 701
+"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.uasset" 702
+"../../../Engine/Content/EngineFonts/Faces/RobotoItalic.ufont" 703
+"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.uexp" 704
+"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.uasset" 705
+"../../../Engine/Content/EngineFonts/Faces/RobotoBoldItalic.ufont" 706
+"../../../Engine/Content/EngineFonts/Roboto.uasset" 707
+"../../../Engine/Content/EngineFonts/Roboto.uexp" 708
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_RichTextStyles.uasset" 709
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_RichTextStyles.uexp" 710
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/HUD/WBP_HUDAbilitySlot.uasset" 711
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/HUD/WBP_HUDAbilitySlot.uexp" 712
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/HUD/WBP_HUDProgressBars.uasset" 713
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/HUD/WBP_HUDProgressBars.uexp" 714
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_Texts.uasset" 715
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_Texts.uexp" 716
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_ConfirmAction.uasset" 717
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_ConfirmAction.uexp" 718
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_PauseMenu.uasset" 719
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_PauseMenu.uexp" 720
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_EnergyRegen.uasset" 721
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_EnergyRegen.uexp" 722
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/LandNoiseShake.uasset" 723
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/LandNoiseShake.uexp" 724
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/SprintCameraShake.uasset" 725
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/SprintCameraShake.uexp" 726
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/SprintMatineeCameraShake.uasset" 727
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/SprintMatineeCameraShake.uexp" 728
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GE_SprintCost.uasset" 729
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GE_SprintCost.uexp" 730
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GE_StandartSprint.uasset" 731
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GE_StandartSprint.uexp" 732
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GA_Sprint.uasset" 733
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GA_Sprint.uexp" 734
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_StaminaRegen.uasset" 735
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_StaminaRegen.uexp" 736
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/FlyingCS.uasset" 737
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/FlyingCS.uexp" 738
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpSprintCSB.uasset" 739
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpSprintCSB.uexp" 740
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpSprintMatineeCSB.uasset" 741
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpSprintMatineeCSB.uexp" 742
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpCameraShakeB.uasset" 743
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpCameraShakeB.uexp" 744
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpMatineeCameraShakeB.uasset" 745
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpMatineeCameraShakeB.uexp" 746
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_HealthRegen.uasset" 747
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_HealthRegen.uexp" 748
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/LandCameraShake.uasset" 749
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/LandCameraShake.uexp" 750
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/LandMatineeCameraShake.uasset" 751
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/LandMatineeCameraShake.uexp" 752
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpSprintCSA.uasset" 753
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpSprintCSA.uexp" 754
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpSprintMatineeCSA.uasset" 755
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpSprintMatineeCSA.uexp" 756
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpCameraShakeA.uasset" 757
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpCameraShakeA.uexp" 758
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpMatineeCameraShakeA.uasset" 759
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/JumpMatineeCameraShakeA.uexp" 760
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/WalkCameraShake.uasset" 761
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/WalkCameraShake.uexp" 762
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/WalkMatineeCameraShake.uasset" 763
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/ChameraShakes/WalkMatineeCameraShake.uexp" 764
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_MGHeroDefaultAttributes.uasset" 765
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_MGHeroDefaultAttributes.uexp" 766
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/BP_MGHeroCharacter.uasset" 767
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/BP_MGHeroCharacter.uexp" 768
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/BP_MGHUD.uasset" 769
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/BP_MGHUD.uexp" 770
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_OkMessage.uasset" 771
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_OkMessage.uexp" 772
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_KeyBinding.uasset" 773
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_KeyBinding.uexp" 774
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_Options.uasset" 775
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_Options.uexp" 776
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_LoadGameSlot.uasset" 777
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_LoadGameSlot.uexp" 778
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_MainMenu.uasset" 779
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_MainMenu.uexp" 780
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Backups/WBP_PauseMenu_Backup.uasset" 781
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Backups/WBP_PauseMenu_Backup.uexp" 782
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Backups/WBP_MainMenu_Backup.uasset" 783
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Backups/WBP_MainMenu_Backup.uexp" 784
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/equipped.ubulk" 785
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/equipped.uasset" 786
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/equipped.uexp" 787
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/1223.ubulk" 788
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/1223.uasset" 789
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/1223.uexp" 790
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/Geometry/Meshes/1M_Cube.ubulk" 791
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/Geometry/Meshes/1M_Cube.uasset" 792
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/Geometry/Meshes/1M_Cube.uexp" 793
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_MazeWallBase.uasset" 794
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_MazeWallBase.uexp" 795
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/BP_HISM_Test.uasset" 796
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/BP_HISM_Test.uexp" 797
+"../../../Engine/Content/EngineMaterials/DefaultDecalMaterial.uasset" 798
+"../../../Engine/Content/EngineMaterials/DefaultDecalMaterial.uexp" 799
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/SM_MazeWallBase_500x500.uasset" 800
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/SM_MazeWallBase_500x500.uexp" 801
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/SM_MazeWallBase_500x500.uasset" 802
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/SM_MazeWallBase_500x500.uexp" 803
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Acrylic_Render__1_.uasset" 804
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Acrylic_Render__1_.uexp" 805
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21.uasset" 806
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21.uexp" 807
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst1.uasset" 808
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst1.uexp" 809
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst.uasset" 810
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst.uexp" 811
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall2v2.ubulk" 812
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall2v2.uasset" 813
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall2v2.uexp" 814
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM3.uasset" 815
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM3.uexp" 816
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall3v2.ubulk" 817
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall3v2.uasset" 818
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall3v2.uexp" 819
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_MazeWall2.uasset" 820
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_MazeWall2.uexp" 821
 "C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM0.uasset" 822
 "C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM0.uexp" 823
 "C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/BP_CommonWallHISMActor.uasset" 824
@@ -832,158 +832,194 @@
 "C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/Meshes/Material__22_Inst1.uexp" 831
 "C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/Meshes/Material__22_Inst.uasset" 832
 "C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/Meshes/Material__22_Inst.uexp" 833
-"../../../Engine/Content/Maps/Entry_BuiltData.uasset" 834
-"../../../Engine/Content/Maps/Entry_BuiltData.uexp" 835
-"../../../Engine/Content/Maps/Entry.uexp" 836
-"../../../Engine/Content/Maps/Entry.umap" 837
-"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uasset" 838
-"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uexp" 839
-"../../../Engine/Content/EngineSky/T_Sky_Stars.ubulk" 840
-"../../../Engine/Content/EngineSky/T_Sky_Stars.uasset" 841
-"../../../Engine/Content/EngineSky/T_Sky_Stars.uexp" 842
-"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.ubulk" 843
-"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uasset" 844
-"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uexp" 845
-"../../../Engine/Content/EngineSky/T_Sky_Blue.ubulk" 846
-"../../../Engine/Content/EngineSky/T_Sky_Blue.uasset" 847
-"../../../Engine/Content/EngineSky/T_Sky_Blue.uexp" 848
-"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uasset" 849
-"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uexp" 850
-"../../../Engine/Content/EngineSky/SM_SkySphere.ubulk" 851
-"../../../Engine/Content/EngineSky/SM_SkySphere.uasset" 852
-"../../../Engine/Content/EngineSky/SM_SkySphere.uexp" 853
-"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uasset" 854
-"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uexp" 855
-"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uasset" 856
-"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uexp" 857
-"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uasset" 858
-"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uexp" 859
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap_BuiltData.ubulk" 860
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap_BuiltData.uasset" 861
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap_BuiltData.uexp" 862
-"../../../Engine/Content/EngineMeshes/Sphere.ubulk" 863
-"../../../Engine/Content/EngineMeshes/Sphere.uasset" 864
-"../../../Engine/Content/EngineMeshes/Sphere.uexp" 865
-"../../../Engine/Content/EngineDebugMaterials/M_SimpleTranslucent.uasset" 866
-"../../../Engine/Content/EngineDebugMaterials/M_SimpleTranslucent.uexp" 867
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/BP_CoinsHISMActor.uasset" 868
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/BP_CoinsHISMActor.uexp" 869
-"../../../Engine/Content/BasicShapes/Cube.ubulk" 870
-"../../../Engine/Content/BasicShapes/Cube.uasset" 871
-"../../../Engine/Content/BasicShapes/Cube.uexp" 872
-"../../../Engine/Content/BasicShapes/BasicShapeMaterial.uasset" 873
-"../../../Engine/Content/BasicShapes/BasicShapeMaterial.uexp" 874
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/MGHUD.uasset" 875
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/MGHUD.uexp" 876
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_LoadingScreen.uasset" 877
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_LoadingScreen.uexp" 878
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/MGPlayerController.uasset" 879
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/MGPlayerController.uexp" 880
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/TestGameMode.uasset" 881
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/TestGameMode.uexp" 882
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap.uexp" 883
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap.umap" 884
-"../../../Engine/Content/VREditor/BasicMeshes/T_CleanFloorGrunge_01_D.ubulk" 885
-"../../../Engine/Content/VREditor/BasicMeshes/T_CleanFloorGrunge_01_D.uasset" 886
-"../../../Engine/Content/VREditor/BasicMeshes/T_CleanFloorGrunge_01_D.uexp" 887
-"../../../Engine/Content/VREditor/BasicMeshes/M_Floor_01.uasset" 888
-"../../../Engine/Content/VREditor/BasicMeshes/M_Floor_01.uexp" 889
-"../../../Engine/Content/VREditor/BasicMeshes/MI_Pyramid_01.uasset" 890
-"../../../Engine/Content/VREditor/BasicMeshes/MI_Pyramid_01.uexp" 891
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_AddEnergy.uasset" 892
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_AddEnergy.uexp" 893
-"../../../Engine/Content/BasicShapes/Sphere.ubulk" 894
-"../../../Engine/Content/BasicShapes/Sphere.uasset" 895
-"../../../Engine/Content/BasicShapes/Sphere.uexp" 896
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_EnergyCollectibleHISM.uasset" 897
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_EnergyCollectibleHISM.uexp" 898
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_AddCoins.uasset" 899
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_AddCoins.uexp" 900
-"../../../Engine/Content/VREditor/LaserPointer/M_LaserPointer-Core.uasset" 901
-"../../../Engine/Content/VREditor/LaserPointer/M_LaserPointer-Core.uexp" 902
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_CoinsCollectibleHISM.uasset" 903
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_CoinsCollectibleHISM.uexp" 904
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/Meshes/floorV2.ubulk" 905
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/Meshes/floorV2.uasset" 906
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/Meshes/floorV2.uexp" 907
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/BP_FloorHISM.uasset" 908
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/BP_FloorHISM.uexp" 909
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/BP_MazeGenerationGameMode.uasset" 910
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/BP_MazeGenerationGameMode.uexp" 911
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM2.uasset" 912
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM2.uexp" 913
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/BP_MazeGenerator.uasset" 914
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/BP_MazeGenerator.uexp" 915
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall1v2.ubulk" 916
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall1v2.uasset" 917
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall1v2.uexp" 918
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM1.uasset" 919
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM1.uexp" 920
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst3.uasset" 921
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst3.uexp" 922
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst2.uasset" 923
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst2.uexp" 924
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/BP_UnbreakableWallHISMActor.uasset" 925
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/BP_UnbreakableWallHISMActor.uexp" 926
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_AbilityCollectible.uasset" 927
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_AbilityCollectible.uexp" 928
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/MazeMap.uexp" 929
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/MazeMap.umap" 930
-"../../../Engine/Content/TemplateResources/M_Template_Master.uasset" 931
-"../../../Engine/Content/TemplateResources/M_Template_Master.uexp" 932
-"../../../Engine/Content/TemplateResources/MI_Template_BaseGray_02_Metal.uasset" 933
-"../../../Engine/Content/TemplateResources/MI_Template_BaseGray_02_Metal.uexp" 934
-"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.ubulk" 935
-"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.uasset" 936
-"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.uexp" 937
-"../../../Engine/Content/EngineMeshes/T_Mat_UnrealTech_01_D.ubulk" 938
-"../../../Engine/Content/EngineMeshes/T_Mat_UnrealTech_01_D.uasset" 939
-"../../../Engine/Content/EngineMeshes/T_Mat_UnrealTech_01_D.uexp" 940
-"../../../Engine/Content/EngineMeshes/M_Mat_UnrealTech.uasset" 941
-"../../../Engine/Content/EngineMeshes/M_Mat_UnrealTech.uexp" 942
-"../../../Engine/Content/EngineMeshes/SM_MatPreviewMesh_01.ubulk" 943
-"../../../Engine/Content/EngineMeshes/SM_MatPreviewMesh_01.uasset" 944
-"../../../Engine/Content/EngineMeshes/SM_MatPreviewMesh_01.uexp" 945
-"../../../Engine/Content/TemplateResources/MI_Template_BaseGray_03_Metal.uasset" 946
-"../../../Engine/Content/TemplateResources/MI_Template_BaseGray_03_Metal.uexp" 947
-"../../../Engine/Content/MapTemplates/TilingNoise05.ubulk" 948
-"../../../Engine/Content/MapTemplates/TilingNoise05.uasset" 949
-"../../../Engine/Content/MapTemplates/TilingNoise05.uexp" 950
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SplitComponents.uasset" 951
-"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SplitComponents.uexp" 952
-"../../../Engine/Content/EngineSky/M_AdvancedSkyDome.uasset" 953
-"../../../Engine/Content/EngineSky/M_AdvancedSkyDome.uexp" 954
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/MainMenu.uexp" 955
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/MainMenu.umap" 956
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_RichTextBlock.uasset" 957
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_RichTextBlock.uexp" 958
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilityTooltip.uasset" 959
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilityTooltip.uexp" 960
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/BP_AbilityDragDrop.uasset" 961
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/BP_AbilityDragDrop.uexp" 962
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_DragAbilityUI.uasset" 963
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_DragAbilityUI.uexp" 964
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilitySlot.uasset" 965
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilitySlot.uexp" 966
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_RunSettings.uasset" 967
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_RunSettings.uexp" 968
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/MGGameMode.uasset" 969
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/MGGameMode.uexp" 970
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_AddMaxHP.uasset" 971
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_AddMaxHP.uexp" 972
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test.uasset" 973
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test.uexp" 974
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_DrainStamina.uasset" 975
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_DrainStamina.uexp" 976
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test_2.uasset" 977
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test_2.uexp" 978
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_AddStamina.uasset" 979
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_AddStamina.uexp" 980
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test_3.uasset" 981
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test_3.uexp" 982
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.uasset" 983
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.uexp" 984
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WPB_ChooseAbilities.uasset" 985
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WPB_ChooseAbilities.uexp" 986
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/Lobby.uexp" 987
-"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/Lobby.umap" 988
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilititiesNames.uasset" 834
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilititiesNames.uexp" 835
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilitiesStats.uasset" 836
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilitiesStats.uexp" 837
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilitiesDescriptions.uasset" 838
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/ST_AbilitiesDescriptions.uexp" 839
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/coin.uasset" 840
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/coin.uexp" 841
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_RichTextDecorator.uasset" 842
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_RichTextDecorator.uexp" 843
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/Scream.ubulk" 844
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/Scream.uasset" 845
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/Scream.uexp" 846
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GA_WithUIBase.uasset" 847
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GA_WithUIBase.uexp" 848
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Scream/GA_Scream.uasset" 849
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Scream/GA_Scream.uexp" 850
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/RaiseWalls.ubulk" 851
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/RaiseWalls.uasset" 852
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Textures/RaiseWalls.uexp" 853
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/RaiseWalls/DT_RaiseWallsStats.uasset" 854
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/RaiseWalls/DT_RaiseWallsStats.uexp" 855
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GE_CostMeta.uasset" 856
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GE_CostMeta.uexp" 857
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GE_CooldownMeta.uasset" 858
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/GE_CooldownMeta.uexp" 859
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/RaiseWalls/GA_RaiseWalls.uasset" 860
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/RaiseWalls/GA_RaiseWalls.uexp" 861
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_Abilities.uasset" 862
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Data/DataTables/DT_Abilities.uexp" 863
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GC_Sprint.uasset" 864
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/Abilities/Sprint/GC_Sprint.uexp" 865
+"../../../Engine/Content/Maps/Entry_BuiltData.uasset" 866
+"../../../Engine/Content/Maps/Entry_BuiltData.uexp" 867
+"../../../Engine/Content/Maps/Entry.uexp" 868
+"../../../Engine/Content/Maps/Entry.umap" 869
+"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uasset" 870
+"../../../Engine/Content/EngineSky/C_Sky_Horizon_Color.uexp" 871
+"../../../Engine/Content/EngineSky/T_Sky_Stars.ubulk" 872
+"../../../Engine/Content/EngineSky/T_Sky_Stars.uasset" 873
+"../../../Engine/Content/EngineSky/T_Sky_Stars.uexp" 874
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.ubulk" 875
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uasset" 876
+"../../../Engine/Content/EngineSky/T_Sky_Clouds_M.uexp" 877
+"../../../Engine/Content/EngineSky/T_Sky_Blue.ubulk" 878
+"../../../Engine/Content/EngineSky/T_Sky_Blue.uasset" 879
+"../../../Engine/Content/EngineSky/T_Sky_Blue.uexp" 880
+"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uasset" 881
+"../../../Engine/Content/EngineSky/M_Sky_Panning_Clouds2.uexp" 882
+"../../../Engine/Content/EngineSky/SM_SkySphere.ubulk" 883
+"../../../Engine/Content/EngineSky/SM_SkySphere.uasset" 884
+"../../../Engine/Content/EngineSky/SM_SkySphere.uexp" 885
+"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uasset" 886
+"../../../Engine/Content/EngineSky/C_Sky_Cloud_Color.uexp" 887
+"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uasset" 888
+"../../../Engine/Content/EngineSky/C_Sky_Zenith_Color.uexp" 889
+"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uasset" 890
+"../../../Engine/Content/EngineSky/BP_Sky_Sphere.uexp" 891
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap_BuiltData.ubulk" 892
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap_BuiltData.uasset" 893
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap_BuiltData.uexp" 894
+"../../../Engine/Content/EngineMeshes/Sphere.ubulk" 895
+"../../../Engine/Content/EngineMeshes/Sphere.uasset" 896
+"../../../Engine/Content/EngineMeshes/Sphere.uexp" 897
+"../../../Engine/Content/EngineDebugMaterials/M_SimpleTranslucent.uasset" 898
+"../../../Engine/Content/EngineDebugMaterials/M_SimpleTranslucent.uexp" 899
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/BP_CoinsHISMActor.uasset" 900
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/BP_CoinsHISMActor.uexp" 901
+"../../../Engine/Content/BasicShapes/Cube.ubulk" 902
+"../../../Engine/Content/BasicShapes/Cube.uasset" 903
+"../../../Engine/Content/BasicShapes/Cube.uexp" 904
+"../../../Engine/Content/BasicShapes/BasicShapeMaterial.uasset" 905
+"../../../Engine/Content/BasicShapes/BasicShapeMaterial.uexp" 906
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/MGHUD.uasset" 907
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/MGHUD.uexp" 908
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_LoadingScreen.uasset" 909
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_LoadingScreen.uexp" 910
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/MGPlayerController.uasset" 911
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/MGPlayerController.uexp" 912
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/TestGameMode.uasset" 913
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/TestGameMode.uexp" 914
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap.uexp" 915
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/FirstPerson/FirstPersonBP/Maps/FirstPersonExampleMap.umap" 916
+"../../../Engine/Content/TemplateResources/M_Template_Master.uasset" 917
+"../../../Engine/Content/TemplateResources/M_Template_Master.uexp" 918
+"../../../Engine/Content/TemplateResources/MI_Template_BaseGray_02_Metal.uasset" 919
+"../../../Engine/Content/TemplateResources/MI_Template_BaseGray_02_Metal.uexp" 920
+"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.ubulk" 921
+"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.uasset" 922
+"../../../Engine/Content/MapTemplates/SM_Template_Map_Floor.uexp" 923
+"../../../Engine/Content/BasicShapes/Sphere.ubulk" 924
+"../../../Engine/Content/BasicShapes/Sphere.uasset" 925
+"../../../Engine/Content/BasicShapes/Sphere.uexp" 926
+"../../../Engine/Content/EngineMeshes/T_Mat_UnrealTech_01_D.ubulk" 927
+"../../../Engine/Content/EngineMeshes/T_Mat_UnrealTech_01_D.uasset" 928
+"../../../Engine/Content/EngineMeshes/T_Mat_UnrealTech_01_D.uexp" 929
+"../../../Engine/Content/EngineMeshes/M_Mat_UnrealTech.uasset" 930
+"../../../Engine/Content/EngineMeshes/M_Mat_UnrealTech.uexp" 931
+"../../../Engine/Content/EngineMeshes/SM_MatPreviewMesh_01.ubulk" 932
+"../../../Engine/Content/EngineMeshes/SM_MatPreviewMesh_01.uasset" 933
+"../../../Engine/Content/EngineMeshes/SM_MatPreviewMesh_01.uexp" 934
+"../../../Engine/Content/TemplateResources/MI_Template_BaseGray_03_Metal.uasset" 935
+"../../../Engine/Content/TemplateResources/MI_Template_BaseGray_03_Metal.uexp" 936
+"../../../Engine/Content/MapTemplates/TilingNoise05.ubulk" 937
+"../../../Engine/Content/MapTemplates/TilingNoise05.uasset" 938
+"../../../Engine/Content/MapTemplates/TilingNoise05.uexp" 939
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SplitComponents.uasset" 940
+"../../../Engine/Content/Functions/Engine_MaterialFunctions02/SplitComponents.uexp" 941
+"../../../Engine/Content/EngineSky/M_AdvancedSkyDome.uasset" 942
+"../../../Engine/Content/EngineSky/M_AdvancedSkyDome.uexp" 943
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/MainMenu.uexp" 944
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/MainMenu.umap" 945
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_RichTextBlock.uasset" 946
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_RichTextBlock.uexp" 947
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilityTooltip.uasset" 948
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilityTooltip.uexp" 949
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/BP_AbilityDragDrop.uasset" 950
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/BP_AbilityDragDrop.uexp" 951
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_DragAbilityUI.uasset" 952
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_DragAbilityUI.uexp" 953
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilitySlot.uasset" 954
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilitySlot.uexp" 955
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_RunSettings.uasset" 956
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WBP_RunSettings.uexp" 957
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/MGGameMode.uasset" 958
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/MGGameMode.uexp" 959
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_AddMaxHP.uasset" 960
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_AddMaxHP.uexp" 961
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test.uasset" 962
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test.uexp" 963
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_DrainStamina.uasset" 964
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_DrainStamina.uexp" 965
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test_2.uasset" 966
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test_2.uexp" 967
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_AddStamina.uasset" 968
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/GE_AddStamina.uexp" 969
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test_3.uasset" 970
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/Developers/kiril/Collections/Tests/BP_Test_3.uexp" 971
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.uasset" 972
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/Elements/WBP_AbilityUpgradeElement.uexp" 973
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WPB_ChooseAbilities.uasset" 974
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/UI/Widgets/WPB_ChooseAbilities.uexp" 975
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/Lobby.uexp" 976
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/Lobby.umap" 977
+"../../../Engine/Content/VREditor/BasicMeshes/T_CleanFloorGrunge_01_D.ubulk" 978
+"../../../Engine/Content/VREditor/BasicMeshes/T_CleanFloorGrunge_01_D.uasset" 979
+"../../../Engine/Content/VREditor/BasicMeshes/T_CleanFloorGrunge_01_D.uexp" 980
+"../../../Engine/Content/VREditor/BasicMeshes/M_Floor_01.uasset" 981
+"../../../Engine/Content/VREditor/BasicMeshes/M_Floor_01.uexp" 982
+"../../../Engine/Content/VREditor/BasicMeshes/MI_Pyramid_01.uasset" 983
+"../../../Engine/Content/VREditor/BasicMeshes/MI_Pyramid_01.uexp" 984
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_AddEnergy.uasset" 985
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_AddEnergy.uexp" 986
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_EnergyCollectibleHISM.uasset" 987
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_EnergyCollectibleHISM.uexp" 988
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_AddCoins.uasset" 989
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Characters/MGHero/GamepalyEffects/GE_AddCoins.uexp" 990
+"../../../Engine/Content/VREditor/LaserPointer/M_LaserPointer-Core.uasset" 991
+"../../../Engine/Content/VREditor/LaserPointer/M_LaserPointer-Core.uexp" 992
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_CoinsCollectibleHISM.uasset" 993
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_CoinsCollectibleHISM.uexp" 994
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/Meshes/floorV2.ubulk" 995
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/Meshes/floorV2.uasset" 996
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/Meshes/floorV2.uexp" 997
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/BP_FloorHISM.uasset" 998
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Floor/BP_FloorHISM.uexp" 999
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/BP_MazeGenerationGameMode.uasset" 1000
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/BP_MazeGenerationGameMode.uexp" 1001
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_MazeWall1.uasset" 1002
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_MazeWall1.uexp" 1003
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM2.uasset" 1004
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM2.uexp" 1005
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/BP_MazeGenerator.uasset" 1006
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Core/BP_MazeGenerator.uexp" 1007
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall1v2.ubulk" 1008
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall1v2.uasset" 1009
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/wall1v2.uexp" 1010
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_MazeWall0.uasset" 1011
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_MazeWall0.uexp" 1012
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM1.uasset" 1013
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/BP_WallHISM1.uexp" 1014
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst3.uasset" 1015
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst3.uexp" 1016
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst2.uasset" 1017
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Walls/Meshes/Material__21_Inst2.uexp" 1018
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/BP_UnbreakableWallHISMActor.uasset" 1019
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/InstancedMeshActors/BP_UnbreakableWallHISMActor.uexp" 1020
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_AbilityCollectible.uasset" 1021
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maze/Collectibles/BP_AbilityCollectible.uexp" 1022
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/MazeMap.uexp" 1023
+"C:/Unreal Projects/Repositories/MazeGame/MazeGame/Content/MazeGame/Maps/MazeMap.umap" 1024

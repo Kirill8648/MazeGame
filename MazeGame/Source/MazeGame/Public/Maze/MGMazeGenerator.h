@@ -53,8 +53,16 @@ struct MazeItem
 	int32 IndexX;
 };
 
-struct Pair
+struct FPair
 {
+	FPair(const int32 Y1, const int32 X1): Y(Y1), X(X1)
+	{
+	}
+
+	FPair(): Y(0), X(0)
+	{
+	}
+
 	int32 Y;
 	int32 X;
 };
@@ -113,6 +121,8 @@ public:
 	//UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
 	void LaunchAsyncMazeGeneration(int32 Seed, int32 XSize, int32 YSize, FString2Delegate& ChangeLoadingScreenTextDelegate, FDelegate& AllFinishedDelegate);
 
+	FVector GetPlayerStartCoords();
+
 	/*UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
 	void SimpleSpawnGeneratedMaze();
 
@@ -130,7 +140,7 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|UnbreakableWalls")
 	TSubclassOf<AMGInstancedMeshActorStatic> InstancedMeshUnbreakableWalls;
-	
+
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Parameters")
 	int32 DistanceBetweenWalls;
 
@@ -186,7 +196,7 @@ private:
 	void DrawGenerationProgressUI(FString StringToDisplay);
 
 	void SpawnObjects();
-	void ShuffleArray(TArray<int32> &Array,FRandomStream& Stream);
+	void ShuffleArray(TArray<int32>& Array, FRandomStream& Stream);
 	int32 Seed;
 };
 

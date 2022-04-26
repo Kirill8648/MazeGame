@@ -2,13 +2,19 @@
 
 
 #include "MGPlayerDataSubsystem.h"
+
+#include "AssetRegistry/AssetRegistryModule.h"
 #include "Runtime/CoreUObject/Public/UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
 
 UMGPlayerDataSubsystem::UMGPlayerDataSubsystem()
 {
+	//FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
+	//if (FModuleManager::Get().IsModuleLoaded("AssetRegistry") && FModuleManager::Get().IsModuleLoaded("DataRegistry"))
+	//{
 	static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable1(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"));
 	AbilitiesTable = AbilitiesTable1.Object;
+	//}
 
 	/*static ConstructorHelpers::FObjectFinder<UDataTable> Table(TEXT("/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities"));
 	AbilitiesTable = Table.Object;

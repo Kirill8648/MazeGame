@@ -32,6 +32,24 @@ void AMGMazeGenerator::LaunchAsyncMazeGeneration(int32 Seed1, int32 XSize, int32
 		StartBackgroundTask();
 }
 
+FVector AMGMazeGenerator::GetPlayerStartCoords()
+{
+	FVector Returning;
+
+	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
+	{
+		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
+		{
+			if (MazeMatrix[IndexY][IndexX].Distance == 1)
+			{
+				Returning = FVector(IndexY * DistanceBetweenWalls / 2, IndexX * DistanceBetweenWalls / 2, 250.0f);
+			}
+		}
+	}
+
+	return Returning;
+}
+
 /*
 void AMGMazeGenerator::SimpleSpawnGeneratedMaze()
 {
@@ -174,7 +192,7 @@ void AMGMazeGenerator::ContinueGeneration(bool bIsMistakeHappenedInAsync)
 	if (bIsMistakeHappenedInAsync && GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, INFINITY, FColor::Red, FString::Printf(TEXT("Errors occurred during async generation! Check the log for more details.")));
 	else
-		GEngine->AddOnScreenDebugMessage(-1, 60.0f, FColor::Green, FString::Printf(TEXT("The maze matrix was successfully async generated")));
+		GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Green, FString::Printf(TEXT("The maze matrix was successfully async generated")));
 
 	FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
 	{

@@ -5,6 +5,7 @@
 
 #include "MGPlayerDataSubsystem.h"
 #include "Blueprint/UserWidget.h"
+#include "GameFramework/PlayerStart.h"
 #include "Kismet/GameplayStatics.h"
 #include "Maze/MGMazeGenerator.h"
 
@@ -69,7 +70,7 @@ void AMGMazeGenerationGameMode::OnMatchStateSet()
 			                                     Subsystem->CurrentlyLoadedSaveGameObject->LastYMazeSize, ChangeLoadingScreenTextDelegate, AllFinishedDelegate);
 		}
 		else GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "MazeGenerator Actor not found on this map");
-	}/*else if (MatchState==MatchState::InProgress)
+	} /*else if (MatchState==MatchState::InProgress)
 	{
 		RestartPlayer(UGameplayStatics::GetPlayerController(GetWorld(),0));
 	}*/
@@ -78,6 +79,20 @@ void AMGMazeGenerationGameMode::OnMatchStateSet()
 
 void AMGMazeGenerationGameMode::AllFinished()
 {
+	TArray<AActor*> Generators;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AMGMazeGenerator::StaticClass(), Generators);
+
+	AMGMazeGenerator* Generator = nullptr;
+	if (!Generators.IsEmpty())
+	{
+		Generator = Cast<AMGMazeGenerator>(Generators[0]);
+	}
+
+	if (Generator)
+	{
+		GetWorld()->SpawnActor<APlayerStart>(APlayerStart::StaticClass(), Generator->GetPlayerStartCoords(), FRotator());
+	}
+
 	LoadingScreenWidgetRef->RemoveFromParent();
 	bIsReadyToStart = true;
 }

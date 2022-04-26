@@ -12,6 +12,7 @@ UMGSaveGame::UMGSaveGame()
 	LastXMazeSize = 100;
 	LastYMazeSize = 100;
 	SetDateTime();
+
 	if (static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'")); AbilitiesTable.
 		Succeeded())
 	{
