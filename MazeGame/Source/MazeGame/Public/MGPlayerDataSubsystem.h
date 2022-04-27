@@ -50,10 +50,11 @@ public:
 	UMGSaveGame* CurrentlyLoadedSaveGameObject;
 
 	UPROPERTY(BlueprintReadOnly, Category = "MazeGame|PlayerSubsystem")
-	UDataTable* AbilitiesTable = FindObject<UDataTable>(nullptr, TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"));;
+	UDataTable* AbilitiesTable;
 
-	UPROPERTY(BlueprintReadOnly, Category = "MazeGame|PlayerSubsystem")
-	TSoftClassPtr<UDataTable> AbilitiesTableSoftClassPtr = TSoftClassPtr<UDataTable>(FSoftObjectPath(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'")));
+	//TSoftClassPtr<UDataTable> AbilitiesTableSoftClassPtr;
+
+	TSoftObjectPtr<UDataTable> AbilitiesTableSoftObjectPtr;
 
 private:
 	//int32 LastSlotIndex;

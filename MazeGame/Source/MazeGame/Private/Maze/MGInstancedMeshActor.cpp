@@ -14,7 +14,7 @@ TArray<AActor*> AMGInstancedMeshActor::ReplaceInstancesWithActorsBySphereOverlap
 	TArray<AActor*> SpawnedActors;
 
 	TArray<int32> OverlappedIndexes = HierarchicalInstancedMesh->GetInstancesOverlappingSphere(Center, Radius);
-	for (auto& OverlappedIndex : OverlappedIndexes/*HierarchicalInstancedMesh->GetInstancesOverlappingSphere(Center, Radius)*/)
+	for (const auto& OverlappedIndex : OverlappedIndexes/*HierarchicalInstancedMesh->GetInstancesOverlappingSphere(Center, Radius)*/)
 	{
 		FTransform InstTransform;
 		HierarchicalInstancedMesh->GetInstanceTransform(OverlappedIndex, InstTransform, true);
@@ -32,7 +32,7 @@ TArray<AActor*> AMGInstancedMeshActor::ReplaceInstancesWithActorsByBoxOverlap(FB
 	TArray<AActor*> SpawnedActors;
 
 	TArray<int32> OverlappedIndexes = HierarchicalInstancedMesh->GetInstancesOverlappingBox(Box);
-	for (auto& OverlappedIndex : OverlappedIndexes/*HierarchicalInstancedMesh->GetInstancesOverlappingBox(Box)*/)
+	for (const auto& OverlappedIndex : OverlappedIndexes/*HierarchicalInstancedMesh->GetInstancesOverlappingBox(Box)*/)
 	{
 		FTransform InstTransform;
 		HierarchicalInstancedMesh->GetInstanceTransform(OverlappedIndex, InstTransform, true);

@@ -4,16 +4,51 @@
 #include "MGPlayerDataSubsystem.h"
 
 #include "AssetRegistry/AssetRegistryModule.h"
+#include "Engine/StreamableManager.h"
 #include "Runtime/CoreUObject/Public/UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
 
 UMGPlayerDataSubsystem::UMGPlayerDataSubsystem()
 {
+	/*static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable1(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"));
+	AbilitiesTable = AbilitiesTable1.Object;*/
 	//FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
 	//if (FModuleManager::Get().IsModuleLoaded("AssetRegistry") && FModuleManager::Get().IsModuleLoaded("DataRegistry"))
 	//{
-	static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable1(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"));
-	AbilitiesTable = AbilitiesTable1.Object;
+
+	/*AbilitiesTableSoftClassPtr = TSoftClassPtr<UDataTable>(FSoftObjectPath(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'")));
+	AbilitiesTable = FindObject<UDataTable>(nullptr, TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"));
+	AbilitiesTable = AbilitiesTableSoftClassPtr.Get();*/
+	/*FStreamableManager StreamableManager;
+	TSharedPtr<FStreamableHandle> Handle;
+	Handle = StreamableManager.RequestSyncLoad(FSoftObjectPath(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'")));
+	AbilitiesTable = Handle.LoadSynchronous();*/
+
+	/*FSoftObjectPath asset{"DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"};
+	UObject* itemObj = asset.ResolveObject();
+	AbilitiesTable = Cast<UDataTable>(itemObj);
+	if (AbilitiesTable != NULL)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Green, "Ptr is valid");
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "Ptr is not valid");
+	}*/
+
+	/*AbilitiesTableSoftObjectPtr = TSoftObjectPtr<UDataTable>(FSoftObjectPath(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'")));
+	if (AbilitiesTableSoftObjectPtr.IsValid())
+	{
+		//AbilitiesTable = AbilitiesTableSoftObjectPtr.LoadSynchronous();
+		//AbilitiesTable = AbilitiesTableSoftObjectPtr.Get();
+		GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Green, "Ptr is valid");
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "Ptr is not valid");
+	}*/
+
+	
 	//}
 
 	/*static ConstructorHelpers::FObjectFinder<UDataTable> Table(TEXT("/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities"));

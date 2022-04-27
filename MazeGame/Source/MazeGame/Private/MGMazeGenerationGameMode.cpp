@@ -17,7 +17,6 @@ AMGMazeGenerationGameMode::AMGMazeGenerationGameMode()
 
 bool AMGMazeGenerationGameMode::ReadyToStartMatch_Implementation()
 {
-	//return Super::ReadyToStartMatch_Implementation();
 	return bIsReadyToStart;
 }
 
@@ -50,6 +49,7 @@ void AMGMazeGenerationGameMode::OnMatchStateSet()
 {
 	if (MatchState == MatchState::WaitingToStart)
 	{
+		UGameplayStatics::GetGameInstance(GetWorld())->GetSubsystem<UMGPlayerDataSubsystem>()->CurrentlyLoadedSaveGameObject->SpawnedAbilityCollectiblesCache.Empty();
 		LoadingScreenWidgetRef = CreateWidget(UGameplayStatics::GetPlayerController(GetWorld(), 0), LoadingScreenWidget);
 		LoadingScreenWidgetRef->AddToViewport(0);
 		K2_UpdateLoadingScreenWidgetText("Text", "MazeGeneration");

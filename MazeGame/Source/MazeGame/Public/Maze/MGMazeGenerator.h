@@ -23,28 +23,22 @@ enum EMazeItemState
 	Knot,
 };
 
-USTRUCT()
-struct FSeparateSpawnedActorInfo
+struct FMazeItem
 {
-	GENERATED_BODY()
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<AActor> SpawnedActor;
-	//None not allowed
-	UPROPERTY(EditAnywhere)
-	TEnumAsByte<EMazeItemState> ActorType;
-	UPROPERTY(EditAnywhere, meta = (UIMin = "0.0"))
-	float SpawnRate;
-	//Is SpawnRate simply means the amount of actors regardless of the size of the maze
-	UPROPERTY(EditAnywhere)
-	bool bIsSpawnRateAsCount;
-	UPROPERTY(EditAnywhere)
-	FVector OptionalOffset;
-	UPROPERTY(EditAnywhere)
-	FRotator OptionalRotation;
-};
+	FMazeItem()
+	{
+		MazeItemState = None;
+		Distance = 0;
+		bIsUnbreakable = false;
+		bIsVisited = false;
+		IndexY = 0;
+		IndexX = 0;
+	}
 
-struct MazeItem
-{
+	FMazeItem(const int32 IndexY, const int32 IndexX): IndexY(IndexY), IndexX(IndexX)
+	{
+	}
+
 	EMazeItemState MazeItemState = None;
 	int32 Distance = 0;
 	bool bIsUnbreakable = false;
@@ -65,6 +59,26 @@ struct FPair
 
 	int32 Y;
 	int32 X;
+};
+
+USTRUCT()
+struct FSeparateSpawnedActorInfo
+{
+	GENERATED_BODY()
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> SpawnedActor;
+	//None not allowed
+	UPROPERTY(EditAnywhere)
+	TEnumAsByte<EMazeItemState> ActorType;
+	UPROPERTY(EditAnywhere, meta = (UIMin = "0.0"))
+	float SpawnRate;
+	//Is SpawnRate simply means the amount of actors regardless of the size of the maze
+	UPROPERTY(EditAnywhere)
+	bool bIsSpawnRateAsCount;
+	UPROPERTY(EditAnywhere)
+	FVector OptionalOffset;
+	UPROPERTY(EditAnywhere)
+	FRotator OptionalRotation;
 };
 
 USTRUCT()
@@ -118,25 +132,9 @@ class MAZEGAME_API AMGMazeGenerator : public AActor
 public:
 	AMGMazeGenerator();
 
-	//UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
 	void LaunchAsyncMazeGeneration(int32 Seed, int32 XSize, int32 YSize, FString2Delegate& ChangeLoadingScreenTextDelegate, FDelegate& AllFinishedDelegate);
 
 	FVector GetPlayerStartCoords();
-
-	/*UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
-	void SimpleSpawnGeneratedMaze();
-
-	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGMazeGenerator")
-	void SpawnWithInstances();*/
-
-	/*UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SimpleSpawn")
-	TSubclassOf<AActor> CommonMazeWall;
-
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SimpleSpawn")
-	TSubclassOf<AActor> UnbreakableMazeWall;
-
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|SpawnWithInstances")
-	TSubclassOf<AMGInstancedMeshActor> InstancedMeshCommonWalls;*/
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|UnbreakableWalls")
 	TSubclassOf<AMGInstancedMeshActorStatic> InstancedMeshUnbreakableWalls;
@@ -159,6 +157,8 @@ public:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
 	int32 NumOfSpawnedAbilityCollectibleActor;
 
+	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
+	TSubclassOf<AActor> ExitLevelVolume;
 	//Actors that will be spawned as separate actors using a percentage (SpawnRate)
 	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
 	TArray<FSeparateSpawnedActorInfo> SeparateActors;
@@ -177,7 +177,7 @@ public:
 	TArray<FSeparateSpawnedFloorActorInfo> FloorActors;
 
 protected:
-	TArray<TArray<MazeItem>> MazeMatrix;
+	TArray<TArray<FMazeItem>> MazeMatrix;
 
 	virtual void BeginPlay() override;
 
@@ -185,6 +185,7 @@ private:
 	FBoolDelegate MatrixGenerationFinishedDelegate;
 	FStringDelegate DrawGenerationProgressUIDelegate;
 	bool bIsMistakeHappened = false;
+	FMazeItem ExitCell;
 
 	FString2Delegate ChangeLoadingScreenTextDelegate;
 	FDelegate AllFinishedDelegate;
@@ -206,15 +207,17 @@ class FGenerateMazeMatrixAsyncTask : public FNonAbandonableTask
 	friend class FAutoDeleteAsyncTask<FGenerateMazeMatrixAsyncTask>;
 
 public:
-	FGenerateMazeMatrixAsyncTask(FBoolDelegate& EndDelegate, FStringDelegate& DrawUIDelegate, TArray<TArray<MazeItem>>& MatrixAddress, int32 Seed, int32 YSize, int32 XSize) :
-		EndDelegate(EndDelegate), DrawUIDelegate(DrawUIDelegate), MatrixAddress(MatrixAddress), Seed(Seed), YSize(YSize), XSize(XSize)
+	FGenerateMazeMatrixAsyncTask(FBoolDelegate& EndDelegate, FStringDelegate& DrawUIDelegate, TArray<TArray<FMazeItem>>& MatrixAddress, FMazeItem& ExitCell, int32 Seed,
+	                             int32 YSize, int32 XSize) : EndDelegate(EndDelegate), DrawUIDelegate(DrawUIDelegate), MatrixAddress(MatrixAddress), ExitCell(ExitCell),
+	                                                         Seed(Seed), YSize(YSize), XSize(XSize)
 	{
 	}
 
 protected:
 	FBoolDelegate& EndDelegate;
 	FStringDelegate& DrawUIDelegate;
-	TArray<TArray<MazeItem>>& MatrixAddress;
+	TArray<TArray<FMazeItem>>& MatrixAddress;
+	FMazeItem& ExitCell;
 	int32 Seed;
 	int32 YSize;
 	int32 XSize;
@@ -222,7 +225,7 @@ protected:
 
 	void DoWork();
 
-	TArray<MazeItem*> GetNearCellsByIndexes(int32 IndexY, int32 IndexX, bool bIgnoreWalls = false);
+	TArray<FMazeItem*> GetNearCellsByIndexes(int32 IndexY, int32 IndexX, bool bIgnoreWalls = false);
 
 	void PlaceWallBetweenCellsByIndexes(int32 IndexY1, int32 IndexX1, int32 IndexY2, int32 IndexX2);
 

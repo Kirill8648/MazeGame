@@ -28,21 +28,24 @@ void AMGMazeGenerator::LaunchAsyncMazeGeneration(int32 Seed1, int32 XSize, int32
 	{
 		MazeGenerationProgressWidgetRef->AddToViewport(1);
 	}
-	(new FAutoDeleteAsyncTask<FGenerateMazeMatrixAsyncTask>(MatrixGenerationFinishedDelegate, DrawGenerationProgressUIDelegate, MazeMatrix, Seed, YSize, XSize))->
+	(new FAutoDeleteAsyncTask<FGenerateMazeMatrixAsyncTask>(MatrixGenerationFinishedDelegate, DrawGenerationProgressUIDelegate, MazeMatrix, ExitCell, Seed, YSize, XSize))->
 		StartBackgroundTask();
 }
 
 FVector AMGMazeGenerator::GetPlayerStartCoords()
 {
+	int32 Max = -10000;
+
 	FVector Returning;
 
 	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 	{
 		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
 		{
-			if (MazeMatrix[IndexY][IndexX].Distance == 1)
+			if (MazeMatrix[IndexY][IndexX].Distance > Max)
 			{
-				Returning = FVector(IndexY * DistanceBetweenWalls / 2, IndexX * DistanceBetweenWalls / 2, 250.0f);
+				Returning = FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 250.0f);
+				Max = MazeMatrix[IndexY][IndexX].Distance;
 			}
 		}
 	}
@@ -50,96 +53,13 @@ FVector AMGMazeGenerator::GetPlayerStartCoords()
 	return Returning;
 }
 
-/*
-void AMGMazeGenerator::SimpleSpawnGeneratedMaze()
-{
-	for (auto& MazeItemY : MazeMatrix)
-	{
-		for (const auto& MazeItemX : MazeItemY)
-		{
-			if (MazeItemX.MazeItemState == VerticalEdge)
-			{
-				if (MazeItemX.bIsUnbreakable == true)
-
-					GetWorld()->SpawnActor<AActor>(UnbreakableMazeWall, FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f), FRotator(0.0f, 90.0f, 0.0f));
-				else
-					GetWorld()->SpawnActor<AActor>(CommonMazeWall, FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f), FRotator(0.0f, 90.0f, 0.0f));
-			}
-			else if (MazeItemX.MazeItemState == HorizontalEdge)
-			{
-				if (MazeItemX.bIsUnbreakable == true)
-					GetWorld()->SpawnActor<AActor>(UnbreakableMazeWall, FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f), FRotator(0.0f, 0.0f, 0.0f));
-				else
-					GetWorld()->SpawnActor<AActor>(CommonMazeWall, FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f), FRotator(0.0f, 0.0f, 0.0f));
-			}
-		}
-	}
-
-	const MazeItem* FurthestRoom = &MazeMatrix[0][0];
-	for (auto& MazeItemY : MazeMatrix)
-		for (auto& MazeItemX : MazeItemY)
-			if (MazeItemX.Distance > FurthestRoom->Distance)
-				FurthestRoom = &MazeItemX;
-
-	UGameplayStatics::GetPlayerCharacter(GetWorld(), 0)->TeleportTo(FVector(FurthestRoom->IndexX, FurthestRoom->IndexY, 0), FRotator(), false, true);
-}
-
-void AMGMazeGenerator::SpawnWithInstances()
-{
-	if (InstancedMeshCommonWalls && InstancedMeshUnbreakableWalls)
-	{
-		AMGInstancedMeshActor* InstancedMeshCommonWallsActor = GetWorld()->SpawnActor<AMGInstancedMeshActor>(
-			InstancedMeshCommonWalls, FVector(0.0f, 0.0f, 250.0f), FRotator(0.0f, 0.0f, 0.0f));
-		AMGInstancedMeshActor* InstancedMeshUnbreakableWallsActor = GetWorld()->SpawnActor<AMGInstancedMeshActor>(
-			InstancedMeshUnbreakableWalls, FVector(0.0f, 0.0f, 250.0f), FRotator(0.0f, 0.0f, 0.0f));
-
-		InstancedMeshCommonWallsActor->ReplacementActorZOffset = -250.0f;
-		InstancedMeshUnbreakableWallsActor->ReplacementActorZOffset = -250.0f;
-
-		for (auto& MazeItemY : MazeMatrix)
-		{
-			for (const auto& MazeItemX : MazeItemY)
-			{
-				if (MazeItemX.MazeItemState == VerticalEdge)
-				{
-					if (MazeItemX.bIsUnbreakable == true)
-						InstancedMeshUnbreakableWallsActor->HierarchicalInstancedMesh->AddInstance(
-							FTransform(FRotator(0.0f, 90.0f, 0.0f), FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f)));
-					else
-						InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(
-							FTransform(FRotator(0.0f, 90.0f, 0.0f), FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f)));
-				}
-				else if (MazeItemX.MazeItemState == HorizontalEdge)
-				{
-					if (MazeItemX.bIsUnbreakable == true)
-						InstancedMeshUnbreakableWallsActor->HierarchicalInstancedMesh->AddInstance(
-							FTransform(FRotator(0.0f, 0.0f, 0.0f), FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f)));
-					else
-						InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(
-							FTransform(FRotator(0.0f, 0.0f, 0.0f), FVector(MazeItemX.IndexX * 500 / 2, MazeItemX.IndexY * 500 / 2, 0.0f)));
-				}
-			}
-		}
-	}
-}
-*/
-
 void AMGMazeGenerator::BeginPlay()
 {
 	Super::BeginPlay();
-
-	/*if (MazeGenerationProgressWidgetRef)
-	{
-		MazeGenerationProgressWidgetRef->AddToViewport(1);
-	}*/
-
-	//LaunchAsyncMazeGeneration(MGSeed, MGXSize, MGYSize);
-
 	/*int32 SecondsAtBeginning;
 	float PartialSecondsAtBeginning;
 	int32 SecondsAfter;
 	float PartialSecondsAfter;
-
 
 	UGameplayStatics::GetAccurateRealTime(SecondsAtBeginning, PartialSecondsAtBeginning);
 	GenerateMazeWithSeed(MGSeed, MGYSize, MGXSize);
@@ -157,7 +77,7 @@ void AMGMazeGenerator::BeginPlay()
 	UGameplayStatics::GetAccurateRealTime(SecondsAfter, PartialSecondsAfter);
 	PastTime = SecondsAfter - SecondsAtBeginning + PartialSecondsAfter - PartialSecondsAtBeginning;
 	GEngine->AddOnScreenDebugMessage(-1, 60.0f, FColor::Green, FString::Printf(TEXT("The maze was spawned in %f seconds"), PastTime));
-*/
+	*/
 }
 
 void AMGMazeGenerator::PrintMazeMatrixToLog()
@@ -192,7 +112,7 @@ void AMGMazeGenerator::ContinueGeneration(bool bIsMistakeHappenedInAsync)
 	if (bIsMistakeHappenedInAsync && GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, INFINITY, FColor::Red, FString::Printf(TEXT("Errors occurred during async generation! Check the log for more details.")));
 	else
-		GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Green, FString::Printf(TEXT("The maze matrix was successfully async generated")));
+		GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, FString::Printf(TEXT("The maze matrix was successfully async generated")));
 
 	FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
 	{
@@ -387,7 +307,7 @@ void AMGMazeGenerator::SpawnObjects()
 		AbilitiesIndexesToSpawn.Emplace(CellIndexes[i]);
 		CellIndexes.RemoveAt(i);
 	}
-	int32 Counter2;
+	int32 Counter2 = 0;
 	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 	{
 		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
@@ -443,7 +363,7 @@ void AMGMazeGenerator::SpawnObjects()
 
 
 	//-----------SPAWN EDGES----------
-	//каждый из массивов перемешать и разделить на куски(проценты), которые написаны в входных массивах
+	//каждый из массивов перемешать и разделить на куски(проценты), которые написаны во входных массивах
 	//итерация сквозь все грани должна включать: отдельные акторы, инстанс объекты стены
 	//TODO добавить проверку соотношения граней (не больше единицы в целом)
 	TArray<int32> HEdgeIndexes;
@@ -700,321 +620,27 @@ void AMGMazeGenerator::SpawnObjects()
 	}
 	//--------------------------------
 
-
-	//TODO добавить генерацию узлов, разделить инстанс меши
-	//потом TArray<int32> KnotIndexes;
-
-	/*
-	for (FSeparateSpawnedActorInfo SeparateActorInfo : SeparateActors)
+	//-------SPAWN EXIT VOLUME--------
+	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 	{
-		if (SeparateActorInfo.bIsSpawnRateAsCount)
+		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
 		{
-			for (int32 i = 0; i < SeparateActorInfo.SpawnRate; i++)
+			if (MazeMatrix[IndexY][IndexX].IndexX == ExitCell.IndexX && MazeMatrix[IndexY][IndexX].IndexY == ExitCell.IndexY)
 			{
-				bool bIsSpawned = false;
-				do
-				{
-					int32 RandomPlace;
-					switch (SeparateActorInfo.ActorType)
-					{
-					case Cell:
-						RandomPlace = Stream.RandRange(1, CellCount);
-						break;
-					case VerticalEdge:
-						RandomPlace = Stream.RandRange(1, VEdgeCount);
-						break;
-					case HorizontalEdge:
-						RandomPlace = Stream.RandRange(1, HEdgeCount);
-						break;
-					case Knot:
-						RandomPlace = Stream.RandRange(1, KnotCount);
-						break;
-					default:
-						GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "SepActors not spawned properly, None enum encountered in SeparateActors array");
-						return;
-					}
-	
-					int32 Counter = 1;
-					for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
-					{
-						for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
-						{
-							if (MazeMatrix[IndexY][IndexX].MazeItemState == SeparateActorInfo.ActorType)
-							{
-								if (Counter == RandomPlace)
-								{
-									/*GetWorld()->SpawnActorDeferred<AActor>(SeparateActorInfo.SpawnedActor.GetDefaultObject()->GetClass(),
-									                                       FTransform(FRotator(0, 0, 0),
-									                                                  FVector(IndexX * 500 / 2, IndexY * 500 / 2, 0.0f) + SeparateActorInfo.OptionalOffset));#1#
-									/*GetWorld()->SpawnActor<AActor>(SeparateActorInfo.SpawnedActor.GetDefaultObject()->GetClass(),
-																									   FVector(IndexX * 500 / 2, IndexY * 500 / 2, 0.0f) + SeparateActorInfo.OptionalOffset,
-																									   SeparateActorInfo.OptionalRotation);#1#
-									//GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "SpawnedObject");
-									GetWorld()->SpawnActorAbsolute(SeparateActorInfo.SpawnedActor.GetDefaultObject()->GetClass(),
-									                               FTransform(FRotator(0.0f, 0.0f, 0.0f),
-									                                          FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) +
-									                                          SeparateActorInfo.OptionalOffset, FVector(1.0f, 1.0f, 1.0f)));
-									switch (SeparateActorInfo.ActorType)
-									{
-									case Cell:
-										CellCount--;
-										break;
-									case VerticalEdge:
-										VEdgeCount--;
-										break;
-									case HorizontalEdge:
-										HEdgeCount--;
-										break;
-									case Knot:
-										KnotCount--;
-										break;
-									default:
-										GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red,
-										                                 "SepActors not spawned properly, None enum encountered in SeparateActors array");
-										return;
-									}
-									MazeMatrix[IndexY][IndexX].MazeItemState = None;
-									bIsSpawned = true;
-								}
-								Counter++;
-							}
-						}
-					}
-				}
-				while (!bIsSpawned);
-			}
-		}
-		else
-		{
-			int32 ActorsAmount;
-			switch (SeparateActorInfo.ActorType)
-			{
-			case Cell:
-				ActorsAmount = SeparateActorInfo.SpawnRate * CellCount;
-				break;
-			case VerticalEdge:
-				ActorsAmount = SeparateActorInfo.SpawnRate * VEdgeCount;
-				break;
-			case HorizontalEdge:
-				ActorsAmount = SeparateActorInfo.SpawnRate * HEdgeCount;
-				break;
-			case Knot:
-				ActorsAmount = SeparateActorInfo.SpawnRate * KnotCount;
-				break;
-			default:
-				GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "SepActors not spawned properly, None enum encountered in SeparateActors array");
-				return;
-			}
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("Need to spawn %d actors"), ActorsAmount));
-			for (int32 i = 0; i < ActorsAmount; i++)
-			{
-				bool bIsSpawned = false;
-				do
-				{
-					int32 RandomPlace;
-					switch (SeparateActorInfo.ActorType)
-					{
-					case Cell:
-						RandomPlace = Stream.RandRange(1, CellCount);
-						break;
-					case VerticalEdge:
-						RandomPlace = Stream.RandRange(1, VEdgeCount);
-						break;
-					case HorizontalEdge:
-						RandomPlace = Stream.RandRange(1, HEdgeCount);
-						break;
-					case Knot:
-						RandomPlace = Stream.RandRange(1, KnotCount);
-						break;
-					default:
-						GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "SepActors not spawned properly, None enum encountered in SeparateActors array");
-						return;
-					}
-	
-					int32 Counter = 1;
-					for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
-					{
-						for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
-						{
-							if (MazeMatrix[IndexY][IndexX].MazeItemState == SeparateActorInfo.ActorType)
-							{
-								if (Counter == RandomPlace)
-								{
-									GetWorld()->SpawnActorAbsolute(SeparateActorInfo.SpawnedActor.GetDefaultObject()->GetClass(),
-									                               FTransform(FRotator(0.0f, 0.0f, 0.0f),
-									                                          FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) +
-									                                          SeparateActorInfo.OptionalOffset, FVector(1.0f, 1.0f, 1.0f)));
-									switch (SeparateActorInfo.ActorType)
-									{
-									case Cell:
-										CellCount--;
-										break;
-									case VerticalEdge:
-										VEdgeCount--;
-										break;
-									case HorizontalEdge:
-										HEdgeCount--;
-										break;
-									case Knot:
-										KnotCount--;
-										break;
-									default:
-										GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red,
-										                                 "SepActors not spawned properly, None enum encountered in SeparateActors array");
-										return;
-									}
-									MazeMatrix[IndexY][IndexX].MazeItemState = None;
-									bIsSpawned = true;
-								}
-								Counter++;
-							}
-						}
-					}
-				}
-				while (!bIsSpawned);
+				FVector ExitVolumeLocation;
+				if (ExitCell.IndexY == 0)
+					ExitVolumeLocation = FVector(ExitCell.IndexX * DistanceBetweenWalls / 2, ExitCell.IndexY * DistanceBetweenWalls / 2 - DistanceBetweenWalls, 0.0f);
+				else if (ExitCell.IndexY == MazeMatrix.Num() - 1)
+					ExitVolumeLocation = FVector(ExitCell.IndexX * DistanceBetweenWalls / 2, ExitCell.IndexY * DistanceBetweenWalls / 2 + DistanceBetweenWalls, 0.0f);
+				else if (ExitCell.IndexX == 0)
+					ExitVolumeLocation = FVector(ExitCell.IndexX * DistanceBetweenWalls / 2 - DistanceBetweenWalls, ExitCell.IndexY * DistanceBetweenWalls / 2, 0.0f);
+				else if (ExitCell.IndexX == MazeMatrix[0].Num() - 1)
+					ExitVolumeLocation = FVector(ExitCell.IndexX * DistanceBetweenWalls / 2 + DistanceBetweenWalls, ExitCell.IndexY * DistanceBetweenWalls / 2, 0.0f);
+				GetWorld()->SpawnActor<AActor>(ExitLevelVolume, ExitVolumeLocation, FRotator(0.0f, 0.0f, 0.0f));
 			}
 		}
 	}
-	
-	//---spawn walls---------
-	
-	for (FInstancedActorInfo InstancedWallVariation : InstancedWallsVariations)
-	{
-		AMGInstancedMeshActor* InstancedMeshCommonWallsActor = GetWorld()->SpawnActor<AMGInstancedMeshActor>(
-			InstancedWallVariation.InstancedActor, InstancedWallVariation.OptionalOffset, FRotator(0.0f, 0.0f, 0.0f));
-	
-		int32 VerticalAmount = VEdgeCount * InstancedWallVariation.SpawnRate;
-		int32 HorizontalAmount = HEdgeCount * InstancedWallVariation.SpawnRate;
-	
-		/*for (int32 i = 0; i < VerticalAmount; i++)
-		{
-			bool bIsSpawned = false;
-			do
-			{
-				int32 RandomPlace = Stream.RandRange(1, VEdgeCount);
-	
-				int32 Counter = 1;
-				for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
-				{
-					for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
-					{
-						if (MazeMatrix[IndexY][IndexX].MazeItemState == VerticalEdge)
-						{
-							if (Counter == RandomPlace)
-							{
-								InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(FTransform(
-									FRotator(0.0f, 90.0f, 0.0f),
-									FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + InstancedWallVariation.OptionalOffset));
-	
-								VEdgeCount--;
-								MazeMatrix[IndexY][IndexX].MazeItemState = None;
-								bIsSpawned = true;
-							}
-							Counter++;
-						}
-					}
-				}
-			}
-			while (!bIsSpawned);
-		}#1#
-	
-		TArray<int32> RandomHEdgeIndexes;
-		RandomHEdgeIndexes.SetNum(HEdgeCount);
-		for (int32 i = 0; i < HEdgeCount; i++)
-		{
-			RandomHEdgeIndexes[i] = i;
-		}
-		ShuffleArray(RandomHEdgeIndexes);
-		for (int32 i = RandomHEdgeIndexes.Num() - 1; i > HorizontalAmount - 1; i--)
-		{
-			RandomHEdgeIndexes.RemoveAt/*Swap#1#(i);
-		}
-		int32 Counter = 0;
-		for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
-		{
-			for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
-			{
-				if (MazeMatrix[IndexY][IndexX].MazeItemState == HorizontalEdge)
-				{
-					if (RandomHEdgeIndexes.Contains(Counter))
-					{
-						InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(FTransform(
-							FRotator(0.0f, 0.0f, 0.0f),
-							FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + InstancedWallVariation.OptionalOffset));
-	
-						//HEdgeCount--;
-						MazeMatrix[IndexY][IndexX].MazeItemState = None;
-					}
-					Counter++;
-				}
-			}
-		}
-	
-		TArray<int32> RandomVEdgeIndexes;
-		RandomVEdgeIndexes.SetNum(VEdgeCount);
-		for (int32 i = 0; i < VEdgeCount; i++)
-		{
-			RandomVEdgeIndexes[i] = i;
-		}
-		ShuffleArray(RandomVEdgeIndexes);
-		for (int32 i = RandomVEdgeIndexes.Num() - 1; i > VerticalAmount - 1; i--)
-		{
-			RandomVEdgeIndexes.RemoveAtSwap(i);
-		}
-		Counter = 0;
-		for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
-		{
-			for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
-			{
-				if (MazeMatrix[IndexY][IndexX].MazeItemState == VerticalEdge)
-				{
-					if (RandomVEdgeIndexes.Contains(Counter))
-					{
-						InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(FTransform(
-							FRotator(0.0f, 90.0f, 0.0f),
-							FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + InstancedWallVariation.OptionalOffset));
-	
-						//VEdgeCount--;
-						MazeMatrix[IndexY][IndexX].MazeItemState = None;
-					}
-					Counter++;
-				}
-			}
-		}
-	
-		/*for (int32 i = 0; i < HorizontalAmount; i++)
-		{
-			bool bIsSpawned = false;
-			do
-			{
-				int32 RandomPlace = Stream.RandRange(1, HEdgeCount);
-	
-				int32 Counter = 1;
-				for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
-				{
-					for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
-					{
-						if (MazeMatrix[IndexY][IndexX].MazeItemState == HorizontalEdge)
-						{
-							if (Counter == RandomPlace)
-							{
-								InstancedMeshCommonWallsActor->HierarchicalInstancedMesh->AddInstance(FTransform(
-									FRotator(0.0f, 0.0f, 0.0f),
-									FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f) + InstancedWallVariation.OptionalOffset));
-	
-								HEdgeCount--;
-								MazeMatrix[IndexY][IndexX].MazeItemState = None;
-								bIsSpawned = true;
-							}
-							Counter++;
-						}
-					}
-				}
-			}
-			while (!bIsSpawned);
-		}#1#
-	}
-	*/
+	//--------------------------------
 }
 
 void AMGMazeGenerator::ShuffleArray(TArray<int32>& Array, FRandomStream& Stream)
@@ -1052,7 +678,7 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 	MatrixAddress[MatrixAddress.Num() - 1][MatrixAddress[0].Num() - 1].bIsUnbreakable = true;
 
 	const int32 Exit = Stream.RandRange(0, 2 * (YSize + XSize) - 1);
-	const MazeItem* ExitCell = nullptr;
+	//const FMazeItem* ExitCell = nullptr;
 	int32 EdgesIter = 0;
 	for (int32 IndexY = 0; IndexY != MatrixAddress.Num(); ++IndexY)
 	{
@@ -1073,7 +699,7 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 					MatrixAddress[IndexY][IndexX].MazeItemState = HorizontalEdge;
 					MatrixAddress[IndexY][IndexX].bIsUnbreakable = true;
 				}
-				else ExitCell = &MatrixAddress[IndexY][IndexX];
+				else ExitCell = FMazeItem(MatrixAddress[IndexY][IndexX].IndexY, MatrixAddress[IndexY][IndexX].IndexX);
 				EdgesIter++;
 			}
 			else if ((IndexX == 0 || IndexX == MatrixAddress[IndexY].Num() - 1) && !MatrixAddress[IndexY][IndexX].bIsUnbreakable)
@@ -1083,7 +709,7 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 					MatrixAddress[IndexY][IndexX].MazeItemState = VerticalEdge;
 					MatrixAddress[IndexY][IndexX].bIsUnbreakable = true;
 				}
-				else ExitCell = &MatrixAddress[IndexY][IndexX];
+				else ExitCell = FMazeItem(MatrixAddress[IndexY][IndexX].IndexY, MatrixAddress[IndexY][IndexX].IndexX);
 				EdgesIter++;
 			}
 			else if (IndexX % 2 == 1 && IndexY % 2 == 1)
@@ -1099,15 +725,15 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 		UE_LOG(LogTemp, Warning, TEXT("The MazeMatrix is not generated. Either input values are 0 or BeginPlay() called too early for seed %d"), 12345);
 		return;
 	}
-	if (ExitCell == nullptr)
+	if (ExitCell.IndexX == 0 && ExitCell.IndexY == 0)
 	{
 		//TODO change seed to from gameinst
 		UE_LOG(LogTemp, Error, TEXT("The exit is not generated for some reason for seed %d"), 12345);
 		bIsMistakeHappenedInAsync = true;
 		return;
 	}
-	TArray<MazeItem*> DesiredCells;
-	DesiredCells.Emplace(GetNearCellsByIndexes(ExitCell->IndexY, ExitCell->IndexX)[0]);
+	TArray<FMazeItem*> DesiredCells;
+	DesiredCells.Emplace(GetNearCellsByIndexes(ExitCell.IndexY, ExitCell.IndexX)[0]);
 	DesiredCells[0]->Distance = 1;
 
 
@@ -1139,10 +765,10 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 			DrawUIDelegate.ExecuteIfBound(Text);
 		}
 
-		MazeItem* CurrentCell = DesiredCells[Stream.RandRange(0, DesiredCells.Num() - 1)];
+		FMazeItem* CurrentCell = DesiredCells[Stream.RandRange(0, DesiredCells.Num() - 1)];
 		CurrentCell->bIsVisited = true;
 
-		TArray<MazeItem*> IterationNearCells;
+		TArray<FMazeItem*> IterationNearCells;
 		IterationNearCells.Append(GetNearCellsByIndexes(CurrentCell->IndexY, CurrentCell->IndexX));
 		for (int32 i = IterationNearCells.Num() - 1; i >= 0; i--)
 			if (IterationNearCells[i]->bIsVisited) IterationNearCells.RemoveAt(i);
@@ -1165,7 +791,7 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 
 		if (DesiredCells.IsEmpty())
 		{
-			MazeItem* NotVisitedCell = nullptr;
+			FMazeItem* NotVisitedCell = nullptr;
 			int32 MaxDistance = -1;
 			for (auto& MazeItemY : MatrixAddress)
 				for (auto& MazeItemX : MazeItemY)
@@ -1180,7 +806,7 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 
 			if (NotVisitedCell)
 			{
-				TArray<MazeItem*> NearVisitedCellsForNotVisitedCell = GetNearCellsByIndexes(NotVisitedCell->IndexY, NotVisitedCell->IndexX, true);
+				TArray<FMazeItem*> NearVisitedCellsForNotVisitedCell = GetNearCellsByIndexes(NotVisitedCell->IndexY, NotVisitedCell->IndexX, true);
 				for (int32 i = NearVisitedCellsForNotVisitedCell.Num() - 1; i >= 0; i--)
 					if (!NearVisitedCellsForNotVisitedCell[i]->bIsVisited) NearVisitedCellsForNotVisitedCell.RemoveAt(i);
 
@@ -1202,9 +828,9 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 	EndDelegate.ExecuteIfBound(bIsMistakeHappenedInAsync);
 }
 
-TArray<MazeItem*> FGenerateMazeMatrixAsyncTask::GetNearCellsByIndexes(int32 IndexY, int32 IndexX, bool bIgnoreWalls)
+TArray<FMazeItem*> FGenerateMazeMatrixAsyncTask::GetNearCellsByIndexes(int32 IndexY, int32 IndexX, bool bIgnoreWalls)
 {
-	TArray<MazeItem*> Returning;
+	TArray<FMazeItem*> Returning;
 
 	if (IndexY > MatrixAddress.Num() - 1 || IndexX > MatrixAddress[0].Num() || IndexY < 0 || IndexX < 0)
 	{
