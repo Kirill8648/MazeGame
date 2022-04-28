@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('class_u_m_g_attribute_set_base.html','
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_u_m_g_attribute_set_base-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">UMGAttributeSetBase Class Reference</div></div>
 </div><!--header-->
@@ -211,10 +212,105 @@ FGameplayAttributeData&#160;</td><td class="memItemRight" valign="bottom"><b>Sta
 FGameplayAttributeData&#160;</td><td class="memItemRight" valign="bottom"><b>Coins</b></td></tr>
 <tr class="memdesc:a1f399f7c8fb07f241083fbdf6c550bef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Атрибут валюты. <br /></td></tr>
 <tr class="separator:a1f399f7c8fb07f241083fbdf6c550bef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a68e30a01357e2e56626b2e841276e5af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#a68e30a01357e2e56626b2e841276e5af">AdjustAttributeForMaxChange</a> (FGameplayAttributeData &amp;AffectedAttribute, const FGameplayAttributeData &amp;MaxAttribute, float NewMaxValue, const FGameplayAttribute &amp;AffectedAttributeProperty)</td></tr>
+<tr class="memdesc:a68e30a01357e2e56626b2e841276e5af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вспомогательная функция для пропорционального изменения значения атрибута когда его максимально значение изменяется.  <a href="class_u_m_g_attribute_set_base.html#a68e30a01357e2e56626b2e841276e5af">More...</a><br /></td></tr>
+<tr class="separator:a68e30a01357e2e56626b2e841276e5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa9dbc925187d9660ed16604f5fc4e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#adfa9dbc925187d9660ed16604f5fc4e2">OnRep_Health</a> (const FGameplayAttributeData &amp;OldHealth)</td></tr>
+<tr class="memdesc:adfa9dbc925187d9660ed16604f5fc4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации здоровья.  <a href="class_u_m_g_attribute_set_base.html#adfa9dbc925187d9660ed16604f5fc4e2">More...</a><br /></td></tr>
+<tr class="separator:adfa9dbc925187d9660ed16604f5fc4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97120371e734c54af4b4a60e1776cd1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#ad97120371e734c54af4b4a60e1776cd1">OnRep_MaxHealth</a> (const FGameplayAttributeData &amp;OldMaxHealth)</td></tr>
+<tr class="memdesc:ad97120371e734c54af4b4a60e1776cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации максимального здоровья.  <a href="class_u_m_g_attribute_set_base.html#ad97120371e734c54af4b4a60e1776cd1">More...</a><br /></td></tr>
+<tr class="separator:ad97120371e734c54af4b4a60e1776cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4b6fbfc94c03559698da312bdafafc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#a3e4b6fbfc94c03559698da312bdafafc">OnRep_HealthRegenRate</a> (const FGameplayAttributeData &amp;OldHealthRegenRate)</td></tr>
+<tr class="memdesc:a3e4b6fbfc94c03559698da312bdafafc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации скорости восстановаления здоровья.  <a href="class_u_m_g_attribute_set_base.html#a3e4b6fbfc94c03559698da312bdafafc">More...</a><br /></td></tr>
+<tr class="separator:a3e4b6fbfc94c03559698da312bdafafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac958eefd881ce269cb8086d5bed645e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#aac958eefd881ce269cb8086d5bed645e">OnRep_Energy</a> (const FGameplayAttributeData &amp;OldEnergy)</td></tr>
+<tr class="memdesc:aac958eefd881ce269cb8086d5bed645e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации энергии.  <a href="class_u_m_g_attribute_set_base.html#aac958eefd881ce269cb8086d5bed645e">More...</a><br /></td></tr>
+<tr class="separator:aac958eefd881ce269cb8086d5bed645e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa44d9e36eaa55ce51ae9cc4da5b3c734"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#aa44d9e36eaa55ce51ae9cc4da5b3c734">OnRep_MaxEnergy</a> (const FGameplayAttributeData &amp;OldMaxEnergy)</td></tr>
+<tr class="memdesc:aa44d9e36eaa55ce51ae9cc4da5b3c734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации максимальной энергии.  <a href="class_u_m_g_attribute_set_base.html#aa44d9e36eaa55ce51ae9cc4da5b3c734">More...</a><br /></td></tr>
+<tr class="separator:aa44d9e36eaa55ce51ae9cc4da5b3c734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf40b37e9757872a5d1a6145eec1614d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#abf40b37e9757872a5d1a6145eec1614d">OnRep_EnergyRegenRate</a> (const FGameplayAttributeData &amp;OldEnergyRegenRate)</td></tr>
+<tr class="memdesc:abf40b37e9757872a5d1a6145eec1614d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации скорости восстановаления энергии.  <a href="class_u_m_g_attribute_set_base.html#abf40b37e9757872a5d1a6145eec1614d">More...</a><br /></td></tr>
+<tr class="separator:abf40b37e9757872a5d1a6145eec1614d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e16a588c546565702116d97515c951"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#a12e16a588c546565702116d97515c951">OnRep_Stamina</a> (const FGameplayAttributeData &amp;OldStamina)</td></tr>
+<tr class="memdesc:a12e16a588c546565702116d97515c951"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации стамины.  <a href="class_u_m_g_attribute_set_base.html#a12e16a588c546565702116d97515c951">More...</a><br /></td></tr>
+<tr class="separator:a12e16a588c546565702116d97515c951"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacfb33fe33982c90d9d4debc6b979f03"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#aacfb33fe33982c90d9d4debc6b979f03">OnRep_MaxStamina</a> (const FGameplayAttributeData &amp;OldMaxStamina)</td></tr>
+<tr class="memdesc:aacfb33fe33982c90d9d4debc6b979f03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации максимальной стамины.  <a href="class_u_m_g_attribute_set_base.html#aacfb33fe33982c90d9d4debc6b979f03">More...</a><br /></td></tr>
+<tr class="separator:aacfb33fe33982c90d9d4debc6b979f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0545dcafda8babc82da8ea927e870fb4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#a0545dcafda8babc82da8ea927e870fb4">OnRep_StaminaRegenRate</a> (const FGameplayAttributeData &amp;OldStaminaRegenRate)</td></tr>
+<tr class="memdesc:a0545dcafda8babc82da8ea927e870fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации скорости восстановаления стамины.  <a href="class_u_m_g_attribute_set_base.html#a0545dcafda8babc82da8ea927e870fb4">More...</a><br /></td></tr>
+<tr class="separator:a0545dcafda8babc82da8ea927e870fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7aa58850313c93e05a0c6e1e4bd0ac4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_attribute_set_base.html#ac7aa58850313c93e05a0c6e1e4bd0ac4">OnRep_Coins</a> (const FGameplayAttributeData &amp;OldCoins)</td></tr>
+<tr class="memdesc:ac7aa58850313c93e05a0c6e1e4bd0ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается при репликации валюты.  <a href="class_u_m_g_attribute_set_base.html#ac7aa58850313c93e05a0c6e1e4bd0ac4">More...</a><br /></td></tr>
+<tr class="separator:ac7aa58850313c93e05a0c6e1e4bd0ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Набор атрибутов персонажа. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a68e30a01357e2e56626b2e841276e5af" name="a68e30a01357e2e56626b2e841276e5af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e30a01357e2e56626b2e841276e5af">&#9670;&nbsp;</a></span>AdjustAttributeForMaxChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMGAttributeSetBase::AdjustAttributeForMaxChange </td>
+          <td>(</td>
+          <td class="paramtype">FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>AffectedAttribute</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>MaxAttribute</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>NewMaxValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FGameplayAttribute &amp;&#160;</td>
+          <td class="paramname"><em>AffectedAttributeProperty</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вспомогательная функция для пропорционального изменения значения атрибута когда его максимально значение изменяется. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">AffectedAttribute</td><td>- изменяемый атрибут </td></tr>
+    <tr><td class="paramname">MaxAttribute</td><td>- максимальное значение атрибута </td></tr>
+    <tr><td class="paramname">NewMaxValue</td><td>- новое максимальное значение </td></tr>
+    <tr><td class="paramname">AffectedAttributeProperty</td><td>- затронутый атрибут </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a21ed66aa3619be924db815eba87a47ad" name="a21ed66aa3619be924db815eba87a47ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21ed66aa3619be924db815eba87a47ad">&#9670;&nbsp;</a></span>GetLifetimeReplicatedProps()</h2>
 
@@ -243,6 +339,346 @@ FGameplayAttributeData&#160;</td><td class="memItemRight" valign="bottom"><b>Coi
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">OutLifetimeProps</td><td>- массив реплицируемых данных </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac7aa58850313c93e05a0c6e1e4bd0ac4" name="ac7aa58850313c93e05a0c6e1e4bd0ac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7aa58850313c93e05a0c6e1e4bd0ac4">&#9670;&nbsp;</a></span>OnRep_Coins()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_Coins </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldCoins</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации валюты. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldCoins</td><td>- предыдущее значение валюты </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aac958eefd881ce269cb8086d5bed645e" name="aac958eefd881ce269cb8086d5bed645e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac958eefd881ce269cb8086d5bed645e">&#9670;&nbsp;</a></span>OnRep_Energy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_Energy </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldEnergy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации энергии. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldEnergy</td><td>- предыдущее значение энергии </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abf40b37e9757872a5d1a6145eec1614d" name="abf40b37e9757872a5d1a6145eec1614d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf40b37e9757872a5d1a6145eec1614d">&#9670;&nbsp;</a></span>OnRep_EnergyRegenRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_EnergyRegenRate </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldEnergyRegenRate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации скорости восстановаления энергии. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldEnergyRegenRate</td><td>- предыдущее значение скорости восстановаления энергии </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adfa9dbc925187d9660ed16604f5fc4e2" name="adfa9dbc925187d9660ed16604f5fc4e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa9dbc925187d9660ed16604f5fc4e2">&#9670;&nbsp;</a></span>OnRep_Health()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_Health </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldHealth</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации здоровья. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldHealth</td><td>- предыдущее значение здоровья </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3e4b6fbfc94c03559698da312bdafafc" name="a3e4b6fbfc94c03559698da312bdafafc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e4b6fbfc94c03559698da312bdafafc">&#9670;&nbsp;</a></span>OnRep_HealthRegenRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_HealthRegenRate </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldHealthRegenRate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации скорости восстановаления здоровья. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldHealthRegenRate</td><td>- предыдущее значение скорости восстановаления здоровья </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa44d9e36eaa55ce51ae9cc4da5b3c734" name="aa44d9e36eaa55ce51ae9cc4da5b3c734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa44d9e36eaa55ce51ae9cc4da5b3c734">&#9670;&nbsp;</a></span>OnRep_MaxEnergy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_MaxEnergy </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldMaxEnergy</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации максимальной энергии. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldMaxEnergy</td><td>- предыдущее максимальное значение энергии </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad97120371e734c54af4b4a60e1776cd1" name="ad97120371e734c54af4b4a60e1776cd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad97120371e734c54af4b4a60e1776cd1">&#9670;&nbsp;</a></span>OnRep_MaxHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_MaxHealth </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldMaxHealth</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации максимального здоровья. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldMaxHealth</td><td>- предыдущее значение максимального здоровья </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aacfb33fe33982c90d9d4debc6b979f03" name="aacfb33fe33982c90d9d4debc6b979f03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacfb33fe33982c90d9d4debc6b979f03">&#9670;&nbsp;</a></span>OnRep_MaxStamina()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_MaxStamina </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldMaxStamina</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации максимальной стамины. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldMaxStamina</td><td>- предыдущее максимальное значение стамины </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a12e16a588c546565702116d97515c951" name="a12e16a588c546565702116d97515c951"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e16a588c546565702116d97515c951">&#9670;&nbsp;</a></span>OnRep_Stamina()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_Stamina </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldStamina</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации стамины. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldStamina</td><td>- предыдущее значение стамины </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0545dcafda8babc82da8ea927e870fb4" name="a0545dcafda8babc82da8ea927e870fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0545dcafda8babc82da8ea927e870fb4">&#9670;&nbsp;</a></span>OnRep_StaminaRegenRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UMGAttributeSetBase::OnRep_StaminaRegenRate </td>
+          <td>(</td>
+          <td class="paramtype">const FGameplayAttributeData &amp;&#160;</td>
+          <td class="paramname"><em>OldStaminaRegenRate</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается при репликации скорости восстановаления стамины. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">OldStaminaRegenRate</td><td>- предыдущее значение скорости восстановаления стамины </td></tr>
   </table>
   </dd>
 </dl>

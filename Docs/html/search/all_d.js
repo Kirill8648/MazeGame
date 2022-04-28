@@ -6,8 +6,18 @@ var searchData=
   ['oncooldownend_3',['OnCooldownEnd',['../class_u_m_g_async_task_cooldown_changed.html#aa2aa87b44f9b59d3031e51b601f520c6',1,'UMGAsyncTaskCooldownChanged']]],
   ['ongiveability_4',['OnGiveAbility',['../class_u_m_g_gameplay_ability_base.html#a93cce45a8171951534850c3ff497d639',1,'UMGGameplayAbilityBase']]],
   ['onremoveability_5',['OnRemoveAbility',['../class_u_m_g_gameplay_ability_base.html#a56ea31ba08da33fd5b66d1a9ebe8ebb5',1,'UMGGameplayAbilityBase']]],
-  ['onrep_5fplayerstate_6',['OnRep_PlayerState',['../class_a_m_g_hero_character.html#a481fae6966150cb3ee3e5a095722ecd0',1,'AMGHeroCharacter']]],
-  ['optionalinstancedmeshcoinsoffset_7',['OptionalInstancedMeshCoinsOffset',['../class_a_m_g_maze_generator.html#a1b7b72f27abdf8fe31c079d7310fa9cc',1,'AMGMazeGenerator']]],
-  ['optionaloffset_8',['OptionalOffset',['../struct_f_separate_spawned_actor_info.html#a5c07c0071b51ee5cf425cc54a5febc65',1,'FSeparateSpawnedActorInfo::OptionalOffset()'],['../struct_f_instanced_wall_info.html#a229f0b7e78661171ca1019e3ddc2e0bf',1,'FInstancedWallInfo::OptionalOffset()'],['../struct_f_instanced_collectible_info.html#acbad8009ffd2945eb9a77bbc8a3fdd34',1,'FInstancedCollectibleInfo::OptionalOffset()'],['../struct_f_separate_spawned_floor_actor_info.html#a9c877558c8a37fa29ce2668a79b7ad82',1,'FSeparateSpawnedFloorActorInfo::OptionalOffset()']]],
-  ['optionalrotation_9',['OptionalRotation',['../struct_f_separate_spawned_actor_info.html#aa4f0df9eb3ccf7d007afea83ae2885b1',1,'FSeparateSpawnedActorInfo::OptionalRotation()'],['../struct_f_separate_spawned_floor_actor_info.html#ade3bfe34d06fe4f8c3553b5092c0889e',1,'FSeparateSpawnedFloorActorInfo::OptionalRotation()']]]
+  ['onrep_5fcoins_6',['OnRep_Coins',['../class_u_m_g_attribute_set_base.html#ac7aa58850313c93e05a0c6e1e4bd0ac4',1,'UMGAttributeSetBase']]],
+  ['onrep_5fenergy_7',['OnRep_Energy',['../class_u_m_g_attribute_set_base.html#aac958eefd881ce269cb8086d5bed645e',1,'UMGAttributeSetBase']]],
+  ['onrep_5fenergyregenrate_8',['OnRep_EnergyRegenRate',['../class_u_m_g_attribute_set_base.html#abf40b37e9757872a5d1a6145eec1614d',1,'UMGAttributeSetBase']]],
+  ['onrep_5fhealth_9',['OnRep_Health',['../class_u_m_g_attribute_set_base.html#adfa9dbc925187d9660ed16604f5fc4e2',1,'UMGAttributeSetBase']]],
+  ['onrep_5fhealthregenrate_10',['OnRep_HealthRegenRate',['../class_u_m_g_attribute_set_base.html#a3e4b6fbfc94c03559698da312bdafafc',1,'UMGAttributeSetBase']]],
+  ['onrep_5fmaxenergy_11',['OnRep_MaxEnergy',['../class_u_m_g_attribute_set_base.html#aa44d9e36eaa55ce51ae9cc4da5b3c734',1,'UMGAttributeSetBase']]],
+  ['onrep_5fmaxhealth_12',['OnRep_MaxHealth',['../class_u_m_g_attribute_set_base.html#ad97120371e734c54af4b4a60e1776cd1',1,'UMGAttributeSetBase']]],
+  ['onrep_5fmaxstamina_13',['OnRep_MaxStamina',['../class_u_m_g_attribute_set_base.html#aacfb33fe33982c90d9d4debc6b979f03',1,'UMGAttributeSetBase']]],
+  ['onrep_5fplayerstate_14',['OnRep_PlayerState',['../class_a_m_g_hero_character.html#a481fae6966150cb3ee3e5a095722ecd0',1,'AMGHeroCharacter']]],
+  ['onrep_5fstamina_15',['OnRep_Stamina',['../class_u_m_g_attribute_set_base.html#a12e16a588c546565702116d97515c951',1,'UMGAttributeSetBase']]],
+  ['onrep_5fstaminaregenrate_16',['OnRep_StaminaRegenRate',['../class_u_m_g_attribute_set_base.html#a0545dcafda8babc82da8ea927e870fb4',1,'UMGAttributeSetBase']]],
+  ['optionalinstancedmeshcoinsoffset_17',['OptionalInstancedMeshCoinsOffset',['../class_a_m_g_maze_generator.html#a1b7b72f27abdf8fe31c079d7310fa9cc',1,'AMGMazeGenerator']]],
+  ['optionaloffset_18',['OptionalOffset',['../struct_f_separate_spawned_actor_info.html#a5c07c0071b51ee5cf425cc54a5febc65',1,'FSeparateSpawnedActorInfo::OptionalOffset()'],['../struct_f_instanced_wall_info.html#a229f0b7e78661171ca1019e3ddc2e0bf',1,'FInstancedWallInfo::OptionalOffset()'],['../struct_f_instanced_collectible_info.html#acbad8009ffd2945eb9a77bbc8a3fdd34',1,'FInstancedCollectibleInfo::OptionalOffset()'],['../struct_f_separate_spawned_floor_actor_info.html#a9c877558c8a37fa29ce2668a79b7ad82',1,'FSeparateSpawnedFloorActorInfo::OptionalOffset()']]],
+  ['optionalrotation_19',['OptionalRotation',['../struct_f_separate_spawned_actor_info.html#aa4f0df9eb3ccf7d007afea83ae2885b1',1,'FSeparateSpawnedActorInfo::OptionalRotation()'],['../struct_f_separate_spawned_floor_actor_info.html#ade3bfe34d06fe4f8c3553b5092c0889e',1,'FSeparateSpawnedFloorActorInfo::OptionalRotation()']]]
 ];

@@ -11,8 +11,7 @@
 
 
 
-Inheritance diagram for UMGPlayer\+Data\+Subsystem\+:
-\nopagebreak
+Inheritance diagram for UMGPlayer\+Data\+Subsystem\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for UMGPlayer\+Data\+Subsystem\+:
 \end{figure}
 
 
-Collaboration diagram for UMGPlayer\+Data\+Subsystem\+:
-\nopagebreak
+Collaboration diagram for UMGPlayer\+Data\+Subsystem\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -62,6 +60,13 @@ int32 {\bfseries Current\+Run\+Seed} = 0
 \mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a253e366302203403f701f0eb214fce6d}\label{class_u_m_g_player_data_subsystem_a253e366302203403f701f0eb214fce6d}} 
 UData\+Table $\ast$ {\bfseries Abilities\+Table}
 \begin{DoxyCompactList}\small\item\em Таблица с информацией о способностях. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_m_g_player_data_subsystem_a6689f551ab9263fedb31469b571191b5}{Load\+Game\+Delegate\+Function}} (const FString \&Slot\+Name, const int32 User\+Index, USave\+Game $\ast$Loaded\+Game\+Data)
+\begin{DoxyCompactList}\small\item\em Вызывается по завершении асинхронной загрузки сохранения. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_player_data_subsystem_ae1d848ef01320507be1908008cabdc8e}{Saved\+Created\+File\+Delegate\+Function}} (const FString \&Slot\+Name, const int32 User\+Index, bool b\+Success)
+\begin{DoxyCompactList}\small\item\em Вызывается по завершении асинхронного сохранения. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -100,6 +105,25 @@ UData\+Table $\ast$ {\bfseries Abilities\+Table}
 {\em Slot\+Index} & -\/ индекс слота сохранения \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a6689f551ab9263fedb31469b571191b5}\label{class_u_m_g_player_data_subsystem_a6689f551ab9263fedb31469b571191b5}} 
+\index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}!LoadGameDelegateFunction@{LoadGameDelegateFunction}}
+\index{LoadGameDelegateFunction@{LoadGameDelegateFunction}!UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
+\doxysubsubsection{\texorpdfstring{LoadGameDelegateFunction()}{LoadGameDelegateFunction()}}
+{\footnotesize\ttfamily void UMGPlayer\+Data\+Subsystem\+::\+Load\+Game\+Delegate\+Function (\begin{DoxyParamCaption}\item[{const FString \&}]{Slot\+Name,  }\item[{const int32}]{User\+Index,  }\item[{USave\+Game $\ast$}]{Loaded\+Game\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Вызывается по завершении асинхронной загрузки сохранения. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slot\+Name} & -\/ имя слота \\
+\hline
+{\em User\+Index} & -\/ индекс игрока \\
+\hline
+{\em Loaded\+Game\+Data} & -\/ указатель объект сохранения \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a2127d23d26e69a54192113b2b7eb5a94}\label{class_u_m_g_player_data_subsystem_a2127d23d26e69a54192113b2b7eb5a94}} 
 \index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}!LoadGameFromSlot@{LoadGameFromSlot}}
 \index{LoadGameFromSlot@{LoadGameFromSlot}!UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
@@ -128,6 +152,25 @@ UData\+Table $\ast$ {\bfseries Abilities\+Table}
 
 \begin{DoxyParams}{Parameters}
 {\em Slot\+Index} & -\/ индекс слота сохранения \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_ae1d848ef01320507be1908008cabdc8e}\label{class_u_m_g_player_data_subsystem_ae1d848ef01320507be1908008cabdc8e}} 
+\index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}!SavedCreatedFileDelegateFunction@{SavedCreatedFileDelegateFunction}}
+\index{SavedCreatedFileDelegateFunction@{SavedCreatedFileDelegateFunction}!UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
+\doxysubsubsection{\texorpdfstring{SavedCreatedFileDelegateFunction()}{SavedCreatedFileDelegateFunction()}}
+{\footnotesize\ttfamily void UMGPlayer\+Data\+Subsystem\+::\+Saved\+Created\+File\+Delegate\+Function (\begin{DoxyParamCaption}\item[{const FString \&}]{Slot\+Name,  }\item[{const int32}]{User\+Index,  }\item[{bool}]{b\+Success }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Вызывается по завершении асинхронного сохранения. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slot\+Name} & -\/ имя слота \\
+\hline
+{\em User\+Index} & -\/ индекс игрока \\
+\hline
+{\em b\+Success} & -\/ успешно ли прошло сохранение \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_u_m_g_player_data_subsystem_afbefcf0d9a2327cee6ca8cec7e1f730b}\label{class_u_m_g_player_data_subsystem_afbefcf0d9a2327cee6ca8cec7e1f730b}} 

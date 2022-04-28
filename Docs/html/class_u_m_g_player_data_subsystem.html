@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('class_u_m_g_player_data_subsystem.html
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_u_m_g_player_data_subsystem-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">UMGPlayerDataSubsystem Class Reference</div></div>
 </div><!--header-->
@@ -158,6 +159,15 @@ int32&#160;</td><td class="memItemRight" valign="bottom"><b>CurrentRunSeed</b> =
 UDataTable *&#160;</td><td class="memItemRight" valign="bottom"><b>AbilitiesTable</b></td></tr>
 <tr class="memdesc:a253e366302203403f701f0eb214fce6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таблица с информацией о способностях. <br /></td></tr>
 <tr class="separator:a253e366302203403f701f0eb214fce6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a6689f551ab9263fedb31469b571191b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_player_data_subsystem.html#a6689f551ab9263fedb31469b571191b5">LoadGameDelegateFunction</a> (const FString &amp;SlotName, const int32 UserIndex, USaveGame *LoadedGameData)</td></tr>
+<tr class="memdesc:a6689f551ab9263fedb31469b571191b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается по завершении асинхронной загрузки сохранения.  <a href="class_u_m_g_player_data_subsystem.html#a6689f551ab9263fedb31469b571191b5">More...</a><br /></td></tr>
+<tr class="separator:a6689f551ab9263fedb31469b571191b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1d848ef01320507be1908008cabdc8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_m_g_player_data_subsystem.html#ae1d848ef01320507be1908008cabdc8e">SavedCreatedFileDelegateFunction</a> (const FString &amp;SlotName, const int32 UserIndex, bool bSuccess)</td></tr>
+<tr class="memdesc:ae1d848ef01320507be1908008cabdc8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывается по завершении асинхронного сохранения.  <a href="class_u_m_g_player_data_subsystem.html#ae1d848ef01320507be1908008cabdc8e">More...</a><br /></td></tr>
+<tr class="separator:ae1d848ef01320507be1908008cabdc8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Класс подсистемы для хранения данных о текущей игровой сессии. </p>
@@ -225,6 +235,58 @@ UDataTable *&#160;</td><td class="memItemRight" valign="bottom"><b>AbilitiesTabl
 
 </div>
 </div>
+<a id="a6689f551ab9263fedb31469b571191b5" name="a6689f551ab9263fedb31469b571191b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6689f551ab9263fedb31469b571191b5">&#9670;&nbsp;</a></span>LoadGameDelegateFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMGPlayerDataSubsystem::LoadGameDelegateFunction </td>
+          <td>(</td>
+          <td class="paramtype">const FString &amp;&#160;</td>
+          <td class="paramname"><em>SlotName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int32&#160;</td>
+          <td class="paramname"><em>UserIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">USaveGame *&#160;</td>
+          <td class="paramname"><em>LoadedGameData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается по завершении асинхронной загрузки сохранения. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">SlotName</td><td>- имя слота </td></tr>
+    <tr><td class="paramname">UserIndex</td><td>- индекс игрока </td></tr>
+    <tr><td class="paramname">LoadedGameData</td><td>- указатель объект сохранения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a2127d23d26e69a54192113b2b7eb5a94" name="a2127d23d26e69a54192113b2b7eb5a94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2127d23d26e69a54192113b2b7eb5a94">&#9670;&nbsp;</a></span>LoadGameFromSlot()</h2>
 
@@ -271,6 +333,58 @@ UDataTable *&#160;</td><td class="memItemRight" valign="bottom"><b>AbilitiesTabl
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">SlotIndex</td><td>- индекс слота сохранения </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae1d848ef01320507be1908008cabdc8e" name="ae1d848ef01320507be1908008cabdc8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1d848ef01320507be1908008cabdc8e">&#9670;&nbsp;</a></span>SavedCreatedFileDelegateFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UMGPlayerDataSubsystem::SavedCreatedFileDelegateFunction </td>
+          <td>(</td>
+          <td class="paramtype">const FString &amp;&#160;</td>
+          <td class="paramname"><em>SlotName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int32&#160;</td>
+          <td class="paramname"><em>UserIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bSuccess</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вызывается по завершении асинхронного сохранения. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">SlotName</td><td>- имя слота </td></tr>
+    <tr><td class="paramname">UserIndex</td><td>- индекс игрока </td></tr>
+    <tr><td class="paramname">bSuccess</td><td>- успешно ли прошло сохранение </td></tr>
   </table>
   </dd>
 </dl>

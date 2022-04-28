@@ -11,8 +11,7 @@
 
 
 
-Inheritance diagram for UMGAttribute\+Set\+Base\+:
-\nopagebreak
+Inheritance diagram for UMGAttribute\+Set\+Base\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for UMGAttribute\+Set\+Base\+:
 \end{figure}
 
 
-Collaboration diagram for UMGAttribute\+Set\+Base\+:
-\nopagebreak
+Collaboration diagram for UMGAttribute\+Set\+Base\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -104,12 +102,58 @@ FGameplay\+Attribute\+Data {\bfseries Stamina\+Regen\+Rate}
 \mbox{\Hypertarget{class_u_m_g_attribute_set_base_a1f399f7c8fb07f241083fbdf6c550bef}\label{class_u_m_g_attribute_set_base_a1f399f7c8fb07f241083fbdf6c550bef}} 
 FGameplay\+Attribute\+Data {\bfseries Coins}
 \begin{DoxyCompactList}\small\item\em Атрибут валюты. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_m_g_attribute_set_base_a68e30a01357e2e56626b2e841276e5af}{Adjust\+Attribute\+For\+Max\+Change}} (FGameplay\+Attribute\+Data \&Affected\+Attribute, const FGameplay\+Attribute\+Data \&Max\+Attribute, float New\+Max\+Value, const FGameplay\+Attribute \&Affected\+Attribute\+Property)
+\begin{DoxyCompactList}\small\item\em Вспомогательная функция для пропорционального изменения значения атрибута когда его максимально значение изменяется. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_adfa9dbc925187d9660ed16604f5fc4e2}{On\+Rep\+\_\+\+Health}} (const FGameplay\+Attribute\+Data \&Old\+Health)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации здоровья. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_ad97120371e734c54af4b4a60e1776cd1}{On\+Rep\+\_\+\+Max\+Health}} (const FGameplay\+Attribute\+Data \&Old\+Max\+Health)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации максимального здоровья. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_a3e4b6fbfc94c03559698da312bdafafc}{On\+Rep\+\_\+\+Health\+Regen\+Rate}} (const FGameplay\+Attribute\+Data \&Old\+Health\+Regen\+Rate)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации скорости восстановаления здоровья. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_aac958eefd881ce269cb8086d5bed645e}{On\+Rep\+\_\+\+Energy}} (const FGameplay\+Attribute\+Data \&Old\+Energy)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации энергии. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_aa44d9e36eaa55ce51ae9cc4da5b3c734}{On\+Rep\+\_\+\+Max\+Energy}} (const FGameplay\+Attribute\+Data \&Old\+Max\+Energy)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации максимальной энергии. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_abf40b37e9757872a5d1a6145eec1614d}{On\+Rep\+\_\+\+Energy\+Regen\+Rate}} (const FGameplay\+Attribute\+Data \&Old\+Energy\+Regen\+Rate)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации скорости восстановаления энергии. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_a12e16a588c546565702116d97515c951}{On\+Rep\+\_\+\+Stamina}} (const FGameplay\+Attribute\+Data \&Old\+Stamina)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации стамины. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_aacfb33fe33982c90d9d4debc6b979f03}{On\+Rep\+\_\+\+Max\+Stamina}} (const FGameplay\+Attribute\+Data \&Old\+Max\+Stamina)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации максимальной стамины. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_a0545dcafda8babc82da8ea927e870fb4}{On\+Rep\+\_\+\+Stamina\+Regen\+Rate}} (const FGameplay\+Attribute\+Data \&Old\+Stamina\+Regen\+Rate)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации скорости восстановаления стамины. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_attribute_set_base_ac7aa58850313c93e05a0c6e1e4bd0ac4}{On\+Rep\+\_\+\+Coins}} (const FGameplay\+Attribute\+Data \&Old\+Coins)
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации валюты. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Набор атрибутов персонажа. 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_a68e30a01357e2e56626b2e841276e5af}\label{class_u_m_g_attribute_set_base_a68e30a01357e2e56626b2e841276e5af}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!AdjustAttributeForMaxChange@{AdjustAttributeForMaxChange}}
+\index{AdjustAttributeForMaxChange@{AdjustAttributeForMaxChange}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{AdjustAttributeForMaxChange()}{AdjustAttributeForMaxChange()}}
+{\footnotesize\ttfamily void UMGAttribute\+Set\+Base\+::\+Adjust\+Attribute\+For\+Max\+Change (\begin{DoxyParamCaption}\item[{FGameplay\+Attribute\+Data \&}]{Affected\+Attribute,  }\item[{const FGameplay\+Attribute\+Data \&}]{Max\+Attribute,  }\item[{float}]{New\+Max\+Value,  }\item[{const FGameplay\+Attribute \&}]{Affected\+Attribute\+Property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Вспомогательная функция для пропорционального изменения значения атрибута когда его максимально значение изменяется. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Affected\+Attribute} & -\/ изменяемый атрибут \\
+\hline
+{\em Max\+Attribute} & -\/ максимальное значение атрибута \\
+\hline
+{\em New\+Max\+Value} & -\/ новое максимальное значение \\
+\hline
+{\em Affected\+Attribute\+Property} & -\/ затронутый атрибут \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_u_m_g_attribute_set_base_a21ed66aa3619be924db815eba87a47ad}\label{class_u_m_g_attribute_set_base_a21ed66aa3619be924db815eba87a47ad}} 
 \index{UMGAttributeSetBase@{UMGAttributeSetBase}!GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}}
 \index{GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}!UMGAttributeSetBase@{UMGAttributeSetBase}}
@@ -123,6 +167,156 @@ FGameplay\+Attribute\+Data {\bfseries Coins}
 
 \begin{DoxyParams}{Parameters}
 {\em Out\+Lifetime\+Props} & -\/ массив реплицируемых данных \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_ac7aa58850313c93e05a0c6e1e4bd0ac4}\label{class_u_m_g_attribute_set_base_ac7aa58850313c93e05a0c6e1e4bd0ac4}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_Coins@{OnRep\_Coins}}
+\index{OnRep\_Coins@{OnRep\_Coins}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_Coins()}{OnRep\_Coins()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Coins (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Coins }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации валюты. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Coins} & -\/ предыдущее значение валюты \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_aac958eefd881ce269cb8086d5bed645e}\label{class_u_m_g_attribute_set_base_aac958eefd881ce269cb8086d5bed645e}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_Energy@{OnRep\_Energy}}
+\index{OnRep\_Energy@{OnRep\_Energy}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_Energy()}{OnRep\_Energy()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Energy (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Energy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации энергии. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Energy} & -\/ предыдущее значение энергии \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_abf40b37e9757872a5d1a6145eec1614d}\label{class_u_m_g_attribute_set_base_abf40b37e9757872a5d1a6145eec1614d}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_EnergyRegenRate@{OnRep\_EnergyRegenRate}}
+\index{OnRep\_EnergyRegenRate@{OnRep\_EnergyRegenRate}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_EnergyRegenRate()}{OnRep\_EnergyRegenRate()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Energy\+Regen\+Rate (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Energy\+Regen\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации скорости восстановаления энергии. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Energy\+Regen\+Rate} & -\/ предыдущее значение скорости восстановаления энергии \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_adfa9dbc925187d9660ed16604f5fc4e2}\label{class_u_m_g_attribute_set_base_adfa9dbc925187d9660ed16604f5fc4e2}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_Health@{OnRep\_Health}}
+\index{OnRep\_Health@{OnRep\_Health}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_Health()}{OnRep\_Health()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Health (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации здоровья. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Health} & -\/ предыдущее значение здоровья \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_a3e4b6fbfc94c03559698da312bdafafc}\label{class_u_m_g_attribute_set_base_a3e4b6fbfc94c03559698da312bdafafc}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_HealthRegenRate@{OnRep\_HealthRegenRate}}
+\index{OnRep\_HealthRegenRate@{OnRep\_HealthRegenRate}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_HealthRegenRate()}{OnRep\_HealthRegenRate()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Health\+Regen\+Rate (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Health\+Regen\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации скорости восстановаления здоровья. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Health\+Regen\+Rate} & -\/ предыдущее значение скорости восстановаления здоровья \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_aa44d9e36eaa55ce51ae9cc4da5b3c734}\label{class_u_m_g_attribute_set_base_aa44d9e36eaa55ce51ae9cc4da5b3c734}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_MaxEnergy@{OnRep\_MaxEnergy}}
+\index{OnRep\_MaxEnergy@{OnRep\_MaxEnergy}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_MaxEnergy()}{OnRep\_MaxEnergy()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Max\+Energy (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Max\+Energy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации максимальной энергии. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Max\+Energy} & -\/ предыдущее максимальное значение энергии \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_ad97120371e734c54af4b4a60e1776cd1}\label{class_u_m_g_attribute_set_base_ad97120371e734c54af4b4a60e1776cd1}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_MaxHealth@{OnRep\_MaxHealth}}
+\index{OnRep\_MaxHealth@{OnRep\_MaxHealth}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_MaxHealth()}{OnRep\_MaxHealth()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Max\+Health (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Max\+Health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации максимального здоровья. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Max\+Health} & -\/ предыдущее значение максимального здоровья \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_aacfb33fe33982c90d9d4debc6b979f03}\label{class_u_m_g_attribute_set_base_aacfb33fe33982c90d9d4debc6b979f03}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_MaxStamina@{OnRep\_MaxStamina}}
+\index{OnRep\_MaxStamina@{OnRep\_MaxStamina}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_MaxStamina()}{OnRep\_MaxStamina()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Max\+Stamina (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Max\+Stamina }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации максимальной стамины. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Max\+Stamina} & -\/ предыдущее максимальное значение стамины \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_a12e16a588c546565702116d97515c951}\label{class_u_m_g_attribute_set_base_a12e16a588c546565702116d97515c951}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_Stamina@{OnRep\_Stamina}}
+\index{OnRep\_Stamina@{OnRep\_Stamina}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_Stamina()}{OnRep\_Stamina()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Stamina (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Stamina }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации стамины. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Stamina} & -\/ предыдущее значение стамины \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_attribute_set_base_a0545dcafda8babc82da8ea927e870fb4}\label{class_u_m_g_attribute_set_base_a0545dcafda8babc82da8ea927e870fb4}} 
+\index{UMGAttributeSetBase@{UMGAttributeSetBase}!OnRep\_StaminaRegenRate@{OnRep\_StaminaRegenRate}}
+\index{OnRep\_StaminaRegenRate@{OnRep\_StaminaRegenRate}!UMGAttributeSetBase@{UMGAttributeSetBase}}
+\doxysubsubsection{\texorpdfstring{OnRep\_StaminaRegenRate()}{OnRep\_StaminaRegenRate()}}
+{\footnotesize\ttfamily virtual void UMGAttribute\+Set\+Base\+::\+On\+Rep\+\_\+\+Stamina\+Regen\+Rate (\begin{DoxyParamCaption}\item[{const FGameplay\+Attribute\+Data \&}]{Old\+Stamina\+Regen\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации скорости восстановаления стамины. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Old\+Stamina\+Regen\+Rate} & -\/ предыдущее значение скорости восстановаления стамины \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_u_m_g_attribute_set_base_a8f7137401d4090f1dc23909e6998348c}\label{class_u_m_g_attribute_set_base_a8f7137401d4090f1dc23909e6998348c}} 

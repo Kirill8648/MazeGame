@@ -87,6 +87,8 @@ $(document).ready(function(){initNavTree('class_a_m_g_maze_generator.html',''); 
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_a_m_g_maze_generator-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">AMGMazeGenerator Class Reference</div></div>
 </div><!--header-->
@@ -110,10 +112,11 @@ Collaboration diagram for AMGMazeGenerator:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_a_m_g_maze_generator__coll__graph.png" border="0" usemap="#a_a_m_g_maze_generator_coll__map" alt="Collaboration graph"/></div>
 <map name="a_a_m_g_maze_generator_coll__map" id="a_a_m_g_maze_generator_coll__map">
-<area shape="rect" title="Генератор лабиринта." alt="" coords="15,185,157,212"/>
+<area shape="rect" title="Генератор лабиринта." alt="" coords="82,185,223,212"/>
 <area shape="rect" title=" " alt="" coords="5,89,68,115"/>
 <area shape="rect" href="class_u_m_g_maze_generation_progress_widget.html" title="Виджет загрузки генерации лабиринта." alt="" coords="92,81,291,123"/>
 <area shape="rect" title=" " alt="" coords="142,5,241,32"/>
+<area shape="rect" href="struct_f_maze_item.html" title="Структура, хранящая данные о клетке лабиринта." alt="" coords="352,89,439,115"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -123,7 +126,7 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>AMGMazeGenerator</b> ()</td></tr>
 <tr class="memdesc:abb3f7f6b1fbecd08f867da019c824734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Стандартный конструктор. <br /></td></tr>
 <tr class="separator:abb3f7f6b1fbecd08f867da019c824734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90112b66ef0312c58186f61b4e8e07e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_m_g_maze_generator.html#a90112b66ef0312c58186f61b4e8e07e8">LaunchAsyncMazeGeneration</a> (int32 Seed, int32 XSize, int32 YSize, FString2Delegate &amp;ChangeLoadingScreenTextDelegate, FDelegate &amp;AllFinishedDelegate)</td></tr>
+<tr class="memitem:a90112b66ef0312c58186f61b4e8e07e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_m_g_maze_generator.html#a90112b66ef0312c58186f61b4e8e07e8">LaunchAsyncMazeGeneration</a> (int32 <a class="el" href="class_a_m_g_maze_generator.html#a314b324c0ec23fd628406b415841bb78">Seed</a>, int32 XSize, int32 YSize, FString2Delegate &amp;<a class="el" href="class_a_m_g_maze_generator.html#a521581792e2f70c1240cc7be42c0fb00">ChangeLoadingScreenTextDelegate</a>, FDelegate &amp;<a class="el" href="class_a_m_g_maze_generator.html#a515cb5533f400fb9d1db3a67513da280">AllFinishedDelegate</a>)</td></tr>
 <tr class="memdesc:a90112b66ef0312c58186f61b4e8e07e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает асинхронную генерацию лабиринта.  <a href="class_a_m_g_maze_generator.html#a90112b66ef0312c58186f61b4e8e07e8">More...</a><br /></td></tr>
 <tr class="separator:a90112b66ef0312c58186f61b4e8e07e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aded49bce2d568768134b6d3b37858eb3"><td class="memItemLeft" align="right" valign="top">FVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_m_g_maze_generator.html#aded49bce2d568768134b6d3b37858eb3">GetPlayerStartCoords</a> ()</td></tr>
@@ -206,10 +209,129 @@ Protected Attributes</h2></td></tr>
 TArray&lt; TArray&lt; <a class="el" href="struct_f_maze_item.html">FMazeItem</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>MazeMatrix</b></td></tr>
 <tr class="memdesc:ac6114901d9d1ff8d357c3e52ee470734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Массив, представляющий генерируемый лабиринт. <br /></td></tr>
 <tr class="separator:ac6114901d9d1ff8d357c3e52ee470734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5c085571bd1b55e6139938380d82e504"><td class="memItemLeft" align="right" valign="top"><a id="a5c085571bd1b55e6139938380d82e504" name="a5c085571bd1b55e6139938380d82e504"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintMazeMatrixToLog</b> ()</td></tr>
+<tr class="memdesc:a5c085571bd1b55e6139938380d82e504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Напечатать матрицу в лог. <br /></td></tr>
+<tr class="separator:a5c085571bd1b55e6139938380d82e504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcf2cd548240e3f5e713534aa013b9e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_m_g_maze_generator.html#adcf2cd548240e3f5e713534aa013b9e1">ContinueGeneration</a> (bool bIsMistakeHappenedInAsync)</td></tr>
+<tr class="memdesc:adcf2cd548240e3f5e713534aa013b9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Продолжить генерацию после генерации матрицы (расставить объекты).  <a href="class_a_m_g_maze_generator.html#adcf2cd548240e3f5e713534aa013b9e1">More...</a><br /></td></tr>
+<tr class="separator:adcf2cd548240e3f5e713534aa013b9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4b437aca64110065e69614b346bfe8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_m_g_maze_generator.html#a1f4b437aca64110065e69614b346bfe8">DrawGenerationProgressUI</a> (FString StringToDisplay)</td></tr>
+<tr class="memdesc:a1f4b437aca64110065e69614b346bfe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перерисовать процесс генерации на виджете.  <a href="class_a_m_g_maze_generator.html#a1f4b437aca64110065e69614b346bfe8">More...</a><br /></td></tr>
+<tr class="separator:a1f4b437aca64110065e69614b346bfe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a9c1db39e77e11e8ffca73e4884018"><td class="memItemLeft" align="right" valign="top"><a id="a73a9c1db39e77e11e8ffca73e4884018" name="a73a9c1db39e77e11e8ffca73e4884018"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SpawnObjects</b> ()</td></tr>
+<tr class="memdesc:a73a9c1db39e77e11e8ffca73e4884018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заспавнить объекты. <br /></td></tr>
+<tr class="separator:a73a9c1db39e77e11e8ffca73e4884018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f0820c14348c79aae5e5a55b8a8ec8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_m_g_maze_generator.html#a7f0820c14348c79aae5e5a55b8a8ec8e">ShuffleArray</a> (TArray&lt; int32 &gt; &amp;Array, FRandomStream &amp;Stream)</td></tr>
+<tr class="memdesc:a7f0820c14348c79aae5e5a55b8a8ec8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Перемешать массив.  <a href="class_a_m_g_maze_generator.html#a7f0820c14348c79aae5e5a55b8a8ec8e">More...</a><br /></td></tr>
+<tr class="separator:a7f0820c14348c79aae5e5a55b8a8ec8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad49c109f74d9cc3b6c2be8984e8286cf"><td class="memItemLeft" align="right" valign="top"><a id="ad49c109f74d9cc3b6c2be8984e8286cf" name="ad49c109f74d9cc3b6c2be8984e8286cf"></a>
+FBoolDelegate&#160;</td><td class="memItemRight" valign="bottom"><b>MatrixGenerationFinishedDelegate</b></td></tr>
+<tr class="memdesc:ad49c109f74d9cc3b6c2be8984e8286cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Делегат, вызывающийся при завершении генерации матрицы лабиринта. <br /></td></tr>
+<tr class="separator:ad49c109f74d9cc3b6c2be8984e8286cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f9c226df2a357d1068b5122d4e4917"><td class="memItemLeft" align="right" valign="top"><a id="ac2f9c226df2a357d1068b5122d4e4917" name="ac2f9c226df2a357d1068b5122d4e4917"></a>
+FStringDelegate&#160;</td><td class="memItemRight" valign="bottom"><b>DrawGenerationProgressUIDelegate</b></td></tr>
+<tr class="memdesc:ac2f9c226df2a357d1068b5122d4e4917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Делегат, вызывающийся при необходимости перерисовать процесс генерации на виджете. <br /></td></tr>
+<tr class="separator:ac2f9c226df2a357d1068b5122d4e4917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3de4c4c9f6abb6cd4c7abb1b2773071a"><td class="memItemLeft" align="right" valign="top"><a id="a3de4c4c9f6abb6cd4c7abb1b2773071a" name="a3de4c4c9f6abb6cd4c7abb1b2773071a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>bIsMistakeHappened</b> = false</td></tr>
+<tr class="memdesc:a3de4c4c9f6abb6cd4c7abb1b2773071a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Случились ли ошибки при генерации. <br /></td></tr>
+<tr class="separator:a3de4c4c9f6abb6cd4c7abb1b2773071a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8671069f23b1a67889d399e1241b39a0"><td class="memItemLeft" align="right" valign="top"><a id="a8671069f23b1a67889d399e1241b39a0" name="a8671069f23b1a67889d399e1241b39a0"></a>
+<a class="el" href="struct_f_maze_item.html">FMazeItem</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ExitCell</b></td></tr>
+<tr class="memdesc:a8671069f23b1a67889d399e1241b39a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Данные о клетке с выходом из лабиринта. <br /></td></tr>
+<tr class="separator:a8671069f23b1a67889d399e1241b39a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a521581792e2f70c1240cc7be42c0fb00"><td class="memItemLeft" align="right" valign="top"><a id="a521581792e2f70c1240cc7be42c0fb00" name="a521581792e2f70c1240cc7be42c0fb00"></a>
+FString2Delegate&#160;</td><td class="memItemRight" valign="bottom"><b>ChangeLoadingScreenTextDelegate</b></td></tr>
+<tr class="memdesc:a521581792e2f70c1240cc7be42c0fb00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Делегат, вызывающийся для смены текста загрузки. <br /></td></tr>
+<tr class="separator:a521581792e2f70c1240cc7be42c0fb00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a515cb5533f400fb9d1db3a67513da280"><td class="memItemLeft" align="right" valign="top"><a id="a515cb5533f400fb9d1db3a67513da280" name="a515cb5533f400fb9d1db3a67513da280"></a>
+FDelegate&#160;</td><td class="memItemRight" valign="bottom"><b>AllFinishedDelegate</b></td></tr>
+<tr class="memdesc:a515cb5533f400fb9d1db3a67513da280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Делегат, вызывающийся при завершении генерации. <br /></td></tr>
+<tr class="separator:a515cb5533f400fb9d1db3a67513da280"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a314b324c0ec23fd628406b415841bb78"><td class="memItemLeft" align="right" valign="top"><a id="a314b324c0ec23fd628406b415841bb78" name="a314b324c0ec23fd628406b415841bb78"></a>
+int32&#160;</td><td class="memItemRight" valign="bottom"><b>Seed</b></td></tr>
+<tr class="memdesc:a314b324c0ec23fd628406b415841bb78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ключ генерации. <br /></td></tr>
+<tr class="separator:a314b324c0ec23fd628406b415841bb78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Генератор лабиринта. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="adcf2cd548240e3f5e713534aa013b9e1" name="adcf2cd548240e3f5e713534aa013b9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcf2cd548240e3f5e713534aa013b9e1">&#9670;&nbsp;</a></span>ContinueGeneration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AMGMazeGenerator::ContinueGeneration </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bIsMistakeHappenedInAsync</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Продолжить генерацию после генерации матрицы (расставить объекты). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bIsMistakeHappenedInAsync</td><td>- случились ли ошибки при выполнении асинхронной задачи </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1f4b437aca64110065e69614b346bfe8" name="a1f4b437aca64110065e69614b346bfe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4b437aca64110065e69614b346bfe8">&#9670;&nbsp;</a></span>DrawGenerationProgressUI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AMGMazeGenerator::DrawGenerationProgressUI </td>
+          <td>(</td>
+          <td class="paramtype">FString&#160;</td>
+          <td class="paramname"><em>StringToDisplay</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Перерисовать процесс генерации на виджете. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">StringToDisplay</td><td>- какую строку отрисовать </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aded49bce2d568768134b6d3b37858eb3" name="aded49bce2d568768134b6d3b37858eb3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aded49bce2d568768134b6d3b37858eb3">&#9670;&nbsp;</a></span>GetPlayerStartCoords()</h2>
 
@@ -282,6 +404,51 @@ TArray&lt; TArray&lt; <a class="el" href="struct_f_maze_item.html">FMazeItem</a>
     <tr><td class="paramname">YSize</td><td>- значение Y </td></tr>
     <tr><td class="paramname">ChangeLoadingScreenTextDelegate</td><td>- делегат, вызывающийся для смены текста загрузки </td></tr>
     <tr><td class="paramname">AllFinishedDelegate</td><td>- делегат, вызывающийся при завершении генерации </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7f0820c14348c79aae5e5a55b8a8ec8e" name="a7f0820c14348c79aae5e5a55b8a8ec8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f0820c14348c79aae5e5a55b8a8ec8e">&#9670;&nbsp;</a></span>ShuffleArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AMGMazeGenerator::ShuffleArray </td>
+          <td>(</td>
+          <td class="paramtype">TArray&lt; int32 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FRandomStream &amp;&#160;</td>
+          <td class="paramname"><em>Stream</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Перемешать массив. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Array</td><td>- адрес перемешиваемого массива </td></tr>
+    <tr><td class="paramname">Stream</td><td>- адрес потока рандомных чисел </td></tr>
   </table>
   </dd>
 </dl>

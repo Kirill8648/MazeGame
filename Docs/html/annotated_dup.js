@@ -24,8 +24,8 @@ var annotated_dup =
     [ "UMGCheatManager", "class_u_m_g_cheat_manager.html", "class_u_m_g_cheat_manager" ],
     [ "UMGGameplayAbilityBase", "class_u_m_g_gameplay_ability_base.html", "class_u_m_g_gameplay_ability_base" ],
     [ "UMGMazeGenerationProgressWidget", "class_u_m_g_maze_generation_progress_widget.html", "class_u_m_g_maze_generation_progress_widget" ],
-    [ "UMGMMC_HeroAbilityCooldown", "class_u_m_g_m_m_c___hero_ability_cooldown.html", null ],
-    [ "UMGMMC_HeroAbilityCost", "class_u_m_g_m_m_c___hero_ability_cost.html", null ],
+    [ "UMGMMC_HeroAbilityCooldown", "class_u_m_g_m_m_c___hero_ability_cooldown.html", "class_u_m_g_m_m_c___hero_ability_cooldown" ],
+    [ "UMGMMC_HeroAbilityCost", "class_u_m_g_m_m_c___hero_ability_cost.html", "class_u_m_g_m_m_c___hero_ability_cost" ],
     [ "UMGPlayerDataSubsystem", "class_u_m_g_player_data_subsystem.html", "class_u_m_g_player_data_subsystem" ],
     [ "UMGSaveGame", "class_u_m_g_save_game.html", "class_u_m_g_save_game" ]
 ];

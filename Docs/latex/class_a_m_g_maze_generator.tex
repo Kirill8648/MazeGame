@@ -11,8 +11,7 @@
 
 
 
-Inheritance diagram for AMGMaze\+Generator\+:
-\nopagebreak
+Inheritance diagram for AMGMaze\+Generator\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,7 +25,7 @@ Collaboration diagram for AMGMaze\+Generator\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=341pt]{class_a_m_g_maze_generator__coll__graph}
+\includegraphics[width=350pt]{class_a_m_g_maze_generator__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -35,7 +34,7 @@ Collaboration diagram for AMGMaze\+Generator\+:
 \mbox{\Hypertarget{class_a_m_g_maze_generator_abb3f7f6b1fbecd08f867da019c824734}\label{class_a_m_g_maze_generator_abb3f7f6b1fbecd08f867da019c824734}} 
 {\bfseries AMGMaze\+Generator} ()
 \begin{DoxyCompactList}\small\item\em Стандартный конструктор. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_a_m_g_maze_generator_a90112b66ef0312c58186f61b4e8e07e8}{Launch\+Async\+Maze\+Generation}} (int32 Seed, int32 XSize, int32 YSize, FString2\+Delegate \&Change\+Loading\+Screen\+Text\+Delegate, FDelegate \&All\+Finished\+Delegate)
+void \mbox{\hyperlink{class_a_m_g_maze_generator_a90112b66ef0312c58186f61b4e8e07e8}{Launch\+Async\+Maze\+Generation}} (int32 \mbox{\hyperlink{class_a_m_g_maze_generator_a314b324c0ec23fd628406b415841bb78}{Seed}}, int32 XSize, int32 YSize, FString2\+Delegate \&\mbox{\hyperlink{class_a_m_g_maze_generator_a521581792e2f70c1240cc7be42c0fb00}{Change\+Loading\+Screen\+Text\+Delegate}}, FDelegate \&\mbox{\hyperlink{class_a_m_g_maze_generator_a515cb5533f400fb9d1db3a67513da280}{All\+Finished\+Delegate}})
 \begin{DoxyCompactList}\small\item\em Запускает асинхронную генерацию лабиринта. \end{DoxyCompactList}\item 
 FVector \mbox{\hyperlink{class_a_m_g_maze_generator_aded49bce2d568768134b6d3b37858eb3}{Get\+Player\+Start\+Coords}} ()
 \begin{DoxyCompactList}\small\item\em Возвращает координаты для старта игрока. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -99,12 +98,81 @@ virtual void {\bfseries Begin\+Play} () override
 \mbox{\Hypertarget{class_a_m_g_maze_generator_ac6114901d9d1ff8d357c3e52ee470734}\label{class_a_m_g_maze_generator_ac6114901d9d1ff8d357c3e52ee470734}} 
 TArray$<$ TArray$<$ \mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} $>$ $>$ {\bfseries Maze\+Matrix}
 \begin{DoxyCompactList}\small\item\em Массив, представляющий генерируемый лабиринт. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a5c085571bd1b55e6139938380d82e504}\label{class_a_m_g_maze_generator_a5c085571bd1b55e6139938380d82e504}} 
+void {\bfseries Print\+Maze\+Matrix\+To\+Log} ()
+\begin{DoxyCompactList}\small\item\em Напечатать матрицу в лог. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_maze_generator_adcf2cd548240e3f5e713534aa013b9e1}{Continue\+Generation}} (bool b\+Is\+Mistake\+Happened\+In\+Async)
+\begin{DoxyCompactList}\small\item\em Продолжить генерацию после генерации матрицы (расставить объекты). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_maze_generator_a1f4b437aca64110065e69614b346bfe8}{Draw\+Generation\+Progress\+UI}} (FString String\+To\+Display)
+\begin{DoxyCompactList}\small\item\em Перерисовать процесс генерации на виджете. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a73a9c1db39e77e11e8ffca73e4884018}\label{class_a_m_g_maze_generator_a73a9c1db39e77e11e8ffca73e4884018}} 
+void {\bfseries Spawn\+Objects} ()
+\begin{DoxyCompactList}\small\item\em Заспавнить объекты. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_maze_generator_a7f0820c14348c79aae5e5a55b8a8ec8e}{Shuffle\+Array}} (TArray$<$ int32 $>$ \&Array, FRandom\+Stream \&Stream)
+\begin{DoxyCompactList}\small\item\em Перемешать массив. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_ad49c109f74d9cc3b6c2be8984e8286cf}\label{class_a_m_g_maze_generator_ad49c109f74d9cc3b6c2be8984e8286cf}} 
+FBool\+Delegate {\bfseries Matrix\+Generation\+Finished\+Delegate}
+\begin{DoxyCompactList}\small\item\em Делегат, вызывающийся при завершении генерации матрицы лабиринта. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_ac2f9c226df2a357d1068b5122d4e4917}\label{class_a_m_g_maze_generator_ac2f9c226df2a357d1068b5122d4e4917}} 
+FString\+Delegate {\bfseries Draw\+Generation\+Progress\+UIDelegate}
+\begin{DoxyCompactList}\small\item\em Делегат, вызывающийся при необходимости перерисовать процесс генерации на виджете. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a3de4c4c9f6abb6cd4c7abb1b2773071a}\label{class_a_m_g_maze_generator_a3de4c4c9f6abb6cd4c7abb1b2773071a}} 
+bool {\bfseries b\+Is\+Mistake\+Happened} = false
+\begin{DoxyCompactList}\small\item\em Случились ли ошибки при генерации. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a8671069f23b1a67889d399e1241b39a0}\label{class_a_m_g_maze_generator_a8671069f23b1a67889d399e1241b39a0}} 
+\mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} {\bfseries Exit\+Cell}
+\begin{DoxyCompactList}\small\item\em Данные о клетке с выходом из лабиринта. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a521581792e2f70c1240cc7be42c0fb00}\label{class_a_m_g_maze_generator_a521581792e2f70c1240cc7be42c0fb00}} 
+FString2\+Delegate {\bfseries Change\+Loading\+Screen\+Text\+Delegate}
+\begin{DoxyCompactList}\small\item\em Делегат, вызывающийся для смены текста загрузки. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a515cb5533f400fb9d1db3a67513da280}\label{class_a_m_g_maze_generator_a515cb5533f400fb9d1db3a67513da280}} 
+FDelegate {\bfseries All\+Finished\+Delegate}
+\begin{DoxyCompactList}\small\item\em Делегат, вызывающийся при завершении генерации. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a314b324c0ec23fd628406b415841bb78}\label{class_a_m_g_maze_generator_a314b324c0ec23fd628406b415841bb78}} 
+int32 {\bfseries Seed}
+\begin{DoxyCompactList}\small\item\em Ключ генерации. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Генератор лабиринта. 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_m_g_maze_generator_adcf2cd548240e3f5e713534aa013b9e1}\label{class_a_m_g_maze_generator_adcf2cd548240e3f5e713534aa013b9e1}} 
+\index{AMGMazeGenerator@{AMGMazeGenerator}!ContinueGeneration@{ContinueGeneration}}
+\index{ContinueGeneration@{ContinueGeneration}!AMGMazeGenerator@{AMGMazeGenerator}}
+\doxysubsubsection{\texorpdfstring{ContinueGeneration()}{ContinueGeneration()}}
+{\footnotesize\ttfamily void AMGMaze\+Generator\+::\+Continue\+Generation (\begin{DoxyParamCaption}\item[{bool}]{b\+Is\+Mistake\+Happened\+In\+Async }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Продолжить генерацию после генерации матрицы (расставить объекты). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Is\+Mistake\+Happened\+In\+Async} & -\/ случились ли ошибки при выполнении асинхронной задачи \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a1f4b437aca64110065e69614b346bfe8}\label{class_a_m_g_maze_generator_a1f4b437aca64110065e69614b346bfe8}} 
+\index{AMGMazeGenerator@{AMGMazeGenerator}!DrawGenerationProgressUI@{DrawGenerationProgressUI}}
+\index{DrawGenerationProgressUI@{DrawGenerationProgressUI}!AMGMazeGenerator@{AMGMazeGenerator}}
+\doxysubsubsection{\texorpdfstring{DrawGenerationProgressUI()}{DrawGenerationProgressUI()}}
+{\footnotesize\ttfamily void AMGMaze\+Generator\+::\+Draw\+Generation\+Progress\+UI (\begin{DoxyParamCaption}\item[{FString}]{String\+To\+Display }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Перерисовать процесс генерации на виджете. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em String\+To\+Display} & -\/ какую строку отрисовать \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_a_m_g_maze_generator_aded49bce2d568768134b6d3b37858eb3}\label{class_a_m_g_maze_generator_aded49bce2d568768134b6d3b37858eb3}} 
 \index{AMGMazeGenerator@{AMGMazeGenerator}!GetPlayerStartCoords@{GetPlayerStartCoords}}
 \index{GetPlayerStartCoords@{GetPlayerStartCoords}!AMGMazeGenerator@{AMGMazeGenerator}}
@@ -139,6 +207,23 @@ TArray$<$ TArray$<$ \mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} $>$ $>$ {
 {\em Change\+Loading\+Screen\+Text\+Delegate} & -\/ делегат, вызывающийся для смены текста загрузки \\
 \hline
 {\em All\+Finished\+Delegate} & -\/ делегат, вызывающийся при завершении генерации \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a7f0820c14348c79aae5e5a55b8a8ec8e}\label{class_a_m_g_maze_generator_a7f0820c14348c79aae5e5a55b8a8ec8e}} 
+\index{AMGMazeGenerator@{AMGMazeGenerator}!ShuffleArray@{ShuffleArray}}
+\index{ShuffleArray@{ShuffleArray}!AMGMazeGenerator@{AMGMazeGenerator}}
+\doxysubsubsection{\texorpdfstring{ShuffleArray()}{ShuffleArray()}}
+{\footnotesize\ttfamily void AMGMaze\+Generator\+::\+Shuffle\+Array (\begin{DoxyParamCaption}\item[{TArray$<$ int32 $>$ \&}]{Array,  }\item[{FRandom\+Stream \&}]{Stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Перемешать массив. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Array} & -\/ адрес перемешиваемого массива \\
+\hline
+{\em Stream} & -\/ адрес потока рандомных чисел \\
 \hline
 \end{DoxyParams}
 

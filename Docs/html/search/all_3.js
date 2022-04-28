@@ -6,5 +6,7 @@ var searchData=
   ['distance_3',['Distance',['../struct_f_maze_item.html#a832263afe986864e09d0c366961c1ecf',1,'FMazeItem']]],
   ['distancebetweenwalls_4',['DistanceBetweenWalls',['../class_a_m_g_maze_generator.html#a3f0c963d78115a47f5b1cea864237f66',1,'AMGMazeGenerator']]],
   ['dowork_5',['DoWork',['../class_f_generate_maze_matrix_async_task.html#a92e7a67029e61c1fbc7b973c725f3643',1,'FGenerateMazeMatrixAsyncTask']]],
-  ['drawuidelegate_6',['DrawUIDelegate',['../class_f_generate_maze_matrix_async_task.html#a1149804c7a868ef08be40ad4fe92abca',1,'FGenerateMazeMatrixAsyncTask']]]
+  ['drawgenerationprogressui_6',['DrawGenerationProgressUI',['../class_a_m_g_maze_generator.html#a1f4b437aca64110065e69614b346bfe8',1,'AMGMazeGenerator']]],
+  ['drawgenerationprogressuidelegate_7',['DrawGenerationProgressUIDelegate',['../class_a_m_g_maze_generator.html#ac2f9c226df2a357d1068b5122d4e4917',1,'AMGMazeGenerator']]],
+  ['drawuidelegate_8',['DrawUIDelegate',['../class_f_generate_maze_matrix_async_task.html#a1149804c7a868ef08be40ad4fe92abca',1,'FGenerateMazeMatrixAsyncTask']]]
 ];
