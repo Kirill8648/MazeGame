@@ -1,0 +1,217 @@
+\hypertarget{_m_g_maze_generator_8h_source}{}\doxysection{MGMaze\+Generator.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}MGInstancedCollectibleActor.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}MGInstancedMeshActor.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}MGMazeGenerationGameMode.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GameFramework/Actor.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}UI/MGMazeGenerationProgressWidget.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}MGMazeGenerator.generated.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 DECLARE\_DELEGATE\_OneParam(FBoolDelegate, \textcolor{keywordtype}{bool})}
+\DoxyCodeLine{14 DECLARE\_DELEGATE\_OneParam(FStringDelegate, FString)}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{19 UENUM()}
+\DoxyCodeLine{20 enum EMazeItemState}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     None,}
+\DoxyCodeLine{24     Cell,}
+\DoxyCodeLine{26     VerticalEdge,}
+\DoxyCodeLine{28     HorizontalEdge,}
+\DoxyCodeLine{30     Knot,}
+\DoxyCodeLine{32 \};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{37 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_f_maze_item}{FMazeItem}}}
+\DoxyCodeLine{38 \{}
+\DoxyCodeLine{42     \mbox{\hyperlink{struct_f_maze_item_adfb5302450e6dbb4e844fa54bca90dd7}{FMazeItem}}()}
+\DoxyCodeLine{43     \{}
+\DoxyCodeLine{44         \mbox{\hyperlink{struct_f_maze_item_a42294728a1774c1da76f9ad3b182f896}{MazeItemState}} = None;}
+\DoxyCodeLine{45         \mbox{\hyperlink{struct_f_maze_item_a832263afe986864e09d0c366961c1ecf}{Distance}} = 0;}
+\DoxyCodeLine{46         \mbox{\hyperlink{struct_f_maze_item_a13a3df5e66093dd770c3ceb1751df09b}{bIsUnbreakable}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{47         \mbox{\hyperlink{struct_f_maze_item_a6b814e13772b00a72eca45551486f924}{bIsVisited}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{48         \mbox{\hyperlink{struct_f_maze_item_a984e35f72e12eb5a3e40b6829a0f1e47}{IndexY}} = 0;}
+\DoxyCodeLine{49         \mbox{\hyperlink{struct_f_maze_item_aaa7b97d6e8f934dce5dc2d7b2954030c}{IndexX}} = 0;}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{57     \mbox{\hyperlink{struct_f_maze_item_ae66c428b2a8fc5ce71f924cc355c1814}{FMazeItem}}(\textcolor{keyword}{const} int32 \mbox{\hyperlink{struct_f_maze_item_a984e35f72e12eb5a3e40b6829a0f1e47}{IndexY}}, \textcolor{keyword}{const} int32 \mbox{\hyperlink{struct_f_maze_item_aaa7b97d6e8f934dce5dc2d7b2954030c}{IndexX}}): \mbox{\hyperlink{struct_f_maze_item_a984e35f72e12eb5a3e40b6829a0f1e47}{IndexY}}(\mbox{\hyperlink{struct_f_maze_item_a984e35f72e12eb5a3e40b6829a0f1e47}{IndexY}}), \mbox{\hyperlink{struct_f_maze_item_aaa7b97d6e8f934dce5dc2d7b2954030c}{IndexX}}(\mbox{\hyperlink{struct_f_maze_item_aaa7b97d6e8f934dce5dc2d7b2954030c}{IndexX}})}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59     \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     EMazeItemState \mbox{\hyperlink{struct_f_maze_item_a42294728a1774c1da76f9ad3b182f896}{MazeItemState}} = None; }
+\DoxyCodeLine{62     int32 \mbox{\hyperlink{struct_f_maze_item_a832263afe986864e09d0c366961c1ecf}{Distance}} = 0; }
+\DoxyCodeLine{63     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_f_maze_item_a13a3df5e66093dd770c3ceb1751df09b}{bIsUnbreakable}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{64     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_f_maze_item_a6b814e13772b00a72eca45551486f924}{bIsVisited}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{65     int32 \mbox{\hyperlink{struct_f_maze_item_a984e35f72e12eb5a3e40b6829a0f1e47}{IndexY}}; }
+\DoxyCodeLine{66     int32 \mbox{\hyperlink{struct_f_maze_item_aaa7b97d6e8f934dce5dc2d7b2954030c}{IndexX}}; }
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{72 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_f_pair}{FPair}}}
+\DoxyCodeLine{73 \{}
+\DoxyCodeLine{77     \mbox{\hyperlink{struct_f_pair_a25e1b2a85466e8b7c0728f42d3f4925d}{FPair}}(): \mbox{\hyperlink{struct_f_pair_af6cfda151fef89909792c3480b62fc58}{Y}}(0), \mbox{\hyperlink{struct_f_pair_a8a48840abbb0379faa1e4ddfe28db6c1}{X}}(0)}
+\DoxyCodeLine{78     \{}
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{86     \mbox{\hyperlink{struct_f_pair_a6d0fc395001d52c765377d5e8d44a5d6}{FPair}}(\textcolor{keyword}{const} int32 Y1, \textcolor{keyword}{const} int32 X1): \mbox{\hyperlink{struct_f_pair_af6cfda151fef89909792c3480b62fc58}{Y}}(Y1), \mbox{\hyperlink{struct_f_pair_a8a48840abbb0379faa1e4ddfe28db6c1}{X}}(X1)}
+\DoxyCodeLine{87     \{}
+\DoxyCodeLine{88     \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     int32 \mbox{\hyperlink{struct_f_pair_af6cfda151fef89909792c3480b62fc58}{Y}}; }
+\DoxyCodeLine{91     int32 \mbox{\hyperlink{struct_f_pair_a8a48840abbb0379faa1e4ddfe28db6c1}{X}}; }
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{97 USTRUCT()}
+\DoxyCodeLine{98 struct \mbox{\hyperlink{struct_f_separate_spawned_actor_info}{FSeparateSpawnedActorInfo}}}
+\DoxyCodeLine{99 \{}
+\DoxyCodeLine{100     GENERATED\_BODY()}
+\DoxyCodeLine{101     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{102     TSubclassOf<AActor> SpawnedActor; }
+\DoxyCodeLine{103     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{104     TEnumAsByte<EMazeItemState> ActorType; }
+\DoxyCodeLine{105     UPROPERTY(EditAnywhere, meta = (UIMin = "{}0.0"{}))}
+\DoxyCodeLine{106     \textcolor{keywordtype}{float} SpawnRate; }
+\DoxyCodeLine{107     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{108     \textcolor{keywordtype}{bool} bIsSpawnRateAsCount;}
+\DoxyCodeLine{110     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{111     FVector OptionalOffset; }
+\DoxyCodeLine{112     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{113     FRotator OptionalRotation; }
+\DoxyCodeLine{114 \};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{119 USTRUCT()}
+\DoxyCodeLine{120 struct \mbox{\hyperlink{struct_f_instanced_wall_info}{FInstancedWallInfo}}}
+\DoxyCodeLine{121 \{}
+\DoxyCodeLine{122     GENERATED\_BODY()}
+\DoxyCodeLine{123     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{124     TSubclassOf<\mbox{\hyperlink{class_a_m_g_instanced_mesh_actor_static}{AMGInstancedMeshActorStatic}}> InstancedActor; }
+\DoxyCodeLine{125     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{126     \textcolor{keywordtype}{float} HorizontalSpawnRate; }
+\DoxyCodeLine{127     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{128     \textcolor{keywordtype}{float} VerticalSpawnRate; }
+\DoxyCodeLine{129     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{130     FVector OptionalOffset; }
+\DoxyCodeLine{131 \};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{136 USTRUCT()}
+\DoxyCodeLine{137 struct \mbox{\hyperlink{struct_f_instanced_collectible_info}{FInstancedCollectibleInfo}}}
+\DoxyCodeLine{138 \{}
+\DoxyCodeLine{139     GENERATED\_BODY()}
+\DoxyCodeLine{140     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{141     TSubclassOf<\mbox{\hyperlink{class_a_m_g_instanced_mesh_actor_static}{AMGInstancedMeshActorStatic}}> InstancedActor; }
+\DoxyCodeLine{142     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{143     \textcolor{keywordtype}{float} SpawnRate; }
+\DoxyCodeLine{144     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{145     FVector OptionalOffset; }
+\DoxyCodeLine{146 \};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{151 USTRUCT()}
+\DoxyCodeLine{152 struct \mbox{\hyperlink{struct_f_separate_spawned_floor_actor_info}{FSeparateSpawnedFloorActorInfo}}}
+\DoxyCodeLine{153 \{}
+\DoxyCodeLine{154     GENERATED\_BODY()}
+\DoxyCodeLine{155     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{156     TSubclassOf<AActor> SpawnedFloorActor; }
+\DoxyCodeLine{157     UPROPERTY(EditAnywhere, meta = (UIMin = "{}0.0"{}))}
+\DoxyCodeLine{158     \textcolor{keywordtype}{float} SpawnRate; }
+\DoxyCodeLine{159     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{160     \textcolor{keywordtype}{bool} bIsSpawnRateAsCount;}
+\DoxyCodeLine{162     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{163     FVector OptionalOffset; }
+\DoxyCodeLine{164     UPROPERTY(EditAnywhere)}
+\DoxyCodeLine{165     FRotator OptionalRotation; }
+\DoxyCodeLine{166 \};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{171 UCLASS()}
+\DoxyCodeLine{172 class MAZEGAME\_API \mbox{\hyperlink{class_a_m_g_maze_generator}{AMGMazeGenerator}} : public AActor}
+\DoxyCodeLine{173 \{}
+\DoxyCodeLine{174     GENERATED\_BODY()}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 \textcolor{keyword}{public}:}
+\DoxyCodeLine{180     \mbox{\hyperlink{class_a_m_g_maze_generator_abb3f7f6b1fbecd08f867da019c824734}{AMGMazeGenerator}}();}
+\DoxyCodeLine{189     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_m_g_maze_generator_a90112b66ef0312c58186f61b4e8e07e8}{LaunchAsyncMazeGeneration}}(int32 Seed, int32 XSize, int32 YSize, FString2Delegate\& ChangeLoadingScreenTextDelegate, FDelegate\& AllFinishedDelegate);}
+\DoxyCodeLine{194     FVector \mbox{\hyperlink{class_a_m_g_maze_generator_aded49bce2d568768134b6d3b37858eb3}{GetPlayerStartCoords}}();}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{196     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = \textcolor{stringliteral}{"{}MazeGame|UnbreakableWalls"{}})}
+\DoxyCodeLine{197     TSubclassOf<\mbox{\hyperlink{class_a_m_g_instanced_mesh_actor_static}{AMGInstancedMeshActorStatic}}> InstancedMeshUnbreakableWalls; }
+\DoxyCodeLine{199     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "{}MazeGame|Parameters"{})}
+\DoxyCodeLine{200     int32 DistanceBetweenWalls; }
+\DoxyCodeLine{202     UPROPERTY(EditAnywhere, Category = "{}MazeGame|Widgets"{})}
+\DoxyCodeLine{203     TSubclassOf<\mbox{\hyperlink{class_u_m_g_maze_generation_progress_widget}{UMGMazeGenerationProgressWidget}}> MazeGenerationProgressWidget; }
+\DoxyCodeLine{205     UPROPERTY(BlueprintReadOnly, Category = "{}MazeGame|Widgets"{})}
+\DoxyCodeLine{206     \mbox{\hyperlink{class_u_m_g_maze_generation_progress_widget}{UMGMazeGenerationProgressWidget}}* MazeGenerationProgressWidgetRef; }
+\DoxyCodeLine{208     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|Collectibles"{})}
+\DoxyCodeLine{209     TSubclassOf<\mbox{\hyperlink{class_a_m_g_instanced_collectible_actor}{AMGInstancedCollectibleActor}}> InstancedMeshCoins; }
+\DoxyCodeLine{210     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|Collectibles"{})}
+\DoxyCodeLine{211     FVector OptionalInstancedMeshCoinsOffset; }
+\DoxyCodeLine{212     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|Collectibles"{})}
+\DoxyCodeLine{213     TSubclassOf<AActor> AbilityCollectibleActor; }
+\DoxyCodeLine{214     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|Collectibles"{})}
+\DoxyCodeLine{215     int32 NumOfSpawnedAbilityCollectibleActor; }
+\DoxyCodeLine{217     UPROPERTY(EditAnywhere, Category = "{}MazeGame|SpawnedObjects"{})}
+\DoxyCodeLine{218     TSubclassOf<AActor> ExitLevelVolume; }
+\DoxyCodeLine{219     UPROPERTY(EditAnywhere, Category = "{}MazeGame|SpawnedObjects"{})}
+\DoxyCodeLine{220     TArray<\mbox{\hyperlink{struct_f_separate_spawned_actor_info}{FSeparateSpawnedActorInfo}}> SeparateActors; }
+\DoxyCodeLine{221     UPROPERTY(EditAnywhere, Category = "{}MazeGame|SpawnedObjects"{})}
+\DoxyCodeLine{222     TArray<\mbox{\hyperlink{struct_f_instanced_wall_info}{FInstancedWallInfo}}> InstancedWallsVariations; }
+\DoxyCodeLine{223     UPROPERTY(EditAnywhere, Category = "{}MazeGame|SpawnedObjects"{})}
+\DoxyCodeLine{224     TArray<\mbox{\hyperlink{struct_f_instanced_collectible_info}{FInstancedCollectibleInfo}}> InstancedCollectibles; }
+\DoxyCodeLine{225     UPROPERTY(EditAnywhere, Category = "{}MazeGame|SpawnedObjects"{})}
+\DoxyCodeLine{226     \textcolor{keywordtype}{float} CoinsSpawnRate; }
+\DoxyCodeLine{228     UPROPERTY(EditAnywhere, Category = "{}MazeGame|Floor"{})}
+\DoxyCodeLine{229     TArray<\mbox{\hyperlink{struct_f_instanced_collectible_info}{FInstancedCollectibleInfo}}> InstancedFloorVariations; }
+\DoxyCodeLine{230     UPROPERTY(EditAnywhere, Category = "{}MazeGame|Floor"{})}
+\DoxyCodeLine{231     TArray<\mbox{\hyperlink{struct_f_separate_spawned_floor_actor_info}{FSeparateSpawnedFloorActorInfo}}> FloorActors; }
+\DoxyCodeLine{233 protected:}
+\DoxyCodeLine{234     TArray<TArray<\mbox{\hyperlink{struct_f_maze_item}{FMazeItem}}>> MazeMatrix; }
+\DoxyCodeLine{238     virtual \textcolor{keywordtype}{void} BeginPlay() override;}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 private:}
+\DoxyCodeLine{241     FBoolDelegate MatrixGenerationFinishedDelegate; }
+\DoxyCodeLine{242     FStringDelegate DrawGenerationProgressUIDelegate; }
+\DoxyCodeLine{243     \textcolor{keywordtype}{bool} bIsMistakeHappened = false; }
+\DoxyCodeLine{244     \mbox{\hyperlink{struct_f_maze_item}{FMazeItem}} ExitCell; }
+\DoxyCodeLine{246     FString2Delegate ChangeLoadingScreenTextDelegate; }
+\DoxyCodeLine{247     FDelegate AllFinishedDelegate; }
+\DoxyCodeLine{251     \textcolor{keywordtype}{void} PrintMazeMatrixToLog();}
+\DoxyCodeLine{256     \textcolor{keywordtype}{void} ContinueGeneration(\textcolor{keywordtype}{bool} bIsMistakeHappenedInAsync);}
+\DoxyCodeLine{261     \textcolor{keywordtype}{void} DrawGenerationProgressUI(FString StringToDisplay);}
+\DoxyCodeLine{265     \textcolor{keywordtype}{void} SpawnObjects();}
+\DoxyCodeLine{271     \textcolor{keywordtype}{void} ShuffleArray(TArray<int32>\& Array, FRandomStream\& Stream);}
+\DoxyCodeLine{272     int32 Seed; }
+\DoxyCodeLine{273 \};}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{278 class \mbox{\hyperlink{class_f_generate_maze_matrix_async_task}{FGenerateMazeMatrixAsyncTask}} : public FNonAbandonableTask}
+\DoxyCodeLine{279 \{}
+\DoxyCodeLine{280     \textcolor{keyword}{friend} \textcolor{keyword}{class }FAutoDeleteAsyncTask<\mbox{\hyperlink{class_f_generate_maze_matrix_async_task}{FGenerateMazeMatrixAsyncTask}}>;}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282 \textcolor{keyword}{public}:}
+\DoxyCodeLine{293     \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a857b5922da8d66afcc29f642eb349598}{FGenerateMazeMatrixAsyncTask}}(FBoolDelegate\& EndDelegate, FStringDelegate\& DrawUIDelegate, TArray<TArray<FMazeItem>>\& MatrixAddress, \mbox{\hyperlink{struct_f_maze_item}{FMazeItem}}\& ExitCell, int32 Seed,}
+\DoxyCodeLine{294                                  int32 YSize, int32 XSize) : EndDelegate(EndDelegate), DrawUIDelegate(DrawUIDelegate), MatrixAddress(MatrixAddress), ExitCell(ExitCell),}
+\DoxyCodeLine{295                                                              Seed(Seed), YSize(YSize), XSize(XSize)}
+\DoxyCodeLine{296     \{}
+\DoxyCodeLine{297     \}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{300     FBoolDelegate\& \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_adf5eb14ff0a1b4700dabb09548c09644}{EndDelegate}}; }
+\DoxyCodeLine{301     FStringDelegate\& \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a1149804c7a868ef08be40ad4fe92abca}{DrawUIDelegate}}; }
+\DoxyCodeLine{302     TArray<TArray<FMazeItem>>\& \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a48ac4c601672de83a8c6a3e0d42220d0}{MatrixAddress}}; }
+\DoxyCodeLine{303     \mbox{\hyperlink{struct_f_maze_item}{FMazeItem}}\& \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a8402864aba62018de8662f106c7b8450}{ExitCell}}; }
+\DoxyCodeLine{304     int32 \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a0b500f78ff43cb24359dc2a05d25bcb1}{Seed}}; }
+\DoxyCodeLine{305     int32 \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_abcfd93c074cabcce0e6e588c33200d42}{YSize}}; }
+\DoxyCodeLine{306     int32 \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a13f40bed55a4865e8da258c0ddb05e19}{XSize}}; }
+\DoxyCodeLine{307     \textcolor{keywordtype}{bool} bIsMistakeHappenedInAsync = \textcolor{keyword}{false}; }
+\DoxyCodeLine{311     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a92e7a67029e61c1fbc7b973c725f3643}{DoWork}}();}
+\DoxyCodeLine{319     TArray<FMazeItem*> \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a0463acb75b5c67269f15320414a704e7}{GetNearCellsByIndexes}}(int32 IndexY, int32 IndexX, \textcolor{keywordtype}{bool} bIgnoreWalls = \textcolor{keyword}{false});}
+\DoxyCodeLine{327     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_adf45d881f9e7a0844032d5e9a82f0a0e}{PlaceWallBetweenCellsByIndexes}}(int32 IndexY1, int32 IndexX1, int32 IndexY2, int32 IndexX2);}
+\DoxyCodeLine{335     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a87804f1a07ebba04a3820b98b0b4c6a2}{BreakWallBetweenCellsByIndexes}}(int32 IndexY1, int32 IndexX1, int32 IndexY2, int32 IndexX2);}
+\DoxyCodeLine{339     FORCEINLINE TStatId \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_ac67c7664040d4cd4bbeb5ceef261531f}{GetStatId}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{340 \textcolor{keyword}{    }\{}
+\DoxyCodeLine{341         RETURN\_QUICK\_DECLARE\_CYCLE\_STAT(FMyTaskName, STATGROUP\_ThreadPoolAsyncTasks);}
+\DoxyCodeLine{342     \}}
+\DoxyCodeLine{343 \};}
+
+\end{DoxyCode}

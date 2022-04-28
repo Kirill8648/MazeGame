@@ -1,0 +1,105 @@
+\hypertarget{class_a_m_g_instanced_mesh_actor}{}\doxysection{AMGInstanced\+Mesh\+Actor Class Reference}
+\label{class_a_m_g_instanced_mesh_actor}\index{AMGInstancedMeshActor@{AMGInstancedMeshActor}}
+
+
+Класс, содержащий объект динамических экземпляров стен  
+
+
+
+
+{\ttfamily \#include $<$MGInstanced\+Mesh\+Actor.\+h$>$}
+
+
+
+Inheritance diagram for AMGInstanced\+Mesh\+Actor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_a_m_g_instanced_mesh_actor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for AMGInstanced\+Mesh\+Actor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{class_a_m_g_instanced_mesh_actor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_instanced_mesh_actor_a05af415093054990a261e4604c35fb09}\label{class_a_m_g_instanced_mesh_actor_a05af415093054990a261e4604c35fb09}} 
+{\bfseries AMGInstanced\+Mesh\+Actor} ()
+\begin{DoxyCompactList}\small\item\em Стандартный конструктор. \end{DoxyCompactList}\item 
+TArray$<$ AActor $\ast$ $>$ \mbox{\hyperlink{class_a_m_g_instanced_mesh_actor_a7ff1b6b0efaa1e184aae2f6c984ff849}{Replace\+Instances\+With\+Actors\+By\+Sphere\+Overlap}} (FVector Center, float Radius)
+\begin{DoxyCompactList}\small\item\em Заменяет экземпляры стен, которые пересекаются со сферой, на акторы. \end{DoxyCompactList}\item 
+TArray$<$ AActor $\ast$ $>$ \mbox{\hyperlink{class_a_m_g_instanced_mesh_actor_ac4c9ca18a4109a1953c7d9068ccce95e}{Replace\+Instances\+With\+Actors\+By\+Box\+Overlap}} (FBox Box)
+\begin{DoxyCompactList}\small\item\em Заменяет экземпляры стен, которые пересекаются с коробкой, на акторы. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_instanced_mesh_actor_a7876adc5596096eef2db28e7206ea636}\label{class_a_m_g_instanced_mesh_actor_a7876adc5596096eef2db28e7206ea636}} 
+TSubclass\+Of$<$ AActor $>$ {\bfseries Replacement\+Actor}
+\begin{DoxyCompactList}\small\item\em Класс актора, который нужно заспавнить при замене. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_instanced_mesh_actor_a8c7906257ad8791c3b6502e3313a45f6}\label{class_a_m_g_instanced_mesh_actor_a8c7906257ad8791c3b6502e3313a45f6}} 
+float {\bfseries Replacement\+Actor\+ZOffset}
+\begin{DoxyCompactList}\small\item\em Корректировка позиции актора при спавне. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_instanced_mesh_actor_a2a3e9801908634282ce21118d9db6f25}\label{class_a_m_g_instanced_mesh_actor_a2a3e9801908634282ce21118d9db6f25}} 
+virtual void {\bfseries Begin\+Play} () override
+\begin{DoxyCompactList}\small\item\em Функция, вызывающаяся в момент начала игры. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс, содержащий объект динамических экземпляров стен 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_m_g_instanced_mesh_actor_ac4c9ca18a4109a1953c7d9068ccce95e}\label{class_a_m_g_instanced_mesh_actor_ac4c9ca18a4109a1953c7d9068ccce95e}} 
+\index{AMGInstancedMeshActor@{AMGInstancedMeshActor}!ReplaceInstancesWithActorsByBoxOverlap@{ReplaceInstancesWithActorsByBoxOverlap}}
+\index{ReplaceInstancesWithActorsByBoxOverlap@{ReplaceInstancesWithActorsByBoxOverlap}!AMGInstancedMeshActor@{AMGInstancedMeshActor}}
+\doxysubsubsection{\texorpdfstring{ReplaceInstancesWithActorsByBoxOverlap()}{ReplaceInstancesWithActorsByBoxOverlap()}}
+{\footnotesize\ttfamily TArray$<$ AActor $\ast$ $>$ AMGInstanced\+Mesh\+Actor\+::\+Replace\+Instances\+With\+Actors\+By\+Box\+Overlap (\begin{DoxyParamCaption}\item[{FBox}]{Box }\end{DoxyParamCaption})}
+
+
+
+Заменяет экземпляры стен, которые пересекаются с коробкой, на акторы. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Box} & -\/ структура коробки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ массив указателей на заспавненные акторы 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_instanced_mesh_actor_a7ff1b6b0efaa1e184aae2f6c984ff849}\label{class_a_m_g_instanced_mesh_actor_a7ff1b6b0efaa1e184aae2f6c984ff849}} 
+\index{AMGInstancedMeshActor@{AMGInstancedMeshActor}!ReplaceInstancesWithActorsBySphereOverlap@{ReplaceInstancesWithActorsBySphereOverlap}}
+\index{ReplaceInstancesWithActorsBySphereOverlap@{ReplaceInstancesWithActorsBySphereOverlap}!AMGInstancedMeshActor@{AMGInstancedMeshActor}}
+\doxysubsubsection{\texorpdfstring{ReplaceInstancesWithActorsBySphereOverlap()}{ReplaceInstancesWithActorsBySphereOverlap()}}
+{\footnotesize\ttfamily TArray$<$ AActor $\ast$ $>$ AMGInstanced\+Mesh\+Actor\+::\+Replace\+Instances\+With\+Actors\+By\+Sphere\+Overlap (\begin{DoxyParamCaption}\item[{FVector}]{Center,  }\item[{float}]{Radius }\end{DoxyParamCaption})}
+
+
+
+Заменяет экземпляры стен, которые пересекаются со сферой, на акторы. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Center} & -\/ центр сферы в мировых координтах \\
+\hline
+{\em Radius} & -\/ радиус сферы \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ массив указателей на заспавненные акторы 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGInstanced\+Mesh\+Actor.\+h\end{DoxyCompactItemize}

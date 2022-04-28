@@ -1,0 +1,38 @@
+\hypertarget{_m_g_async_task_attribute_changed_8h_source}{}\doxysection{MGAsync\+Task\+Attribute\+Changed.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Kismet/BlueprintAsyncActionBase.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}AbilitySystemComponent.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}MGAsyncTaskAttributeChanged.generated.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_ThreeParams(FOnAttributeChanged, FGameplayAttribute, Attribute, \textcolor{keywordtype}{float}, NewValue, \textcolor{keywordtype}{float}, OldValue);}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{16 UCLASS(BlueprintType, meta=(ExposedAsyncProxy = AsyncTask))}
+\DoxyCodeLine{17 class MAZEGAME\_API \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed}{UMGAsyncTaskAttributeChanged}} : public UBlueprintAsyncActionBase}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     GENERATED\_BODY()}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     UPROPERTY(BlueprintAssignable)}
+\DoxyCodeLine{23     FOnAttributeChanged OnAttributeChanged; }
+\DoxyCodeLine{30     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "{}true"{}))}
+\DoxyCodeLine{31     static \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed}{UMGAsyncTaskAttributeChanged}}* ListenForAttributeChange(UAbilitySystemComponent* AbilitySystemComponent, FGameplayAttribute Attribute);}
+\DoxyCodeLine{38     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "{}true"{}))}
+\DoxyCodeLine{39     static \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed}{UMGAsyncTaskAttributeChanged}}* ListenForAttributesChange(UAbilitySystemComponent* AbilitySystemComponent, TArray<FGameplayAttribute> Attributes);}
+\DoxyCodeLine{43     UFUNCTION(BlueprintCallable)}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} EndTask();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 protected:}
+\DoxyCodeLine{47     UPROPERTY()}
+\DoxyCodeLine{48     UAbilitySystemComponent* ASC; }
+\DoxyCodeLine{50     FGameplayAttribute AttributeToListenFor; }
+\DoxyCodeLine{51     TArray<FGameplayAttribute> AttributesToListenFor; }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} AttributeChanged(const FOnAttributeChangeData\& Data);}
+\DoxyCodeLine{57 \};}
+
+\end{DoxyCode}

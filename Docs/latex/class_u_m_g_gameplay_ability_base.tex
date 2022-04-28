@@ -1,0 +1,266 @@
+\hypertarget{class_u_m_g_gameplay_ability_base}{}\doxysection{UMGGameplay\+Ability\+Base Class Reference}
+\label{class_u_m_g_gameplay_ability_base}\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+
+
+Класс способности.  
+
+
+
+
+{\ttfamily \#include $<$MGGameplay\+Ability\+Base.\+h$>$}
+
+
+
+Inheritance diagram for UMGGameplay\+Ability\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_u_m_g_gameplay_ability_base__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UMGGameplay\+Ability\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_u_m_g_gameplay_ability_base__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a055e4676a547deee2c795a1efcf4c8dd}\label{class_u_m_g_gameplay_ability_base_a055e4676a547deee2c795a1efcf4c8dd}} 
+{\bfseries UMGGameplay\+Ability\+Base} ()
+\begin{DoxyCompactList}\small\item\em Стандартный конструктор. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a7a21c6dbe5fcfe724b17bcd0f3847956}{K2\+\_\+\+On\+Ability\+Added}} ()
+\begin{DoxyCompactList}\small\item\em Функция, реализованная в наследуемом от этого класса блупринте. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a3165603ee73f71b06b302e58bc1d799d}{K2\+\_\+\+On\+Ability\+Removed}} ()
+\begin{DoxyCompactList}\small\item\em Функция, реализованная в наследуемом от этого класса блупринте. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a43d626d74df29713eb089cf020ce082d}{K2\+\_\+\+On\+Ability\+Check\+Cost}} (bool Return\+Value) const
+\begin{DoxyCompactList}\small\item\em Функция, реализованная в наследуемом от этого класса блупринте. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_aa87de3e56f0431f09cfe1b9f907f4cac}{K2\+\_\+\+On\+Ability\+Check\+Cooldown}} (bool Return\+Value) const
+\begin{DoxyCompactList}\small\item\em Функция, реализованная в наследуемом от этого класса блупринте. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a9fe4d782c7265a51dee3a4bebb128636}\label{class_u_m_g_gameplay_ability_base_a9fe4d782c7265a51dee3a4bebb128636}} 
+EMGAbility\+Input\+ID {\bfseries Ability\+Input\+ID} = EMGAbility\+Input\+ID\+::\+None
+\begin{DoxyCompactList}\small\item\em Идентификатор ввода для данной способности. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_aed409c875af6c91b58f1c3050b49dfa9}\label{class_u_m_g_gameplay_ability_base_aed409c875af6c91b58f1c3050b49dfa9}} 
+FString {\bfseries Ability\+Key}
+\begin{DoxyCompactList}\small\item\em Ключ данной способности. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a28d9b4464824139a922e55347d7df925}\label{class_u_m_g_gameplay_ability_base_a28d9b4464824139a922e55347d7df925}} 
+FGameplay\+Tag\+Container {\bfseries Cooldown\+Tags}
+\begin{DoxyCompactList}\small\item\em Тэги перезарядки для данной способности. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_ac6f726108cb6b2baeea57e06be78a799}\label{class_u_m_g_gameplay_ability_base_ac6f726108cb6b2baeea57e06be78a799}} 
+UData\+Table $\ast$ {\bfseries Stats\+Table}
+\begin{DoxyCompactList}\small\item\em Таблица характеристик данной способности. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a93cce45a8171951534850c3ff497d639}{On\+Give\+Ability}} (const FGameplay\+Ability\+Actor\+Info $\ast$Actor\+Info, const FGameplay\+Ability\+Spec \&Spec) override
+\begin{DoxyCompactList}\small\item\em Вызывается в момент выдачи способности. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a56ea31ba08da33fd5b66d1a9ebe8ebb5}{On\+Remove\+Ability}} (const FGameplay\+Ability\+Actor\+Info $\ast$Actor\+Info, const FGameplay\+Ability\+Spec \&Spec) override
+\begin{DoxyCompactList}\small\item\em Вызывается в момент удаления способности. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a2377db0f7f95e09338786a5f4b96e205}{Check\+Cost}} (const FGameplay\+Ability\+Spec\+Handle Handle, const FGameplay\+Ability\+Actor\+Info $\ast$Actor\+Info, FGameplay\+Tag\+Container $\ast$Optional\+Relevant\+Tags) const override
+\begin{DoxyCompactList}\small\item\em Вызывается в момент проверки цены способности. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a71952d74498111e79f2146bfb74e0e5d}{Check\+Cooldown}} (const FGameplay\+Ability\+Spec\+Handle Handle, const FGameplay\+Ability\+Actor\+Info $\ast$Actor\+Info, FGameplay\+Tag\+Container $\ast$Optional\+Relevant\+Tags) const override
+\begin{DoxyCompactList}\small\item\em Вызывается в момент преверки перезарядки способности. \end{DoxyCompactList}\item 
+virtual const FGameplay\+Tag\+Container $\ast$ \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a03a4914d3b9becee9b496aea82130783}{Get\+Cooldown\+Tags}} () const override
+\begin{DoxyCompactList}\small\item\em Вызывается внутри \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a71952d74498111e79f2146bfb74e0e5d}{Check\+Cooldown()}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a1c748046a3f92e06de581cefca0dcaff}{Apply\+Cooldown}} (const FGameplay\+Ability\+Spec\+Handle Handle, const FGameplay\+Ability\+Actor\+Info $\ast$Actor\+Info, const FGameplay\+Ability\+Activation\+Info Activation\+Info) const override
+\begin{DoxyCompactList}\small\item\em Вызывается в момент применения перезарядки способности. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FGameplay\+Tag\+Container \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_acaf02fb3620c45a38456fcadd3f7a79a}{Temp\+Cooldown\+Tags}}
+\begin{DoxyCompactList}\small\item\em Временный контейнер, указатель на который мы вернем в \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a03a4914d3b9becee9b496aea82130783}{Get\+Cooldown\+Tags()}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс способности. 
+
+От него должны наследоваться все способности в нашей игре. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a1c748046a3f92e06de581cefca0dcaff}\label{class_u_m_g_gameplay_ability_base_a1c748046a3f92e06de581cefca0dcaff}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!ApplyCooldown@{ApplyCooldown}}
+\index{ApplyCooldown@{ApplyCooldown}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{ApplyCooldown()}{ApplyCooldown()}}
+{\footnotesize\ttfamily virtual void UMGGameplay\+Ability\+Base\+::\+Apply\+Cooldown (\begin{DoxyParamCaption}\item[{const FGameplay\+Ability\+Spec\+Handle}]{Handle,  }\item[{const FGameplay\+Ability\+Actor\+Info $\ast$}]{Actor\+Info,  }\item[{const FGameplay\+Ability\+Activation\+Info}]{Activation\+Info }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается в момент применения перезарядки способности. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Handle} & -\/ обработчик структуры спецификации способности \\
+\hline
+{\em Actor\+Info} & -\/ информация об акторе, владеющем этой способностью \\
+\hline
+{\em Activation\+Info} & -\/ структура с информацией об активации способности \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a71952d74498111e79f2146bfb74e0e5d}\label{class_u_m_g_gameplay_ability_base_a71952d74498111e79f2146bfb74e0e5d}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!CheckCooldown@{CheckCooldown}}
+\index{CheckCooldown@{CheckCooldown}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{CheckCooldown()}{CheckCooldown()}}
+{\footnotesize\ttfamily virtual bool UMGGameplay\+Ability\+Base\+::\+Check\+Cooldown (\begin{DoxyParamCaption}\item[{const FGameplay\+Ability\+Spec\+Handle}]{Handle,  }\item[{const FGameplay\+Ability\+Actor\+Info $\ast$}]{Actor\+Info,  }\item[{FGameplay\+Tag\+Container $\ast$}]{Optional\+Relevant\+Tags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается в момент преверки перезарядки способности. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Handle} & -\/ обработчик структуры спецификации способности \\
+\hline
+{\em Actor\+Info} & -\/ информация об акторе, владеющем этой способностью \\
+\hline
+{\em Optional\+Relevant\+Tags} & -\/ необязательные дополнительные тэги \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+прошла ли способность проверку. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a2377db0f7f95e09338786a5f4b96e205}\label{class_u_m_g_gameplay_ability_base_a2377db0f7f95e09338786a5f4b96e205}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!CheckCost@{CheckCost}}
+\index{CheckCost@{CheckCost}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{CheckCost()}{CheckCost()}}
+{\footnotesize\ttfamily virtual bool UMGGameplay\+Ability\+Base\+::\+Check\+Cost (\begin{DoxyParamCaption}\item[{const FGameplay\+Ability\+Spec\+Handle}]{Handle,  }\item[{const FGameplay\+Ability\+Actor\+Info $\ast$}]{Actor\+Info,  }\item[{FGameplay\+Tag\+Container $\ast$}]{Optional\+Relevant\+Tags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается в момент проверки цены способности. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Handle} & -\/ обработчик структуры спецификации способности \\
+\hline
+{\em Actor\+Info} & -\/ информация об акторе, владеющем этой способностью \\
+\hline
+{\em Optional\+Relevant\+Tags} & -\/ необязательные дополнительные тэги \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+прошла ли способность проверку. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a03a4914d3b9becee9b496aea82130783}\label{class_u_m_g_gameplay_ability_base_a03a4914d3b9becee9b496aea82130783}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!GetCooldownTags@{GetCooldownTags}}
+\index{GetCooldownTags@{GetCooldownTags}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{GetCooldownTags()}{GetCooldownTags()}}
+{\footnotesize\ttfamily virtual const FGameplay\+Tag\+Container $\ast$ UMGGameplay\+Ability\+Base\+::\+Get\+Cooldown\+Tags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается внутри \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a71952d74498111e79f2146bfb74e0e5d}{Check\+Cooldown()}}. 
+
+\begin{DoxyReturn}{Returns}
+указатель на Temp\+Cooldown\+Tags 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a7a21c6dbe5fcfe724b17bcd0f3847956}\label{class_u_m_g_gameplay_ability_base_a7a21c6dbe5fcfe724b17bcd0f3847956}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!K2\_OnAbilityAdded@{K2\_OnAbilityAdded}}
+\index{K2\_OnAbilityAdded@{K2\_OnAbilityAdded}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{K2\_OnAbilityAdded()}{K2\_OnAbilityAdded()}}
+{\footnotesize\ttfamily void UMGGameplay\+Ability\+Base\+::\+K2\+\_\+\+On\+Ability\+Added (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция, реализованная в наследуемом от этого класса блупринте. 
+
+Вызывается в момент добавления способности. \mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_aa87de3e56f0431f09cfe1b9f907f4cac}\label{class_u_m_g_gameplay_ability_base_aa87de3e56f0431f09cfe1b9f907f4cac}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!K2\_OnAbilityCheckCooldown@{K2\_OnAbilityCheckCooldown}}
+\index{K2\_OnAbilityCheckCooldown@{K2\_OnAbilityCheckCooldown}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{K2\_OnAbilityCheckCooldown()}{K2\_OnAbilityCheckCooldown()}}
+{\footnotesize\ttfamily void UMGGameplay\+Ability\+Base\+::\+K2\+\_\+\+On\+Ability\+Check\+Cooldown (\begin{DoxyParamCaption}\item[{bool}]{Return\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Функция, реализованная в наследуемом от этого класса блупринте. 
+
+Вызывается в момент проверки перезарядки способности. 
+\begin{DoxyParams}{Parameters}
+{\em Return\+Value} & -\/ прошла ли способность проверку \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a43d626d74df29713eb089cf020ce082d}\label{class_u_m_g_gameplay_ability_base_a43d626d74df29713eb089cf020ce082d}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!K2\_OnAbilityCheckCost@{K2\_OnAbilityCheckCost}}
+\index{K2\_OnAbilityCheckCost@{K2\_OnAbilityCheckCost}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{K2\_OnAbilityCheckCost()}{K2\_OnAbilityCheckCost()}}
+{\footnotesize\ttfamily void UMGGameplay\+Ability\+Base\+::\+K2\+\_\+\+On\+Ability\+Check\+Cost (\begin{DoxyParamCaption}\item[{bool}]{Return\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Функция, реализованная в наследуемом от этого класса блупринте. 
+
+Вызывается в момент проверки цены способности. 
+\begin{DoxyParams}{Parameters}
+{\em Return\+Value} & -\/ прошла ли способность проверку \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a3165603ee73f71b06b302e58bc1d799d}\label{class_u_m_g_gameplay_ability_base_a3165603ee73f71b06b302e58bc1d799d}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!K2\_OnAbilityRemoved@{K2\_OnAbilityRemoved}}
+\index{K2\_OnAbilityRemoved@{K2\_OnAbilityRemoved}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{K2\_OnAbilityRemoved()}{K2\_OnAbilityRemoved()}}
+{\footnotesize\ttfamily void UMGGameplay\+Ability\+Base\+::\+K2\+\_\+\+On\+Ability\+Removed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Функция, реализованная в наследуемом от этого класса блупринте. 
+
+Вызывается в момент удаления способности. \mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a93cce45a8171951534850c3ff497d639}\label{class_u_m_g_gameplay_ability_base_a93cce45a8171951534850c3ff497d639}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!OnGiveAbility@{OnGiveAbility}}
+\index{OnGiveAbility@{OnGiveAbility}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{OnGiveAbility()}{OnGiveAbility()}}
+{\footnotesize\ttfamily virtual void UMGGameplay\+Ability\+Base\+::\+On\+Give\+Ability (\begin{DoxyParamCaption}\item[{const FGameplay\+Ability\+Actor\+Info $\ast$}]{Actor\+Info,  }\item[{const FGameplay\+Ability\+Spec \&}]{Spec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается в момент выдачи способности. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Actor\+Info} & -\/ информация об акторе, владеющем этой способностью \\
+\hline
+{\em Spec} & -\/ структура спецификации способности \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_a56ea31ba08da33fd5b66d1a9ebe8ebb5}\label{class_u_m_g_gameplay_ability_base_a56ea31ba08da33fd5b66d1a9ebe8ebb5}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!OnRemoveAbility@{OnRemoveAbility}}
+\index{OnRemoveAbility@{OnRemoveAbility}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{OnRemoveAbility()}{OnRemoveAbility()}}
+{\footnotesize\ttfamily virtual void UMGGameplay\+Ability\+Base\+::\+On\+Remove\+Ability (\begin{DoxyParamCaption}\item[{const FGameplay\+Ability\+Actor\+Info $\ast$}]{Actor\+Info,  }\item[{const FGameplay\+Ability\+Spec \&}]{Spec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается в момент удаления способности. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Actor\+Info} & -\/ информация об акторе, владеющем этой способностью \\
+\hline
+{\em Spec} & -\/ структура спецификации способности \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_u_m_g_gameplay_ability_base_acaf02fb3620c45a38456fcadd3f7a79a}\label{class_u_m_g_gameplay_ability_base_acaf02fb3620c45a38456fcadd3f7a79a}} 
+\index{UMGGameplayAbilityBase@{UMGGameplayAbilityBase}!TempCooldownTags@{TempCooldownTags}}
+\index{TempCooldownTags@{TempCooldownTags}!UMGGameplayAbilityBase@{UMGGameplayAbilityBase}}
+\doxysubsubsection{\texorpdfstring{TempCooldownTags}{TempCooldownTags}}
+{\footnotesize\ttfamily FGameplay\+Tag\+Container UMGGameplay\+Ability\+Base\+::\+Temp\+Cooldown\+Tags\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Временный контейнер, указатель на который мы вернем в \mbox{\hyperlink{class_u_m_g_gameplay_ability_base_a03a4914d3b9becee9b496aea82130783}{Get\+Cooldown\+Tags()}}. 
+
+Это будет объединение состоящие из Cooldown\+Tags и Cooldown GE\textquotesingle{}s cooldown tags 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGGameplay\+Ability\+Base.\+h\end{DoxyCompactItemize}

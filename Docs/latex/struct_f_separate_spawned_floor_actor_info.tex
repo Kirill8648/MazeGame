@@ -1,0 +1,58 @@
+\hypertarget{struct_f_separate_spawned_floor_actor_info}{}\doxysection{FSeparate\+Spawned\+Floor\+Actor\+Info Struct Reference}
+\label{struct_f_separate_spawned_floor_actor_info}\index{FSeparateSpawnedFloorActorInfo@{FSeparateSpawnedFloorActorInfo}}
+
+
+Структура, хранящая данные об акторе пола для спавна.  
+
+
+
+
+{\ttfamily \#include $<$MGMaze\+Generator.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_f_separate_spawned_floor_actor_info_af658067d862bf87bb73a8980f3ecaf46}\label{struct_f_separate_spawned_floor_actor_info_af658067d862bf87bb73a8980f3ecaf46}} 
+TSubclass\+Of$<$ AActor $>$ {\bfseries Spawned\+Floor\+Actor}
+\begin{DoxyCompactList}\small\item\em Класс актора пола для спавна. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_f_separate_spawned_floor_actor_info_a636a2c4633edc6b1b2606eb2ff60bac3}{Spawn\+Rate}}
+\begin{DoxyCompactList}\small\item\em Вероятность спавна в процентах (50\% = 0.\+5). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_f_separate_spawned_floor_actor_info_aa3794c6144a07588b8a0a29e4897aaad}{b\+Is\+Spawn\+Rate\+As\+Count}}
+\begin{DoxyCompactList}\small\item\em Использовать ли вероятность спавна как количество заспавненных акторов независимо от размера лабиринта. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_f_separate_spawned_floor_actor_info_a9c877558c8a37fa29ce2668a79b7ad82}\label{struct_f_separate_spawned_floor_actor_info_a9c877558c8a37fa29ce2668a79b7ad82}} 
+FVector {\bfseries Optional\+Offset}
+\begin{DoxyCompactList}\small\item\em Опциональная корректировка положения актора при спавне. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_f_separate_spawned_floor_actor_info_ade3bfe34d06fe4f8c3553b5092c0889e}\label{struct_f_separate_spawned_floor_actor_info_ade3bfe34d06fe4f8c3553b5092c0889e}} 
+FRotator {\bfseries Optional\+Rotation}
+\begin{DoxyCompactList}\small\item\em Опциональная корректировка поворота актора при спавне. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Структура, хранящая данные об акторе пола для спавна. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_f_separate_spawned_floor_actor_info_aa3794c6144a07588b8a0a29e4897aaad}\label{struct_f_separate_spawned_floor_actor_info_aa3794c6144a07588b8a0a29e4897aaad}} 
+\index{FSeparateSpawnedFloorActorInfo@{FSeparateSpawnedFloorActorInfo}!bIsSpawnRateAsCount@{bIsSpawnRateAsCount}}
+\index{bIsSpawnRateAsCount@{bIsSpawnRateAsCount}!FSeparateSpawnedFloorActorInfo@{FSeparateSpawnedFloorActorInfo}}
+\doxysubsubsection{\texorpdfstring{bIsSpawnRateAsCount}{bIsSpawnRateAsCount}}
+{\footnotesize\ttfamily bool FSeparate\+Spawned\+Floor\+Actor\+Info\+::b\+Is\+Spawn\+Rate\+As\+Count}
+
+
+
+Использовать ли вероятность спавна как количество заспавненных акторов независимо от размера лабиринта. 
+
+В этом случае значение Spawn\+Rate должно быть целое. \mbox{\Hypertarget{struct_f_separate_spawned_floor_actor_info_a636a2c4633edc6b1b2606eb2ff60bac3}\label{struct_f_separate_spawned_floor_actor_info_a636a2c4633edc6b1b2606eb2ff60bac3}} 
+\index{FSeparateSpawnedFloorActorInfo@{FSeparateSpawnedFloorActorInfo}!SpawnRate@{SpawnRate}}
+\index{SpawnRate@{SpawnRate}!FSeparateSpawnedFloorActorInfo@{FSeparateSpawnedFloorActorInfo}}
+\doxysubsubsection{\texorpdfstring{SpawnRate}{SpawnRate}}
+{\footnotesize\ttfamily float FSeparate\+Spawned\+Floor\+Actor\+Info\+::\+Spawn\+Rate}
+
+
+
+Вероятность спавна в процентах (50\% = 0.\+5). 
+
+Означает процент от количества клеток пола. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGMaze\+Generator.\+h\end{DoxyCompactItemize}

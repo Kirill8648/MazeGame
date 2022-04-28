@@ -1,0 +1,299 @@
+\hypertarget{class_a_m_g_character_base}{}\doxysection{AMGCharacter\+Base Class Reference}
+\label{class_a_m_g_character_base}\index{AMGCharacterBase@{AMGCharacterBase}}
+
+
+Базовый класс персонажа.  
+
+
+
+
+{\ttfamily \#include $<$MGCharacter\+Base.\+h$>$}
+
+
+
+Inheritance diagram for AMGCharacter\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_a_m_g_character_base__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for AMGCharacter\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_m_g_character_base__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_a685f6f1e600326c5cef75dcd9b24d251}\label{class_a_m_g_character_base_a685f6f1e600326c5cef75dcd9b24d251}} 
+{\bfseries AMGCharacter\+Base} ()
+\begin{DoxyCompactList}\small\item\em Стандартный конструктор. \end{DoxyCompactList}\item 
+virtual UAbility\+System\+Component $\ast$ \mbox{\hyperlink{class_a_m_g_character_base_a55c807a6e137392deff8c40902832d8b}{Get\+Ability\+System\+Component}} () const override
+\begin{DoxyCompactList}\small\item\em Функция, возвращающая компонент системы способностей. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_a_m_g_character_base_a7cecd1964ccf9ed62e5e8276e0fd710c}{Is\+Alive}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет, жив ли персонаж. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_aec07d75aae3763142edb477d9ff3ccdb}\label{class_a_m_g_character_base_aec07d75aae3763142edb477d9ff3ccdb}} 
+virtual void {\bfseries Finish\+Dying} ()
+\begin{DoxyCompactList}\small\item\em Закончить умирать. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_a5f0cdea3fcc9ae66f3a29d6d50d25459}{Get\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Геттер здоровья. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_ac77b63ac6bae1948dfc36e97a61790ac}{Get\+Max\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Геттер максимального здоровья. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_a9c1c28ed702864426b6b52f627d4653b}{Get\+Health\+Regen\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Геттер скорости восстановления здоровья. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_ac7e468a2c21091e8c91e6a2e57a23e31}{Get\+Energy}} () const
+\begin{DoxyCompactList}\small\item\em Геттер энергии. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_a14f154a520db72a7858833662251ef73}{Get\+Max\+Energy}} () const
+\begin{DoxyCompactList}\small\item\em Геттер максимальной энергии. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_a24e0e7f6a4b55ea4201fa5944ebfca1e}{Get\+Energy\+Regen\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Геттер скорости восстановления энергии. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_a6db9a57c8219c07a0304dba8e807ece1}{Get\+Stamina}} () const
+\begin{DoxyCompactList}\small\item\em Геттер стамины. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_aba27fd20f83cb86cb6a6656cd8bfc2d1}{Get\+Max\+Stamina}} () const
+\begin{DoxyCompactList}\small\item\em Геттер максимальной стамины. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_a065b39ef7cbac891cf20d762b1505a6f}{Get\+Stamina\+Regen\+Rate}} () const
+\begin{DoxyCompactList}\small\item\em Геттер скорости восстановления стамины. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_a_m_g_character_base_a9f6dd839254e99c9d6cb55613b58b223}{Get\+Coins}} () const
+\begin{DoxyCompactList}\small\item\em Геттер валюты. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_m_g_character_base_acd821602fab5c5f032a398239eb61acd}{Begin\+Play}} () override
+\begin{DoxyCompactList}\small\item\em Функция, вызывающаяся в момент начала игры. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_a3de8a41e265ba280ef807f1ab03d5fba}\label{class_a_m_g_character_base_a3de8a41e265ba280ef807f1ab03d5fba}} 
+virtual void {\bfseries Add\+Character\+Abilities} ()
+\begin{DoxyCompactList}\small\item\em Добавляет каждую способность из Character\+Abilities к компоненту системы способностей. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_a40ebcb003c552d6add7f0c8f06f44071}\label{class_a_m_g_character_base_a40ebcb003c552d6add7f0c8f06f44071}} 
+virtual void {\bfseries Initialize\+Attributes} ()
+\begin{DoxyCompactList}\small\item\em Инициализирует стандартные атрибуты для данного персонажа. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_af613d266c0eec2deb980dce859eb0222}\label{class_a_m_g_character_base_af613d266c0eec2deb980dce859eb0222}} 
+virtual void {\bfseries Add\+Startup\+Effects} ()
+\begin{DoxyCompactList}\small\item\em Применяет каждый эффект из Startup\+Effects на компоненту системы способностей. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_m_g_character_base_a1d81dc32141383ceca68a2923a2350c2}{Set\+Health}} (float Health)
+\begin{DoxyCompactList}\small\item\em Сеттер здоровья. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_ab74377cf5e1d9472c177f2d03ea9ccb0}\label{class_a_m_g_character_base_ab74377cf5e1d9472c177f2d03ea9ccb0}} 
+class \mbox{\hyperlink{class_u_m_g_ability_system_component}{UMGAbility\+System\+Component}} $\ast$ {\bfseries Ability\+System\+Component}
+\begin{DoxyCompactList}\small\item\em Указатель на компонент системы способностей. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_aa8fc88dfeac256a2d5375ea6036b31a9}\label{class_a_m_g_character_base_aa8fc88dfeac256a2d5375ea6036b31a9}} 
+class \mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttribute\+Set\+Base}} $\ast$ {\bfseries Attribute\+Set\+Base}
+\begin{DoxyCompactList}\small\item\em Указатель на набор атрибутов системы способностей. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_ac7c621768599ed290634f4e2f0d98efd}\label{class_a_m_g_character_base_ac7c621768599ed290634f4e2f0d98efd}} 
+FText {\bfseries Character\+Name}
+\begin{DoxyCompactList}\small\item\em Имя персонажа. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_a333c4c0e146e95fcbf91248e138092df}\label{class_a_m_g_character_base_a333c4c0e146e95fcbf91248e138092df}} 
+TArray$<$ TSubclass\+Of$<$ class \mbox{\hyperlink{class_u_m_g_gameplay_ability_base}{UMGGameplay\+Ability\+Base}} $>$ $>$ {\bfseries Character\+Abilities}
+\begin{DoxyCompactList}\small\item\em Массив классов способностей, стандартных для этого персонажа. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_a7c8281fdb0e40123a08ae5298a0a15cd}\label{class_a_m_g_character_base_a7c8281fdb0e40123a08ae5298a0a15cd}} 
+TSubclass\+Of$<$ class UGameplay\+Effect $>$ {\bfseries Default\+Attributes}
+\begin{DoxyCompactList}\small\item\em Массив классов эффектов игрового процесса, инициализирующих стандартные атрибуты для этого персонажа. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_character_base_a369c318bbcc23ecc345b176324e548e5}\label{class_a_m_g_character_base_a369c318bbcc23ecc345b176324e548e5}} 
+TArray$<$ TSubclass\+Of$<$ UGameplay\+Effect $>$ $>$ {\bfseries Startup\+Effects}
+\begin{DoxyCompactList}\small\item\em Массив классов эффектов игрового процесса, добавляющих стартовые эффекты для этого персонажа. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Базовый класс персонажа. 
+
+Любой персонаж, взаимодействующий со системой способностей должен наследовать от него. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_m_g_character_base_acd821602fab5c5f032a398239eb61acd}\label{class_a_m_g_character_base_acd821602fab5c5f032a398239eb61acd}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{BeginPlay()}{BeginPlay()}}
+{\footnotesize\ttfamily virtual void AMGCharacter\+Base\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Функция, вызывающаяся в момент начала игры. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_a_m_g_hero_character_afd605a611f8d98949848094f22afa392}{AMGHero\+Character}}.
+
+\mbox{\Hypertarget{class_a_m_g_character_base_a55c807a6e137392deff8c40902832d8b}\label{class_a_m_g_character_base_a55c807a6e137392deff8c40902832d8b}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetAbilitySystemComponent@{GetAbilitySystemComponent}}
+\index{GetAbilitySystemComponent@{GetAbilitySystemComponent}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetAbilitySystemComponent()}{GetAbilitySystemComponent()}}
+{\footnotesize\ttfamily virtual UAbility\+System\+Component $\ast$ AMGCharacter\+Base\+::\+Get\+Ability\+System\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Функция, возвращающая компонент системы способностей. 
+
+\begin{DoxyReturn}{Returns}
+-\/ компонент ситемы способностей 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_a9f6dd839254e99c9d6cb55613b58b223}\label{class_a_m_g_character_base_a9f6dd839254e99c9d6cb55613b58b223}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetCoins@{GetCoins}}
+\index{GetCoins@{GetCoins}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetCoins()}{GetCoins()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Coins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер валюты. 
+
+\begin{DoxyReturn}{Returns}
+-\/ валюта 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_ac7e468a2c21091e8c91e6a2e57a23e31}\label{class_a_m_g_character_base_ac7e468a2c21091e8c91e6a2e57a23e31}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetEnergy@{GetEnergy}}
+\index{GetEnergy@{GetEnergy}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetEnergy()}{GetEnergy()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Energy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер энергии. 
+
+\begin{DoxyReturn}{Returns}
+-\/ энергия 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_a24e0e7f6a4b55ea4201fa5944ebfca1e}\label{class_a_m_g_character_base_a24e0e7f6a4b55ea4201fa5944ebfca1e}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetEnergyRegenRate@{GetEnergyRegenRate}}
+\index{GetEnergyRegenRate@{GetEnergyRegenRate}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetEnergyRegenRate()}{GetEnergyRegenRate()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Energy\+Regen\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер скорости восстановления энергии. 
+
+\begin{DoxyReturn}{Returns}
+-\/ скорость восстановления энергии 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_a5f0cdea3fcc9ae66f3a29d6d50d25459}\label{class_a_m_g_character_base_a5f0cdea3fcc9ae66f3a29d6d50d25459}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetHealth@{GetHealth}}
+\index{GetHealth@{GetHealth}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetHealth()}{GetHealth()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер здоровья. 
+
+\begin{DoxyReturn}{Returns}
+-\/ здоровье 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_a9c1c28ed702864426b6b52f627d4653b}\label{class_a_m_g_character_base_a9c1c28ed702864426b6b52f627d4653b}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetHealthRegenRate@{GetHealthRegenRate}}
+\index{GetHealthRegenRate@{GetHealthRegenRate}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetHealthRegenRate()}{GetHealthRegenRate()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Health\+Regen\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер скорости восстановления здоровья. 
+
+\begin{DoxyReturn}{Returns}
+-\/ скорость восстановления здоровья 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_a14f154a520db72a7858833662251ef73}\label{class_a_m_g_character_base_a14f154a520db72a7858833662251ef73}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetMaxEnergy@{GetMaxEnergy}}
+\index{GetMaxEnergy@{GetMaxEnergy}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetMaxEnergy()}{GetMaxEnergy()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Max\+Energy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер максимальной энергии. 
+
+\begin{DoxyReturn}{Returns}
+-\/ максимальная энергия 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_ac77b63ac6bae1948dfc36e97a61790ac}\label{class_a_m_g_character_base_ac77b63ac6bae1948dfc36e97a61790ac}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetMaxHealth@{GetMaxHealth}}
+\index{GetMaxHealth@{GetMaxHealth}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetMaxHealth()}{GetMaxHealth()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Max\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер максимального здоровья. 
+
+\begin{DoxyReturn}{Returns}
+-\/ максимальное здоровье 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_aba27fd20f83cb86cb6a6656cd8bfc2d1}\label{class_a_m_g_character_base_aba27fd20f83cb86cb6a6656cd8bfc2d1}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetMaxStamina@{GetMaxStamina}}
+\index{GetMaxStamina@{GetMaxStamina}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetMaxStamina()}{GetMaxStamina()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Max\+Stamina (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер максимальной стамины. 
+
+\begin{DoxyReturn}{Returns}
+-\/ максимальная стамина 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_a6db9a57c8219c07a0304dba8e807ece1}\label{class_a_m_g_character_base_a6db9a57c8219c07a0304dba8e807ece1}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetStamina@{GetStamina}}
+\index{GetStamina@{GetStamina}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetStamina()}{GetStamina()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Stamina (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер стамины. 
+
+\begin{DoxyReturn}{Returns}
+-\/ стамина 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_a065b39ef7cbac891cf20d762b1505a6f}\label{class_a_m_g_character_base_a065b39ef7cbac891cf20d762b1505a6f}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!GetStaminaRegenRate@{GetStaminaRegenRate}}
+\index{GetStaminaRegenRate@{GetStaminaRegenRate}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{GetStaminaRegenRate()}{GetStaminaRegenRate()}}
+{\footnotesize\ttfamily float AMGCharacter\+Base\+::\+Get\+Stamina\+Regen\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Геттер скорости восстановления стамины. 
+
+\begin{DoxyReturn}{Returns}
+-\/ скорость восстановления стамины 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_a7cecd1964ccf9ed62e5e8276e0fd710c}\label{class_a_m_g_character_base_a7cecd1964ccf9ed62e5e8276e0fd710c}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!IsAlive@{IsAlive}}
+\index{IsAlive@{IsAlive}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{IsAlive()}{IsAlive()}}
+{\footnotesize\ttfamily virtual bool AMGCharacter\+Base\+::\+Is\+Alive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Проверяет, жив ли персонаж. 
+
+\begin{DoxyReturn}{Returns}
+-\/ живой ли персонаж 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_character_base_a1d81dc32141383ceca68a2923a2350c2}\label{class_a_m_g_character_base_a1d81dc32141383ceca68a2923a2350c2}} 
+\index{AMGCharacterBase@{AMGCharacterBase}!SetHealth@{SetHealth}}
+\index{SetHealth@{SetHealth}!AMGCharacterBase@{AMGCharacterBase}}
+\doxysubsubsection{\texorpdfstring{SetHealth()}{SetHealth()}}
+{\footnotesize\ttfamily virtual void AMGCharacter\+Base\+::\+Set\+Health (\begin{DoxyParamCaption}\item[{float}]{Health }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Сеттер здоровья. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Health} & -\/ здоровье \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGCharacter\+Base.\+h\end{DoxyCompactItemize}

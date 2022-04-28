@@ -1,0 +1,87 @@
+\hypertarget{_m_g_attribute_set_base_8h_source}{}\doxysection{MGAttribute\+Set\+Base.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}AbilitySystemComponent.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}AttributeSet.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}MGAttributeSetBase.generated.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define ATTRIBUTE\_ACCESSORS(ClassName, PropertyName) \(\backslash\)}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{    GAMEPLAYATTRIBUTE\_PROPERTY\_GETTER(ClassName, PropertyName) \(\backslash\)}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    GAMEPLAYATTRIBUTE\_VALUE\_GETTER(PropertyName) \(\backslash\)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    GAMEPLAYATTRIBUTE\_VALUE\_SETTER(PropertyName) \(\backslash\)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    GAMEPLAYATTRIBUTE\_VALUE\_INITTER(PropertyName)}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19 UCLASS()}
+\DoxyCodeLine{20 class MAZEGAME\_API \mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}} : public UAttributeSet}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     GENERATED\_BODY()}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_u_m_g_attribute_set_base_a8cdc68c00ba8d0b1a08fa9d52384b170}{UMGAttributeSetBase}}();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     UPROPERTY(BlueprintReadOnly, Category=\textcolor{stringliteral}{"{}Health"{}}, ReplicatedUsing=OnRep\_Health)}
+\DoxyCodeLine{31     FGameplayAttributeData Health; }
+\DoxyCodeLine{32     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, Health); }
+\DoxyCodeLine{34     UPROPERTY(BlueprintReadOnly, Category="{}Health"{}, ReplicatedUsing=OnRep\_MaxHealth)}
+\DoxyCodeLine{35     FGameplayAttributeData MaxHealth; }
+\DoxyCodeLine{36     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, MaxHealth); }
+\DoxyCodeLine{38     UPROPERTY(BlueprintReadOnly, Category="{}Health"{}, ReplicatedUsing=OnRep\_HealthRegenRate)}
+\DoxyCodeLine{39     FGameplayAttributeData HealthRegenRate; }
+\DoxyCodeLine{40     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, HealthRegenRate); }
+\DoxyCodeLine{42     UPROPERTY(BlueprintReadOnly, Category="{}Energy"{}, ReplicatedUsing=OnRep\_Energy)}
+\DoxyCodeLine{43     FGameplayAttributeData Energy; }
+\DoxyCodeLine{44     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, Energy); }
+\DoxyCodeLine{46     UPROPERTY(BlueprintReadOnly, Category="{}Energy"{}, ReplicatedUsing=OnRep\_MaxEnergy)}
+\DoxyCodeLine{47     FGameplayAttributeData MaxEnergy; }
+\DoxyCodeLine{48     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, MaxEnergy); }
+\DoxyCodeLine{50     UPROPERTY(BlueprintReadOnly, Category="{}Energy"{}, ReplicatedUsing=OnRep\_EnergyRegenRate)}
+\DoxyCodeLine{51     FGameplayAttributeData EnergyRegenRate; }
+\DoxyCodeLine{52     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, EnergyRegenRate); }
+\DoxyCodeLine{54     UPROPERTY(BlueprintReadOnly, Category="{}Stamina"{}, ReplicatedUsing=OnRep\_Stamina)}
+\DoxyCodeLine{55     FGameplayAttributeData Stamina; }
+\DoxyCodeLine{56     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, Stamina); }
+\DoxyCodeLine{58     UPROPERTY(BlueprintReadOnly, Category="{}Stamina"{}, ReplicatedUsing=OnRep\_MaxStamina)}
+\DoxyCodeLine{59     FGameplayAttributeData MaxStamina; }
+\DoxyCodeLine{60     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, MaxStamina); }
+\DoxyCodeLine{62     UPROPERTY(BlueprintReadOnly, Category="{}Stamina"{}, ReplicatedUsing=OnRep\_StaminaRegenRate)}
+\DoxyCodeLine{63     FGameplayAttributeData StaminaRegenRate; }
+\DoxyCodeLine{64     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, StaminaRegenRate); }
+\DoxyCodeLine{66     UPROPERTY(BlueprintReadOnly, Category="{}Coins"{}, ReplicatedUsing=OnRep\_Coins)}
+\DoxyCodeLine{67     FGameplayAttributeData Coins; }
+\DoxyCodeLine{68     ATTRIBUTE\_ACCESSORS(\mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}, Coins); }
+\DoxyCodeLine{75     virtual \textcolor{keywordtype}{void} PreAttributeChange(const FGameplayAttribute\& Attribute, \textcolor{keywordtype}{float}\& NewValue) override;}
+\DoxyCodeLine{80     virtual \textcolor{keywordtype}{void} PostGameplayEffectExecute(const FGameplayEffectModCallbackData\& Data) override;}
+\DoxyCodeLine{85     virtual \textcolor{keywordtype}{void} GetLifetimeReplicatedProps(TArray<FLifetimeProperty>\& OutLifetimeProps) const override;}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 private:}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} AdjustAttributeForMaxChange(FGameplayAttributeData\& AffectedAttribute, const FGameplayAttributeData\& MaxAttribute, \textcolor{keywordtype}{float} NewMaxValue,}
+\DoxyCodeLine{96                                      const FGameplayAttribute\& AffectedAttributeProperty);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{102     UFUNCTION()}
+\DoxyCodeLine{103     virtual \textcolor{keywordtype}{void} OnRep\_Health(const FGameplayAttributeData\& OldHealth);}
+\DoxyCodeLine{108     UFUNCTION()}
+\DoxyCodeLine{109     virtual \textcolor{keywordtype}{void} OnRep\_MaxHealth(const FGameplayAttributeData\& OldMaxHealth);}
+\DoxyCodeLine{114     UFUNCTION()}
+\DoxyCodeLine{115     virtual \textcolor{keywordtype}{void} OnRep\_HealthRegenRate(const FGameplayAttributeData\& OldHealthRegenRate);}
+\DoxyCodeLine{120     UFUNCTION()}
+\DoxyCodeLine{121     virtual \textcolor{keywordtype}{void} OnRep\_Energy(const FGameplayAttributeData\& OldEnergy);}
+\DoxyCodeLine{126     UFUNCTION()}
+\DoxyCodeLine{127     virtual \textcolor{keywordtype}{void} OnRep\_MaxEnergy(const FGameplayAttributeData\& OldMaxEnergy);}
+\DoxyCodeLine{132     UFUNCTION()}
+\DoxyCodeLine{133     virtual \textcolor{keywordtype}{void} OnRep\_EnergyRegenRate(const FGameplayAttributeData\& OldEnergyRegenRate);}
+\DoxyCodeLine{138     UFUNCTION()}
+\DoxyCodeLine{139     virtual \textcolor{keywordtype}{void} OnRep\_Stamina(const FGameplayAttributeData\& OldStamina);}
+\DoxyCodeLine{144     UFUNCTION()}
+\DoxyCodeLine{145     virtual \textcolor{keywordtype}{void} OnRep\_MaxStamina(const FGameplayAttributeData\& OldMaxStamina);}
+\DoxyCodeLine{150     UFUNCTION()}
+\DoxyCodeLine{151     virtual \textcolor{keywordtype}{void} OnRep\_StaminaRegenRate(const FGameplayAttributeData\& OldStaminaRegenRate);}
+\DoxyCodeLine{156     UFUNCTION()}
+\DoxyCodeLine{157     virtual \textcolor{keywordtype}{void} OnRep\_Coins(const FGameplayAttributeData\& OldCoins);}
+\DoxyCodeLine{158 \};}
+
+\end{DoxyCode}

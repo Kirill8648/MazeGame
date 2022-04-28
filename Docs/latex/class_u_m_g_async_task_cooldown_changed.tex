@@ -1,0 +1,174 @@
+\hypertarget{class_u_m_g_async_task_cooldown_changed}{}\doxysection{UMGAsync\+Task\+Cooldown\+Changed Class Reference}
+\label{class_u_m_g_async_task_cooldown_changed}\index{UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}}
+
+
+Блупринт нода, которая автоматически регистрирует listener для изменения (начала и конца) для массива тэгов перезарядки.  
+
+
+
+
+{\ttfamily \#include $<$MGAsync\+Task\+Cooldown\+Changed.\+h$>$}
+
+
+
+Inheritance diagram for UMGAsync\+Task\+Cooldown\+Changed\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_u_m_g_async_task_cooldown_changed__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UMGAsync\+Task\+Cooldown\+Changed\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{class_u_m_g_async_task_cooldown_changed__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed_a2d4e7b7f81d695b64f146d770aa03143}{End\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Уничтожает задачу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed}{UMGAsync\+Task\+Cooldown\+Changed}} $\ast$ \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed_a6372e31b051d413fae65a72d80a48efd}{Listen\+For\+Cooldown\+Change}} (UAbility\+System\+Component $\ast$Ability\+System\+Component, FGameplay\+Tag\+Container \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed_ac80b5cfd9e5021335c032772031c56c1}{Cooldown\+Tags}}, bool \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed_abd8dd0a644c71fe15a32cf484746d749}{Use\+Server\+Cooldown}})
+\begin{DoxyCompactList}\small\item\em Слушает измененения (начало и конец) дял эффекта игрового процесса перезарядки, основываясь на тэге перезарядки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_ace2da7849edfc75eff2fa6c11af1aafe}\label{class_u_m_g_async_task_cooldown_changed_ace2da7849edfc75eff2fa6c11af1aafe}} 
+FOn\+Cooldown\+Changed {\bfseries On\+Cooldown\+Begin}
+\begin{DoxyCompactList}\small\item\em Делегат, вызывающийся при начале перезарядки. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_aa2aa87b44f9b59d3031e51b601f520c6}\label{class_u_m_g_async_task_cooldown_changed_aa2aa87b44f9b59d3031e51b601f520c6}} 
+FOn\+Cooldown\+Changed {\bfseries On\+Cooldown\+End}
+\begin{DoxyCompactList}\small\item\em Делегат, вызывающийся по окончании перезарядки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed_a4c1bea3e95d7d59a73539d383053b8b8}{On\+Active\+Gameplay\+Effect\+Added\+Callback}} (UAbility\+System\+Component $\ast$Target, const FGameplay\+Effect\+Spec \&Spec\+Applied, FActive\+Gameplay\+Effect\+Handle Active\+Handle)
+\begin{DoxyCompactList}\small\item\em Вызывается когда добавленный активный эффект игрового процесса дает обратную связь. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed_a8c101d9967427a51413ec07a7715131f}{Cooldown\+Tag\+Changed}} (const FGameplay\+Tag Cooldown\+Tag, int32 New\+Count)
+\begin{DoxyCompactList}\small\item\em Вызывается когда изменяется контейнер тэгов перезарядки. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed_a6588c4597ee09bcbd3a4e53d72165020}{Get\+Cooldown\+Remaining\+For\+Tag}} (FGameplay\+Tag\+Container \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed_ac80b5cfd9e5021335c032772031c56c1}{Cooldown\+Tags}}, float \&Time\+Remaining, float \&Cooldown\+Duration)
+\begin{DoxyCompactList}\small\item\em Геттер состояния перезарядки для определенных тэгов. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_a8cadef41291200b374616b7146ae6991}\label{class_u_m_g_async_task_cooldown_changed_a8cadef41291200b374616b7146ae6991}} 
+UAbility\+System\+Component $\ast$ {\bfseries ASC}
+\begin{DoxyCompactList}\small\item\em Указатель на компонент системы способностей. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_ac80b5cfd9e5021335c032772031c56c1}\label{class_u_m_g_async_task_cooldown_changed_ac80b5cfd9e5021335c032772031c56c1}} 
+FGameplay\+Tag\+Container {\bfseries Cooldown\+Tags}
+\begin{DoxyCompactList}\small\item\em Контейнер тэгов перезарядки. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_abd8dd0a644c71fe15a32cf484746d749}\label{class_u_m_g_async_task_cooldown_changed_abd8dd0a644c71fe15a32cf484746d749}} 
+bool {\bfseries Use\+Server\+Cooldown}
+\begin{DoxyCompactList}\small\item\em Вызывать ли перезарядку дополнительно на сервере. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Блупринт нода, которая автоматически регистрирует listener для изменения (начала и конца) для массива тэгов перезарядки. 
+
+Полезно использовать в пользовательском интерфейсе. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_a8c101d9967427a51413ec07a7715131f}\label{class_u_m_g_async_task_cooldown_changed_a8c101d9967427a51413ec07a7715131f}} 
+\index{UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}!CooldownTagChanged@{CooldownTagChanged}}
+\index{CooldownTagChanged@{CooldownTagChanged}!UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}}
+\doxysubsubsection{\texorpdfstring{CooldownTagChanged()}{CooldownTagChanged()}}
+{\footnotesize\ttfamily virtual void UMGAsync\+Task\+Cooldown\+Changed\+::\+Cooldown\+Tag\+Changed (\begin{DoxyParamCaption}\item[{const FGameplay\+Tag}]{Cooldown\+Tag,  }\item[{int32}]{New\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается когда изменяется контейнер тэгов перезарядки. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cooldown\+Tag} & -\/ измененный тэг \\
+\hline
+{\em New\+Count} & -\/ новое количество тэгов в контейнере \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_a2d4e7b7f81d695b64f146d770aa03143}\label{class_u_m_g_async_task_cooldown_changed_a2d4e7b7f81d695b64f146d770aa03143}} 
+\index{UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}!EndTask@{EndTask}}
+\index{EndTask@{EndTask}!UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}}
+\doxysubsubsection{\texorpdfstring{EndTask()}{EndTask()}}
+{\footnotesize\ttfamily void UMGAsync\+Task\+Cooldown\+Changed\+::\+End\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Уничтожает задачу. 
+
+Эту функцию нужно вызвать, когда задача больше не нужна, иначе задача будет существовать бесконечно. \mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_a6588c4597ee09bcbd3a4e53d72165020}\label{class_u_m_g_async_task_cooldown_changed_a6588c4597ee09bcbd3a4e53d72165020}} 
+\index{UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}!GetCooldownRemainingForTag@{GetCooldownRemainingForTag}}
+\index{GetCooldownRemainingForTag@{GetCooldownRemainingForTag}!UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}}
+\doxysubsubsection{\texorpdfstring{GetCooldownRemainingForTag()}{GetCooldownRemainingForTag()}}
+{\footnotesize\ttfamily bool UMGAsync\+Task\+Cooldown\+Changed\+::\+Get\+Cooldown\+Remaining\+For\+Tag (\begin{DoxyParamCaption}\item[{FGameplay\+Tag\+Container}]{Cooldown\+Tags,  }\item[{float \&}]{Time\+Remaining,  }\item[{float \&}]{Cooldown\+Duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Геттер состояния перезарядки для определенных тэгов. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cooldown\+Tags} & -\/ контейнер тэгов \\
+\hline
+{\em Time\+Remaining} & -\/ оставшееся время перезарядки \\
+\hline
+{\em Cooldown\+Duration} & -\/ время перезарядки \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ закончилась ли перезарядка 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_a6372e31b051d413fae65a72d80a48efd}\label{class_u_m_g_async_task_cooldown_changed_a6372e31b051d413fae65a72d80a48efd}} 
+\index{UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}!ListenForCooldownChange@{ListenForCooldownChange}}
+\index{ListenForCooldownChange@{ListenForCooldownChange}!UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}}
+\doxysubsubsection{\texorpdfstring{ListenForCooldownChange()}{ListenForCooldownChange()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed}{UMGAsync\+Task\+Cooldown\+Changed}} $\ast$ UMGAsync\+Task\+Cooldown\+Changed\+::\+Listen\+For\+Cooldown\+Change (\begin{DoxyParamCaption}\item[{UAbility\+System\+Component $\ast$}]{Ability\+System\+Component,  }\item[{FGameplay\+Tag\+Container}]{Cooldown\+Tags,  }\item[{bool}]{Use\+Server\+Cooldown }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Слушает измененения (начало и конец) дял эффекта игрового процесса перезарядки, основываясь на тэге перезарядки. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ability\+System\+Component} & -\/ компонент системы способностей \\
+\hline
+{\em Cooldown\+Tags} & -\/ контейнер тэгов перезарядки \\
+\hline
+{\em Use\+Server\+Cooldown} & -\/ вызывать ли перезарядку дополнительно на сервере \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ указатель на асинхронную задачу 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_u_m_g_async_task_cooldown_changed_a4c1bea3e95d7d59a73539d383053b8b8}\label{class_u_m_g_async_task_cooldown_changed_a4c1bea3e95d7d59a73539d383053b8b8}} 
+\index{UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}!OnActiveGameplayEffectAddedCallback@{OnActiveGameplayEffectAddedCallback}}
+\index{OnActiveGameplayEffectAddedCallback@{OnActiveGameplayEffectAddedCallback}!UMGAsyncTaskCooldownChanged@{UMGAsyncTaskCooldownChanged}}
+\doxysubsubsection{\texorpdfstring{OnActiveGameplayEffectAddedCallback()}{OnActiveGameplayEffectAddedCallback()}}
+{\footnotesize\ttfamily virtual void UMGAsync\+Task\+Cooldown\+Changed\+::\+On\+Active\+Gameplay\+Effect\+Added\+Callback (\begin{DoxyParamCaption}\item[{UAbility\+System\+Component $\ast$}]{Target,  }\item[{const FGameplay\+Effect\+Spec \&}]{Spec\+Applied,  }\item[{FActive\+Gameplay\+Effect\+Handle}]{Active\+Handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается когда добавленный активный эффект игрового процесса дает обратную связь. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Target} & -\/ целевой компонент системы способностей \\
+\hline
+{\em Spec\+Applied} & -\/ спецификация эффекта игрового процесса \\
+\hline
+{\em Active\+Handle} & -\/ содержит информацию об активном эффекте игрового процесса \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGAsync\+Task\+Cooldown\+Changed.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,30 @@
+\hypertarget{_m_g_maze_generation_progress_widget_8h_source}{}\doxysection{MGMaze\+Generation\+Progress\+Widget.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Blueprint/UserWidget.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Components/CanvasPanel.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Components/ScaleBox.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Components/TextBlock.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}Components/VerticalBox.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}MGMazeGenerationProgressWidget.generated.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{16 UCLASS()}
+\DoxyCodeLine{17 class MAZEGAME\_API \mbox{\hyperlink{class_u_m_g_maze_generation_progress_widget}{UMGMazeGenerationProgressWidget}} : public UUserWidget}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     GENERATED\_BODY()}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_u_m_g_maze_generation_progress_widget_af74d8f8a15828aeae928b8acd675530c}{NativeConstruct}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     UPROPERTY(meta = (BindWidget))}
+\DoxyCodeLine{28     UScaleBox* ScaleBox;}
+\DoxyCodeLine{30     UPROPERTY(meta = (BindWidget))}
+\DoxyCodeLine{31     UTextBlock* TextBlock;}
+\DoxyCodeLine{32 \};}
+
+\end{DoxyCode}

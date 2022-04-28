@@ -10,8 +10,8 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnAttributeChanged, FGameplayAttribute, Attribute, float, NewValue, float, OldValue);
 
 /**
- * Blueprint node to automatically register a listener for all attribute changes in an AbilitySystemComponent.
- * Useful to use in UI.
+ * Блупринт нода, которая автоматически регистрирует listener для изменения значения атрибута в компоненте системы способностей.
+ * Полезно использовать в пользовательском интерфейсе.
  */
 UCLASS(BlueprintType, meta=(ExposedAsyncProxy = AsyncTask))
 class MAZEGAME_API UMGAsyncTaskAttributeChanged : public UBlueprintAsyncActionBase
@@ -20,28 +20,38 @@ class MAZEGAME_API UMGAsyncTaskAttributeChanged : public UBlueprintAsyncActionBa
 
 public:
 	UPROPERTY(BlueprintAssignable)
-	FOnAttributeChanged OnAttributeChanged;
-	
-	// Listens for an attribute changing.
+	FOnAttributeChanged OnAttributeChanged; /**< Делегат, вызывающийся при изменениизначения атрибута. */
+
+	/**
+	* Слушает изменение атрибута.
+	* @param AbilitySystemComponent - компонент системы способностей
+	* @param Attribute - атрибут
+	*/
 	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"))
 	static UMGAsyncTaskAttributeChanged* ListenForAttributeChange(UAbilitySystemComponent* AbilitySystemComponent, FGameplayAttribute Attribute);
-
-	// Listens for an attribute changing.
-	// Version that takes in an array of Attributes. Check the Attribute output for which Attribute changed.
+	/**
+	* Слушает изменение атрибутов.
+	* Версия с массивом атрибутов.
+	* @param AbilitySystemComponent - компонент системы способностей
+	* @param Attributes - массив атрибут
+	*/
 	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"))
 	static UMGAsyncTaskAttributeChanged* ListenForAttributesChange(UAbilitySystemComponent* AbilitySystemComponent, TArray<FGameplayAttribute> Attributes);
-
-	// You must call this function manually when you want the AsyncTask to end.
-	// For UMG Widgets, you would call it in the Widget's Destruct event.
+	/**
+	* Уничтожает задачу. Эту функцию нужно вызвать, когда задача больше не нужна, иначе задача будет существовать бесконечно.
+	*/
 	UFUNCTION(BlueprintCallable)
 	void EndTask();
 
 protected:
 	UPROPERTY()
-	UAbilitySystemComponent* ASC;
+	UAbilitySystemComponent* ASC; /**< Указатель на компонент системы способностей.*/
 
-	FGameplayAttribute AttributeToListenFor;
-	TArray<FGameplayAttribute> AttributesToListenFor;
-
+	FGameplayAttribute AttributeToListenFor; /**< Атрибут, чьи изменения нужно слушать.*/
+	TArray<FGameplayAttribute> AttributesToListenFor; /**< Массив атрибутов, чьи изменения нужно слушать.*/
+	/**
+	* Вызывается при изменении атрибута.
+	* @param Data - данные о изменении атрибута
+	*/
 	void AttributeChanged(const FOnAttributeChangeData& Data);
 };

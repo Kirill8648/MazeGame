@@ -1,0 +1,5 @@
+<map id="FGenerateMazeMatrixAsyncTask" name="FGenerateMazeMatrixAsyncTask">
+<area shape="rect" id="node1" title="Асинхронная задача для генерации матрицы лабиринта" alt="" coords="47,95,263,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,161,32"/>
+<area shape="rect" id="node3" href="$struct_f_maze_item.html" title="Структура, хранящая данные о клетке лабиринта." alt="" coords="185,5,272,32"/>
+</map>

@@ -14,7 +14,7 @@
 	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
 /**
- * 
+ * Набор атрибутов персонажа.
  */
 UCLASS()
 class MAZEGAME_API UMGAttributeSetBase : public UAttributeSet
@@ -22,84 +22,137 @@ class MAZEGAME_API UMGAttributeSetBase : public UAttributeSet
 	GENERATED_BODY()
 
 public:
+	/**
+	* Стандартный конструктор.
+	*/
 	UMGAttributeSetBase();
 
 	UPROPERTY(BlueprintReadOnly, Category="Health", ReplicatedUsing=OnRep_Health)
-	FGameplayAttributeData Health;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Health);
+	FGameplayAttributeData Health; /**< Атрибут здоровья. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Health); /**< Макрос создания геттеров и сеттеров для атрибута здоровье. */
 
 	UPROPERTY(BlueprintReadOnly, Category="Health", ReplicatedUsing=OnRep_MaxHealth)
-	FGameplayAttributeData MaxHealth;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, MaxHealth);
+	FGameplayAttributeData MaxHealth; /**< Атрибут максимального количества здоровья. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, MaxHealth); /**< Макрос создания геттеров и сеттеров для атрибута максимальное количество здоровья. */
 
 	UPROPERTY(BlueprintReadOnly, Category="Health", ReplicatedUsing=OnRep_HealthRegenRate)
-	FGameplayAttributeData HealthRegenRate;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, HealthRegenRate);
+	FGameplayAttributeData HealthRegenRate; /**< Атрибут скорости восстановления здоровья. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, HealthRegenRate); /**< Макрос создания геттеров и сеттеров для атрибута скорость восстановления здоровья. */
 
 	UPROPERTY(BlueprintReadOnly, Category="Energy", ReplicatedUsing=OnRep_Energy)
-	FGameplayAttributeData Energy;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Energy);
+	FGameplayAttributeData Energy; /**< Атрибут энергии. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Energy); /**< Макрос создания геттеров и сеттеров для атрибута энергия. */
 
 	UPROPERTY(BlueprintReadOnly, Category="Energy", ReplicatedUsing=OnRep_MaxEnergy)
-	FGameplayAttributeData MaxEnergy;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, MaxEnergy);
+	FGameplayAttributeData MaxEnergy; /**< Атрибут максимального количества энергии. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, MaxEnergy); /**< Макрос создания геттеров и сеттеров для атрибута максимальное количество энергии. */
 
 	UPROPERTY(BlueprintReadOnly, Category="Energy", ReplicatedUsing=OnRep_EnergyRegenRate)
-	FGameplayAttributeData EnergyRegenRate;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, EnergyRegenRate);
+	FGameplayAttributeData EnergyRegenRate; /**< Атрибут скорости восстановления энергии. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, EnergyRegenRate); /**< Макрос создания геттеров и сеттеров для атрибута скорость восстановления энергии. */
 
 	UPROPERTY(BlueprintReadOnly, Category="Stamina", ReplicatedUsing=OnRep_Stamina)
-	FGameplayAttributeData Stamina;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Stamina);
+	FGameplayAttributeData Stamina; /**< Атрибут стамины. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Stamina); /**< Макрос создания геттеров и сеттеров для атрибута стамина. */
 
 	UPROPERTY(BlueprintReadOnly, Category="Stamina", ReplicatedUsing=OnRep_MaxStamina)
-	FGameplayAttributeData MaxStamina;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, MaxStamina);
+	FGameplayAttributeData MaxStamina; /**< Атрибут максимального количества стамины. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, MaxStamina); /**< Макрос создания геттеров и сеттеров для атрибута максимальное количество стамины. */
 
 	UPROPERTY(BlueprintReadOnly, Category="Stamina", ReplicatedUsing=OnRep_StaminaRegenRate)
-	FGameplayAttributeData StaminaRegenRate;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, StaminaRegenRate);
+	FGameplayAttributeData StaminaRegenRate; /**< Атрибут скорости восстановления стамины. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, StaminaRegenRate); /**< Макрос создания геттеров и сеттеров для атрибута скорость восстановления стамины. */
 
 	UPROPERTY(BlueprintReadOnly, Category="Coins", ReplicatedUsing=OnRep_Coins)
-	FGameplayAttributeData Coins;
-	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Coins);
+	FGameplayAttributeData Coins; /**< Атрибут валюты. */
+	ATTRIBUTE_ACCESSORS(UMGAttributeSetBase, Coins); /**< Макрос создания геттеров и сеттеров для атрибута валюта. */
 
+	/**
+	* Вызывается перед изменением атрибута.
+	* @param Attribute - изменяемый атрибут
+	* @param NewValue - новое значение атрибута
+	*/
 	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
+	/**
+	* Вызывается после применения эффекта игрового процесса.
+	* @param Data - структура данных о эффекте игрового процесса
+	*/
 	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
+	/**
+	* Вызывается при репликации класса.
+	* @param OutLifetimeProps - массив реплицируемых данных
+	*/
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 private:
-	// Helper function to proportionally adjust the value of an attribute when it's associated max attribute changes.
-	// (i.e. When MaxHealth increases, Health increases by an amount that maintains the same percentage as before)
-	void AdjustAttributeForMaxChange(FGameplayAttributeData& AffectedAttribute, const FGameplayAttributeData& MaxAttribute, float NewMaxValue, const FGameplayAttribute& AffectedAttributeProperty);
-	
+	/**
+	* Вспомогательная функция для пропорционального изменения значения атрибута когда его максимально значение изменяется.
+	* @param AffectedAttribute - изменяемый атрибут
+	* @param MaxAttribute - максимальное значение атрибута
+	* @param NewMaxValue - новое максимальное значение
+	* @param AffectedAttributeProperty - затронутый атрибут
+	*/
+	void AdjustAttributeForMaxChange(FGameplayAttributeData& AffectedAttribute, const FGameplayAttributeData& MaxAttribute, float NewMaxValue,
+	                                 const FGameplayAttribute& AffectedAttributeProperty);
+
+	/**
+	* Вызывается при репликации здоровья.
+	* @param OldHealth - предыдущее значение здоровья
+	*/
 	UFUNCTION()
 	virtual void OnRep_Health(const FGameplayAttributeData& OldHealth);
-
+	/**
+	* Вызывается при репликации максимального здоровья.
+	* @param OldMaxHealth - предыдущее значение максимального здоровья
+	*/
 	UFUNCTION()
 	virtual void OnRep_MaxHealth(const FGameplayAttributeData& OldMaxHealth);
-
+	/**
+	* Вызывается при репликации скорости восстановаления здоровья.
+	* @param OldHealthRegenRate - предыдущее значение скорости восстановаления здоровья
+	*/
 	UFUNCTION()
 	virtual void OnRep_HealthRegenRate(const FGameplayAttributeData& OldHealthRegenRate);
-
+	/**
+	* Вызывается при репликации энергии.
+	* @param OldEnergy - предыдущее значение энергии
+	*/
 	UFUNCTION()
 	virtual void OnRep_Energy(const FGameplayAttributeData& OldEnergy);
-
+	/**
+	* Вызывается при репликации максимальной энергии.
+	* @param OldMaxEnergy - предыдущее максимальное значение энергии
+	*/
 	UFUNCTION()
 	virtual void OnRep_MaxEnergy(const FGameplayAttributeData& OldMaxEnergy);
-
+	/**
+	* Вызывается при репликации скорости восстановаления энергии.
+	* @param OldEnergyRegenRate - предыдущее значение скорости восстановаления энергии
+	*/
 	UFUNCTION()
 	virtual void OnRep_EnergyRegenRate(const FGameplayAttributeData& OldEnergyRegenRate);
-
+	/**
+	* Вызывается при репликации стамины.
+	* @param OldStamina - предыдущее значение стамины
+	*/
 	UFUNCTION()
 	virtual void OnRep_Stamina(const FGameplayAttributeData& OldStamina);
-
+	/**
+	* Вызывается при репликации максимальной стамины.
+	* @param OldMaxStamina - предыдущее максимальное значение стамины
+	*/
 	UFUNCTION()
 	virtual void OnRep_MaxStamina(const FGameplayAttributeData& OldMaxStamina);
-
+	/**
+	* Вызывается при репликации скорости восстановаления стамины.
+	* @param OldStaminaRegenRate - предыдущее значение скорости восстановаления стамины
+	*/
 	UFUNCTION()
 	virtual void OnRep_StaminaRegenRate(const FGameplayAttributeData& OldStaminaRegenRate);
-
+	/**
+	* Вызывается при репликации валюты.
+	* @param OldCoins - предыдущее значение валюты
+	*/
 	UFUNCTION()
 	virtual void OnRep_Coins(const FGameplayAttributeData& OldCoins);
 };

@@ -1,0 +1,60 @@
+\hypertarget{_m_g_hero_character_8h_source}{}\doxysection{MGHero\+Character.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Characters/MGCharacterBase.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}MGHeroCharacter.generated.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{12 UCLASS()}
+\DoxyCodeLine{13 class MAZEGAME\_API \mbox{\hyperlink{class_a_m_g_hero_character}{AMGHeroCharacter}} : public \mbox{\hyperlink{class_a_m_g_character_base}{AMGCharacterBase}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     GENERATED\_BODY()}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_a_m_g_hero_character_a4b0fe2a82944bc6f6fa51a7f1f1eef9e}{AMGHeroCharacter}}();}
+\DoxyCodeLine{26     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_m_g_hero_character_a50481302a62b347fb633bc1f10357276}{GetLifetimeReplicatedProps}}(TArray<FLifetimeProperty>\& OutLifetimeProps) \textcolor{keyword}{const override};}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_m_g_hero_character_a69163641830116f15f86cde75e7023a4}{SetupPlayerInputComponent}}(UInputComponent* PlayerInputComponent) \textcolor{keyword}{override};}
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_a_m_g_hero_character_a6f29b88cb6c735a3a56579ac129e4678}{PossessedBy}}(AController* NewController) \textcolor{keyword}{override};}
+\DoxyCodeLine{40     UFUNCTION(BlueprintCallable, Category = \textcolor{stringliteral}{"{}MazeGame|Player"{}})}
+\DoxyCodeLine{41     void UpdateAbilities();}
+\DoxyCodeLine{46     UFUNCTION(BlueprintImplementableEvent, Category = "{}MazeGame|HUD"{})}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} K2\_RemoveAbilitySlotFromHUD(EMGAbilityInputID const\& SlotID);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 protected:}
+\DoxyCodeLine{50     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "{}MazeGame|Camera"{})}
+\DoxyCodeLine{51     \textcolor{keywordtype}{float} BaseTurnRate;}
+\DoxyCodeLine{53     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "{}MazeGame|Camera"{})}
+\DoxyCodeLine{54     \textcolor{keywordtype}{float} BaseLookUpRate;}
+\DoxyCodeLine{56     UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "{}MazeGame|Flying"{})}
+\DoxyCodeLine{57     \textcolor{keywordtype}{bool} bMoveByCamera;}
+\DoxyCodeLine{59     \textcolor{keywordtype}{bool} bASCInputBound;}
+\DoxyCodeLine{61     UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "{}MazeGame|Camera"{})}
+\DoxyCodeLine{62     class UCameraComponent* FirstPersonCamera;}
+\DoxyCodeLine{67     virtual \textcolor{keywordtype}{void} BeginPlay() override;}
+\DoxyCodeLine{72     virtual \textcolor{keywordtype}{void} EndPlay(const EEndPlayReason::Type EndPlayReason) override;}
+\DoxyCodeLine{76     virtual \textcolor{keywordtype}{void} PostInitializeComponents() override;}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} LookUp(\textcolor{keywordtype}{float} Value);}
+\DoxyCodeLine{86     \textcolor{keywordtype}{void} Turn(\textcolor{keywordtype}{float} Value);}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} MoveForward(\textcolor{keywordtype}{float} Value);}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} MoveRight(\textcolor{keywordtype}{float} Value);}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} MoveUp(\textcolor{keywordtype}{float} Value);}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} BindASCInput();}
+\DoxyCodeLine{109     virtual \textcolor{keywordtype}{void} OnRep\_PlayerState() override;}
+\DoxyCodeLine{114     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "{}MazeGame|Camera"{})}
+\DoxyCodeLine{115     \textcolor{keywordtype}{void} StartWalkCameraShake(int32 const \&DoShakeOnStart);}
+\DoxyCodeLine{121     UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "{}MazeGame|Camera"{})}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} StopWalkCameraShake(int32 const \&Immediately, int32 const \&ClearHandle);}
+\DoxyCodeLine{123     }
+\DoxyCodeLine{124 private:}
+\DoxyCodeLine{125     \textcolor{keywordtype}{bool} bDoOnceMoveForwardStartShake;}
+\DoxyCodeLine{126     \textcolor{keywordtype}{bool} bDoOnceMoveForwardStopShake;}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{keywordtype}{bool} bDoOnceMoveRightStartShake;}
+\DoxyCodeLine{129     \textcolor{keywordtype}{bool} bDoOnceMoveRightStopShake;}
+\DoxyCodeLine{130 \};}
+
+\end{DoxyCode}

@@ -8,14 +8,14 @@
 #include "MGSaveGame.generated.h"
 
 /** 
- * Структура, хранящая текущий уровень способностей
+ * Структура, хранящая текущий уровень способностей.
  */
 USTRUCT(BlueprintType)
 struct FSavedAbilityInfo
 {
 	GENERATED_BODY()
 	/**
-	* Стандартный конструктор
+	* Стандартный конструктор.
 	*/
 	FSavedAbilityInfo()
 	{
@@ -23,7 +23,7 @@ struct FSavedAbilityInfo
 	}
 
 	/**
-	* Конструктор со значениями
+	* Конструктор с параметрами.
 	* @param AbilityKey - ключ способности
 	* @param AbilityInfo - уровень способности
 	*/
@@ -38,7 +38,7 @@ struct FSavedAbilityInfo
 };
 
 /** 
- * Структура, хранящая данные об одной способности
+ * Структура, хранящая данные об одной способности.
  */
 USTRUCT(BlueprintType)
 struct FAbilityLevelPrices : public FTableRowBase
@@ -77,7 +77,7 @@ struct FAbilityLevelPrices : public FTableRowBase
 };
 
 /** 
- * Структура, хранящая данные об одной характеристике способности
+ * Структура, хранящая данные об одной характеристике способности.
  */
 USTRUCT(BlueprintType)
 struct FAbilityStatsByLevels : public FTableRowBase
@@ -108,7 +108,7 @@ struct FAbilityStatsByLevels : public FTableRowBase
 };
 
 /**
- * Класс для хранения сохраняющихся данных
+ * Класс для хранения сохраняющихся данных.
  */
 UCLASS()
 class MAZEGAME_API UMGSaveGame : public USaveGame
@@ -116,12 +116,12 @@ class MAZEGAME_API UMGSaveGame : public USaveGame
 	GENERATED_BODY()
 public:
 	/**
-	* Стандартный конструктор
+	* Стандартный конструктор.
 	*/
 	UMGSaveGame();
 
 	/**
-	* Инициализирует дату и время
+	* Инициализирует дату и время.
 	*/
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|SaveGame")
 	void SetDateTime();

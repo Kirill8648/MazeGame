@@ -1,0 +1,72 @@
+\hypertarget{_m_g_character_base_8h_source}{}\doxysection{MGCharacter\+Base.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GameFramework/Character.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}AbilitySystemInterface.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}MazeGame/MazeGame.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}MGCharacterBase.generated.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{15 UCLASS()}
+\DoxyCodeLine{16 class MAZEGAME\_API \mbox{\hyperlink{class_a_m_g_character_base}{AMGCharacterBase}} : public ACharacter, public IAbilitySystemInterface}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     GENERATED\_BODY()}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_a_m_g_character_base_a685f6f1e600326c5cef75dcd9b24d251}{AMGCharacterBase}}();}
+\DoxyCodeLine{29     \textcolor{keyword}{virtual} UAbilitySystemComponent* \mbox{\hyperlink{class_a_m_g_character_base_a55c807a6e137392deff8c40902832d8b}{GetAbilitySystemComponent}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{34     UFUNCTION(BlueprintCallable, Category = \textcolor{stringliteral}{"{}MazeGame|MGCharacterBase"{}})}
+\DoxyCodeLine{35     virtual \textcolor{keywordtype}{bool} IsAlive() const;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{/*virtual void RemoveCharacterAbilities();}}
+\DoxyCodeLine{38 \textcolor{comment}{}}
+\DoxyCodeLine{39 \textcolor{comment}{    virtual void Die();*/}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{44     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase"{})}
+\DoxyCodeLine{45     virtual \textcolor{keywordtype}{void} FinishDying();}
+\DoxyCodeLine{50     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{51     \textcolor{keywordtype}{float} GetHealth() const;}
+\DoxyCodeLine{56     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{57     \textcolor{keywordtype}{float} GetMaxHealth() const;}
+\DoxyCodeLine{62     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{63     \textcolor{keywordtype}{float} GetHealthRegenRate() const;}
+\DoxyCodeLine{68     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{69     \textcolor{keywordtype}{float} GetEnergy() const;}
+\DoxyCodeLine{74     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{75     \textcolor{keywordtype}{float} GetMaxEnergy() const;}
+\DoxyCodeLine{80     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{81     \textcolor{keywordtype}{float} GetEnergyRegenRate() const;}
+\DoxyCodeLine{86     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{87     \textcolor{keywordtype}{float} GetStamina() const;}
+\DoxyCodeLine{92     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{93     \textcolor{keywordtype}{float} GetMaxStamina() const;}
+\DoxyCodeLine{98     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{99     \textcolor{keywordtype}{float} GetStaminaRegenRate() const;}
+\DoxyCodeLine{104     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGCharacterBase|Attributes"{})}
+\DoxyCodeLine{105     \textcolor{keywordtype}{float} GetCoins() const;}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 protected:}
+\DoxyCodeLine{108     UPROPERTY()}
+\DoxyCodeLine{109     class \mbox{\hyperlink{class_u_m_g_ability_system_component}{UMGAbilitySystemComponent}}* AbilitySystemComponent; }
+\DoxyCodeLine{111     UPROPERTY()}
+\DoxyCodeLine{112     class \mbox{\hyperlink{class_u_m_g_attribute_set_base}{UMGAttributeSetBase}}* AttributeSetBase; }
+\DoxyCodeLine{114     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|MGCharacterBase"{})}
+\DoxyCodeLine{115     FText CharacterName; }
+\DoxyCodeLine{117     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|Abilities"{})}
+\DoxyCodeLine{118     TArray<TSubclassOf<class \mbox{\hyperlink{class_u_m_g_gameplay_ability_base}{UMGGameplayAbilityBase}}>> CharacterAbilities; }
+\DoxyCodeLine{120     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|Abilities"{})}
+\DoxyCodeLine{121     TSubclassOf<class UGameplayEffect> DefaultAttributes; }
+\DoxyCodeLine{123     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|Abilities"{})}
+\DoxyCodeLine{124     TArray<TSubclassOf<UGameplayEffect>> StartupEffects; }
+\DoxyCodeLine{128     virtual \textcolor{keywordtype}{void} BeginPlay() override;}
+\DoxyCodeLine{132     virtual \textcolor{keywordtype}{void} AddCharacterAbilities();}
+\DoxyCodeLine{136     virtual \textcolor{keywordtype}{void} InitializeAttributes();}
+\DoxyCodeLine{140     virtual \textcolor{keywordtype}{void} AddStartupEffects();}
+\DoxyCodeLine{145     virtual \textcolor{keywordtype}{void} SetHealth(\textcolor{keywordtype}{float} Health);}
+\DoxyCodeLine{146 \};}
+
+\end{DoxyCode}

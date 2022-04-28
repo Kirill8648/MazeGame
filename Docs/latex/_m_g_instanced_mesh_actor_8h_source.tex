@@ -1,0 +1,35 @@
+\hypertarget{_m_g_instanced_mesh_actor_8h_source}{}\doxysection{MGInstanced\+Mesh\+Actor.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}MGInstancedMeshActorStatic.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}GameFramework/Actor.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}MGInstancedMeshActor.generated.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{13 UCLASS()}
+\DoxyCodeLine{14 class MAZEGAME\_API \mbox{\hyperlink{class_a_m_g_instanced_mesh_actor}{AMGInstancedMeshActor}} : public \mbox{\hyperlink{class_a_m_g_instanced_mesh_actor_static}{AMGInstancedMeshActorStatic}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     GENERATED\_BODY()}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_a_m_g_instanced_mesh_actor_a05af415093054990a261e4604c35fb09}{AMGInstancedMeshActor}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{30     UFUNCTION(BlueprintCallable, Category = \textcolor{stringliteral}{"{}MazeGame|MGInstansedMeshActor"{}})}
+\DoxyCodeLine{31     TArray<AActor*> ReplaceInstancesWithActorsBySphereOverlap(FVector Center, \textcolor{keywordtype}{float} Radius);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{38     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|MGInstansedMeshActor"{})}
+\DoxyCodeLine{39     TArray<AActor*> ReplaceInstancesWithActorsByBoxOverlap(FBox Box);}
+\DoxyCodeLine{40     }
+\DoxyCodeLine{41     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|MGInstansedMeshActor"{})}
+\DoxyCodeLine{42     TSubclassOf<AActor> ReplacementActor;}
+\DoxyCodeLine{44     UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "{}MazeGame|MGInstancedMeshActor"{})}
+\DoxyCodeLine{45     \textcolor{keywordtype}{float} ReplacementActorZOffset;}
+\DoxyCodeLine{47 protected:}
+\DoxyCodeLine{51     virtual \textcolor{keywordtype}{void} BeginPlay() override;}
+\DoxyCodeLine{52 \};}
+
+\end{DoxyCode}

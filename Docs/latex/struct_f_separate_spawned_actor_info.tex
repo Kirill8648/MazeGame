@@ -1,0 +1,70 @@
+\hypertarget{struct_f_separate_spawned_actor_info}{}\doxysection{FSeparate\+Spawned\+Actor\+Info Struct Reference}
+\label{struct_f_separate_spawned_actor_info}\index{FSeparateSpawnedActorInfo@{FSeparateSpawnedActorInfo}}
+
+
+Структура, хранящая данные об отдельном акторе для спавна после генерации лабиринта.  
+
+
+
+
+{\ttfamily \#include $<$MGMaze\+Generator.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct_f_separate_spawned_actor_info_af04d436052527337130b1109cd8620d9}\label{struct_f_separate_spawned_actor_info_af04d436052527337130b1109cd8620d9}} 
+TSubclass\+Of$<$ AActor $>$ {\bfseries Spawned\+Actor}
+\begin{DoxyCompactList}\small\item\em Класс актора для спавна. \end{DoxyCompactList}\item 
+TEnum\+As\+Byte$<$ EMaze\+Item\+State $>$ \mbox{\hyperlink{struct_f_separate_spawned_actor_info_a01179b7e0a245d724876088968fc61e9}{Actor\+Type}}
+\begin{DoxyCompactList}\small\item\em Тип актора для спавна. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_f_separate_spawned_actor_info_a120428f6c3c7bff15f4eaf400ca7e76d}{Spawn\+Rate}}
+\begin{DoxyCompactList}\small\item\em Вероятность спавна в процентах (50\% = 0.\+5). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_f_separate_spawned_actor_info_a751097a8c8a985f271196d0c4ab5c25d}{b\+Is\+Spawn\+Rate\+As\+Count}}
+\begin{DoxyCompactList}\small\item\em Использовать ли вероятность спавна как количество заспавненных акторов независимо от размера лабиринта. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_f_separate_spawned_actor_info_a5c07c0071b51ee5cf425cc54a5febc65}\label{struct_f_separate_spawned_actor_info_a5c07c0071b51ee5cf425cc54a5febc65}} 
+FVector {\bfseries Optional\+Offset}
+\begin{DoxyCompactList}\small\item\em Опциональная корректировка положения актора при спавне. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{struct_f_separate_spawned_actor_info_aa4f0df9eb3ccf7d007afea83ae2885b1}\label{struct_f_separate_spawned_actor_info_aa4f0df9eb3ccf7d007afea83ae2885b1}} 
+FRotator {\bfseries Optional\+Rotation}
+\begin{DoxyCompactList}\small\item\em Опциональная корректировка поворота актора при спавне. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Структура, хранящая данные об отдельном акторе для спавна после генерации лабиринта. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_f_separate_spawned_actor_info_a01179b7e0a245d724876088968fc61e9}\label{struct_f_separate_spawned_actor_info_a01179b7e0a245d724876088968fc61e9}} 
+\index{FSeparateSpawnedActorInfo@{FSeparateSpawnedActorInfo}!ActorType@{ActorType}}
+\index{ActorType@{ActorType}!FSeparateSpawnedActorInfo@{FSeparateSpawnedActorInfo}}
+\doxysubsubsection{\texorpdfstring{ActorType}{ActorType}}
+{\footnotesize\ttfamily TEnum\+As\+Byte$<$EMaze\+Item\+State$>$ FSeparate\+Spawned\+Actor\+Info\+::\+Actor\+Type}
+
+
+
+Тип актора для спавна. 
+
+Выбирать None запрещено. Knot пока не реализован. \mbox{\Hypertarget{struct_f_separate_spawned_actor_info_a751097a8c8a985f271196d0c4ab5c25d}\label{struct_f_separate_spawned_actor_info_a751097a8c8a985f271196d0c4ab5c25d}} 
+\index{FSeparateSpawnedActorInfo@{FSeparateSpawnedActorInfo}!bIsSpawnRateAsCount@{bIsSpawnRateAsCount}}
+\index{bIsSpawnRateAsCount@{bIsSpawnRateAsCount}!FSeparateSpawnedActorInfo@{FSeparateSpawnedActorInfo}}
+\doxysubsubsection{\texorpdfstring{bIsSpawnRateAsCount}{bIsSpawnRateAsCount}}
+{\footnotesize\ttfamily bool FSeparate\+Spawned\+Actor\+Info\+::b\+Is\+Spawn\+Rate\+As\+Count}
+
+
+
+Использовать ли вероятность спавна как количество заспавненных акторов независимо от размера лабиринта. 
+
+В этом случае значение Spawn\+Rate должно быть целое. \mbox{\Hypertarget{struct_f_separate_spawned_actor_info_a120428f6c3c7bff15f4eaf400ca7e76d}\label{struct_f_separate_spawned_actor_info_a120428f6c3c7bff15f4eaf400ca7e76d}} 
+\index{FSeparateSpawnedActorInfo@{FSeparateSpawnedActorInfo}!SpawnRate@{SpawnRate}}
+\index{SpawnRate@{SpawnRate}!FSeparateSpawnedActorInfo@{FSeparateSpawnedActorInfo}}
+\doxysubsubsection{\texorpdfstring{SpawnRate}{SpawnRate}}
+{\footnotesize\ttfamily float FSeparate\+Spawned\+Actor\+Info\+::\+Spawn\+Rate}
+
+
+
+Вероятность спавна в процентах (50\% = 0.\+5). 
+
+Означает процент от количества клеток определенного выбранного типа. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGMaze\+Generator.\+h\end{DoxyCompactItemize}

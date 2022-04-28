@@ -1,0 +1,6 @@
+<map id="UMGPlayerDataSubsystem" name="UMGPlayerDataSubsystem">
+<area shape="rect" id="node1" title="Класс подсистемы для хранения данных о текущей игровой сессии." alt="" coords="58,171,241,197"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,81,187,108"/>
+<area shape="rect" id="node3" href="$class_u_m_g_save_game.html" title="Класс для хранения сохраняющихся данных." alt="" coords="211,81,325,108"/>
+<area shape="rect" id="node4" title=" " alt="" coords="221,5,315,32"/>
+</map>

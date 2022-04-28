@@ -48,7 +48,7 @@ UMGPlayerDataSubsystem::UMGPlayerDataSubsystem()
 		GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, "Ptr is not valid");
 	}*/
 
-	
+
 	//}
 
 	/*static ConstructorHelpers::FObjectFinder<UDataTable> Table(TEXT("/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities"));
@@ -97,7 +97,12 @@ void UMGPlayerDataSubsystem::LoadGameFromSlotAsync(const int32 SlotIndex)
 void UMGPlayerDataSubsystem::SaveGameToSlotAsync(const int32 SlotIndex)
 {
 	if (IsValid(CurrentlyLoadedSaveGameObject))
-		UGameplayStatics::AsyncSaveGameToSlot(CurrentlyLoadedSaveGameObject, FString::Printf(TEXT("SaveGame%d"), SlotIndex), 0);
+	{
+		CurrentlyLoadedSaveGameObject->SetDateTime();
+		FAsyncSaveGameToSlotDelegate SavedDelegate;
+		SavedDelegate.BindUObject(this, &UMGPlayerDataSubsystem::SavedCreatedFileDelegateFunction);
+		UGameplayStatics::AsyncSaveGameToSlot(CurrentlyLoadedSaveGameObject, FString::Printf(TEXT("SaveGame%d"), SlotIndex), 0, SavedDelegate);
+	}
 }
 
 void UMGPlayerDataSubsystem::LoadGameFromSlot(const int32 SlotIndex)
@@ -112,7 +117,10 @@ void UMGPlayerDataSubsystem::LoadGameFromSlot(const int32 SlotIndex)
 void UMGPlayerDataSubsystem::SaveGameToSlot(const int32 SlotIndex)
 {
 	if (IsValid(CurrentlyLoadedSaveGameObject))
+	{
+		CurrentlyLoadedSaveGameObject->SetDateTime();
 		UGameplayStatics::SaveGameToSlot(CurrentlyLoadedSaveGameObject, FString::Printf(TEXT("SaveGame%d"), SlotIndex), 0);
+	}
 }
 
 /*void UMGPlayerDataSubsystem::SaveGameToLastSlot()
@@ -133,4 +141,10 @@ void UMGPlayerDataSubsystem::LoadGameDelegateFunction(const FString& SlotName, c
 		CurrentlyLoadedSaveGameObject = Cast<UMGSaveGame>(LoadedGameData);
 		CurrentlyLoadedSaveGameObject->SlotIndex = FCString::Atoi(*Temp);
 	}
+}
+
+void UMGPlayerDataSubsystem::SavedCreatedFileDelegateFunction(const FString& SlotName, const int32 UserIndex, bool bSuccess)
+{
+	if (!bSuccess && GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 30.0f, FColor::Red, FString::Printf(TEXT("Filed to async save game with SlotName: %s; UserIndex: %d"), *SlotName, UserIndex));
 }

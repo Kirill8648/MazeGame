@@ -11,42 +11,62 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnCooldownChanged, FGameplayTag, CooldownTag, float, TimeRemaining, float, Duration);
 
 /**
- * Blueprint node to automatically register a listener for changes (Begin and End) to an array of Cooldown tags.
- * Useful to use in UI.
+ * Блупринт нода, которая автоматически регистрирует listener для изменения (начала и конца) для массива тэгов перезарядки.
+ * Полезно использовать в пользовательском интерфейсе.
  */
 UCLASS(BlueprintType, meta = (ExposedAsyncProxy = AsyncTask))
 class MAZEGAME_API UMGAsyncTaskCooldownChanged : public UBlueprintAsyncActionBase
 {
 	GENERATED_BODY()
-	
+
 public:
 	UPROPERTY(BlueprintAssignable)
-	FOnCooldownChanged OnCooldownBegin;
+	FOnCooldownChanged OnCooldownBegin; /**< Делегат, вызывающийся при начале перезарядки. */
 
 	UPROPERTY(BlueprintAssignable)
-	FOnCooldownChanged OnCooldownEnd;
+	FOnCooldownChanged OnCooldownEnd; /**< Делегат, вызывающийся по окончании перезарядки. */
 
-	// Listens for changes (Begin and End) to cooldown GameplayEffects based on the cooldown tag.
-	// UseServerCooldown determines if the Sever's cooldown is returned in addition to the local predicted cooldown.
-	// If using ServerCooldown, TimeRemaining and Duration will return -1 to signal local predicted cooldown has begun.
+	/**
+	* Слушает измененения (начало и конец) дял эффекта игрового процесса перезарядки, основываясь на тэге перезарядки.
+	* @param AbilitySystemComponent - компонент системы способностей
+	* @param CooldownTags - контейнер тэгов перезарядки
+	* @param UseServerCooldown - вызывать ли перезарядку дополнительно на сервере
+	* @return - указатель на асинхронную задачу
+	*/
 	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"))
 	static UMGAsyncTaskCooldownChanged* ListenForCooldownChange(UAbilitySystemComponent* AbilitySystemComponent, FGameplayTagContainer CooldownTags, bool UseServerCooldown);
-
-	// You must call this function manually when you want the AsyncTask to end.
-	// For UMG Widgets, you would call it in the Widget's Destruct event.
+	/**
+	* Уничтожает задачу. Эту функцию нужно вызвать, когда задача больше не нужна, иначе задача будет существовать бесконечно.
+	*/
 	UFUNCTION(BlueprintCallable)
 	void EndTask();
 
 protected:
 	UPROPERTY()
-	UAbilitySystemComponent* ASC;
+	UAbilitySystemComponent* ASC; /**< Указатель на компонент системы способностей.*/
 
-	FGameplayTagContainer CooldownTags;
+	FGameplayTagContainer CooldownTags; /**< Контейнер тэгов перезарядки.*/
 
-	bool UseServerCooldown;
-
+	bool UseServerCooldown; /**< Вызывать ли перезарядку дополнительно на сервере.*/
+	/**
+	* Вызывается когда добавленный активный эффект игрового процесса дает обратную связь.
+	* @param Target - целевой компонент системы способностей
+	* @param SpecApplied - спецификация эффекта игрового процесса
+	* @param ActiveHandle - содержит информацию об активном эффекте игрового процесса
+	*/
 	virtual void OnActiveGameplayEffectAddedCallback(UAbilitySystemComponent* Target, const FGameplayEffectSpec& SpecApplied, FActiveGameplayEffectHandle ActiveHandle);
+	/**
+	* Вызывается когда изменяется контейнер тэгов перезарядки.
+	* @param CooldownTag - измененный тэг
+	* @param NewCount - новое количество тэгов в контейнере
+	*/
 	virtual void CooldownTagChanged(const FGameplayTag CooldownTag, int32 NewCount);
-
+	/**
+	* Геттер состояния перезарядки для определенных тэгов.
+	* @param CooldownTags - контейнер тэгов
+	* @param TimeRemaining - оставшееся время перезарядки
+	* @param CooldownDuration - время перезарядки
+	* @return - закончилась ли перезарядка
+	*/
 	bool GetCooldownRemainingForTag(FGameplayTagContainer CooldownTags, float& TimeRemaining, float& CooldownDuration);
 };

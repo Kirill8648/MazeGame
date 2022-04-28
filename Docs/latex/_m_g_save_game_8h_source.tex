@@ -1,0 +1,128 @@
+\hypertarget{_m_g_save_game_8h_source}{}\doxysection{MGSave\+Game.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}MGGameplayAbilityBase.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}GameFramework/SaveGame.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}MGSaveGame.generated.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{13 USTRUCT(BlueprintType)}
+\DoxyCodeLine{14 struct \mbox{\hyperlink{struct_f_saved_ability_info}{FSavedAbilityInfo}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     GENERATED\_BODY()}
+\DoxyCodeLine{20     \mbox{\hyperlink{struct_f_saved_ability_info}{FSavedAbilityInfo}}()}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         AbilityInfo = NULL;}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{30     \mbox{\hyperlink{struct_f_saved_ability_info_a4ba6fde2a1a21e348a5e9a525998721b}{FSavedAbilityInfo}}(FString AbilityKey, int32 AbilityInfo): AbilityKey(AbilityKey), AbilityInfo(AbilityInfo)}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{35     FString AbilityKey; }
+\DoxyCodeLine{36     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{37     int32 AbilityInfo; }
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{43 USTRUCT(BlueprintType)}
+\DoxyCodeLine{44 struct \mbox{\hyperlink{struct_f_ability_level_prices}{FAbilityLevelPrices}} : public FTableRowBase}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46     GENERATED\_BODY()}
+\DoxyCodeLine{47     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{48     FString AbilityKey = "{}"{}; }
+\DoxyCodeLine{49     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{50     int32 Lvl1Cost = 0; }
+\DoxyCodeLine{51     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{52     int32 Lvl2Cost = 0; }
+\DoxyCodeLine{53     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{54     int32 Lvl3Cost = 0; }
+\DoxyCodeLine{55     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{56     int32 Lvl4Cost = 0; }
+\DoxyCodeLine{57     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{58     int32 Lvl5Cost = 0; }
+\DoxyCodeLine{59     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{60     int32 Lvl6Cost = 0; }
+\DoxyCodeLine{61     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{62     int32 Lvl7Cost = 0; }
+\DoxyCodeLine{63     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{64     int32 Lvl8Cost = 0; }
+\DoxyCodeLine{65     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{66     int32 Lvl9Cost = 0; }
+\DoxyCodeLine{67     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{68     int32 Lvl10Cost = 0; }
+\DoxyCodeLine{69     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{70     int32 MaxLvl = 0; }
+\DoxyCodeLine{71     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{72     TObjectPtr<UTexture2D> AbilityIcon = \textcolor{keywordtype}{nullptr}; }
+\DoxyCodeLine{73     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{74     TSubclassOf<\mbox{\hyperlink{class_u_m_g_gameplay_ability_base}{UMGGameplayAbilityBase}}> Ability; }
+\DoxyCodeLine{75     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{76     UDataTable* AbilityStatsTable = \textcolor{keywordtype}{nullptr}; }
+\DoxyCodeLine{77 \};}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{82 USTRUCT(BlueprintType)}
+\DoxyCodeLine{83 struct \mbox{\hyperlink{struct_f_ability_stats_by_levels}{FAbilityStatsByLevels}} : public FTableRowBase}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85     GENERATED\_BODY()}
+\DoxyCodeLine{86     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{87     FString StatKey = "{}"{}; }
+\DoxyCodeLine{88     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{89     \textcolor{keywordtype}{float} Lvl1Value = 0; }
+\DoxyCodeLine{90     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{91     \textcolor{keywordtype}{float} Lvl2Value = 0; }
+\DoxyCodeLine{92     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{93     \textcolor{keywordtype}{float} Lvl3Value = 0; }
+\DoxyCodeLine{94     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{95     \textcolor{keywordtype}{float} Lvl4Value = 0; }
+\DoxyCodeLine{96     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{97     \textcolor{keywordtype}{float} Lvl5Value = 0; }
+\DoxyCodeLine{98     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{99     \textcolor{keywordtype}{float} Lvl6Value = 0; }
+\DoxyCodeLine{100     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{101     \textcolor{keywordtype}{float} Lvl7Value = 0; }
+\DoxyCodeLine{102     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{103     \textcolor{keywordtype}{float} Lvl8Value = 0; }
+\DoxyCodeLine{104     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{105     \textcolor{keywordtype}{float} Lvl9Value = 0; }
+\DoxyCodeLine{106     UPROPERTY(EditAnywhere, BlueprintReadWrite)}
+\DoxyCodeLine{107     \textcolor{keywordtype}{float} Lvl10Value = 0; }
+\DoxyCodeLine{108 \};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{113 UCLASS()}
+\DoxyCodeLine{114 class MAZEGAME\_API \mbox{\hyperlink{class_u_m_g_save_game}{UMGSaveGame}} : public USaveGame}
+\DoxyCodeLine{115 \{}
+\DoxyCodeLine{116     GENERATED\_BODY()}
+\DoxyCodeLine{117 \textcolor{keyword}{public}:}
+\DoxyCodeLine{121     \mbox{\hyperlink{class_u_m_g_save_game_add9be63fc985389e1b88292282385f5e}{UMGSaveGame}}();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{126     UFUNCTION(BlueprintCallable, Category = \textcolor{stringliteral}{"{}MazeGame|SaveGame"{}})}
+\DoxyCodeLine{127     void SetDateTime();}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{130     int32 PlayerCurrentCoinsNumber; }
+\DoxyCodeLine{132     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{133     int32 PlayerAccumulatedCoinsNumber; }
+\DoxyCodeLine{135     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{136     TArray<\mbox{\hyperlink{struct_f_saved_ability_info}{FSavedAbilityInfo}}> AbilitiesLevels; }
+\DoxyCodeLine{138     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{139     TArray<\mbox{\hyperlink{struct_f_saved_ability_info}{FSavedAbilityInfo}}> AbilitiesSlotsNumbers; }
+\DoxyCodeLine{141     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{142     int32 LastXMazeSize; }
+\DoxyCodeLine{144     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{145     int32 LastYMazeSize; }
+\DoxyCodeLine{147     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{148     TArray<\mbox{\hyperlink{struct_f_saved_ability_info}{FSavedAbilityInfo}}> SpawnedAbilityCollectiblesCache; }
+\DoxyCodeLine{150     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{151     int32 SlotIndex; }
+\DoxyCodeLine{152     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{153     FString Date; }
+\DoxyCodeLine{154     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|SaveGame"{})}
+\DoxyCodeLine{155     FString Time; }
+\DoxyCodeLine{156 \};}
+
+\end{DoxyCode}

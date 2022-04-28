@@ -1,0 +1,189 @@
+\hypertarget{class_f_generate_maze_matrix_async_task}{}\doxysection{FGenerate\+Maze\+Matrix\+Async\+Task Class Reference}
+\label{class_f_generate_maze_matrix_async_task}\index{FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}}
+
+
+Асинхронная задача для генерации матрицы лабиринта  
+
+
+
+
+{\ttfamily \#include $<$MGMaze\+Generator.\+h$>$}
+
+
+
+Inheritance diagram for FGenerate\+Maze\+Matrix\+Async\+Task\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_f_generate_maze_matrix_async_task__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for FGenerate\+Maze\+Matrix\+Async\+Task\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_f_generate_maze_matrix_async_task__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a857b5922da8d66afcc29f642eb349598}{FGenerate\+Maze\+Matrix\+Async\+Task}} (FBool\+Delegate \&\mbox{\hyperlink{class_f_generate_maze_matrix_async_task_adf5eb14ff0a1b4700dabb09548c09644}{End\+Delegate}}, FString\+Delegate \&\mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a1149804c7a868ef08be40ad4fe92abca}{Draw\+UIDelegate}}, TArray$<$ TArray$<$ \mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} $>$ $>$ \&\mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a48ac4c601672de83a8c6a3e0d42220d0}{Matrix\+Address}}, \mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} \&\mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a8402864aba62018de8662f106c7b8450}{Exit\+Cell}}, int32 \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a0b500f78ff43cb24359dc2a05d25bcb1}{Seed}}, int32 \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_abcfd93c074cabcce0e6e588c33200d42}{YSize}}, int32 \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a13f40bed55a4865e8da258c0ddb05e19}{XSize}})
+\begin{DoxyCompactList}\small\item\em Конструктор с параметрами. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a92e7a67029e61c1fbc7b973c725f3643}\label{class_f_generate_maze_matrix_async_task_a92e7a67029e61c1fbc7b973c725f3643}} 
+void {\bfseries Do\+Work} ()
+\begin{DoxyCompactList}\small\item\em Сделать работу (асинхронно сгенерировать матрицу лабиринта). \end{DoxyCompactList}\item 
+TArray$<$ \mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a0463acb75b5c67269f15320414a704e7}{Get\+Near\+Cells\+By\+Indexes}} (int32 IndexY, int32 IndexX, bool b\+Ignore\+Walls=false)
+\begin{DoxyCompactList}\small\item\em Получить указатели на соседние клетки. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_adf45d881f9e7a0844032d5e9a82f0a0e}{Place\+Wall\+Between\+Cells\+By\+Indexes}} (int32 Index\+Y1, int32 Index\+X1, int32 Index\+Y2, int32 Index\+X2)
+\begin{DoxyCompactList}\small\item\em Поставить стену между клетками по индексам. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_f_generate_maze_matrix_async_task_a87804f1a07ebba04a3820b98b0b4c6a2}{Break\+Wall\+Between\+Cells\+By\+Indexes}} (int32 Index\+Y1, int32 Index\+X1, int32 Index\+Y2, int32 Index\+X2)
+\begin{DoxyCompactList}\small\item\em Разрушить стену между клетками по индексам. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_ac67c7664040d4cd4bbeb5ceef261531f}\label{class_f_generate_maze_matrix_async_task_ac67c7664040d4cd4bbeb5ceef261531f}} 
+FORCEINLINE TStat\+Id {\bfseries Get\+Stat\+Id} () const
+\begin{DoxyCompactList}\small\item\em Техническая функция, необходимая для реализации FNon\+Abandonable\+Task. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_adf5eb14ff0a1b4700dabb09548c09644}\label{class_f_generate_maze_matrix_async_task_adf5eb14ff0a1b4700dabb09548c09644}} 
+FBool\+Delegate \& {\bfseries End\+Delegate}
+\begin{DoxyCompactList}\small\item\em Адрес делегата, вызваемого при завершении генерации матрицы. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a1149804c7a868ef08be40ad4fe92abca}\label{class_f_generate_maze_matrix_async_task_a1149804c7a868ef08be40ad4fe92abca}} 
+FString\+Delegate \& {\bfseries Draw\+UIDelegate}
+\begin{DoxyCompactList}\small\item\em Адрес делегата, вызваемого при необходимости перерисовать процесс генерации. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a48ac4c601672de83a8c6a3e0d42220d0}\label{class_f_generate_maze_matrix_async_task_a48ac4c601672de83a8c6a3e0d42220d0}} 
+TArray$<$ TArray$<$ \mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} $>$ $>$ \& {\bfseries Matrix\+Address}
+\begin{DoxyCompactList}\small\item\em Адрес матрицы лабиринта. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a8402864aba62018de8662f106c7b8450}\label{class_f_generate_maze_matrix_async_task_a8402864aba62018de8662f106c7b8450}} 
+\mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} \& {\bfseries Exit\+Cell}
+\begin{DoxyCompactList}\small\item\em Адрес клетки с выходом. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a0b500f78ff43cb24359dc2a05d25bcb1}\label{class_f_generate_maze_matrix_async_task_a0b500f78ff43cb24359dc2a05d25bcb1}} 
+int32 {\bfseries Seed}
+\begin{DoxyCompactList}\small\item\em Ключ генерации. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_abcfd93c074cabcce0e6e588c33200d42}\label{class_f_generate_maze_matrix_async_task_abcfd93c074cabcce0e6e588c33200d42}} 
+int32 {\bfseries YSize}
+\begin{DoxyCompactList}\small\item\em Размер Y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a13f40bed55a4865e8da258c0ddb05e19}\label{class_f_generate_maze_matrix_async_task_a13f40bed55a4865e8da258c0ddb05e19}} 
+int32 {\bfseries XSize}
+\begin{DoxyCompactList}\small\item\em Размер X. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_aff5b45abbb3c823346dfabdd29c46b5c}\label{class_f_generate_maze_matrix_async_task_aff5b45abbb3c823346dfabdd29c46b5c}} 
+bool {\bfseries b\+Is\+Mistake\+Happened\+In\+Async} = false
+\begin{DoxyCompactList}\small\item\em Случились ли ошибки при асинхронной генерации матрицы лабиринта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a8dc16c150791fa13620e7bd2d0ea5a61}\label{class_f_generate_maze_matrix_async_task_a8dc16c150791fa13620e7bd2d0ea5a61}} 
+class {\bfseries FAuto\+Delete\+Async\+Task$<$ FGenerate\+Maze\+Matrix\+Async\+Task $>$}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Асинхронная задача для генерации матрицы лабиринта 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a857b5922da8d66afcc29f642eb349598}\label{class_f_generate_maze_matrix_async_task_a857b5922da8d66afcc29f642eb349598}} 
+\index{FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}!FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}}
+\index{FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}!FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}}
+\doxysubsubsection{\texorpdfstring{FGenerateMazeMatrixAsyncTask()}{FGenerateMazeMatrixAsyncTask()}}
+{\footnotesize\ttfamily FGenerate\+Maze\+Matrix\+Async\+Task\+::\+FGenerate\+Maze\+Matrix\+Async\+Task (\begin{DoxyParamCaption}\item[{FBool\+Delegate \&}]{End\+Delegate,  }\item[{FString\+Delegate \&}]{Draw\+UIDelegate,  }\item[{TArray$<$ TArray$<$ \mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} $>$ $>$ \&}]{Matrix\+Address,  }\item[{\mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} \&}]{Exit\+Cell,  }\item[{int32}]{Seed,  }\item[{int32}]{YSize,  }\item[{int32}]{XSize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор с параметрами. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em End\+Delegate} & -\/ адрес делегата, вызваемого при завершении генерации матрицы \\
+\hline
+{\em Draw\+UIDelegate} & -\/ адрес делегата, вызваемого при необходимости перерисовать процесс генерации \\
+\hline
+{\em Matrix\+Address} & -\/ адрес матрицы лабиринта \\
+\hline
+{\em Exit\+Cell} & -\/ адрес клетки с выходом \\
+\hline
+{\em Seed} & -\/ ключ генерации \\
+\hline
+{\em YSize} & -\/ размер Y \\
+\hline
+{\em XSize} & -\/ размер X \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a87804f1a07ebba04a3820b98b0b4c6a2}\label{class_f_generate_maze_matrix_async_task_a87804f1a07ebba04a3820b98b0b4c6a2}} 
+\index{FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}!BreakWallBetweenCellsByIndexes@{BreakWallBetweenCellsByIndexes}}
+\index{BreakWallBetweenCellsByIndexes@{BreakWallBetweenCellsByIndexes}!FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}}
+\doxysubsubsection{\texorpdfstring{BreakWallBetweenCellsByIndexes()}{BreakWallBetweenCellsByIndexes()}}
+{\footnotesize\ttfamily void FGenerate\+Maze\+Matrix\+Async\+Task\+::\+Break\+Wall\+Between\+Cells\+By\+Indexes (\begin{DoxyParamCaption}\item[{int32}]{Index\+Y1,  }\item[{int32}]{Index\+X1,  }\item[{int32}]{Index\+Y2,  }\item[{int32}]{Index\+X2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Разрушить стену между клетками по индексам. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Index\+Y1} & -\/ индекс клетки 1 по Y \\
+\hline
+{\em Index\+X1} & -\/ индекс клетки 1 по X \\
+\hline
+{\em Index\+Y2} & -\/ индекс клетки 2 по Y \\
+\hline
+{\em Index\+X2} & -\/ индекс клетки 2 по X \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_a0463acb75b5c67269f15320414a704e7}\label{class_f_generate_maze_matrix_async_task_a0463acb75b5c67269f15320414a704e7}} 
+\index{FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}!GetNearCellsByIndexes@{GetNearCellsByIndexes}}
+\index{GetNearCellsByIndexes@{GetNearCellsByIndexes}!FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}}
+\doxysubsubsection{\texorpdfstring{GetNearCellsByIndexes()}{GetNearCellsByIndexes()}}
+{\footnotesize\ttfamily TArray$<$ \mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} $\ast$ $>$ FGenerate\+Maze\+Matrix\+Async\+Task\+::\+Get\+Near\+Cells\+By\+Indexes (\begin{DoxyParamCaption}\item[{int32}]{IndexY,  }\item[{int32}]{IndexX,  }\item[{bool}]{b\+Ignore\+Walls = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Получить указатели на соседние клетки. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IndexY} & -\/ индекс клетки по Y \\
+\hline
+{\em IndexX} & -\/ индекс клетки по X \\
+\hline
+{\em b\+Ignore\+Walls} & -\/ игнорировать ли стены \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+массив указателей на клетки 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_f_generate_maze_matrix_async_task_adf45d881f9e7a0844032d5e9a82f0a0e}\label{class_f_generate_maze_matrix_async_task_adf45d881f9e7a0844032d5e9a82f0a0e}} 
+\index{FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}!PlaceWallBetweenCellsByIndexes@{PlaceWallBetweenCellsByIndexes}}
+\index{PlaceWallBetweenCellsByIndexes@{PlaceWallBetweenCellsByIndexes}!FGenerateMazeMatrixAsyncTask@{FGenerateMazeMatrixAsyncTask}}
+\doxysubsubsection{\texorpdfstring{PlaceWallBetweenCellsByIndexes()}{PlaceWallBetweenCellsByIndexes()}}
+{\footnotesize\ttfamily void FGenerate\+Maze\+Matrix\+Async\+Task\+::\+Place\+Wall\+Between\+Cells\+By\+Indexes (\begin{DoxyParamCaption}\item[{int32}]{Index\+Y1,  }\item[{int32}]{Index\+X1,  }\item[{int32}]{Index\+Y2,  }\item[{int32}]{Index\+X2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Поставить стену между клетками по индексам. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Index\+Y1} & -\/ индекс клетки 1 по Y \\
+\hline
+{\em Index\+X1} & -\/ индекс клетки 1 по X \\
+\hline
+{\em Index\+Y2} & -\/ индекс клетки 2 по Y \\
+\hline
+{\em Index\+X2} & -\/ индекс клетки 2 по X \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGMaze\+Generator.\+h\end{DoxyCompactItemize}

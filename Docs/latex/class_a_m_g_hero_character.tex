@@ -1,0 +1,303 @@
+\hypertarget{class_a_m_g_hero_character}{}\doxysection{AMGHero\+Character Class Reference}
+\label{class_a_m_g_hero_character}\index{AMGHeroCharacter@{AMGHeroCharacter}}
+
+
+Класс управляемого игроком персонажа.  
+
+
+
+
+{\ttfamily \#include $<$MGHero\+Character.\+h$>$}
+
+
+
+Inheritance diagram for AMGHero\+Character\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_a_m_g_hero_character__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for AMGHero\+Character\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_m_g_hero_character__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_a4b0fe2a82944bc6f6fa51a7f1f1eef9e}\label{class_a_m_g_hero_character_a4b0fe2a82944bc6f6fa51a7f1f1eef9e}} 
+{\bfseries AMGHero\+Character} ()
+\begin{DoxyCompactList}\small\item\em Стандартный конструктор. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_m_g_hero_character_a50481302a62b347fb633bc1f10357276}{Get\+Lifetime\+Replicated\+Props}} (TArray$<$ FLifetime\+Property $>$ \&Out\+Lifetime\+Props) const override
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации класса. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_m_g_hero_character_a69163641830116f15f86cde75e7023a4}{Setup\+Player\+Input\+Component}} (UInput\+Component $\ast$Player\+Input\+Component) override
+\begin{DoxyCompactList}\small\item\em Инициализирует ввод с клавиатуры для персонажа. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_m_g_hero_character_a6f29b88cb6c735a3a56579ac129e4678}{Possessed\+By}} (AController $\ast$New\+Controller) override
+\begin{DoxyCompactList}\small\item\em Вызывается когда персонаж начинает контролироваться контроллером. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_a4509a92fb75a95654f037a0d360be371}\label{class_a_m_g_hero_character_a4509a92fb75a95654f037a0d360be371}} 
+void {\bfseries Update\+Abilities} ()
+\begin{DoxyCompactList}\small\item\em Обновляет способности в компоненте системы способностей. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_hero_character_ac5bdf572ea99f305fe081b5797f96298}{K2\+\_\+\+Remove\+Ability\+Slot\+From\+HUD}} (EMGAbility\+Input\+ID const \&Slot\+ID)
+\begin{DoxyCompactList}\small\item\em Функция, реализованная в наследуемом от этого класса блупринте. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_a_m_g_hero_character_afd605a611f8d98949848094f22afa392}{Begin\+Play}} () override
+\begin{DoxyCompactList}\small\item\em Функция, вызывающаяся в момент начала игры. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_a_m_g_hero_character_a410fa1125406013aedbb077722bba712}{End\+Play}} (const EEnd\+Play\+Reason\+::\+Type End\+Play\+Reason) override
+\begin{DoxyCompactList}\small\item\em Функция, вызывающаяся в момент окончания игры. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_a704c2c69c9cffb7f5256709b4b09cb2e}\label{class_a_m_g_hero_character_a704c2c69c9cffb7f5256709b4b09cb2e}} 
+virtual void {\bfseries Post\+Initialize\+Components} () override
+\begin{DoxyCompactList}\small\item\em Функция, вызывающаяся после инииализации компонентов. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_hero_character_abc821a3f9b166cf1d2b048d1cf442f79}{Look\+Up}} (float Value)
+\begin{DoxyCompactList}\small\item\em Посмотреть вверх. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_hero_character_a5ff92b7c760eded721ba31704d902ca2}{Turn}} (float Value)
+\begin{DoxyCompactList}\small\item\em Повернуть камеру. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_hero_character_a27e144d15749b078bee5c61848b8f673}{Move\+Forward}} (float Value)
+\begin{DoxyCompactList}\small\item\em Двигаться вперед. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_hero_character_aa24b733bb49057c78d13fac44c0c0e58}{Move\+Right}} (float Value)
+\begin{DoxyCompactList}\small\item\em Посмотреть вправо. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_hero_character_a707609942a7a0fa87edeb1d74a17a8e3}{Move\+Up}} (float Value)
+\begin{DoxyCompactList}\small\item\em Двигаться вверх. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_a03c45ea4c3a580193be01b69b65871d1}\label{class_a_m_g_hero_character_a03c45ea4c3a580193be01b69b65871d1}} 
+void {\bfseries Bind\+ASCInput} ()
+\begin{DoxyCompactList}\small\item\em Привязывает ввод компонента системы способностей к компоненту ввода персонажа. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_a481fae6966150cb3ee3e5a095722ecd0}\label{class_a_m_g_hero_character_a481fae6966150cb3ee3e5a095722ecd0}} 
+virtual void {\bfseries On\+Rep\+\_\+\+Player\+State} () override
+\begin{DoxyCompactList}\small\item\em Вызывается при репликации состояния игрока. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_hero_character_a1a242f0888c42c133f59d8eb080de829}{Start\+Walk\+Camera\+Shake}} (int32 const \&Do\+Shake\+On\+Start)
+\begin{DoxyCompactList}\small\item\em Функция, реализованная в наследуемом от этого класса блупринте. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_hero_character_ac732502cae21b7f2a7a78277289e081f}{Stop\+Walk\+Camera\+Shake}} (int32 const \&Immediately, int32 const \&Clear\+Handle)
+\begin{DoxyCompactList}\small\item\em Функция, реализованная в наследуемом от этого класса блупринте. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_a940807e9fd066f23e27a6bd8047676b4}\label{class_a_m_g_hero_character_a940807e9fd066f23e27a6bd8047676b4}} 
+float {\bfseries Base\+Turn\+Rate}
+\begin{DoxyCompactList}\small\item\em Стандартная скорость поворота камеры персонажа. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_aa340737905f1dcfc9fe91dee1fb2de27}\label{class_a_m_g_hero_character_aa340737905f1dcfc9fe91dee1fb2de27}} 
+float {\bfseries Base\+Look\+Up\+Rate}
+\begin{DoxyCompactList}\small\item\em Стандартная скорость поднятия камеры персонажа. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_af2500032624abc32a368217255d35a5a}\label{class_a_m_g_hero_character_af2500032624abc32a368217255d35a5a}} 
+bool {\bfseries b\+Move\+By\+Camera}
+\begin{DoxyCompactList}\small\item\em Двигаться ли параллельно камере в режиме полета. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_ab03857d23950cf42b7bf553fe26d3afd}\label{class_a_m_g_hero_character_ab03857d23950cf42b7bf553fe26d3afd}} 
+bool {\bfseries b\+ASCInput\+Bound}
+\begin{DoxyCompactList}\small\item\em Привязан ли ввод компонента системы способностей к компоненту ввода персонажа. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_hero_character_ab581d2f11867f3b99f4d67cc2349111a}\label{class_a_m_g_hero_character_ab581d2f11867f3b99f4d67cc2349111a}} 
+class UCamera\+Component $\ast$ {\bfseries First\+Person\+Camera}
+\begin{DoxyCompactList}\small\item\em Указатель на компонент камеры персонажа. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс управляемого игроком персонажа. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_m_g_hero_character_afd605a611f8d98949848094f22afa392}\label{class_a_m_g_hero_character_afd605a611f8d98949848094f22afa392}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!BeginPlay@{BeginPlay}}
+\index{BeginPlay@{BeginPlay}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{BeginPlay()}{BeginPlay()}}
+{\footnotesize\ttfamily virtual void AMGHero\+Character\+::\+Begin\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Функция, вызывающаяся в момент начала игры. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_a_m_g_character_base_acd821602fab5c5f032a398239eb61acd}{AMGCharacter\+Base}}.
+
+\mbox{\Hypertarget{class_a_m_g_hero_character_a410fa1125406013aedbb077722bba712}\label{class_a_m_g_hero_character_a410fa1125406013aedbb077722bba712}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!EndPlay@{EndPlay}}
+\index{EndPlay@{EndPlay}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{EndPlay()}{EndPlay()}}
+{\footnotesize\ttfamily virtual void AMGHero\+Character\+::\+End\+Play (\begin{DoxyParamCaption}\item[{const EEnd\+Play\+Reason\+::\+Type}]{End\+Play\+Reason }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Функция, вызывающаяся в момент окончания игры. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em End\+Play\+Reason} & -\/ причина окончания игры \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_a50481302a62b347fb633bc1f10357276}\label{class_a_m_g_hero_character_a50481302a62b347fb633bc1f10357276}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}}
+\index{GetLifetimeReplicatedProps@{GetLifetimeReplicatedProps}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{GetLifetimeReplicatedProps()}{GetLifetimeReplicatedProps()}}
+{\footnotesize\ttfamily virtual void AMGHero\+Character\+::\+Get\+Lifetime\+Replicated\+Props (\begin{DoxyParamCaption}\item[{TArray$<$ FLifetime\+Property $>$ \&}]{Out\+Lifetime\+Props }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается при репликации класса. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Out\+Lifetime\+Props} & -\/ массив реплицируемых данных \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_ac5bdf572ea99f305fe081b5797f96298}\label{class_a_m_g_hero_character_ac5bdf572ea99f305fe081b5797f96298}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!K2\_RemoveAbilitySlotFromHUD@{K2\_RemoveAbilitySlotFromHUD}}
+\index{K2\_RemoveAbilitySlotFromHUD@{K2\_RemoveAbilitySlotFromHUD}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{K2\_RemoveAbilitySlotFromHUD()}{K2\_RemoveAbilitySlotFromHUD()}}
+{\footnotesize\ttfamily void AMGHero\+Character\+::\+K2\+\_\+\+Remove\+Ability\+Slot\+From\+HUD (\begin{DoxyParamCaption}\item[{EMGAbility\+Input\+ID const \&}]{Slot\+ID }\end{DoxyParamCaption})}
+
+
+
+Функция, реализованная в наследуемом от этого класса блупринте. 
+
+Удаляет слот удаленной способности в пользовательском интерфейсе. 
+\begin{DoxyParams}{Parameters}
+{\em Slot\+ID} & -\/ идентификатор ввода способности \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_abc821a3f9b166cf1d2b048d1cf442f79}\label{class_a_m_g_hero_character_abc821a3f9b166cf1d2b048d1cf442f79}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!LookUp@{LookUp}}
+\index{LookUp@{LookUp}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{LookUp()}{LookUp()}}
+{\footnotesize\ttfamily void AMGHero\+Character\+::\+Look\+Up (\begin{DoxyParamCaption}\item[{float}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Посмотреть вверх. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & -\/ значение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_a27e144d15749b078bee5c61848b8f673}\label{class_a_m_g_hero_character_a27e144d15749b078bee5c61848b8f673}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!MoveForward@{MoveForward}}
+\index{MoveForward@{MoveForward}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{MoveForward()}{MoveForward()}}
+{\footnotesize\ttfamily void AMGHero\+Character\+::\+Move\+Forward (\begin{DoxyParamCaption}\item[{float}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Двигаться вперед. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & -\/ значение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_aa24b733bb49057c78d13fac44c0c0e58}\label{class_a_m_g_hero_character_aa24b733bb49057c78d13fac44c0c0e58}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!MoveRight@{MoveRight}}
+\index{MoveRight@{MoveRight}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{MoveRight()}{MoveRight()}}
+{\footnotesize\ttfamily void AMGHero\+Character\+::\+Move\+Right (\begin{DoxyParamCaption}\item[{float}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Посмотреть вправо. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & -\/ значение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_a707609942a7a0fa87edeb1d74a17a8e3}\label{class_a_m_g_hero_character_a707609942a7a0fa87edeb1d74a17a8e3}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!MoveUp@{MoveUp}}
+\index{MoveUp@{MoveUp}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{MoveUp()}{MoveUp()}}
+{\footnotesize\ttfamily void AMGHero\+Character\+::\+Move\+Up (\begin{DoxyParamCaption}\item[{float}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Двигаться вверх. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & -\/ значение \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_a6f29b88cb6c735a3a56579ac129e4678}\label{class_a_m_g_hero_character_a6f29b88cb6c735a3a56579ac129e4678}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!PossessedBy@{PossessedBy}}
+\index{PossessedBy@{PossessedBy}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{PossessedBy()}{PossessedBy()}}
+{\footnotesize\ttfamily virtual void AMGHero\+Character\+::\+Possessed\+By (\begin{DoxyParamCaption}\item[{AController $\ast$}]{New\+Controller }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Вызывается когда персонаж начинает контролироваться контроллером. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New\+Controller} & -\/ указатель на новый контроллер \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_a69163641830116f15f86cde75e7023a4}\label{class_a_m_g_hero_character_a69163641830116f15f86cde75e7023a4}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!SetupPlayerInputComponent@{SetupPlayerInputComponent}}
+\index{SetupPlayerInputComponent@{SetupPlayerInputComponent}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{SetupPlayerInputComponent()}{SetupPlayerInputComponent()}}
+{\footnotesize\ttfamily virtual void AMGHero\+Character\+::\+Setup\+Player\+Input\+Component (\begin{DoxyParamCaption}\item[{UInput\+Component $\ast$}]{Player\+Input\+Component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Инициализирует ввод с клавиатуры для персонажа. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Player\+Input\+Component} & -\/ указатель на компонент ввода для этого персонажа \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_a1a242f0888c42c133f59d8eb080de829}\label{class_a_m_g_hero_character_a1a242f0888c42c133f59d8eb080de829}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!StartWalkCameraShake@{StartWalkCameraShake}}
+\index{StartWalkCameraShake@{StartWalkCameraShake}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{StartWalkCameraShake()}{StartWalkCameraShake()}}
+{\footnotesize\ttfamily void AMGHero\+Character\+::\+Start\+Walk\+Camera\+Shake (\begin{DoxyParamCaption}\item[{int32 const \&}]{Do\+Shake\+On\+Start }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Функция, реализованная в наследуемом от этого класса блупринте. 
+
+Начинает тряску камеры при ходьбе. 
+\begin{DoxyParams}{Parameters}
+{\em Do\+Shake\+On\+Start} & -\/ начинать ли тряску сразу или после задержки \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_ac732502cae21b7f2a7a78277289e081f}\label{class_a_m_g_hero_character_ac732502cae21b7f2a7a78277289e081f}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!StopWalkCameraShake@{StopWalkCameraShake}}
+\index{StopWalkCameraShake@{StopWalkCameraShake}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{StopWalkCameraShake()}{StopWalkCameraShake()}}
+{\footnotesize\ttfamily void AMGHero\+Character\+::\+Stop\+Walk\+Camera\+Shake (\begin{DoxyParamCaption}\item[{int32 const \&}]{Immediately,  }\item[{int32 const \&}]{Clear\+Handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Функция, реализованная в наследуемом от этого класса блупринте. 
+
+Останавливает тряску камеры при ходьбе. 
+\begin{DoxyParams}{Parameters}
+{\em Immediately} & -\/ закончить ли тряску моментально \\
+\hline
+{\em Clear\+Handle} & -\/ очистить ли таймер обнолвения тряски камеры \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_a_m_g_hero_character_a5ff92b7c760eded721ba31704d902ca2}\label{class_a_m_g_hero_character_a5ff92b7c760eded721ba31704d902ca2}} 
+\index{AMGHeroCharacter@{AMGHeroCharacter}!Turn@{Turn}}
+\index{Turn@{Turn}!AMGHeroCharacter@{AMGHeroCharacter}}
+\doxysubsubsection{\texorpdfstring{Turn()}{Turn()}}
+{\footnotesize\ttfamily void AMGHero\+Character\+::\+Turn (\begin{DoxyParamCaption}\item[{float}]{Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Повернуть камеру. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value} & -\/ значение \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGHero\+Character.\+h\end{DoxyCompactItemize}

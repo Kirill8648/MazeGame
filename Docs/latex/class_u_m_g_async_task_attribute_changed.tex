@@ -1,0 +1,138 @@
+\hypertarget{class_u_m_g_async_task_attribute_changed}{}\doxysection{UMGAsync\+Task\+Attribute\+Changed Class Reference}
+\label{class_u_m_g_async_task_attribute_changed}\index{UMGAsyncTaskAttributeChanged@{UMGAsyncTaskAttributeChanged}}
+
+
+Блупринт нода, которая автоматически регистрирует listener для изменения значения атрибута в компоненте системы способностей.  
+
+
+
+
+{\ttfamily \#include $<$MGAsync\+Task\+Attribute\+Changed.\+h$>$}
+
+
+
+Inheritance diagram for UMGAsync\+Task\+Attribute\+Changed\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{class_u_m_g_async_task_attribute_changed__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UMGAsync\+Task\+Attribute\+Changed\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{class_u_m_g_async_task_attribute_changed__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed_a0a52d271bbbc1e173039aa2a8fd6b9cb}{End\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Уничтожает задачу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed}{UMGAsync\+Task\+Attribute\+Changed}} $\ast$ \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed_a75bc2e3d49a7f52f07b860b70c8411e3}{Listen\+For\+Attribute\+Change}} (UAbility\+System\+Component $\ast$Ability\+System\+Component, FGameplay\+Attribute Attribute)
+\begin{DoxyCompactList}\small\item\em Слушает изменение атрибута. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed}{UMGAsync\+Task\+Attribute\+Changed}} $\ast$ \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed_a1a5a72a678408ab05dee174a010f47b3}{Listen\+For\+Attributes\+Change}} (UAbility\+System\+Component $\ast$Ability\+System\+Component, TArray$<$ FGameplay\+Attribute $>$ Attributes)
+\begin{DoxyCompactList}\small\item\em Слушает изменение атрибутов. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_async_task_attribute_changed_a9edabbe81d83be4c9b67903b39cfc673}\label{class_u_m_g_async_task_attribute_changed_a9edabbe81d83be4c9b67903b39cfc673}} 
+FOn\+Attribute\+Changed {\bfseries On\+Attribute\+Changed}
+\begin{DoxyCompactList}\small\item\em Делегат, вызывающийся при изменениизначения атрибута. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed_a2447fa46bd2f42bc30c7f6220742c61d}{Attribute\+Changed}} (const FOn\+Attribute\+Change\+Data \&Data)
+\begin{DoxyCompactList}\small\item\em Вызывается при изменении атрибута. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_async_task_attribute_changed_a3c37a461015c804ced561afe46956083}\label{class_u_m_g_async_task_attribute_changed_a3c37a461015c804ced561afe46956083}} 
+UAbility\+System\+Component $\ast$ {\bfseries ASC}
+\begin{DoxyCompactList}\small\item\em Указатель на компонент системы способностей. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_async_task_attribute_changed_af90323342f82d5de810e7ac0d382da62}\label{class_u_m_g_async_task_attribute_changed_af90323342f82d5de810e7ac0d382da62}} 
+FGameplay\+Attribute {\bfseries Attribute\+To\+Listen\+For}
+\begin{DoxyCompactList}\small\item\em Атрибут, чьи изменения нужно слушать. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_async_task_attribute_changed_a75c66a6d8c4ac98d15d830d17d00b3ca}\label{class_u_m_g_async_task_attribute_changed_a75c66a6d8c4ac98d15d830d17d00b3ca}} 
+TArray$<$ FGameplay\+Attribute $>$ {\bfseries Attributes\+To\+Listen\+For}
+\begin{DoxyCompactList}\small\item\em Массив атрибутов, чьи изменения нужно слушать. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Блупринт нода, которая автоматически регистрирует listener для изменения значения атрибута в компоненте системы способностей. 
+
+Полезно использовать в пользовательском интерфейсе. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_u_m_g_async_task_attribute_changed_a2447fa46bd2f42bc30c7f6220742c61d}\label{class_u_m_g_async_task_attribute_changed_a2447fa46bd2f42bc30c7f6220742c61d}} 
+\index{UMGAsyncTaskAttributeChanged@{UMGAsyncTaskAttributeChanged}!AttributeChanged@{AttributeChanged}}
+\index{AttributeChanged@{AttributeChanged}!UMGAsyncTaskAttributeChanged@{UMGAsyncTaskAttributeChanged}}
+\doxysubsubsection{\texorpdfstring{AttributeChanged()}{AttributeChanged()}}
+{\footnotesize\ttfamily void UMGAsync\+Task\+Attribute\+Changed\+::\+Attribute\+Changed (\begin{DoxyParamCaption}\item[{const FOn\+Attribute\+Change\+Data \&}]{Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Вызывается при изменении атрибута. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data} & -\/ данные о изменении атрибута \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_async_task_attribute_changed_a0a52d271bbbc1e173039aa2a8fd6b9cb}\label{class_u_m_g_async_task_attribute_changed_a0a52d271bbbc1e173039aa2a8fd6b9cb}} 
+\index{UMGAsyncTaskAttributeChanged@{UMGAsyncTaskAttributeChanged}!EndTask@{EndTask}}
+\index{EndTask@{EndTask}!UMGAsyncTaskAttributeChanged@{UMGAsyncTaskAttributeChanged}}
+\doxysubsubsection{\texorpdfstring{EndTask()}{EndTask()}}
+{\footnotesize\ttfamily void UMGAsync\+Task\+Attribute\+Changed\+::\+End\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Уничтожает задачу. 
+
+Эту функцию нужно вызвать, когда задача больше не нужна, иначе задача будет существовать бесконечно. \mbox{\Hypertarget{class_u_m_g_async_task_attribute_changed_a75bc2e3d49a7f52f07b860b70c8411e3}\label{class_u_m_g_async_task_attribute_changed_a75bc2e3d49a7f52f07b860b70c8411e3}} 
+\index{UMGAsyncTaskAttributeChanged@{UMGAsyncTaskAttributeChanged}!ListenForAttributeChange@{ListenForAttributeChange}}
+\index{ListenForAttributeChange@{ListenForAttributeChange}!UMGAsyncTaskAttributeChanged@{UMGAsyncTaskAttributeChanged}}
+\doxysubsubsection{\texorpdfstring{ListenForAttributeChange()}{ListenForAttributeChange()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed}{UMGAsync\+Task\+Attribute\+Changed}} $\ast$ UMGAsync\+Task\+Attribute\+Changed\+::\+Listen\+For\+Attribute\+Change (\begin{DoxyParamCaption}\item[{UAbility\+System\+Component $\ast$}]{Ability\+System\+Component,  }\item[{FGameplay\+Attribute}]{Attribute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Слушает изменение атрибута. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ability\+System\+Component} & -\/ компонент системы способностей \\
+\hline
+{\em Attribute} & -\/ атрибут \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_async_task_attribute_changed_a1a5a72a678408ab05dee174a010f47b3}\label{class_u_m_g_async_task_attribute_changed_a1a5a72a678408ab05dee174a010f47b3}} 
+\index{UMGAsyncTaskAttributeChanged@{UMGAsyncTaskAttributeChanged}!ListenForAttributesChange@{ListenForAttributesChange}}
+\index{ListenForAttributesChange@{ListenForAttributesChange}!UMGAsyncTaskAttributeChanged@{UMGAsyncTaskAttributeChanged}}
+\doxysubsubsection{\texorpdfstring{ListenForAttributesChange()}{ListenForAttributesChange()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_u_m_g_async_task_attribute_changed}{UMGAsync\+Task\+Attribute\+Changed}} $\ast$ UMGAsync\+Task\+Attribute\+Changed\+::\+Listen\+For\+Attributes\+Change (\begin{DoxyParamCaption}\item[{UAbility\+System\+Component $\ast$}]{Ability\+System\+Component,  }\item[{TArray$<$ FGameplay\+Attribute $>$}]{Attributes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Слушает изменение атрибутов. 
+
+Версия с массивом атрибутов. 
+\begin{DoxyParams}{Parameters}
+{\em Ability\+System\+Component} & -\/ компонент системы способностей \\
+\hline
+{\em Attributes} & -\/ массив атрибут \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGAsync\+Task\+Attribute\+Changed.\+h\end{DoxyCompactItemize}

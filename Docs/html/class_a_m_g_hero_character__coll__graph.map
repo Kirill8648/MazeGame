@@ -1,0 +1,10 @@
+<map id="AMGHeroCharacter" name="AMGHeroCharacter">
+<area shape="rect" id="node1" title="Класс управляемого игроком персонажа." alt="" coords="188,247,323,273"/>
+<area shape="rect" id="node2" href="$class_a_m_g_character_base.html" title="Базовый класс персонажа." alt="" coords="186,171,325,197"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,81,92,108"/>
+<area shape="rect" id="node4" title=" " alt="" coords="117,81,271,108"/>
+<area shape="rect" id="node5" href="$class_u_m_g_ability_system_component.html" title="Компонент системы способностей для этой игры." alt="" coords="296,81,495,108"/>
+<area shape="rect" id="node6" title=" " alt="" coords="306,5,485,32"/>
+<area shape="rect" id="node7" href="$class_u_m_g_attribute_set_base.html" title="Набор атрибутов персонажа." alt="" coords="519,81,669,108"/>
+<area shape="rect" id="node8" title=" " alt="" coords="544,5,644,32"/>
+</map>

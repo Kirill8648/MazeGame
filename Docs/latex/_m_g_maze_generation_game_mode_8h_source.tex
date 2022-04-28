@@ -1,0 +1,43 @@
+\hypertarget{_m_g_maze_generation_game_mode_8h_source}{}\doxysection{MGMaze\+Generation\+Game\+Mode.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}GameFramework/GameMode.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}MGMazeGenerationGameMode.generated.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 DECLARE\_DELEGATE\_TwoParams(FString2Delegate, FString, FString)}
+\DoxyCodeLine{10 DECLARE\_DELEGATE(FDelegate)}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{15 UCLASS()}
+\DoxyCodeLine{16 class MAZEGAME\_API AMGMazeGenerationGameMode : public AGameMode}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     GENERATED\_BODY()}
+\DoxyCodeLine{19 public:}
+\DoxyCodeLine{23     AMGMazeGenerationGameMode();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     FString2Delegate ChangeLoadingScreenTextDelegate; }
+\DoxyCodeLine{27     FDelegate AllFinishedDelegate; }
+\DoxyCodeLine{29     UPROPERTY(EditAnywhere, Category = "{}MGMazeGenerationGameMode|Widget"{})}
+\DoxyCodeLine{30     TSubclassOf<UUserWidget> LoadingScreenWidget; }
+\DoxyCodeLine{32     UPROPERTY(BlueprintReadOnly, Category = "{}MGMazeGenerationGameMode|Widget"{})}
+\DoxyCodeLine{33     UUserWidget* LoadingScreenWidgetRef; }
+\DoxyCodeLine{40     UFUNCTION(BlueprintImplementableEvent)}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} K2\_UpdateLoadingScreenWidgetText(FString const\& TableNamespace, FString const\& KeyInTable);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 protected:}
+\DoxyCodeLine{48     virtual \textcolor{keywordtype}{bool} ReadyToStartMatch\_Implementation() override;}
+\DoxyCodeLine{52     virtual \textcolor{keywordtype}{void} BeginPlay() override;}
+\DoxyCodeLine{56     virtual \textcolor{keywordtype}{void} OnMatchStateSet() override;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 private:}
+\DoxyCodeLine{59     \textcolor{keywordtype}{bool} bIsReadyToStart = false; }
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} AllFinished();}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} UpdateLoadingScreenWidgetTextHelperFunction(FString TableNamespace, FString KeyInTable);}
+\DoxyCodeLine{68 \};}
+
+\end{DoxyCode}

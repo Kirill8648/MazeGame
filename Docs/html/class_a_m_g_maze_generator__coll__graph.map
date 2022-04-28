@@ -1,0 +1,6 @@
+<map id="AMGMazeGenerator" name="AMGMazeGenerator">
+<area shape="rect" id="node1" title="Генератор лабиринта." alt="" coords="15,185,157,212"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,89,68,115"/>
+<area shape="rect" id="node3" href="$class_u_m_g_maze_generation_progress_widget.html" title="Виджет загрузки генерации лабиринта." alt="" coords="92,81,291,123"/>
+<area shape="rect" id="node4" title=" " alt="" coords="142,5,241,32"/>
+</map>

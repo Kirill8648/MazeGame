@@ -1,0 +1,81 @@
+\hypertarget{class_u_m_g_save_game}{}\doxysection{UMGSave\+Game Class Reference}
+\label{class_u_m_g_save_game}\index{UMGSaveGame@{UMGSaveGame}}
+
+
+Класс для хранения сохраняющихся данных.  
+
+
+
+
+{\ttfamily \#include $<$MGSave\+Game.\+h$>$}
+
+
+
+Inheritance diagram for UMGSave\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_u_m_g_save_game__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UMGSave\+Game\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_u_m_g_save_game__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_add9be63fc985389e1b88292282385f5e}\label{class_u_m_g_save_game_add9be63fc985389e1b88292282385f5e}} 
+{\bfseries UMGSave\+Game} ()
+\begin{DoxyCompactList}\small\item\em Стандартный конструктор. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_a27c5f4af318d0eef3897a5873d08a212}\label{class_u_m_g_save_game_a27c5f4af318d0eef3897a5873d08a212}} 
+void {\bfseries Set\+Date\+Time} ()
+\begin{DoxyCompactList}\small\item\em Инициализирует дату и время. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_a3f2ff038e4dd2d5e258e2aa61075fbb5}\label{class_u_m_g_save_game_a3f2ff038e4dd2d5e258e2aa61075fbb5}} 
+int32 {\bfseries Player\+Current\+Coins\+Number}
+\begin{DoxyCompactList}\small\item\em Количество монет у игрока. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_a9caae44eac0610275a7f767730a22c8e}\label{class_u_m_g_save_game_a9caae44eac0610275a7f767730a22c8e}} 
+int32 {\bfseries Player\+Accumulated\+Coins\+Number}
+\begin{DoxyCompactList}\small\item\em Количество потраченных монет у игрока. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_a84b8f6a21e3a38547c3754419120f827}\label{class_u_m_g_save_game_a84b8f6a21e3a38547c3754419120f827}} 
+TArray$<$ \mbox{\hyperlink{struct_f_saved_ability_info}{FSaved\+Ability\+Info}} $>$ {\bfseries Abilities\+Levels}
+\begin{DoxyCompactList}\small\item\em Уровни способностей для текущего сохранения. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_a8b9daa61f91ae205192c9cdc2e2f54f5}\label{class_u_m_g_save_game_a8b9daa61f91ae205192c9cdc2e2f54f5}} 
+TArray$<$ \mbox{\hyperlink{struct_f_saved_ability_info}{FSaved\+Ability\+Info}} $>$ {\bfseries Abilities\+Slots\+Numbers}
+\begin{DoxyCompactList}\small\item\em Слоты способностей для текущего сохранения. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_a93094852500a7e692be88390d068bdb0}\label{class_u_m_g_save_game_a93094852500a7e692be88390d068bdb0}} 
+int32 {\bfseries Last\+XMaze\+Size}
+\begin{DoxyCompactList}\small\item\em Последняя настроенная игроком ширина лабиринта. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_aee6f7413b559976278f7194382c9a7f6}\label{class_u_m_g_save_game_aee6f7413b559976278f7194382c9a7f6}} 
+int32 {\bfseries Last\+YMaze\+Size}
+\begin{DoxyCompactList}\small\item\em Последняя настроенная игроком длина лабиринта. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_a8ec5ba2847fdc51c2a2785df7ea793c1}\label{class_u_m_g_save_game_a8ec5ba2847fdc51c2a2785df7ea793c1}} 
+TArray$<$ \mbox{\hyperlink{struct_f_saved_ability_info}{FSaved\+Ability\+Info}} $>$ {\bfseries Spawned\+Ability\+Collectibles\+Cache}
+\begin{DoxyCompactList}\small\item\em Кэш заспавненных ключей способностей, использующийся для избежания их повторения. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_a959ae63c5b4b96360b4a0fd60e70a6e2}\label{class_u_m_g_save_game_a959ae63c5b4b96360b4a0fd60e70a6e2}} 
+int32 {\bfseries Slot\+Index}
+\begin{DoxyCompactList}\small\item\em Мета индекс слота сохранения. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_aa9056efc781516a14996d45147e2737e}\label{class_u_m_g_save_game_aa9056efc781516a14996d45147e2737e}} 
+FString {\bfseries Date}
+\begin{DoxyCompactList}\small\item\em Мета дата слота сохранения. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_save_game_ab3128e461aea11acd457fe92bdabe321}\label{class_u_m_g_save_game_ab3128e461aea11acd457fe92bdabe321}} 
+FString {\bfseries Time}
+\begin{DoxyCompactList}\small\item\em Мета время слота сохранения. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс для хранения сохраняющихся данных. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGSave\+Game.\+h\end{DoxyCompactItemize}

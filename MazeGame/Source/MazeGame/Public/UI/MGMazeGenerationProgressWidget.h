@@ -11,7 +11,7 @@
 #include "MGMazeGenerationProgressWidget.generated.h"
 
 /**
- * 
+ * Виджет загрузки генерации лабиринта.
  */
 UCLASS()
 class MAZEGAME_API UMGMazeGenerationProgressWidget : public UUserWidget
@@ -19,13 +19,14 @@ class MAZEGAME_API UMGMazeGenerationProgressWidget : public UUserWidget
 	GENERATED_BODY()
 
 public:
+	/**
+	* Вызывается в момент конструирования виджета.
+	*/
 	virtual void NativeConstruct() override;
-	/*UPROPERTY(meta = (BindWidget))
-	UCanvasPanel* CanvasPanel;*/
 
 	UPROPERTY(meta = (BindWidget))
-	UScaleBox* ScaleBox;
+	UScaleBox* ScaleBox;/**< Масштабируемая область. */
 
 	UPROPERTY(meta = (BindWidget))
-	UTextBlock* TextBlock;
+	UTextBlock* TextBlock;/**< Блок текста. */
 };

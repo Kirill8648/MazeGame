@@ -7,19 +7,23 @@
 #include "MGCheatManager.generated.h"
 
 /**
- * 
+ * Менеджер читов.
  */
 UCLASS()
 class MAZEGAME_API UMGCheatManager : public UCheatManager
 {
 	GENERATED_BODY()
-	
+
 public:
-	//virtual void InitCheatManager() override;
-	
+	/**
+	* Добавляет вылюту игроку. Работает только в лобби.
+	* @param Amount - индекс слота сохранения
+	*/
 	UFUNCTION(Exec)
 	void AddMoney(int Amount) const;
-
+	/**
+	* Разблокировывает все способности. Чтобы увидеть изменения нужно закрыть и открыть меню способностей.
+	*/
 	UFUNCTION(Exec)
 	void UnlockAbilities() const;
 };

@@ -27,30 +27,36 @@ void UMGCheatManager::AddMoney(const int Amount) const
 	const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>();
 
 	//UGameplayStatics::GetGameInstance(GetWorld())->GetSubsystem<UMGPlayerDataSubsystem>()->CurrentlyLoadedSaveGameObject->PlayerCurrentCoinsNumber += Amount;
-
-	if (PlayerDataSubsystem)
+	if (UGameplayStatics::GetCurrentLevelName(GetWorld()).Equals("Lobby"))
 	{
-		if (PlayerDataSubsystem->CurrentlyLoadedSaveGameObject)
+		if (PlayerDataSubsystem)
 		{
-			PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->PlayerCurrentCoinsNumber += Amount;
-			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Money Added");
+			if (PlayerDataSubsystem->CurrentlyLoadedSaveGameObject)
+			{
+				PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->PlayerCurrentCoinsNumber += Amount;
+				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Money Added");
+			}
+			else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "No save file loaded");
 		}
-		else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "No save file loaded");
 	}
+	else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "You're not in Lobby!");
 }
 
 void UMGCheatManager::UnlockAbilities() const
 {
 	const UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(GetWorld());
-
-	if (const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>())
-		if (PlayerDataSubsystem->CurrentlyLoadedSaveGameObject)
-		{
-			for (FSavedAbilityInfo& AbilitiesLevel : PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->AbilitiesLevels)
-				if (AbilitiesLevel.AbilityInfo == 0)
-					AbilitiesLevel.AbilityInfo = 1;
-			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Abilities unlocked, redraw UI to see changes");
-		}
-		else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "No save file loaded");
-	//else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "Error during unlocking. PlayerDataSubsystem is null");
+	if (UGameplayStatics::GetCurrentLevelName(GetWorld()).Equals("Lobby"))
+	{
+		if (const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>())
+			if (PlayerDataSubsystem->CurrentlyLoadedSaveGameObject)
+			{
+				for (FSavedAbilityInfo& AbilitiesLevel : PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->AbilitiesLevels)
+					if (AbilitiesLevel.AbilityInfo == 0)
+						AbilitiesLevel.AbilityInfo = 1;
+				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Abilities unlocked, redraw UI to see changes");
+			}
+			else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "No save file loaded");
+		//else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "Error during unlocking. PlayerDataSubsystem is null");
+	}
+	else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "You're not in Lobby!");
 }

@@ -1,0 +1,167 @@
+\hypertarget{class_u_m_g_player_data_subsystem}{}\doxysection{UMGPlayer\+Data\+Subsystem Class Reference}
+\label{class_u_m_g_player_data_subsystem}\index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
+
+
+Класс подсистемы для хранения данных о текущей игровой сессии.  
+
+
+
+
+{\ttfamily \#include $<$MGPlayer\+Data\+Subsystem.\+h$>$}
+
+
+
+Inheritance diagram for UMGPlayer\+Data\+Subsystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_u_m_g_player_data_subsystem__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for UMGPlayer\+Data\+Subsystem\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_u_m_g_player_data_subsystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_ac5707f17f9c4d59aa3d20505da9e1395}\label{class_u_m_g_player_data_subsystem_ac5707f17f9c4d59aa3d20505da9e1395}} 
+{\bfseries UMGPlayer\+Data\+Subsystem} ()
+\begin{DoxyCompactList}\small\item\em Стандартный конструктор. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_player_data_subsystem_ac622e2c0b9f6e2843c611349c2751c35}{Create\+New\+Save\+File\+And\+Save}} (int32 Slot\+Index, bool b\+Is\+Overriding)
+\begin{DoxyCompactList}\small\item\em Создает новый файл сохранения. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_player_data_subsystem_a7cf9e70fa32dcf52cabeb99f30a33b09}{Delete\+Save\+File\+By\+Slot}} (int32 Slot\+Index)
+\begin{DoxyCompactList}\small\item\em Удалаяет файл сохранения. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a0760fccfce651e8fe31d17fd9e17c413}\label{class_u_m_g_player_data_subsystem_a0760fccfce651e8fe31d17fd9e17c413}} 
+void {\bfseries Unload\+Game\+From\+Player\+Data\+Subsystem} ()
+\begin{DoxyCompactList}\small\item\em Выгружает объект класса сохранения из подсистемы. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_player_data_subsystem_a5d33b79aa29bc096a41322c5378893b6}{Load\+Game\+From\+Slot\+Async}} (int32 Slot\+Index)
+\begin{DoxyCompactList}\small\item\em Асинхронно загружает сохранение из слота. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_player_data_subsystem_a2d4433cce43d4eaa02a4b8ba264c8653}{Save\+Game\+To\+Slot\+Async}} (int32 Slot\+Index)
+\begin{DoxyCompactList}\small\item\em Асинхронно сохраняет файл сохранения в слот. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_player_data_subsystem_a2127d23d26e69a54192113b2b7eb5a94}{Load\+Game\+From\+Slot}} (int32 Slot\+Index)
+\begin{DoxyCompactList}\small\item\em Загружает файл сохранения из слота. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_m_g_player_data_subsystem_afbefcf0d9a2327cee6ca8cec7e1f730b}{Save\+Game\+To\+Slot}} (int32 Slot\+Index)
+\begin{DoxyCompactList}\small\item\em Сохраняет файл сохранения в слот. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a6676a381cb6a62bfa71a096d773ae0f6}\label{class_u_m_g_player_data_subsystem_a6676a381cb6a62bfa71a096d773ae0f6}} 
+int32 {\bfseries Current\+Run\+Seed} = 0
+\begin{DoxyCompactList}\small\item\em Последний введенный игроком ключ генерации. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a44fb9e15ae89a77d4ed507fad4f15893}\label{class_u_m_g_player_data_subsystem_a44fb9e15ae89a77d4ed507fad4f15893}} 
+\mbox{\hyperlink{class_u_m_g_save_game}{UMGSave\+Game}} $\ast$ {\bfseries Currently\+Loaded\+Save\+Game\+Object}
+\begin{DoxyCompactList}\small\item\em Указатель на объект текущего загруженного сохранения. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a253e366302203403f701f0eb214fce6d}\label{class_u_m_g_player_data_subsystem_a253e366302203403f701f0eb214fce6d}} 
+UData\+Table $\ast$ {\bfseries Abilities\+Table}
+\begin{DoxyCompactList}\small\item\em Таблица с информацией о способностях. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс подсистемы для хранения данных о текущей игровой сессии. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_ac622e2c0b9f6e2843c611349c2751c35}\label{class_u_m_g_player_data_subsystem_ac622e2c0b9f6e2843c611349c2751c35}} 
+\index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}!CreateNewSaveFileAndSave@{CreateNewSaveFileAndSave}}
+\index{CreateNewSaveFileAndSave@{CreateNewSaveFileAndSave}!UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
+\doxysubsubsection{\texorpdfstring{CreateNewSaveFileAndSave()}{CreateNewSaveFileAndSave()}}
+{\footnotesize\ttfamily void UMGPlayer\+Data\+Subsystem\+::\+Create\+New\+Save\+File\+And\+Save (\begin{DoxyParamCaption}\item[{int32}]{Slot\+Index,  }\item[{bool}]{b\+Is\+Overriding }\end{DoxyParamCaption})}
+
+
+
+Создает новый файл сохранения. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slot\+Index} & -\/ индекс слота сохранения \\
+\hline
+{\em b\+Is\+Overriding} & -\/ допускает ли перезапись если слот сохранения с данным индексом уже существует \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a7cf9e70fa32dcf52cabeb99f30a33b09}\label{class_u_m_g_player_data_subsystem_a7cf9e70fa32dcf52cabeb99f30a33b09}} 
+\index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}!DeleteSaveFileBySlot@{DeleteSaveFileBySlot}}
+\index{DeleteSaveFileBySlot@{DeleteSaveFileBySlot}!UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
+\doxysubsubsection{\texorpdfstring{DeleteSaveFileBySlot()}{DeleteSaveFileBySlot()}}
+{\footnotesize\ttfamily void UMGPlayer\+Data\+Subsystem\+::\+Delete\+Save\+File\+By\+Slot (\begin{DoxyParamCaption}\item[{int32}]{Slot\+Index }\end{DoxyParamCaption})}
+
+
+
+Удалаяет файл сохранения. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slot\+Index} & -\/ индекс слота сохранения \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a2127d23d26e69a54192113b2b7eb5a94}\label{class_u_m_g_player_data_subsystem_a2127d23d26e69a54192113b2b7eb5a94}} 
+\index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}!LoadGameFromSlot@{LoadGameFromSlot}}
+\index{LoadGameFromSlot@{LoadGameFromSlot}!UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
+\doxysubsubsection{\texorpdfstring{LoadGameFromSlot()}{LoadGameFromSlot()}}
+{\footnotesize\ttfamily void UMGPlayer\+Data\+Subsystem\+::\+Load\+Game\+From\+Slot (\begin{DoxyParamCaption}\item[{int32}]{Slot\+Index }\end{DoxyParamCaption})}
+
+
+
+Загружает файл сохранения из слота. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slot\+Index} & -\/ индекс слота сохранения \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a5d33b79aa29bc096a41322c5378893b6}\label{class_u_m_g_player_data_subsystem_a5d33b79aa29bc096a41322c5378893b6}} 
+\index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}!LoadGameFromSlotAsync@{LoadGameFromSlotAsync}}
+\index{LoadGameFromSlotAsync@{LoadGameFromSlotAsync}!UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
+\doxysubsubsection{\texorpdfstring{LoadGameFromSlotAsync()}{LoadGameFromSlotAsync()}}
+{\footnotesize\ttfamily void UMGPlayer\+Data\+Subsystem\+::\+Load\+Game\+From\+Slot\+Async (\begin{DoxyParamCaption}\item[{int32}]{Slot\+Index }\end{DoxyParamCaption})}
+
+
+
+Асинхронно загружает сохранение из слота. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slot\+Index} & -\/ индекс слота сохранения \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_afbefcf0d9a2327cee6ca8cec7e1f730b}\label{class_u_m_g_player_data_subsystem_afbefcf0d9a2327cee6ca8cec7e1f730b}} 
+\index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}!SaveGameToSlot@{SaveGameToSlot}}
+\index{SaveGameToSlot@{SaveGameToSlot}!UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
+\doxysubsubsection{\texorpdfstring{SaveGameToSlot()}{SaveGameToSlot()}}
+{\footnotesize\ttfamily void UMGPlayer\+Data\+Subsystem\+::\+Save\+Game\+To\+Slot (\begin{DoxyParamCaption}\item[{int32}]{Slot\+Index }\end{DoxyParamCaption})}
+
+
+
+Сохраняет файл сохранения в слот. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slot\+Index} & -\/ индекс слота сохранения \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_u_m_g_player_data_subsystem_a2d4433cce43d4eaa02a4b8ba264c8653}\label{class_u_m_g_player_data_subsystem_a2d4433cce43d4eaa02a4b8ba264c8653}} 
+\index{UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}!SaveGameToSlotAsync@{SaveGameToSlotAsync}}
+\index{SaveGameToSlotAsync@{SaveGameToSlotAsync}!UMGPlayerDataSubsystem@{UMGPlayerDataSubsystem}}
+\doxysubsubsection{\texorpdfstring{SaveGameToSlotAsync()}{SaveGameToSlotAsync()}}
+{\footnotesize\ttfamily void UMGPlayer\+Data\+Subsystem\+::\+Save\+Game\+To\+Slot\+Async (\begin{DoxyParamCaption}\item[{int32}]{Slot\+Index }\end{DoxyParamCaption})}
+
+
+
+Асинхронно сохраняет файл сохранения в слот. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Slot\+Index} & -\/ индекс слота сохранения \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGPlayer\+Data\+Subsystem.\+h\end{DoxyCompactItemize}

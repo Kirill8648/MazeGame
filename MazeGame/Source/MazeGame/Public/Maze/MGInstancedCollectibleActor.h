@@ -6,11 +6,17 @@
 #include "MGInstancedMeshActor.h"
 #include "MGInstancedCollectibleActor.generated.h"
 
+/**
+ * Класс, содержащий объект экземпляров собираемых предметов.
+ */
 UCLASS()
 class MAZEGAME_API AMGInstancedCollectibleActor : public AMGInstancedMeshActorStatic
 {
 	GENERATED_BODY()
 	
-public:	
+public:
+	/**
+	* Стандартный конструктор.
+	*/
 	AMGInstancedCollectibleActor();
 };

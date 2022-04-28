@@ -1,0 +1,6 @@
+<map id="AMGCharacterBase" name="AMGCharacterBase">
+<area shape="rect" id="node1" title="Базовый класс персонажа." alt="" coords="51,80,190,107"/>
+<area shape="rect" id="node4" href="$class_a_m_g_hero_character.html" title="Класс управляемого игроком персонажа." alt="" coords="53,155,188,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="117,5,271,32"/>
+</map>

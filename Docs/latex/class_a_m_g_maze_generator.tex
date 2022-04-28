@@ -1,0 +1,148 @@
+\hypertarget{class_a_m_g_maze_generator}{}\doxysection{AMGMaze\+Generator Class Reference}
+\label{class_a_m_g_maze_generator}\index{AMGMazeGenerator@{AMGMazeGenerator}}
+
+
+Генератор лабиринта.  
+
+
+
+
+{\ttfamily \#include $<$MGMaze\+Generator.\+h$>$}
+
+
+
+Inheritance diagram for AMGMaze\+Generator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_a_m_g_maze_generator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for AMGMaze\+Generator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_a_m_g_maze_generator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_abb3f7f6b1fbecd08f867da019c824734}\label{class_a_m_g_maze_generator_abb3f7f6b1fbecd08f867da019c824734}} 
+{\bfseries AMGMaze\+Generator} ()
+\begin{DoxyCompactList}\small\item\em Стандартный конструктор. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_a_m_g_maze_generator_a90112b66ef0312c58186f61b4e8e07e8}{Launch\+Async\+Maze\+Generation}} (int32 Seed, int32 XSize, int32 YSize, FString2\+Delegate \&Change\+Loading\+Screen\+Text\+Delegate, FDelegate \&All\+Finished\+Delegate)
+\begin{DoxyCompactList}\small\item\em Запускает асинхронную генерацию лабиринта. \end{DoxyCompactList}\item 
+FVector \mbox{\hyperlink{class_a_m_g_maze_generator_aded49bce2d568768134b6d3b37858eb3}{Get\+Player\+Start\+Coords}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает координаты для старта игрока. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a05d8b6b56b219121b284c7aaf252a468}\label{class_a_m_g_maze_generator_a05d8b6b56b219121b284c7aaf252a468}} 
+TSubclass\+Of$<$ \mbox{\hyperlink{class_a_m_g_instanced_mesh_actor_static}{AMGInstanced\+Mesh\+Actor\+Static}} $>$ {\bfseries Instanced\+Mesh\+Unbreakable\+Walls}
+\begin{DoxyCompactList}\small\item\em Класс актора неразрушаемой стены с компонентом экземпляра меша. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a3f0c963d78115a47f5b1cea864237f66}\label{class_a_m_g_maze_generator_a3f0c963d78115a47f5b1cea864237f66}} 
+int32 {\bfseries Distance\+Between\+Walls}
+\begin{DoxyCompactList}\small\item\em Расстояние между стенами в лабиринте. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a87e7658f209e43eb26d726972234ad9f}\label{class_a_m_g_maze_generator_a87e7658f209e43eb26d726972234ad9f}} 
+TSubclass\+Of$<$ \mbox{\hyperlink{class_u_m_g_maze_generation_progress_widget}{UMGMaze\+Generation\+Progress\+Widget}} $>$ {\bfseries Maze\+Generation\+Progress\+Widget}
+\begin{DoxyCompactList}\small\item\em Класс виджета генерации лабиринта. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_aebf9d45d2931c57ae4b5c874389d5ce4}\label{class_a_m_g_maze_generator_aebf9d45d2931c57ae4b5c874389d5ce4}} 
+\mbox{\hyperlink{class_u_m_g_maze_generation_progress_widget}{UMGMaze\+Generation\+Progress\+Widget}} $\ast$ {\bfseries Maze\+Generation\+Progress\+Widget\+Ref}
+\begin{DoxyCompactList}\small\item\em Укзатель на виджет генерации лабиринта. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a6396e86cc3f93b38576c170a3ff55f76}\label{class_a_m_g_maze_generator_a6396e86cc3f93b38576c170a3ff55f76}} 
+TSubclass\+Of$<$ \mbox{\hyperlink{class_a_m_g_instanced_collectible_actor}{AMGInstanced\+Collectible\+Actor}} $>$ {\bfseries Instanced\+Mesh\+Coins}
+\begin{DoxyCompactList}\small\item\em Класс актора валюты с компонентом экземпляра меша. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a1b7b72f27abdf8fe31c079d7310fa9cc}\label{class_a_m_g_maze_generator_a1b7b72f27abdf8fe31c079d7310fa9cc}} 
+FVector {\bfseries Optional\+Instanced\+Mesh\+Coins\+Offset}
+\begin{DoxyCompactList}\small\item\em Опциональная корректировка положения актора валюты с компонентом экземпляра меша при спавне. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_afa3877443b1547c4de8fd0afad8e0e78}\label{class_a_m_g_maze_generator_afa3877443b1547c4de8fd0afad8e0e78}} 
+TSubclass\+Of$<$ AActor $>$ {\bfseries Ability\+Collectible\+Actor}
+\begin{DoxyCompactList}\small\item\em Класс актора собираемой способности. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_ae7dedc7dd7c5be927e0ba23f50ba80ff}\label{class_a_m_g_maze_generator_ae7dedc7dd7c5be927e0ba23f50ba80ff}} 
+int32 {\bfseries Num\+Of\+Spawned\+Ability\+Collectible\+Actor}
+\begin{DoxyCompactList}\small\item\em Количество акторов собираемой способности на весь лабиринт. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a73c13d83a66cd6a6fffc591a6d0d4550}\label{class_a_m_g_maze_generator_a73c13d83a66cd6a6fffc591a6d0d4550}} 
+TSubclass\+Of$<$ AActor $>$ {\bfseries Exit\+Level\+Volume}
+\begin{DoxyCompactList}\small\item\em Класс триггера завершения уровня. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a88268f3bf1601909a5fdb1c1a06f01db}\label{class_a_m_g_maze_generator_a88268f3bf1601909a5fdb1c1a06f01db}} 
+TArray$<$ \mbox{\hyperlink{struct_f_separate_spawned_actor_info}{FSeparate\+Spawned\+Actor\+Info}} $>$ {\bfseries Separate\+Actors}
+\begin{DoxyCompactList}\small\item\em Массив акторов которые будут заспавнены используя процент (Spawn\+Rate). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a38b85e3fc3db71a20efcb77785f48258}\label{class_a_m_g_maze_generator_a38b85e3fc3db71a20efcb77785f48258}} 
+TArray$<$ \mbox{\hyperlink{struct_f_instanced_wall_info}{FInstanced\+Wall\+Info}} $>$ {\bfseries Instanced\+Walls\+Variations}
+\begin{DoxyCompactList}\small\item\em Массив вариаций мешей стен. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_aa89760ae85f52c434e7fe839125409a6}\label{class_a_m_g_maze_generator_aa89760ae85f52c434e7fe839125409a6}} 
+TArray$<$ \mbox{\hyperlink{struct_f_instanced_collectible_info}{FInstanced\+Collectible\+Info}} $>$ {\bfseries Instanced\+Collectibles}
+\begin{DoxyCompactList}\small\item\em Массив собираемых предметов, ИСКЛЮЧАЯ валюту. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_ae6d09bb22c14a5ffdecef688129034f1}\label{class_a_m_g_maze_generator_ae6d09bb22c14a5ffdecef688129034f1}} 
+float {\bfseries Coins\+Spawn\+Rate}
+\begin{DoxyCompactList}\small\item\em Процент спавна монет. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_ae57082229988bfea3fa66e5601a00a72}\label{class_a_m_g_maze_generator_ae57082229988bfea3fa66e5601a00a72}} 
+TArray$<$ \mbox{\hyperlink{struct_f_instanced_collectible_info}{FInstanced\+Collectible\+Info}} $>$ {\bfseries Instanced\+Floor\+Variations}
+\begin{DoxyCompactList}\small\item\em Массив вариаций мешей пола. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a7d814ded6cb189d468e60a5d8136e44c}\label{class_a_m_g_maze_generator_a7d814ded6cb189d468e60a5d8136e44c}} 
+TArray$<$ \mbox{\hyperlink{struct_f_separate_spawned_floor_actor_info}{FSeparate\+Spawned\+Floor\+Actor\+Info}} $>$ {\bfseries Floor\+Actors}
+\begin{DoxyCompactList}\small\item\em Массив акторов пола. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a753106f48b3be3bdeab75941d570574b}\label{class_a_m_g_maze_generator_a753106f48b3be3bdeab75941d570574b}} 
+virtual void {\bfseries Begin\+Play} () override
+\begin{DoxyCompactList}\small\item\em Функция, вызывающаяся в момент начала игры. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_a_m_g_maze_generator_ac6114901d9d1ff8d357c3e52ee470734}\label{class_a_m_g_maze_generator_ac6114901d9d1ff8d357c3e52ee470734}} 
+TArray$<$ TArray$<$ \mbox{\hyperlink{struct_f_maze_item}{FMaze\+Item}} $>$ $>$ {\bfseries Maze\+Matrix}
+\begin{DoxyCompactList}\small\item\em Массив, представляющий генерируемый лабиринт. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Генератор лабиринта. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_m_g_maze_generator_aded49bce2d568768134b6d3b37858eb3}\label{class_a_m_g_maze_generator_aded49bce2d568768134b6d3b37858eb3}} 
+\index{AMGMazeGenerator@{AMGMazeGenerator}!GetPlayerStartCoords@{GetPlayerStartCoords}}
+\index{GetPlayerStartCoords@{GetPlayerStartCoords}!AMGMazeGenerator@{AMGMazeGenerator}}
+\doxysubsubsection{\texorpdfstring{GetPlayerStartCoords()}{GetPlayerStartCoords()}}
+{\footnotesize\ttfamily FVector AMGMaze\+Generator\+::\+Get\+Player\+Start\+Coords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Возвращает координаты для старта игрока. 
+
+\begin{DoxyReturn}{Returns}
+координаты для старта игрока. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_a_m_g_maze_generator_a90112b66ef0312c58186f61b4e8e07e8}\label{class_a_m_g_maze_generator_a90112b66ef0312c58186f61b4e8e07e8}} 
+\index{AMGMazeGenerator@{AMGMazeGenerator}!LaunchAsyncMazeGeneration@{LaunchAsyncMazeGeneration}}
+\index{LaunchAsyncMazeGeneration@{LaunchAsyncMazeGeneration}!AMGMazeGenerator@{AMGMazeGenerator}}
+\doxysubsubsection{\texorpdfstring{LaunchAsyncMazeGeneration()}{LaunchAsyncMazeGeneration()}}
+{\footnotesize\ttfamily void AMGMaze\+Generator\+::\+Launch\+Async\+Maze\+Generation (\begin{DoxyParamCaption}\item[{int32}]{Seed,  }\item[{int32}]{XSize,  }\item[{int32}]{YSize,  }\item[{FString2\+Delegate \&}]{Change\+Loading\+Screen\+Text\+Delegate,  }\item[{FDelegate \&}]{All\+Finished\+Delegate }\end{DoxyParamCaption})}
+
+
+
+Запускает асинхронную генерацию лабиринта. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Seed} & -\/ ключ генерации \\
+\hline
+{\em XSize} & -\/ значение X \\
+\hline
+{\em YSize} & -\/ значение Y \\
+\hline
+{\em Change\+Loading\+Screen\+Text\+Delegate} & -\/ делегат, вызывающийся для смены текста загрузки \\
+\hline
+{\em All\+Finished\+Delegate} & -\/ делегат, вызывающийся при завершении генерации \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MGMaze\+Generator.\+h\end{DoxyCompactItemize}

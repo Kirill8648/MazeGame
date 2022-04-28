@@ -1,0 +1,57 @@
+\hypertarget{_m_g_player_data_subsystem_8h_source}{}\doxysection{MGPlayer\+Data\+Subsystem.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}MGSaveGame.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}Subsystems/GameInstanceSubsystem.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}MGPlayerDataSubsystem.generated.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{13 UCLASS()}
+\DoxyCodeLine{14 class MAZEGAME\_API \mbox{\hyperlink{class_u_m_g_player_data_subsystem}{UMGPlayerDataSubsystem}} : public UGameInstanceSubsystem}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     GENERATED\_BODY()}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     \mbox{\hyperlink{class_u_m_g_player_data_subsystem_ac5707f17f9c4d59aa3d20505da9e1395}{UMGPlayerDataSubsystem}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{29     UFUNCTION(BlueprintCallable, Category = \textcolor{stringliteral}{"{}MazeGame|PlayerSubsystem"{}})}
+\DoxyCodeLine{30     void CreateNewSaveFileAndSave(int32 SlotIndex, \textcolor{keywordtype}{bool} bIsOverriding);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{36     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|PlayerSubsystem"{})}
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} DeleteSaveFileBySlot(int32 SlotIndex);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{42     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|PlayerSubsystem"{})}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} UnloadGameFromPlayerDataSubsystem();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{49     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|PlayerSubsystem"{})}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} LoadGameFromSlotAsync(int32 SlotIndex);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{56     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|PlayerSubsystem"{})}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} SaveGameToSlotAsync(int32 SlotIndex);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{63     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|PlayerSubsystem"{})}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} LoadGameFromSlot(int32 SlotIndex);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{70     UFUNCTION(BlueprintCallable, Category = "{}MazeGame|PlayerSubsystem"{})}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} SaveGameToSlot(int32 SlotIndex);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|PlayerSubsystem"{})}
+\DoxyCodeLine{74     int32 CurrentRunSeed = 0; }
+\DoxyCodeLine{76     UPROPERTY(BlueprintReadWrite, Category = "{}MazeGame|PlayerSubsystem"{})}
+\DoxyCodeLine{77     \mbox{\hyperlink{class_u_m_g_save_game}{UMGSaveGame}}* CurrentlyLoadedSaveGameObject; }
+\DoxyCodeLine{79     UPROPERTY(BlueprintReadOnly, Category = "{}MazeGame|PlayerSubsystem"{})}
+\DoxyCodeLine{80     UDataTable* AbilitiesTable; }
+\DoxyCodeLine{82     \textcolor{comment}{//TSoftClassPtr<UDataTable> AbilitiesTableSoftClassPtr;}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{//TSoftObjectPtr<UDataTable> AbilitiesTableSoftObjectPtr;}}
+\DoxyCodeLine{85 private:}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} LoadGameDelegateFunction(const FString\& SlotName, const int32 UserIndex, USaveGame* LoadedGameData);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} SavedCreatedFileDelegateFunction(const FString\& SlotName, const int32 UserIndex, \textcolor{keywordtype}{bool} bSuccess);}
+\DoxyCodeLine{101 \};}
+
+\end{DoxyCode}

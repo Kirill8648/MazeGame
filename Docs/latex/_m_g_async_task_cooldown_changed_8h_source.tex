@@ -1,0 +1,41 @@
+\hypertarget{_m_g_async_task_cooldown_changed_8h_source}{}\doxysection{MGAsync\+Task\+Cooldown\+Changed.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Fill out your copyright notice in the Description page of Project Settings.}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}CoreMinimal.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Kismet/BlueprintAsyncActionBase.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}AbilitySystemComponent.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GameplayTagContainer.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}MGAsyncTaskCooldownChanged.generated.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 DECLARE\_DYNAMIC\_MULTICAST\_DELEGATE\_ThreeParams(FOnCooldownChanged, FGameplayTag, CooldownTag, \textcolor{keywordtype}{float}, TimeRemaining, \textcolor{keywordtype}{float}, Duration);}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{17 UCLASS(BlueprintType, meta = (ExposedAsyncProxy = AsyncTask))}
+\DoxyCodeLine{18 class MAZEGAME\_API \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed}{UMGAsyncTaskCooldownChanged}} : public UBlueprintAsyncActionBase}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     GENERATED\_BODY()}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     UPROPERTY(BlueprintAssignable)}
+\DoxyCodeLine{24     FOnCooldownChanged OnCooldownBegin; }
+\DoxyCodeLine{26     UPROPERTY(BlueprintAssignable)}
+\DoxyCodeLine{27     FOnCooldownChanged OnCooldownEnd; }
+\DoxyCodeLine{36     UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "{}true"{}))}
+\DoxyCodeLine{37     static \mbox{\hyperlink{class_u_m_g_async_task_cooldown_changed}{UMGAsyncTaskCooldownChanged}}* ListenForCooldownChange(UAbilitySystemComponent* AbilitySystemComponent, FGameplayTagContainer CooldownTags, \textcolor{keywordtype}{bool} UseServerCooldown);}
+\DoxyCodeLine{41     UFUNCTION(BlueprintCallable)}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} EndTask();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 protected:}
+\DoxyCodeLine{45     UPROPERTY()}
+\DoxyCodeLine{46     UAbilitySystemComponent* ASC; }
+\DoxyCodeLine{48     FGameplayTagContainer CooldownTags; }
+\DoxyCodeLine{50     \textcolor{keywordtype}{bool} UseServerCooldown; }
+\DoxyCodeLine{57     virtual \textcolor{keywordtype}{void} OnActiveGameplayEffectAddedCallback(UAbilitySystemComponent* Target, const FGameplayEffectSpec\& SpecApplied, FActiveGameplayEffectHandle ActiveHandle);}
+\DoxyCodeLine{63     virtual \textcolor{keywordtype}{void} CooldownTagChanged(const FGameplayTag CooldownTag, int32 NewCount);}
+\DoxyCodeLine{71     \textcolor{keywordtype}{bool} GetCooldownRemainingForTag(FGameplayTagContainer CooldownTags, \textcolor{keywordtype}{float}\& TimeRemaining, \textcolor{keywordtype}{float}\& CooldownDuration);}
+\DoxyCodeLine{72 \};}
+
+\end{DoxyCode}
