@@ -222,6 +222,32 @@ void AMGMazeGenerator::SpawnObjects()
 	ShuffleArray(CellIndexes, Stream);
 	int32 CellAmountCorrectionAppliedToCoins = 0;
 
+	TArray<int32> AbilitiesIndexesToSpawn;
+	CellAmountCorrectionAppliedToCoins += NumOfSpawnedAbilityCollectibleActor;
+	int32 Temp2 = CellIndexes.Num();
+	for (int32 i = Temp2 - 1; i > Temp2 - 1 - NumOfSpawnedAbilityCollectibleActor /*&& i >= 0*/; i--)
+	{
+		AbilitiesIndexesToSpawn.Emplace(CellIndexes[i]);
+		CellIndexes.RemoveAt(i);
+	}
+	int32 Counter2 = 0;
+	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
+	{
+		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
+		{
+			if (MazeMatrix[IndexY][IndexX].MazeItemState == Cell)
+			{
+				if (AbilitiesIndexesToSpawn.Contains(Counter2))
+				{
+					GetWorld()->SpawnActor<AActor>(AbilityCollectibleActor.GetDefaultObject()->GetClass(),
+												   FTransform(FRotator(0.0f, 0.0f, 0.0f), FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f),
+															  FVector(1.0f, 1.0f, 1.0f)));
+				}
+				Counter2++;
+			}
+		}
+	}
+	
 	for (FSeparateSpawnedActorInfo SeparateActorInfo : SeparateActors)
 	{
 		if (SeparateActorInfo.ActorType == Cell)
@@ -274,7 +300,7 @@ void AMGMazeGenerator::SpawnObjects()
 		TArray<int32> CollectibleIndexesToSpawn;
 		int32 CollectibleAmount = FMath::RoundHalfToZero(InstancedCollectible.SpawnRate * CellCount);
 		int32 Temp = CellIndexes.Num();
-		for (int32 i = Temp - 1; i > Temp - 1 - CollectibleAmount /*&& i >= 0*/; i--)
+		for (int32 i = Temp - 1; i > Temp - 1 - CollectibleAmount && i >= 0; i--)
 		{
 			CollectibleIndexesToSpawn.Emplace(CellIndexes[i]);
 			CellIndexes.RemoveAt(i);
@@ -295,32 +321,6 @@ void AMGMazeGenerator::SpawnObjects()
 					}
 					Counter++;
 				}
-			}
-		}
-	}
-
-	TArray<int32> AbilitiesIndexesToSpawn;
-	CellAmountCorrectionAppliedToCoins += NumOfSpawnedAbilityCollectibleActor;
-	int32 Temp2 = CellIndexes.Num();
-	for (int32 i = Temp2 - 1; i > Temp2 - 1 - NumOfSpawnedAbilityCollectibleActor /*&& i >= 0*/; i--)
-	{
-		AbilitiesIndexesToSpawn.Emplace(CellIndexes[i]);
-		CellIndexes.RemoveAt(i);
-	}
-	int32 Counter2 = 0;
-	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
-	{
-		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
-		{
-			if (MazeMatrix[IndexY][IndexX].MazeItemState == Cell)
-			{
-				if (AbilitiesIndexesToSpawn.Contains(Counter2))
-				{
-					GetWorld()->SpawnActor<AActor>(AbilityCollectibleActor.GetDefaultObject()->GetClass(),
-					                               FTransform(FRotator(0.0f, 0.0f, 0.0f), FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f),
-					                                          FVector(1.0f, 1.0f, 1.0f)));
-				}
-				Counter2++;
 			}
 		}
 	}
