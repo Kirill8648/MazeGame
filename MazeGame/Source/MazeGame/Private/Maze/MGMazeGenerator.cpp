@@ -119,8 +119,6 @@ void AMGMazeGenerator::ContinueGeneration(bool bIsMistakeHappenedInAsync)
 		ChangeLoadingScreenTextDelegate.ExecuteIfBound("Text", "ObjectsGeneration");
 	}, TStatId(), nullptr, ENamedThreads::GameThread);
 
-	//ChangeLoadingScreenTextDelegate1.ExecuteIfBound("Text", "ObjectsGeneration");
-
 	FString Text;
 	for (int i = 1; i < MazeMatrix.Num(); i = i + 2)
 	{
@@ -136,30 +134,18 @@ void AMGMazeGenerator::ContinueGeneration(bool bIsMistakeHappenedInAsync)
 	{
 		DrawGenerationProgressUIDelegate.ExecuteIfBound(Text);
 	}, TStatId(), nullptr, ENamedThreads::GameThread);
-	//DrawGenerationProgressUIDelegate.ExecuteIfBound(Text);
-
-	//TODO Objects Generation
 
 	FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
 	{
 		ChangeLoadingScreenTextDelegate.ExecuteIfBound("Text", "ObjectPlacement");
 		SpawnObjects();
-
-		//SpawnWithInstances();
 	}, TStatId(), nullptr, ENamedThreads::GameThread);
-	//ChangeLoadingScreenTextDelegate1.ExecuteIfBound("Text", "ObjectPlacement");
-	//SpawnWithInstances();
-	//SpawnObjects();
 
-	//Cast<AMGMazeGenerationGameMode>(UGameplayStatics::GetGameMode(GetWorld()))->RestartPlayer(UGameplayStatics::GetPlayerController(GetWorld(),0));
-
-	//MazeGenerationProgressWidgetRef->RemoveFromParent();
 	FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
 	{
 		MazeGenerationProgressWidgetRef->RemoveFromParent();
 		AllFinishedDelegate.ExecuteIfBound();
 	}, TStatId(), nullptr, ENamedThreads::GameThread);
-	//AllFinishedDelegate1.ExecuteIfBound();
 }
 
 void AMGMazeGenerator::DrawGenerationProgressUI(FString StringToDisplay)
@@ -240,14 +226,14 @@ void AMGMazeGenerator::SpawnObjects()
 				if (AbilitiesIndexesToSpawn.Contains(Counter2))
 				{
 					GetWorld()->SpawnActor<AActor>(AbilityCollectibleActor.GetDefaultObject()->GetClass(),
-												   FTransform(FRotator(0.0f, 0.0f, 0.0f), FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f),
-															  FVector(1.0f, 1.0f, 1.0f)));
+					                               FTransform(FRotator(0.0f, 0.0f, 0.0f), FVector(IndexX * DistanceBetweenWalls / 2, IndexY * DistanceBetweenWalls / 2, 0.0f),
+					                                          FVector(1.0f, 1.0f, 1.0f)));
 				}
 				Counter2++;
 			}
 		}
 	}
-	
+
 	for (FSeparateSpawnedActorInfo SeparateActorInfo : SeparateActors)
 	{
 		if (SeparateActorInfo.ActorType == Cell)

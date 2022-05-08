@@ -7,6 +7,7 @@ DerivedDataCache
 Intermediate
 Saved
 Plugins
+Build/Windows/FileOpenOrder/*
 
 # Compiled Object files
 *.slo
