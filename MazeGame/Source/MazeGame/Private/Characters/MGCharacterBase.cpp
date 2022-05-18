@@ -31,21 +31,22 @@ void AMGCharacterBase::RemoveCharacterAbilities()
 	{
 		return;
 	}
-
-	AbilitySystemComponent->ClearAllAbilities();
-	AbilitySystemComponent->bCharacterAbilitiesGiven = false;
+	if (AbilitySystemComponent)
+	{
+		//AbilitySystemComponent->ClearAllAbilities();
+		AbilitySystemComponent->bCharacterAbilitiesGiven = false;
+	}
 }
 
 void AMGCharacterBase::Die()
 {
-	RemoveCharacterAbilities();
-
 	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	if (AbilitySystemComponent)
 	{
 		AbilitySystemComponent->CancelAllAbilities();
 		AbilitySystemComponent->AddLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.Dead"));
+		RemoveCharacterAbilities();
 	}
 }
 
