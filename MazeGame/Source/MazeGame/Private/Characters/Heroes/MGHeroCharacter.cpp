@@ -6,6 +6,7 @@
 #include "MGAbilitySystemComponent.h"
 #include "MGPlayerDataSubsystem.h"
 #include "Camera/CameraComponent.h"
+#include "Components/BoxComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
@@ -49,6 +50,35 @@ void AMGHeroCharacter::PossessedBy(AController* NewController)
 	//if (!AbilitySystemComponent->bCharacterAbilitiesGiven) UpdateAbilities();
 	//UpdateAbilities();
 	//AddCharacterAbilities();
+}
+
+void AMGHeroCharacter::Die()
+{
+	UBoxComponent* DeadBoxCollision = NewObject<UBoxComponent>(this);
+
+	if (DeadBoxCollision)
+	{
+		DeadBoxCollision->AttachToComponent(RootComponent, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		DeadBoxCollision->RegisterComponent();
+		DeadBoxCollision->InitBoxExtent(FVector(5.0f, 5.0f, 5.0f));
+		DeadBoxCollision->SetGenerateOverlapEvents(false);
+		DeadBoxCollision->SetCollisionProfileName("BlockAll");
+		DeadBoxCollision->SetPhysMaterialOverride(DeadBoxPhysMat);
+		DeadBoxCollision->SetRelativeTransform(FirstPersonCamera->GetRelativeTransform());
+		DeadBoxCollision->SetPhysicsMaxAngularVelocityInDegrees(700.0f);
+		FirstPersonCamera->AttachToComponent(DeadBoxCollision, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+
+		FirstPersonCamera->bUsePawnControlRotation = false;
+		FirstPersonCamera->bLockToHmd = false;
+		DisableInput(Cast<APlayerController>(GetController()));
+		DeadBoxCollision->SetSimulatePhysics(true);
+		DeadBoxCollision->AddTorqueInDegrees(FVector(FMath::FRandRange(-7200.0f, 7200.0f), FMath::FRandRange(-7200.0f, 7200.0f), FMath::FRandRange(-7200.0f, 7200.0f)),
+		                                     "NAME_None", true);
+		DeadBoxCollision->AddImpulse(ClampVector(GetCharacterMovement()->GetLastUpdateVelocity(), FVector(-1850.0f, -1850.0f, -1850.0f), FVector(1850.0f, 1850.0f, 1850.0f)),
+		                             "NAME_None", true);
+	}
+	K2_OnDied();
+	Super::Die();
 }
 
 void AMGHeroCharacter::UpdateAbilities()

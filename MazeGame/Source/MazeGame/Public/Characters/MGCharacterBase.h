@@ -34,10 +34,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase")
 	virtual bool IsAlive() const;
 
-	/*virtual void RemoveCharacterAbilities();
-
-	virtual void Die();*/
-
+	virtual void RemoveCharacterAbilities();
+	/**
+	* Если нужно уничтожить актор после смерти, необходимо переопределить эту функцию и вызвать в ней FinishDying()
+	*/
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|MGCharacterBase")
+	virtual void Die();
 	/**
 	* Закончить умирать.
 	*/

@@ -84,6 +84,7 @@ void UMGPlayerDataSubsystem::DeleteSaveFileBySlot(const int32 SlotIndex)
 
 void UMGPlayerDataSubsystem::UnloadGameFromPlayerDataSubsystem()
 {
+	delete CurrentlyLoadedSaveGameObject;
 	CurrentlyLoadedSaveGameObject = nullptr;
 }
 

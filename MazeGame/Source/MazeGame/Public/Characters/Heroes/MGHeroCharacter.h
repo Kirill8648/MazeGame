@@ -37,6 +37,8 @@ public:
 	/**
 	* Обновляет способности в компоненте системы способностей.
 	*/
+	virtual void Die() override;
+
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|Player")
 	void UpdateAbilities();
 	/**
@@ -48,18 +50,24 @@ public:
 
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Camera")
-	float BaseTurnRate;/**< Стандартная скорость поворота камеры персонажа. */
+	float BaseTurnRate; /**< Стандартная скорость поворота камеры персонажа. */
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Camera")
-	float BaseLookUpRate;/**< Стандартная скорость поднятия камеры персонажа. */
+	float BaseLookUpRate; /**< Стандартная скорость поднятия камеры персонажа. */
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Flying")
-	bool bMoveByCamera;/**< Двигаться ли параллельно камере в режиме полета. */
+	bool bMoveByCamera; /**< Двигаться ли параллельно камере в режиме полета. */
 
-	bool bASCInputBound;/**< Привязан ли ввод компонента системы способностей к компоненту ввода персонажа. */
+	bool bASCInputBound; /**< Привязан ли ввод компонента системы способностей к компоненту ввода персонажа. */
 
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category = "MazeGame|Camera")
-	class UCameraComponent* FirstPersonCamera;/**< Указатель на компонент камеры персонажа. */
+	class UCameraComponent* FirstPersonCamera; /**< Указатель на компонент камеры персонажа. */
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Camera")
+	UPhysicalMaterial* DeadBoxPhysMat;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "MazeGame|Player")
+	void K2_OnDied();
 
 	/**
 	* Функция, вызывающаяся в момент начала игры.
@@ -112,15 +120,15 @@ protected:
 	* @param DoShakeOnStart - начинать ли тряску сразу или после задержки
 	*/
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "MazeGame|Camera")
-	void StartWalkCameraShake(int32 const &DoShakeOnStart);
+	void StartWalkCameraShake(int32 const& DoShakeOnStart);
 	/**
 	* Функция, реализованная в наследуемом от этого класса блупринте. Останавливает тряску камеры при ходьбе.
 	* @param Immediately - закончить ли тряску моментально
 	* @param ClearHandle - очистить ли таймер обнолвения тряски камеры
 	*/
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "MazeGame|Camera")
-	void StopWalkCameraShake(int32 const &Immediately, int32 const &ClearHandle);
-	
+	void StopWalkCameraShake(int32 const& Immediately, int32 const& ClearHandle);
+
 private:
 	bool bDoOnceMoveForwardStartShake;
 	bool bDoOnceMoveForwardStopShake;

@@ -5,6 +5,7 @@
 #include "MGAbilitySystemComponent.h"
 #include "MGAttributeSetBase.h"
 #include "MGGameplayAbilityBase.h"
+#include "Components/CapsuleComponent.h"
 
 AMGCharacterBase::AMGCharacterBase()
 {
@@ -22,6 +23,30 @@ UAbilitySystemComponent* AMGCharacterBase::GetAbilitySystemComponent() const
 bool AMGCharacterBase::IsAlive() const
 {
 	return GetHealth() > 0.0f;
+}
+
+void AMGCharacterBase::RemoveCharacterAbilities()
+{
+	if (GetLocalRole() != ROLE_Authority || !AbilitySystemComponent || !AbilitySystemComponent->bCharacterAbilitiesGiven)
+	{
+		return;
+	}
+
+	AbilitySystemComponent->ClearAllAbilities();
+	AbilitySystemComponent->bCharacterAbilitiesGiven = false;
+}
+
+void AMGCharacterBase::Die()
+{
+	RemoveCharacterAbilities();
+
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->CancelAllAbilities();
+		AbilitySystemComponent->AddLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.Dead"));
+	}
 }
 
 void AMGCharacterBase::FinishDying()
