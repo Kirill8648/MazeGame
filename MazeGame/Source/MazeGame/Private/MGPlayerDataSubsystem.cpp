@@ -10,8 +10,8 @@
 
 UMGPlayerDataSubsystem::UMGPlayerDataSubsystem()
 {
-	/*static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable1(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"));
-	AbilitiesTable = AbilitiesTable1.Object;*/
+	static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable1(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'"));
+	AbilitiesTable = AbilitiesTable1.Object;
 	//FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>("AssetRegistry");
 	//if (FModuleManager::Get().IsModuleLoaded("AssetRegistry") && FModuleManager::Get().IsModuleLoaded("DataRegistry"))
 	//{

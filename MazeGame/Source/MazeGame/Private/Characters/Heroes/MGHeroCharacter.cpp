@@ -152,6 +152,27 @@ void AMGHeroCharacter::UpdateAbilities()
 	AbilitySystemComponent->bCharacterAbilitiesGiven = true;
 }
 
+void AMGHeroCharacter::ClearRandomAbility()
+{
+	TArray<FGameplayAbilitySpecHandle> Handles;
+	AbilitySystemComponent->GetAllAbilities(Handles);
+	for (int32 i = Handles.Num() - 1; i >= 0; i--)
+	{
+		const EMGAbilityInputID CachedInpID = Cast<UMGGameplayAbilityBase>(AbilitySystemComponent->FindAbilitySpecFromHandle(Handles[i])->Ability)->AbilityInputID;
+		if (CachedInpID != EMGAbilityInputID::ActivateFirst && CachedInpID != EMGAbilityInputID::ActivateSecond && CachedInpID != EMGAbilityInputID::ActivateThird &&
+			CachedInpID != EMGAbilityInputID::ActivateFourth && CachedInpID != EMGAbilityInputID::ActivateFifth)
+		{
+			Handles.RemoveAt(i);
+		}
+	}
+	if (Handles.Num() > 0)
+	{
+		const int32 RandIndex = FMath::RandRange(0, Handles.Num() - 1);
+		K2_RemoveAbilitySlotFromHUD(Cast<UMGGameplayAbilityBase>(AbilitySystemComponent->FindAbilitySpecFromHandle(Handles[RandIndex])->Ability)->AbilityInputID);
+		AbilitySystemComponent->ClearAbility(Handles[RandIndex]);
+	}
+}
+
 void AMGHeroCharacter::BeginPlay()
 {
 	Super::BeginPlay();

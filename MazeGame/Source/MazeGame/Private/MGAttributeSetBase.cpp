@@ -44,6 +44,10 @@ void UMGAttributeSetBase::PostGameplayEffectExecute(const FGameplayEffectModCall
 	{
 		SetStamina(FMath::Clamp(GetStamina(), 0.0f, GetMaxStamina()));
 	}
+	else if (Data.EvaluatedData.Attribute == GetCoinsAttribute())
+	{
+		SetCoins(FMath::Clamp(GetCoins(), 0.0f, INFINITY));
+	}
 }
 
 void UMGAttributeSetBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const

@@ -41,6 +41,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "MazeGame|Player")
 	void UpdateAbilities();
+
+	UFUNCTION(BlueprintCallable, Category = "MazeGame|Player")
+	void ClearRandomAbility();
 	/**
 	* Функция, реализованная в наследуемом от этого класса блупринте. Удаляет слот удаленной способности в пользовательском интерфейсе.
 	* @param SlotID - идентификатор ввода способности
