@@ -13,7 +13,7 @@ UMGSaveGame::UMGSaveGame()
 	LastYMazeSize = 100;
 	SetDateTime();
 
-	if (static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'")); AbilitiesTable.
+	/*if (static ConstructorHelpers::FObjectFinder<UDataTable> AbilitiesTable(TEXT("DataTable'/Game/MazeGame/Data/DataTables/DT_Abilities.DT_Abilities'")); AbilitiesTable.
 		Succeeded())
 	{
 		TArray<FAbilityLevelPrices*> Rows;
@@ -24,7 +24,7 @@ UMGSaveGame::UMGSaveGame()
 			else
 				//TEMP
 				AbilitiesLevels.Emplace(FSavedAbilityInfo(Row->AbilityKey, 0));
-	}
+	}*/
 
 	AbilitiesSlotsNumbers.Emplace(FSavedAbilityInfo("RaiseWalls", 0));
 	for (int i = 1; i < 5; i++)
