@@ -22,4 +22,10 @@ class MAZEGAME_API UMGBlueprintFunctionLibrary : public UBlueprintFunctionLibrar
 	*/
 	UFUNCTION(BlueprintPure)
 	static FString SanitizeFloat(double InFloat, const int32 InMinFractionalDigits);
+
+	UFUNCTION(BlueprintCallable)
+	static UTexture2D* GetTextureFromRenderTarget2D(UTextureRenderTarget2D* TextureRenderTarget);
+
+	UFUNCTION(BlueprintCallable)
+	static UTextureCube* GetTextureFromRenderTargetCube(UTextureRenderTargetCube* TextureRenderTargetCube);
 };

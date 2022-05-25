@@ -60,3 +60,21 @@ void UMGCheatManager::UnlockAbilities() const
 	}
 	else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "You're not in Lobby!");
 }
+
+void UMGCheatManager::RenderRealTimePortalsMenuOnly(bool Render) const
+{
+	const UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(GetWorld());
+	if (const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>())
+	{
+		PlayerDataSubsystem->bRealTimePortals = Render;
+	}
+}
+
+void UMGCheatManager::SetPortalsUpdateRateMenuOnly(float Rate) const
+{
+	const UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(GetWorld());
+	if (const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>())
+	{
+		PlayerDataSubsystem->PortalsUpdateRate = Rate;
+	}
+}

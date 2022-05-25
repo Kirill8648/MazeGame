@@ -79,6 +79,11 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "MazeGame|PlayerSubsystem")
 	UDataTable* AbilitiesTable; /**< Таблица с информацией о способностях. */
 
+	UPROPERTY(BlueprintReadOnly)
+	mutable bool bRealTimePortals = false;
+	UPROPERTY(BlueprintReadOnly)
+	mutable float PortalsUpdateRate = 1.0f;
+
 	//TSoftClassPtr<UDataTable> AbilitiesTableSoftClassPtr;
 
 	//TSoftObjectPtr<UDataTable> AbilitiesTableSoftObjectPtr;

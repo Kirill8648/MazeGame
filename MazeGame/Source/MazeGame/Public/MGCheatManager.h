@@ -26,4 +26,10 @@ public:
 	*/
 	UFUNCTION(Exec)
 	void UnlockAbilities() const;
+
+	UFUNCTION(Exec)
+	void RenderRealTimePortalsMenuOnly(bool Render) const;
+
+	UFUNCTION(Exec)
+	void SetPortalsUpdateRateMenuOnly(float Rate) const;
 };
