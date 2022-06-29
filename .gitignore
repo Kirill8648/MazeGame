@@ -8,6 +8,7 @@ Intermediate
 Saved
 Plugins
 Build/Windows/FileOpenOrder/*
+*.sln.DotSettings.user
 
 # Compiled Object files
 *.slo

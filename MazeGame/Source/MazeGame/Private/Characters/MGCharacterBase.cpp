@@ -209,3 +209,12 @@ void AMGCharacterBase::SetHealth(float Health)
 		AttributeSetBase->SetHealth(Health);
 	}
 }
+
+void AMGCharacterBase::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+	AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	InitializeAttributes();
+	AddStartupEffects();
+	AddCharacterAbilities();
+}

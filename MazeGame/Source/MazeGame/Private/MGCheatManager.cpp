@@ -4,6 +4,7 @@
 #include "MGCheatManager.h"
 
 #include "MGPlayerDataSubsystem.h"
+#include "Engine/LevelStreaming.h"
 #include "Kismet/GameplayStatics.h"
 
 /*void UMGCheatManager::InitCheatManager()
@@ -20,6 +21,25 @@
 	
 	Super::InitCheatManager();
 }*/
+
+void UMGCheatManager::UnlockAbilities() const
+{
+	const UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(GetWorld());
+	if (UGameplayStatics::GetCurrentLevelName(GetWorld()).Equals("Lobby"))
+	{
+		if (const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>())
+			if (PlayerDataSubsystem->CurrentlyLoadedSaveGameObject)
+			{
+				for (FSavedAbilityInfo& AbilitiesLevel : PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->AbilitiesLevels)
+					if (AbilitiesLevel.AbilityInfo == 0)
+						AbilitiesLevel.AbilityInfo = 1;
+				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Abilities unlocked, redraw UI to see changes");
+			}
+			else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "No save file loaded");
+		//else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "Error during unlocking. PlayerDataSubsystem is null");
+	}
+	else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "You're not in Lobby!");
+}
 
 void UMGCheatManager::AddMoney(const int Amount) const
 {
@@ -42,26 +62,7 @@ void UMGCheatManager::AddMoney(const int Amount) const
 	else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "You're not in Lobby!");
 }
 
-void UMGCheatManager::UnlockAbilities() const
-{
-	const UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(GetWorld());
-	if (UGameplayStatics::GetCurrentLevelName(GetWorld()).Equals("Lobby"))
-	{
-		if (const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>())
-			if (PlayerDataSubsystem->CurrentlyLoadedSaveGameObject)
-			{
-				for (FSavedAbilityInfo& AbilitiesLevel : PlayerDataSubsystem->CurrentlyLoadedSaveGameObject->AbilitiesLevels)
-					if (AbilitiesLevel.AbilityInfo == 0)
-						AbilitiesLevel.AbilityInfo = 1;
-				GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Cyan, "Abilities unlocked, redraw UI to see changes");
-			}
-			else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "No save file loaded");
-		//else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "Error during unlocking. PlayerDataSubsystem is null");
-	}
-	else GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Red, "You're not in Lobby!");
-}
-
-void UMGCheatManager::RenderRealTimePortalsMenuOnly(bool Render) const
+void UMGCheatManager::RenderRealTimePortals(bool Render) const
 {
 	const UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(GetWorld());
 	if (const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>())
@@ -70,11 +71,41 @@ void UMGCheatManager::RenderRealTimePortalsMenuOnly(bool Render) const
 	}
 }
 
-void UMGCheatManager::SetPortalsUpdateRateMenuOnly(float Rate) const
+void UMGCheatManager::SetPortalsUpdateRate(float Rate) const
 {
 	const UGameInstance* GameInstance = UGameplayStatics::GetGameInstance(GetWorld());
 	if (const UMGPlayerDataSubsystem* PlayerDataSubsystem = GameInstance->GetSubsystem<UMGPlayerDataSubsystem>())
 	{
 		PlayerDataSubsystem->PortalsUpdateRate = Rate;
 	}
+}
+
+void UMGCheatManager::RemoveStremedLevel(ULevelStreaming* StreamingToRemove)
+{
+	ULevel* level = StreamingToRemove->GetLoadedLevel();
+	if (level) StreamingToRemove->GetWorld()->RemoveFromWorld(level);
+	/*else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.5f, FColor::Red, "No LoadedLevel!");
+	}*/
+
+	if (StreamingToRemove->GetCurrentState() == ULevelStreaming::ECurrentState::Loading)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.5f, FColor::Yellow, "Loading Overlap! Removing...");
+		//StreamingToRemove->HasLoadRequestPending();
+		/*StreamingToRemove->SetShouldBeLoaded(false);*/
+		//StreamingToRemove->OnLevelLoaded.AddDynamic(this, UMGCheatManager::OnLevelLoaded());
+		StreamingToRemove->SetIsRequestingUnloadAndRemoval(true);
+		//StreamingToRemove->SetShouldBeVisible(false);
+	}
+	if (StreamingToRemove)
+	{
+		GetWorld()->RemoveStreamingLevel(StreamingToRemove);
+		StreamingToRemove->MarkAsGarbage();
+	}
+	//StreamingToRemove->GetCurrentState()==ULevelStreaming::ECurrentState::Removed;
+}
+
+void UMGCheatManager::OnLevelLoaded()
+{
 }

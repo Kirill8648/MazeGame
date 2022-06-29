@@ -145,4 +145,6 @@ protected:
 	* @param Health - здоровье 
 	*/
 	virtual void SetHealth(float Health);
+
+	virtual void PossessedBy(AController* NewController) override;
 };

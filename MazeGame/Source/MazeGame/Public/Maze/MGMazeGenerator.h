@@ -7,9 +7,11 @@
 #include "MGInstancedMeshActor.h"
 #include "MGMazeGenerationGameMode.h"
 #include "GameFramework/Actor.h"
+#include "Templates/Tuple.h"
 #include "UI/MGMazeGenerationProgressWidget.h"
 #include "MGMazeGenerator.generated.h"
 
+class UMGBiomeData;
 DECLARE_DELEGATE_OneParam(FBoolDelegate, bool)
 DECLARE_DELEGATE_OneParam(FStringDelegate, FString)
 
@@ -101,9 +103,11 @@ struct FSeparateSpawnedActorInfo
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AActor> SpawnedActor; /**< Класс актора для спавна. */
 	UPROPERTY(EditAnywhere)
-	TEnumAsByte<EMazeItemState> ActorType; /**< Тип актора для спавна. Выбирать None запрещено. Knot пока не реализован. */
+	TEnumAsByte<EMazeItemState> ActorType;
+	/**< Тип актора для спавна. Выбирать None запрещено. Knot пока не реализован. */
 	UPROPERTY(EditAnywhere, meta = (UIMin = "0.0"))
-	float SpawnRate; /**< Вероятность спавна в процентах (50% = 0.5). Означает процент от количества клеток определенного выбранного типа. */
+	float SpawnRate;
+	/**< Вероятность спавна в процентах (50% = 0.5). Означает процент от количества клеток определенного выбранного типа. */
 	UPROPERTY(EditAnywhere)
 	bool bIsSpawnRateAsCount;
 	/**< Использовать ли вероятность спавна как количество заспавненных акторов независимо от размера лабиринта. В этом случае значение SpawnRate должно быть целое. */
@@ -138,7 +142,8 @@ struct FInstancedCollectibleInfo
 {
 	GENERATED_BODY()
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<AMGInstancedMeshActorStatic> InstancedActor; /**< Класс актора собираемого предмета с компонентом экземпляра меша. */
+	TSubclassOf<AMGInstancedMeshActorStatic> InstancedActor;
+	/**< Класс актора собираемого предмета с компонентом экземпляра меша. */
 	UPROPERTY(EditAnywhere)
 	float SpawnRate; /**< Вероятность спавна в процентах (50% = 0.5) на месте клетки типа Cell. */
 	UPROPERTY(EditAnywhere)
@@ -186,7 +191,8 @@ public:
 	* @param ChangeLoadingScreenTextDelegate - делегат, вызывающийся для смены текста загрузки
 	* @param AllFinishedDelegate - делегат, вызывающийся при завершении генерации
 	*/
-	void LaunchAsyncMazeGeneration(int32 Seed, int32 XSize, int32 YSize, FString2Delegate& ChangeLoadingScreenTextDelegate, FDelegate& AllFinishedDelegate);
+	void LaunchAsyncMazeGeneration(int32 Seed, int32 XSize, int32 YSize,
+	                               FString2Delegate& ChangeLoadingScreenTextDelegate, FDelegate& AllFinishedDelegate);
 	/**
 	* Возвращает координаты для старта игрока.
 	* @return координаты для старта игрока.
@@ -194,7 +200,8 @@ public:
 	FVector GetPlayerStartCoords();
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|UnbreakableWalls")
-	TSubclassOf<AMGInstancedMeshActorStatic> InstancedMeshUnbreakableWalls; /**< Класс актора неразрушаемой стены с компонентом экземпляра меша. */
+	TSubclassOf<AMGInstancedMeshActorStatic> InstancedMeshUnbreakableWalls;
+	/**< Класс актора неразрушаемой стены с компонентом экземпляра меша. */
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame|Parameters")
 	int32 DistanceBetweenWalls; /**< Расстояние между стенами в лабиринте. */
@@ -206,9 +213,11 @@ public:
 	UMGMazeGenerationProgressWidget* MazeGenerationProgressWidgetRef; /**< Укзатель на виджет генерации лабиринта. */
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
-	TSubclassOf<AMGInstancedCollectibleActor> InstancedMeshCoins; /**< Класс актора валюты с компонентом экземпляра меша. */
+	TSubclassOf<AMGInstancedCollectibleActor> InstancedMeshCoins;
+	/**< Класс актора валюты с компонентом экземпляра меша. */
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
-	FVector OptionalInstancedMeshCoinsOffset; /**< Опциональная корректировка положения актора валюты с компонентом экземпляра меша при спавне. */
+	FVector OptionalInstancedMeshCoinsOffset;
+	/**< Опциональная корректировка положения актора валюты с компонентом экземпляра меша при спавне. */
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
 	TSubclassOf<AActor> AbilityCollectibleActor; /**< Класс актора собираемой способности. */
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "MazeGame|Collectibles")
@@ -217,7 +226,8 @@ public:
 	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
 	TSubclassOf<AActor> ExitLevelVolume; /**< Класс триггера завершения уровня. */
 	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
-	TArray<FSeparateSpawnedActorInfo> SeparateActors; /**< Массив акторов которые будут заспавнены используя процент (SpawnRate). */
+	TArray<FSeparateSpawnedActorInfo> SeparateActors;
+	/**< Массив акторов которые будут заспавнены используя процент (SpawnRate). */
 	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
 	TArray<FInstancedWallInfo> InstancedWallsVariations; /**< Массив вариаций мешей стен. */
 	UPROPERTY(EditAnywhere, Category = "MazeGame|SpawnedObjects")
@@ -230,6 +240,38 @@ public:
 	UPROPERTY(EditAnywhere, Category = "MazeGame|Floor")
 	TArray<FSeparateSpawnedFloorActorInfo> FloorActors; /**< Массив акторов пола. */
 
+	/*Height Redistribution curve over time from 0 to 1*/
+	UPROPERTY(EditAnywhere, Category = "MazeGame|Biomes")
+	UCurveFloat* HeightRedistribution;
+	/*
+	 * Height Octaves in the following format:
+	 * FVector2D (InX: OctaveWeight, InY: OctaveValue) */
+	UPROPERTY(EditAnywhere, Category = "MazeGame|Biomes")
+	TArray<FVector2D> HeightOctaves = {FVector2D(1.0f, 0.01f), FVector2D(0.5f, 0.02f), FVector2D(0.25f, 0.04f)};
+
+	/*Heat Redistribution curve over time from 0 to 1*/
+	UPROPERTY(EditAnywhere, Category = "MazeGame|Biomes")
+	UCurveFloat* HeatRedistribution;
+	/*
+	 * Heat Octaves in the following format:
+	 * FVector2D (InX: OctaveWeight, InY: OctaveValue) */
+	UPROPERTY(EditAnywhere, Category = "MazeGame|Biomes")
+	TArray<FVector2D> HeatOctaves = {FVector2D(1.0f, 0.02f), FVector2D(0.5f, 0.04f), FVector2D(0.25f, 0.08f)};
+
+	/*Moisture Redistribution curve over time from 0 to 1*/
+	UPROPERTY(EditAnywhere, Category = "MazeGame|Biomes")
+	UCurveFloat* MoistureRedistribution;
+	/*
+	 * Moisture Octaves in the following format:
+	 * FVector2D (InX: OctaveWeight, InY: OctaveValue) */
+	UPROPERTY(EditAnywhere, Category = "MazeGame|Biomes")
+	TArray<FVector2D> MoistureOctaves = {FVector2D(2.0f, 0.02f), FVector2D(0.25f, 0.04f), FVector2D(0.125f, 0.06f)};
+
+	UPROPERTY(EditAnywhere, Category = "MazeGame|Biomes")
+	TArray<UMGBiomeData*> Biomes;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame")
+	int32 Seed;
+	
 protected:
 	TArray<TArray<FMazeItem>> MazeMatrix; /**< Массив, представляющий генерируемый лабиринт. */
 	/**
@@ -238,8 +280,10 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	FBoolDelegate MatrixGenerationFinishedDelegate; /**< Делегат, вызывающийся при завершении генерации матрицы лабиринта. */
-	FStringDelegate DrawGenerationProgressUIDelegate; /**< Делегат, вызывающийся при необходимости перерисовать процесс генерации на виджете. */
+	FBoolDelegate MatrixGenerationFinishedDelegate;
+	/**< Делегат, вызывающийся при завершении генерации матрицы лабиринта. */
+	FStringDelegate DrawGenerationProgressUIDelegate;
+	/**< Делегат, вызывающийся при необходимости перерисовать процесс генерации на виджете. */
 	bool bIsMistakeHappened = false; /**< Случились ли ошибки при генерации. */
 	FMazeItem ExitCell; /**< Данные о клетке с выходом из лабиринта. */
 
@@ -268,8 +312,16 @@ private:
 	* @param Array - адрес перемешиваемого массива
 	* @param Stream - адрес потока рандомных чисел
 	*/
-	void ShuffleArray(TArray<int32>& Array, FRandomStream& Stream);
+	template <typename InElementType, typename InAllocatorType>
+	static void ShuffleArray(TArray<InElementType, InAllocatorType>& Array, FRandomStream& Stream);
+	/*UPROPERTY(EditAnywhere, Category = "MazeGame")
 	int32 Seed; /**<Ключ генерации.*/
+
+	UFUNCTION(BlueprintCallable)
+	TArray<UTexture2D*> GenerateBiomes();
+
+	void PerlinReset(FRandomStream& Stream);
+	float PerlinNoise2D(const FVector2D& Location);
 };
 
 /** 
@@ -290,8 +342,10 @@ public:
 	* @param YSize - размер Y
 	* @param XSize - размер X
 	*/
-	FGenerateMazeMatrixAsyncTask(FBoolDelegate& EndDelegate, FStringDelegate& DrawUIDelegate, TArray<TArray<FMazeItem>>& MatrixAddress, FMazeItem& ExitCell, int32 Seed,
-	                             int32 YSize, int32 XSize) : EndDelegate(EndDelegate), DrawUIDelegate(DrawUIDelegate), MatrixAddress(MatrixAddress), ExitCell(ExitCell),
+	FGenerateMazeMatrixAsyncTask(FBoolDelegate& EndDelegate, FStringDelegate& DrawUIDelegate,
+	                             TArray<TArray<FMazeItem>>& MatrixAddress, FMazeItem& ExitCell, int32 Seed,
+	                             int32 YSize, int32 XSize) : EndDelegate(EndDelegate), DrawUIDelegate(DrawUIDelegate),
+	                                                         MatrixAddress(MatrixAddress), ExitCell(ExitCell),
 	                                                         Seed(Seed), YSize(YSize), XSize(XSize)
 	{
 	}

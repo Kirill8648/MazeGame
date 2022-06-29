@@ -23,6 +23,12 @@ class MAZEGAME_API UMGBlueprintFunctionLibrary : public UBlueprintFunctionLibrar
 	UFUNCTION(BlueprintPure)
 	static FString SanitizeFloat(double InFloat, const int32 InMinFractionalDigits);
 
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
+	static void SpawnActorsInGrid(UObject* WorldContextObject, TSubclassOf<AActor> ActorClass, int32 X, int32 Y, float GridSize);
+
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject"))
+	static void DestroyAllActorsByClass(UObject* WorldContextObject, TSubclassOf<AActor> ActorClass);
+
 	UFUNCTION(BlueprintCallable)
 	static UTexture2D* GetTextureFromRenderTarget2D(UTextureRenderTarget2D* TextureRenderTarget);
 

@@ -79,6 +79,8 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "MazeGame|PlayerSubsystem")
 	UDataTable* AbilitiesTable; /**< Таблица с информацией о способностях. */
 
+	float CurrentMazeCellSize = 500.0f;
+
 	UPROPERTY(BlueprintReadOnly)
 	mutable bool bRealTimePortals = false;
 	UPROPERTY(BlueprintReadOnly)

@@ -6,10 +6,34 @@
 #include "Engine/TextureCube.h"
 #include "Engine/TextureRenderTarget2D.h"
 #include "Engine/TextureRenderTargetCube.h"
+#include "Kismet/GameplayStatics.h"
 
 FString UMGBlueprintFunctionLibrary::SanitizeFloat(double InFloat, const int32 InMinFractionalDigits)
 {
 	return FString::SanitizeFloat(InFloat, InMinFractionalDigits);
+}
+
+void UMGBlueprintFunctionLibrary::SpawnActorsInGrid(UObject* WorldContextObject, const TSubclassOf<AActor> ActorClass, const int32 X, const int32 Y,
+                                                    const float GridSize)
+{
+	if (ActorClass && WorldContextObject)
+	{
+		UWorld* World = WorldContextObject->GetWorld();
+		for (int32 i = 0; i < X; i++)
+			for (int32 j = 0; j < Y; j++)
+				World->SpawnActor<AActor>(ActorClass, FVector(i * GridSize, j * GridSize, 0.0f), FRotator());
+	}
+}
+
+void UMGBlueprintFunctionLibrary::DestroyAllActorsByClass(UObject* WorldContextObject, const TSubclassOf<AActor> ActorClass)
+{
+	if (ActorClass && WorldContextObject)
+	{
+		TArray<AActor*> Actors;
+		UGameplayStatics::GetAllActorsOfClass(WorldContextObject, ActorClass, Actors);
+		for (const auto Actor : Actors)
+			Actor->Destroy();
+	}
 }
 
 UTexture2D* UMGBlueprintFunctionLibrary::GetTextureFromRenderTarget2D(UTextureRenderTarget2D* TextureRenderTarget)

@@ -28,8 +28,12 @@ public:
 	void UnlockAbilities() const;
 
 	UFUNCTION(Exec)
-	void RenderRealTimePortalsMenuOnly(bool Render) const;
+	void RenderRealTimePortals(bool Render) const;
 
 	UFUNCTION(Exec)
-	void SetPortalsUpdateRateMenuOnly(float Rate) const;
+	void SetPortalsUpdateRate(float Rate) const;
+
+	UFUNCTION(BlueprintCallable)
+	void RemoveStremedLevel(ULevelStreaming* StreamingToRemove);
+	void OnLevelLoaded();
 };
