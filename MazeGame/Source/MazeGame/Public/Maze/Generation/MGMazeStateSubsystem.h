@@ -6,6 +6,7 @@
 #include "Subsystems/WorldSubsystem.h"
 #include "MGMazeStateSubsystem.generated.h"
 
+struct FRoomInfo;
 USTRUCT()
 struct FObjectState
 {
@@ -32,6 +33,15 @@ USTRUCT(BlueprintType)
 struct FRoomChunk
 {
 	GENERATED_BODY()
+
+	FRoomChunk(): UpAngle(0), DownAngle(0), RightAngle(0), LeftAngle(0)
+	{
+	}
+
+	FRoomChunk(const FVector2D Coords) : ChunkLocalCoords(Coords), UpAngle(0), DownAngle(0), RightAngle(0), LeftAngle(0)
+	{
+	}
+
 	/*
 	 * Room Chunks coordinates:
 	 *			+Y
@@ -65,7 +75,7 @@ struct FRoomState
 	{
 	}
 
-	explicit FRoomState(const FVector2D GridCoords) : DistanceMesh(nullptr), GridCoords(GridCoords), Height(-1), Heat(-1), Moisture(-1)
+	explicit FRoomState(const FVector2D GridCoords) : DistanceMesh(nullptr), Coords(GridCoords), Height(-1), Heat(-1), Moisture(-1)
 	{
 	}
 
@@ -77,7 +87,9 @@ struct FRoomState
 	UPROPERTY(BlueprintReadOnly)
 	FName BiomeName;
 	UPROPERTY(BlueprintReadOnly)
-	FVector2D GridCoords;
+	FVector2D Coords;
+	UPROPERTY(BlueprintReadOnly)
+	FVector Offset;
 	UPROPERTY(BlueprintReadOnly)
 	FRotator Rotation;
 	UPROPERTY(BlueprintReadOnly)
@@ -90,6 +102,7 @@ struct FRoomState
 	TMap<int32, FObjectState> StaticObjects;
 
 	bool bShouldNotBeDeletedByChunks = false;
+	bool bIsFlat = false;
 };
 
 UCLASS()
@@ -113,4 +126,9 @@ public:
 
 	UFUNCTION(BlueprintPure, meta = (WorldContext = WorldContextObject))
 	static int32 GetRoomHash(UObject* WorldContextObject, float X, float Y);
+
+	bool TryToSpawn(FRoomInfo RoomToSpawn, FRotator Rotation, TArray<TPair<int32, FRoomState>>* BiomeRoomsToRemoveFrom, int32 RootIndexInBiomeRooms);
+
+private:
+	static TArray<FVector2D> GetRotatedChunksArray(TArray<FVector2D> ChunksToRotate, FRotator Rotator);
 };

@@ -5,11 +5,14 @@
 
 #include "EditorLevelUtils.h"
 #include "ImageUtils.h"
+#include "MGPlayerDataSubsystem.h"
 #include "Components/HierarchicalInstancedStaticMeshComponent.h"
-#include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
+#include "Maze/MGInstancedCollectibleActor.h"
 #include "Maze/MGInstancedMeshActor.h"
+#include "UI/MGMazeGenerationProgressWidget.h"
 #include "Maze/Generation/MGBiomeData.h"
+#include "Maze/Generation/MGMazeRoomActor.h"
 #include "Maze/Generation/MGMazeStateSubsystem.h"
 
 AMGMazeGenerator::AMGMazeGenerator()
@@ -20,8 +23,7 @@ AMGMazeGenerator::AMGMazeGenerator()
 	DrawGenerationProgressUIDelegate.BindUObject(this, &AMGMazeGenerator::DrawGenerationProgressUI);
 }
 
-void AMGMazeGenerator::LaunchAsyncMazeGeneration(int32 Seed1, int32 XSize, int32 YSize,
-                                                 FString2Delegate& ChangeLoadingScreenTextDelegate1,
+void AMGMazeGenerator::LaunchAsyncMazeGeneration(int32 Seed1, int32 XSize, int32 YSize, FString2Delegate& ChangeLoadingScreenTextDelegate1,
                                                  FDelegate& AllFinishedDelegate1)
 {
 	this->Seed = Seed1;
@@ -35,10 +37,8 @@ void AMGMazeGenerator::LaunchAsyncMazeGeneration(int32 Seed1, int32 XSize, int32
 	{
 		MazeGenerationProgressWidgetRef->AddToViewport(1);
 	}
-	(new FAutoDeleteAsyncTask<FGenerateMazeMatrixAsyncTask>(MatrixGenerationFinishedDelegate,
-	                                                        DrawGenerationProgressUIDelegate, MazeMatrix, ExitCell,
-	                                                        Seed, YSize, XSize))->
-		StartBackgroundTask();
+	(new FAutoDeleteAsyncTask<FGenerateMazeMatrixAsyncTask>(MatrixGenerationFinishedDelegate, DrawGenerationProgressUIDelegate, MazeMatrix, ExitCell, Seed,
+	                                                        YSize, XSize))->StartBackgroundTask();
 }
 
 FVector AMGMazeGenerator::GetPlayerStartCoords()
@@ -120,11 +120,9 @@ void AMGMazeGenerator::ContinueGeneration(bool bIsMistakeHappenedInAsync)
 
 	if (bIsMistakeHappenedInAsync && GEngine)
 		GEngine->AddOnScreenDebugMessage(-1, INFINITY, FColor::Red,
-		                                 FString::Printf(TEXT(
-			                                 "Errors occurred during async generation! Check the log for more details.")));
+		                                 FString::Printf(TEXT("Errors occurred during async generation! Check the log for more details.")));
 	else
-		GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green,
-		                                 FString::Printf(TEXT("The maze matrix was successfully async generated")));
+		GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, FString::Printf(TEXT("The maze matrix was successfully async generated")));
 
 	FFunctionGraphTask::CreateAndDispatchWhenReady([this]()
 	{
@@ -690,7 +688,7 @@ void AMGMazeGenerator::ShuffleArray(TArray<InElementType, InAllocatorType>& Arra
 		int32 LastIndex = Array.Num() - 1;
 		for (int32 i = 0; i <= LastIndex; ++i)
 		{
-			int32 Index = Stream.RandRange(i, LastIndex); /*FMath::RandRange(i, LastIndex);*/
+			int32 Index = Stream.RandRange(i, LastIndex);
 			if (i != Index)
 			{
 				Array.Swap(i, Index);
@@ -766,18 +764,24 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 		for (auto Room : Biome->Rooms)
 			if (Room.SpawnType == SpawnRate)
 				SpawnRateSum += Room.SpawnRate;
-		if (SpawnRateSum > 1.0f)
+		if (SpawnRateSum > 100.0f)
 		{
 			if (GEngine)
 				GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red, FString::Printf(TEXT(
-					                                 "SpawnRate sum with SpawnType=SpawnRate of biome '%s' are more than 1.0f! Generation cancelled"),
+					                                 "SpawnRate sum with SpawnType=SpawnRate of biome '%s' are more than 100%! Generation cancelled"),
 				                                                                         *Biome->BiomeName.ToString()));
-			UE_LOG(LogTemp, Error, TEXT("SpawnRate sum with SpawnType=SpawnRate of biome '%s' are more than 1.0f! Generation cancelled"),
+			UE_LOG(LogTemp, Error, TEXT("SpawnRate sum with SpawnType=SpawnRate of biome '%s' are more than 100%! Generation cancelled"),
 			       *Biome->BiomeName.ToString());
 			return Returnable;
 		}
 	}
 	//----------------------
+
+	MazeStateSubsystem->GridSize = 250.0f;
+	UGameInstance* GI = UGameplayStatics::GetGameInstance(this);
+	UMGPlayerDataSubsystem* PDS = GI->GetSubsystem<UMGPlayerDataSubsystem>();
+	PDS->CurrentMazeCellSize = MazeStateSubsystem->GridSize;
+	MazeStateSubsystem->RoomsStates.Empty(); //TODO ВРЕМЕННОЕ, УДАЛИТЬ КАК МОЖНО БЫСТРЕЕ
 
 	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
@@ -786,8 +790,8 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 	//сгенерировать карту высоты, теплоты и влажности
 	for (auto& RoomState : MazeStateSubsystem->RoomsStates)
 	{
-		float nx = RoomState.Value.GridCoords.X / MazeMatrix[0].Num() - 0.5f;
-		float ny = RoomState.Value.GridCoords.Y / MazeMatrix.Num() - 0.5f;
+		float nx = RoomState.Value.Coords.X / MazeMatrix[0].Num() - 0.5f;
+		float ny = RoomState.Value.Coords.Y / MazeMatrix.Num() - 0.5f;
 
 		float EHeight = 0.0f;
 		float HeightOctavesSum = 0.0f;
@@ -805,8 +809,8 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 	PerlinReset(PerlinNoiseStream);
 	for (auto& RoomState : MazeStateSubsystem->RoomsStates)
 	{
-		float nx = RoomState.Value.GridCoords.X / MazeMatrix[0].Num() - 0.5f;
-		float ny = RoomState.Value.GridCoords.Y / MazeMatrix.Num() - 0.5f;
+		float nx = RoomState.Value.Coords.X / MazeMatrix[0].Num() - 0.5f;
+		float ny = RoomState.Value.Coords.Y / MazeMatrix.Num() - 0.5f;
 
 		float EHeat = 0.0f;
 		float HeatOctavesSum = 0.0f;
@@ -823,8 +827,8 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 	PerlinReset(PerlinNoiseStream);
 	for (auto& RoomState : MazeStateSubsystem->RoomsStates)
 	{
-		float nx = RoomState.Value.GridCoords.X / MazeMatrix[0].Num() - 0.5f;
-		float ny = RoomState.Value.GridCoords.Y / MazeMatrix.Num() - 0.5f;
+		float nx = RoomState.Value.Coords.X / MazeMatrix[0].Num() - 0.5f;
+		float ny = RoomState.Value.Coords.Y / MazeMatrix.Num() - 0.5f;
 
 		float EMoisture = 0.0f;
 		float MoistureOctavesSum = 0.0f;
@@ -848,11 +852,11 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 	MoistureTextureColor.SetNum(10000);
 	for (const auto& RoomState : MazeStateSubsystem->RoomsStates)
 	{
-		HeightTextureColor[RoomState.Value.GridCoords.X / 250.0f + RoomState.Value.GridCoords.Y / 250.0f * MazeMatrix[0].Num()] = FColor(
+		HeightTextureColor[RoomState.Value.Coords.X / 250.0f + RoomState.Value.Coords.Y / 250.0f * MazeMatrix[0].Num()] = FColor(
 			RoomState.Value.Height * 255, RoomState.Value.Height * 255, RoomState.Value.Height * 255);
-		HeatTextureColor[RoomState.Value.GridCoords.X / 250.0f + RoomState.Value.GridCoords.Y / 250.0f * MazeMatrix[0].Num()] = FColor(
+		HeatTextureColor[RoomState.Value.Coords.X / 250.0f + RoomState.Value.Coords.Y / 250.0f * MazeMatrix[0].Num()] = FColor(
 			RoomState.Value.Heat * 255, RoomState.Value.Heat * 255, RoomState.Value.Heat * 255);
-		MoistureTextureColor[RoomState.Value.GridCoords.X / 250.0f + RoomState.Value.GridCoords.Y / 250.0f * MazeMatrix[0].Num()] = FColor(
+		MoistureTextureColor[RoomState.Value.Coords.X / 250.0f + RoomState.Value.Coords.Y / 250.0f * MazeMatrix[0].Num()] = FColor(
 			RoomState.Value.Moisture * 255, RoomState.Value.Moisture * 255, RoomState.Value.Moisture * 255);
 	}
 
@@ -907,7 +911,7 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 	TArray<FColor> BiomesTextureColor;
 	BiomesTextureColor.SetNum(10000);
 	for (const auto& RoomState : MazeStateSubsystem->RoomsStates)
-		BiomesTextureColor[RoomState.Value.GridCoords.X / 250.0f + RoomState.Value.GridCoords.Y / 250.0f * MazeMatrix[0].Num()] =
+		BiomesTextureColor[RoomState.Value.Coords.X / 250.0f + RoomState.Value.Coords.Y / 250.0f * MazeMatrix[0].Num()] =
 			UMGBiomeData::GetBiomeByName(RoomState.Value.BiomeName, Biomes)->DebugColor;
 	Returnable.Add(FImageUtils::CreateTexture2D(100, 100, BiomesTextureColor, this, "TextureBio", RF_WillBeLoaded, FCreateTexture2DParameters()));
 
@@ -939,53 +943,202 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 	}
 
 	//заспавнить плоские комнаты (заполнить инфу в MGMazeStateSubsystem о плоских комнатах)
-	for (auto Biome : Biomes)
+	//заспавнить остальные (не плоские) комнаты (заполнить инфу в MGMazeStateSubsystem о не плоских комнатах)
+	for (auto Biome : Biomes) //плоские
+	{
+		TArray<TPair<int32, FRoomState>>* BiomeRooms = nullptr;
+		for (auto& RoomsIDsByBiome : RoomsIDsByBiomes)
+			if (RoomsIDsByBiome.Key.IsEqual(Biome->BiomeName))
+				BiomeRooms = &RoomsIDsByBiome.Value;
+
 		for (auto Room : Biome->Rooms)
 			if (Room.bIsFlat && Room.SpawnType == NumberOfRooms)
-			{
-				for (int i = 0; i < Room.SpawnRate; i++)
-				{
-					//попробовать выбрать комнату (изза плоскости)
-					bool RoomChosenSuccessfully = false;
-					while (!RoomChosenSuccessfully)
-					{
-						
-					}
-				}
-			}
-	for (auto Biome : Biomes)
+				for (int i = 0; i < Room.NumberOfRooms; i++)
+					GenerateRoom(Room, Biome, BiomeRooms, ShuffleStream, MazeStateSubsystem, 100);
+	}
+	for (auto Biome : Biomes) //не плоские
+	{
+		TArray<TPair<int32, FRoomState>>* BiomeRooms = nullptr;
+		for (auto& RoomsIDsByBiome : RoomsIDsByBiomes)
+			if (RoomsIDsByBiome.Key.IsEqual(Biome->BiomeName))
+				BiomeRooms = &RoomsIDsByBiome.Value;
+
+		for (auto Room : Biome->Rooms)
+			if (!Room.bIsFlat && Room.SpawnType == NumberOfRooms)
+				for (int i = 0; i < Room.NumberOfRooms; i++)
+					GenerateRoom(Room, Biome, BiomeRooms, ShuffleStream, MazeStateSubsystem, 500);
+	}
+
+	for (auto Biome : Biomes) //плоские
+	{
+		TArray<TPair<int32, FRoomState>>* BiomeRooms = nullptr;
+		for (auto& RoomsIDsByBiome : RoomsIDsByBiomes)
+			if (RoomsIDsByBiome.Key.IsEqual(Biome->BiomeName))
+				BiomeRooms = &RoomsIDsByBiome.Value;
+
 		for (auto Room : Biome->Rooms)
 			if (Room.bIsFlat && Room.SpawnType == SpawnRate)
 			{
+				int32 SpawnAmount = BiomeRooms->Num() * Room.SpawnRate / 100;
+				for (int32 i = 0; i < SpawnAmount; i++)
+					GenerateRoom(Room, Biome, BiomeRooms, ShuffleStream, MazeStateSubsystem, 100);
 			}
-	for (auto Biome : Biomes)
+	}
+	for (auto Biome : Biomes) //не плоские
+	{
+		TArray<TPair<int32, FRoomState>>* BiomeRooms = nullptr;
+		for (auto& RoomsIDsByBiome : RoomsIDsByBiomes)
+			if (RoomsIDsByBiome.Key.IsEqual(Biome->BiomeName))
+				BiomeRooms = &RoomsIDsByBiome.Value;
+
+		for (auto Room : Biome->Rooms)
+			if (!Room.bIsFlat && Room.SpawnType == SpawnRate)
+			{
+				int32 SpawnAmount = BiomeRooms->Num() * Room.SpawnRate / 100;
+				for (int32 i = 0; i < SpawnAmount; i++)
+					GenerateRoom(Room, Biome, BiomeRooms, ShuffleStream, MazeStateSubsystem, 100);
+			}
+	}
+
+	for (auto Biome : Biomes) //плоские
 		for (auto Room : Biome->Rooms)
 			if (Room.bIsFlat && Room.SpawnType == SpawnWeight)
 			{
 			}
-
-	//заспавнить остальные (не плоские) комнаты (заполнить инфу в MGMazeStateSubsystem о не плоских комнатах)
-	for (auto Biome : Biomes)
-		for (auto Room : Biome->Rooms)
-			if (!Room.bIsFlat && Room.SpawnType == NumberOfRooms)
-			{
-			}
-	for (auto Biome : Biomes)
-		for (auto Room : Biome->Rooms)
-			if (!Room.bIsFlat && Room.SpawnType == SpawnRate)
-			{
-			}
-	for (auto Biome : Biomes)
+	for (auto Biome : Biomes) //не плоские
 		for (auto Room : Biome->Rooms)
 			if (!Room.bIsFlat && Room.SpawnType == SpawnWeight)
 			{
 			}
+
+	//зачекать на наличие дырок и заполнить их
+	for (auto RoomState : MazeStateSubsystem->RoomsStates)
+	{
+		if (RoomState.Value.Level.IsNull())
+		{
+		}
+	}
+
+	InitializeOrSpawnMazeRoomActors();
 
 	//назначить комнаты (чанки)
 
 	//рассчитать углы для комнат (и тупики)
 
 	return Returnable;
+}
+
+void AMGMazeGenerator::GenerateRoom(FRoomInfo& Room, UMGBiomeData* Biome, TArray<TPair<int32, FRoomState>>* BiomeRooms, FRandomStream& ShuffleStream,
+                                    UMGMazeStateSubsystem* MazeStateSubsystem, int32 MaxAttempts)
+{
+	//попробовать выбрать комнату (изза плоскости или когда чанков много)
+	bool RoomChosenSuccessfully = false;
+	int32 AttemptCounter = 0;
+	TSet<int32> WeightTryingIDIgnoreList;
+	while (!RoomChosenSuccessfully && AttemptCounter < MaxAttempts)
+	{
+		AttemptCounter++;
+		int32 RandOrWeightIndex = 0;
+		if (Room.OptionalWeights.IsEmpty())
+		{
+			RandOrWeightIndex = ShuffleStream.RandRange(0, BiomeRooms->Num() - 1);
+		}
+		else
+		{
+			float MinDistance = INFINITY;
+			int32 MinHash;
+
+			for (int32 j = 0; j < BiomeRooms->Num(); j++)
+			{
+				if (WeightTryingIDIgnoreList.Contains(BiomeRooms->Last(BiomeRooms->Num() - 1 - j).Key)) continue;
+				float Distance = 0.0f;
+				for (auto& OptionalWeight : Room.OptionalWeights)
+				{
+					switch (OptionalWeight.Key)
+					{
+					case Height:
+						Distance += FMath::Abs(OptionalWeight.Value - BiomeRooms->Last(BiomeRooms->Num() - 1 - j).Value.Height);
+						break;
+					case Heat:
+						Distance += FMath::Abs(OptionalWeight.Value - BiomeRooms->Last(BiomeRooms->Num() - 1 - j).Value.Heat);
+						break;
+					case Moisture:
+						Distance += FMath::Abs(OptionalWeight.Value - BiomeRooms->Last(BiomeRooms->Num() - 1 - j).Value.Moisture);
+						break;
+					default:
+						break;
+					}
+				}
+				if (Distance < MinDistance)
+				{
+					MinDistance = Distance;
+					MinHash = BiomeRooms->Last(BiomeRooms->Num() - 1 - j).Key;
+					RandOrWeightIndex = j;
+				}
+			}
+			WeightTryingIDIgnoreList.Emplace(MinHash);
+		}
+
+		FRotator RoomRotation = {0.0f, 0.0f, 0.0f};
+		// TODO добавить попробовать заспавнить все повороты
+		if (Room.bRandomizeRotation) RoomRotation = {0.0f, ShuffleStream.RandRange(0, 3) * 90.0f, 0.0f };
+		if (MazeStateSubsystem->TryToSpawn(Room, RoomRotation, BiomeRooms, RandOrWeightIndex))
+		{
+			RoomChosenSuccessfully = true;
+		}
+	}
+	if (AttemptCounter == MaxAttempts)
+	{
+		if (GEngine)
+			GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Yellow,
+			                                 FString::Printf(
+				                                 TEXT("The room '%s' with SpawnType 'NumberOfRooms' in '%s' biome was not spawned!"),
+				                                 *Room.Room->Level.GetAssetName(), *Biome->BiomeName.ToString()));
+		UE_LOG(LogTemp, Warning, TEXT("The room '%s' with SpawnType 'NumberOfRooms' in '%s' biome was not spawned!"),
+		       *Room.Room->Level.GetAssetName(), *Biome->BiomeName.ToString());
+	}
+}
+
+void AMGMazeGenerator::InitializeOrSpawnMazeRoomActors()
+{
+	const TSubclassOf<AMGMazeRoomActor> ActorClass;
+	TArray<AActor*> MazeRoomActors;
+	UGameplayStatics::GetAllActorsOfClass(this, AMGMazeRoomActor::StaticClass(), MazeRoomActors);
+
+	UMGMazeStateSubsystem* MazeStateSubsystem = GetWorld()->GetSubsystem<UMGMazeStateSubsystem>();
+	int32 Index = 0;
+	for (const auto RoomState : MazeStateSubsystem->RoomsStates)
+	{
+		if (MazeRoomActors.IsValidIndex(Index))
+		{
+			AMGMazeRoomActor* MazeActor = Cast<AMGMazeRoomActor>(MazeRoomActors[Index]);
+			MazeActor->DistantMesh->SetStaticMesh(RoomState.Value.DistanceMesh);
+			MazeActor->LevelToLoad = RoomState.Value.Level;
+			MazeActor->SetActorLocationAndRotation(
+				FVector(RoomState.Value.Coords.X * 2.5f/*MazeStateSubsystem->GridSize*/, RoomState.Value.Coords.Y * 2.5f/*MazeStateSubsystem->GridSize*/,
+				        0.0f/*(RoomState.Value.Height + RoomState.Value.Heat + RoomState.Value.Moisture) / 3 * 250.0f * 250.0f*/) + RoomState.Value.Offset, RoomState.Value.Rotation);
+		}
+		else
+		{
+			AMGMazeRoomActor* MazeActor = Cast<AMGMazeRoomActor>(GetWorld()->SpawnActor<AActor>(
+				AMGMazeRoomActor::StaticClass(), FTransform(RoomState.Value.Rotation,
+				                                            FVector(RoomState.Value.Coords.X * MazeStateSubsystem->GridSize,
+				                                                    RoomState.Value.Coords.Y * MazeStateSubsystem->GridSize,
+				                                                    (RoomState.Value.Height +RoomState.Value.Heat + RoomState.Value.Moisture)/3 * MazeStateSubsystem->GridSize) + RoomState.Value.Offset,
+				                                            FVector(1.0f, 1.0f, 1.0f))));
+			if (MazeActor)
+			{
+				if (GEngine)
+					GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Red,
+					                                 FString::Printf(
+						                                 TEXT("Room actor with coords (X: %f,Y: %f) was not spawned!"), RoomState.Value.Coords.X,
+						                                 RoomState.Value.Coords.Y));
+				UE_LOG(LogTemp, Error, TEXT("Room actor with coords (X: %f,Y: %f) was not spawned!"), RoomState.Value.Coords.X,
+				       RoomState.Value.Coords.Y);
+			}
+		}
+		Index++;
+	}
 }
 
 void FGenerateMazeMatrixAsyncTask::DoWork()
@@ -1022,8 +1175,7 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 					Num() - 1)
 					MatrixAddress[IndexY][IndexX].bIsUnbreakable = true;
 			}
-			else if ((IndexY == 0 || IndexY == MatrixAddress.Num() - 1) && !MatrixAddress[IndexY][IndexX].
-				bIsUnbreakable)
+			else if ((IndexY == 0 || IndexY == MatrixAddress.Num() - 1) && !MatrixAddress[IndexY][IndexX].bIsUnbreakable)
 			{
 				if (EdgesIter != Exit)
 				{
@@ -1033,8 +1185,7 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 				else ExitCell = FMazeItem(MatrixAddress[IndexY][IndexX].IndexY, MatrixAddress[IndexY][IndexX].IndexX);
 				EdgesIter++;
 			}
-			else if ((IndexX == 0 || IndexX == MatrixAddress[IndexY].Num() - 1) && !MatrixAddress[IndexY][IndexX].
-				bIsUnbreakable)
+			else if ((IndexX == 0 || IndexX == MatrixAddress[IndexY].Num() - 1) && !MatrixAddress[IndexY][IndexX].bIsUnbreakable)
 			{
 				if (EdgesIter != Exit)
 				{
@@ -1053,17 +1204,12 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 
 	if (MatrixAddress.Num() < 2)
 	{
-		//TODO change seed to from gameinst
-		UE_LOG(LogTemp, Warning,
-		       TEXT(
-			       "The MazeMatrix is not generated. Either input values are 0 or BeginPlay() called too early for seed %d"
-		       ), 12345);
+		UE_LOG(LogTemp, Warning, TEXT("The MazeMatrix is not generated. Either input values are 0 or BeginPlay() called too early for seed %d"), Seed);
 		return;
 	}
 	if (ExitCell.IndexX == 0 && ExitCell.IndexY == 0)
 	{
-		//TODO change seed to from gameinst
-		UE_LOG(LogTemp, Error, TEXT("The exit is not generated for some reason for seed %d"), 12345);
+		UE_LOG(LogTemp, Error, TEXT("The exit is not generated for some reason for seed %d"), Seed);
 		bIsMistakeHappenedInAsync = true;
 		return;
 	}
@@ -1119,8 +1265,7 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 
 		for (const auto& IterationNearRemainingCell : IterationNearCells)
 		{
-			PlaceWallBetweenCellsByIndexes(IterationNearRemainingCell->IndexY, IterationNearRemainingCell->IndexX,
-			                               CurrentCell->IndexY, CurrentCell->IndexX);
+			PlaceWallBetweenCellsByIndexes(IterationNearRemainingCell->IndexY, IterationNearRemainingCell->IndexX, CurrentCell->IndexY, CurrentCell->IndexX);
 		}
 
 		DesiredCells.Remove(CurrentCell);
@@ -1142,23 +1287,18 @@ void FGenerateMazeMatrixAsyncTask::DoWork()
 
 			if (NotVisitedCell)
 			{
-				TArray<FMazeItem*> NearVisitedCellsForNotVisitedCell = GetNearCellsByIndexes(
-					NotVisitedCell->IndexY, NotVisitedCell->IndexX, true);
+				TArray<FMazeItem*> NearVisitedCellsForNotVisitedCell = GetNearCellsByIndexes(NotVisitedCell->IndexY, NotVisitedCell->IndexX, true);
 				for (int32 i = NearVisitedCellsForNotVisitedCell.Num() - 1; i >= 0; i--)
 					if (!NearVisitedCellsForNotVisitedCell[i]->bIsVisited)
-						NearVisitedCellsForNotVisitedCell.
-							RemoveAt(i);
+						NearVisitedCellsForNotVisitedCell.RemoveAt(i);
 
 				if (NearVisitedCellsForNotVisitedCell.Num() > 0)
 				{
-					const int32 RandomizedNearVisitedCellsForNotVisitedCellIndex = Stream.RandRange(
-						0, NearVisitedCellsForNotVisitedCell.Num() - 1);
+					const int32 RandomizedNearVisitedCellsForNotVisitedCellIndex = Stream.RandRange(0, NearVisitedCellsForNotVisitedCell.Num() - 1);
 
 					BreakWallBetweenCellsByIndexes(NotVisitedCell->IndexY, NotVisitedCell->IndexX,
-					                               NearVisitedCellsForNotVisitedCell[
-						                               RandomizedNearVisitedCellsForNotVisitedCellIndex]->IndexY,
-					                               NearVisitedCellsForNotVisitedCell[
-						                               RandomizedNearVisitedCellsForNotVisitedCellIndex]->IndexX);
+					                               NearVisitedCellsForNotVisitedCell[RandomizedNearVisitedCellsForNotVisitedCellIndex]->IndexY,
+					                               NearVisitedCellsForNotVisitedCell[RandomizedNearVisitedCellsForNotVisitedCellIndex]->IndexX);
 				}
 				DesiredCells.Emplace(NotVisitedCell);
 			}
@@ -1176,9 +1316,7 @@ TArray<FMazeItem*> FGenerateMazeMatrixAsyncTask::GetNearCellsByIndexes(int32 Ind
 
 	if (IndexY > MatrixAddress.Num() - 1 || IndexX > MatrixAddress[0].Num() || IndexY < 0 || IndexX < 0)
 	{
-		//TODO change seed to from gameinst
-		UE_LOG(LogTemp, Error, TEXT("Index out of bounds in function GetNearCellsByIndexes(%d, %d) with seed %d"),
-		       IndexY, IndexX, 12345);
+		UE_LOG(LogTemp, Error, TEXT("Index out of bounds in function GetNearCellsByIndexes(%d, %d) with seed %d"), IndexY, IndexX, Seed);
 		bIsMistakeHappenedInAsync = true;
 		return Returning;
 	}
@@ -1210,10 +1348,8 @@ TArray<FMazeItem*> FGenerateMazeMatrixAsyncTask::GetNearCellsByIndexes(int32 Ind
 				else if (MatrixAddress[IndexY][IndexX + 1].MazeItemState != VerticalEdge)
 					Returning.Emplace(&MatrixAddress[IndexY][IndexX + 2]);
 	}
-	else if (MatrixAddress[IndexY][IndexX].MazeItemState == HorizontalEdge || MatrixAddress[IndexY][IndexX].
-		MazeItemState == VerticalEdge || MatrixAddress[IndexY][IndexX].
-		MazeItemState
-		== None)
+	else if (MatrixAddress[IndexY][IndexX].MazeItemState == HorizontalEdge || MatrixAddress[IndexY][IndexX].MazeItemState == VerticalEdge || MatrixAddress[
+		IndexY][IndexX].MazeItemState == None)
 	{
 		if (IndexY - 1 >= 0)
 			if (MatrixAddress[IndexY - 1][IndexX].MazeItemState == Cell)
@@ -1230,25 +1366,18 @@ TArray<FMazeItem*> FGenerateMazeMatrixAsyncTask::GetNearCellsByIndexes(int32 Ind
 	}
 	else
 	{
-		//TODO change seed to from gameinst
-		UE_LOG(LogTemp, Error,
-		       TEXT("Trying to get near cells not for Edge, Cell or None in indexes Y:%d X:%d with seed %d"), IndexY,
-		       IndexX, 12345);
+		UE_LOG(LogTemp, Error, TEXT("Trying to get near cells not for Edge, Cell or None in indexes Y:%d X:%d with seed %d"), IndexY, IndexX, Seed);
 		bIsMistakeHappenedInAsync = true;
 	}
 	return Returning;
 }
 
-void FGenerateMazeMatrixAsyncTask::PlaceWallBetweenCellsByIndexes(int32 IndexY1, int32 IndexX1, int32 IndexY2,
-                                                                  int32 IndexX2)
+void FGenerateMazeMatrixAsyncTask::PlaceWallBetweenCellsByIndexes(int32 IndexY1, int32 IndexX1, int32 IndexY2, int32 IndexX2)
 {
 	if (MatrixAddress[IndexY1][IndexX1].MazeItemState != Cell || MatrixAddress[IndexY2][IndexX2].MazeItemState != Cell)
 	{
-		//TODO change seed to from gameinst
-		UE_LOG(LogTemp, Error,
-		       TEXT(
-			       "Trying to place walls not between cells in PlaceWallBetweenCellsByIndexes(%d, %d, %d, %d) with seed %d"
-		       ), IndexY1, IndexX1, IndexY2, IndexX2, 12345);
+		UE_LOG(LogTemp, Error, TEXT("Trying to place walls not between cells in PlaceWallBetweenCellsByIndexes(%d, %d, %d, %d) with seed %d"), IndexY1, IndexX1,
+		       IndexY2, IndexX2, Seed);
 		bIsMistakeHappenedInAsync = true;
 		return;
 	}
@@ -1263,25 +1392,18 @@ void FGenerateMazeMatrixAsyncTask::PlaceWallBetweenCellsByIndexes(int32 IndexY1,
 		MatrixAddress[IndexY1][IndexX1 + 1].MazeItemState = VerticalEdge;
 	else
 	{
-		//TODO change seed to from gameinst
-		UE_LOG(LogTemp, Error,
-		       TEXT(
-			       "The wall was not placed between the cells in PlaceWallBetweenCellsByIndexes(%d, %d, %d, %d) with seed %d"
-		       ), IndexY1, IndexX1, IndexY2, IndexX2, 12345);
+		UE_LOG(LogTemp, Error, TEXT("The wall was not placed between the cells in PlaceWallBetweenCellsByIndexes(%d, %d, %d, %d) with seed %d"), IndexY1,
+		       IndexX1, IndexY2, IndexX2, Seed);
 		bIsMistakeHappenedInAsync = true;
 	}
 }
 
-void FGenerateMazeMatrixAsyncTask::BreakWallBetweenCellsByIndexes(int32 IndexY1, int32 IndexX1, int32 IndexY2,
-                                                                  int32 IndexX2)
+void FGenerateMazeMatrixAsyncTask::BreakWallBetweenCellsByIndexes(int32 IndexY1, int32 IndexX1, int32 IndexY2, int32 IndexX2)
 {
 	if (MatrixAddress[IndexY1][IndexX1].MazeItemState != Cell || MatrixAddress[IndexY2][IndexX2].MazeItemState != Cell)
 	{
-		//TODO change seed to from gameinst
-		UE_LOG(LogTemp, Error,
-		       TEXT(
-			       "Trying to break walls not between cells in BreakWallBetweenCellsByIndexes(%d, %d, %d, %d) with seed %d"
-		       ), IndexY1, IndexX1, IndexY2, IndexX2, 12345);
+		UE_LOG(LogTemp, Error, TEXT("Trying to break walls not between cells in BreakWallBetweenCellsByIndexes(%d, %d, %d, %d) with seed %d"), IndexY1, IndexX1,
+		       IndexY2, IndexX2, Seed);
 		bIsMistakeHappenedInAsync = true;
 		return;
 	}
@@ -1295,11 +1417,8 @@ void FGenerateMazeMatrixAsyncTask::BreakWallBetweenCellsByIndexes(int32 IndexY1,
 		MatrixAddress[IndexY1][IndexX1 + 1].MazeItemState = None;
 	else
 	{
-		//TODO change seed to from gameinst
-		UE_LOG(LogTemp, Error,
-		       TEXT(
-			       "The wall was not broken between the cells in BreakWallBetweenCellsByIndexes(%d, %d, %d, %d) with seed %d"
-		       ), IndexY1, IndexX1, IndexY2, IndexX2, 12345);
+		UE_LOG(LogTemp, Error, TEXT("The wall was not broken between the cells in BreakWallBetweenCellsByIndexes(%d, %d, %d, %d) with seed %d"), IndexY1,
+		       IndexX1, IndexY2, IndexX2, Seed);
 		bIsMistakeHappenedInAsync = true;
 	}
 }

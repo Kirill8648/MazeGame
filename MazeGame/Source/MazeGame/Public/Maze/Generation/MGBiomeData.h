@@ -20,13 +20,22 @@ enum ENoiseMapTypes
 UENUM(BlueprintType)
 enum ERoomSpawnType
 {
-	/*Spawn rate as a percentage of the entire maze from 0 to 100 + considering weights. It is considered in the second place*/
+	/*
+	 * Spawn rate as a percentage of the biome grid from 0 to 100, which will be filled with this room + considering weights.
+	 * It is considered in the second place.
+	 */
 	SpawnRate UMETA(DisplayName = "SpawnRate"),
-
-	/* The NumberOfRooms is the exact amount of spawned rooms + considering weights. It is considered first of all*/
+	/*
+	 * The NumberOfRooms is the exact amount of spawned rooms + considering weights.
+	 * It is considered first of all.
+	 * Guarantees the spawn of rooms, if at least one room has not been spawned for some reason, the algorithm will display a warning on the screen.
+	 */
 	NumberOfRooms UMETA(DisplayName = "NumberOfRooms"),
-
-	/*Spawn weight of random spawn in empty remaining cells + considering weights. It is considered in the third turn*/
+	/*
+	 * Spawn weight of random spawn in empty remaining cells + considering weights.
+	 * It is considered in the third turn.
+	 * DOES NOT GUARANTEE THE SPAWN OF ROOMS.
+	 */
 	SpawnWeight UMETA(DisplayName = "SpawnWeight"),
 };
 
@@ -68,7 +77,7 @@ class MAZEGAME_API UMGBiomeData : public UDataAsset
 
 public:
 	UMGBiomeData();
-	
+
 	UPROPERTY(EditAnywhere, Category = "BiomeInfo")
 	FName BiomeName;
 	UPROPERTY(EditAnywhere, Category = "BiomeInfo")

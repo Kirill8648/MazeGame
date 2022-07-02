@@ -30,5 +30,5 @@ public:
 	 * In a common room there will be only one chunk with coordinates 0.0f, 0.0f
 	 */
 	UPROPERTY(EditAnywhere, meta = (ClampMin = 0, ClampMax = 10, Multiple = 1, Delta = 1))
-	TSet<FVector2D> RoomChunks = {FVector2D(0.0f, 0.0f)};
+	TArray<FVector2D> RoomChunks = {FVector2D(0.0f, 0.0f)};
 };

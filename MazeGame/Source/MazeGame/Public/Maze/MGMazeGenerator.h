@@ -3,15 +3,17 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "MGInstancedCollectibleActor.h"
-#include "MGInstancedMeshActor.h"
 #include "MGMazeGenerationGameMode.h"
 #include "GameFramework/Actor.h"
-#include "Templates/Tuple.h"
-#include "UI/MGMazeGenerationProgressWidget.h"
 #include "MGMazeGenerator.generated.h"
 
 class UMGBiomeData;
+class UMGMazeStateSubsystem;
+class UMGMazeGenerationProgressWidget;
+class AMGInstancedMeshActorStatic;
+class AMGInstancedCollectibleActor;
+struct FRoomInfo;
+struct FRoomState;
 DECLARE_DELEGATE_OneParam(FBoolDelegate, bool)
 DECLARE_DELEGATE_OneParam(FStringDelegate, FString)
 
@@ -191,8 +193,7 @@ public:
 	* @param ChangeLoadingScreenTextDelegate - делегат, вызывающийся для смены текста загрузки
 	* @param AllFinishedDelegate - делегат, вызывающийся при завершении генерации
 	*/
-	void LaunchAsyncMazeGeneration(int32 Seed, int32 XSize, int32 YSize,
-	                               FString2Delegate& ChangeLoadingScreenTextDelegate, FDelegate& AllFinishedDelegate);
+	void LaunchAsyncMazeGeneration(int32 Seed, int32 XSize, int32 YSize, FString2Delegate& ChangeLoadingScreenTextDelegate, FDelegate& AllFinishedDelegate);
 	/**
 	* Возвращает координаты для старта игрока.
 	* @return координаты для старта игрока.
@@ -271,7 +272,7 @@ public:
 	TArray<UMGBiomeData*> Biomes;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "MazeGame")
 	int32 Seed;
-	
+
 protected:
 	TArray<TArray<FMazeItem>> MazeMatrix; /**< Массив, представляющий генерируемый лабиринт. */
 	/**
@@ -319,6 +320,9 @@ private:
 
 	UFUNCTION(BlueprintCallable)
 	TArray<UTexture2D*> GenerateBiomes();
+	void GenerateRoom(FRoomInfo& Room, UMGBiomeData* Biome, TArray<TPair<int32, FRoomState>>* BiomeRooms, FRandomStream& ShuffleStream,
+	                               UMGMazeStateSubsystem* MazeStateSubsystem, int32 MaxAttempts = 100);
+	void InitializeOrSpawnMazeRoomActors();
 
 	void PerlinReset(FRandomStream& Stream);
 	float PerlinNoise2D(const FVector2D& Location);
@@ -342,11 +346,9 @@ public:
 	* @param YSize - размер Y
 	* @param XSize - размер X
 	*/
-	FGenerateMazeMatrixAsyncTask(FBoolDelegate& EndDelegate, FStringDelegate& DrawUIDelegate,
-	                             TArray<TArray<FMazeItem>>& MatrixAddress, FMazeItem& ExitCell, int32 Seed,
-	                             int32 YSize, int32 XSize) : EndDelegate(EndDelegate), DrawUIDelegate(DrawUIDelegate),
-	                                                         MatrixAddress(MatrixAddress), ExitCell(ExitCell),
-	                                                         Seed(Seed), YSize(YSize), XSize(XSize)
+	FGenerateMazeMatrixAsyncTask(FBoolDelegate& EndDelegate, FStringDelegate& DrawUIDelegate, TArray<TArray<FMazeItem>>& MatrixAddress, FMazeItem& ExitCell,
+	                             int32 Seed, int32 YSize, int32 XSize) : EndDelegate(EndDelegate), DrawUIDelegate(DrawUIDelegate), MatrixAddress(MatrixAddress),
+	                                                                     ExitCell(ExitCell), Seed(Seed), YSize(YSize), XSize(XSize)
 	{
 	}
 
