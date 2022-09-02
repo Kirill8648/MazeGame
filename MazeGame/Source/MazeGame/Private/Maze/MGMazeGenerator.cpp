@@ -775,6 +775,7 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 			return Returnable;
 		}
 	}
+	// TODO добавить проверку чтобы была хотя бы одна одиночная комната для каждого биома (с SpawnType != NumberOfRooms)
 	//----------------------
 
 	MazeStateSubsystem->GridSize = 250.0f;
@@ -785,8 +786,8 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 
 	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
-			MazeStateSubsystem->RoomsStates.Add(UMGMazeStateSubsystem::GetRoomHash(this, IndexX * 250.0f, IndexY * 250.0f),
-			                                    FRoomState(FVector2d(IndexX * 250.0f, IndexY * 250.0f)));
+			MazeStateSubsystem->RoomsStates.Add(UMGMazeStateSubsystem::GetRoomHash(this, IndexX * MazeStateSubsystem->GridSize, IndexY * MazeStateSubsystem->GridSize),
+			                                    FRoomState(FVector2d(IndexX * MazeStateSubsystem->GridSize, IndexY * MazeStateSubsystem->GridSize)));
 	//сгенерировать карту высоты, теплоты и влажности
 	for (auto& RoomState : MazeStateSubsystem->RoomsStates)
 	{
@@ -798,8 +799,7 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 		for (int32 i = 0; i < HeightOctaves.Num(); i++)
 		{
 			EHeight += HeightOctaves[i].X * FMath::GetMappedRangeValueUnclamped(FVector2d(-1.0f, 1.0f), FVector2d(0.0f, 1.0f),
-			                                                                    PerlinNoise2D(FVector2D(
-				                                                                    HeightOctaves[i].Y * nx, HeightOctaves[i].Y * ny)));
+			                                                                    PerlinNoise2D(FVector2D(HeightOctaves[i].Y * nx, HeightOctaves[i].Y * ny)));
 			HeightOctavesSum += HeightOctaves[i].X;
 		}
 
@@ -817,8 +817,7 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 		for (int32 i = 0; i < HeatOctaves.Num(); i++)
 		{
 			EHeat += HeatOctaves[i].X * FMath::GetMappedRangeValueUnclamped(FVector2d(-1.0f, 1.0f), FVector2d(0.0f, 1.0f),
-			                                                                PerlinNoise2D(FVector2D(
-				                                                                HeatOctaves[i].Y * nx, HeatOctaves[i].Y * ny)));
+			                                                                PerlinNoise2D(FVector2D(HeatOctaves[i].Y * nx, HeatOctaves[i].Y * ny)));
 			HeatOctavesSum += HeatOctaves[i].X;
 		}
 		if (HeatRedistribution) RoomState.Value.Heat = HeatRedistribution->GetFloatValue(EHeat / HeatOctavesSum);
@@ -835,8 +834,7 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 		for (int32 i = 0; i < MoistureOctaves.Num(); i++)
 		{
 			EMoisture += MoistureOctaves[i].X * FMath::GetMappedRangeValueUnclamped(FVector2d(-1.0f, 1.0f), FVector2d(0.0f, 1.0f),
-			                                                                        PerlinNoise2D(FVector2D(
-				                                                                        MoistureOctaves[i].Y * nx, MoistureOctaves[i].Y * ny)));
+			                                                                        PerlinNoise2D(FVector2D(MoistureOctaves[i].Y * nx, MoistureOctaves[i].Y * ny)));
 			MoistureOctavesSum += MoistureOctaves[i].X;
 		}
 
@@ -852,11 +850,11 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 	MoistureTextureColor.SetNum(10000);
 	for (const auto& RoomState : MazeStateSubsystem->RoomsStates)
 	{
-		HeightTextureColor[RoomState.Value.Coords.X / 250.0f + RoomState.Value.Coords.Y / 250.0f * MazeMatrix[0].Num()] = FColor(
+		HeightTextureColor[RoomState.Value.Coords.X / MazeStateSubsystem->GridSize + RoomState.Value.Coords.Y / MazeStateSubsystem->GridSize * MazeMatrix[0].Num()] = FColor(
 			RoomState.Value.Height * 255, RoomState.Value.Height * 255, RoomState.Value.Height * 255);
-		HeatTextureColor[RoomState.Value.Coords.X / 250.0f + RoomState.Value.Coords.Y / 250.0f * MazeMatrix[0].Num()] = FColor(
+		HeatTextureColor[RoomState.Value.Coords.X / MazeStateSubsystem->GridSize + RoomState.Value.Coords.Y / MazeStateSubsystem->GridSize * MazeMatrix[0].Num()] = FColor(
 			RoomState.Value.Heat * 255, RoomState.Value.Heat * 255, RoomState.Value.Heat * 255);
-		MoistureTextureColor[RoomState.Value.Coords.X / 250.0f + RoomState.Value.Coords.Y / 250.0f * MazeMatrix[0].Num()] = FColor(
+		MoistureTextureColor[RoomState.Value.Coords.X / MazeStateSubsystem->GridSize + RoomState.Value.Coords.Y / MazeStateSubsystem->GridSize * MazeMatrix[0].Num()] = FColor(
 			RoomState.Value.Moisture * 255, RoomState.Value.Moisture * 255, RoomState.Value.Moisture * 255);
 	}
 
@@ -911,7 +909,7 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 	TArray<FColor> BiomesTextureColor;
 	BiomesTextureColor.SetNum(10000);
 	for (const auto& RoomState : MazeStateSubsystem->RoomsStates)
-		BiomesTextureColor[RoomState.Value.Coords.X / 250.0f + RoomState.Value.Coords.Y / 250.0f * MazeMatrix[0].Num()] =
+		BiomesTextureColor[RoomState.Value.Coords.X / MazeStateSubsystem->GridSize + RoomState.Value.Coords.Y / MazeStateSubsystem->GridSize * MazeMatrix[0].Num()] =
 			UMGBiomeData::GetBiomeByName(RoomState.Value.BiomeName, Biomes)->DebugColor;
 	Returnable.Add(FImageUtils::CreateTexture2D(100, 100, BiomesTextureColor, this, "TextureBio", RF_WillBeLoaded, FCreateTexture2DParameters()));
 
@@ -975,11 +973,12 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 		for (auto& RoomsIDsByBiome : RoomsIDsByBiomes)
 			if (RoomsIDsByBiome.Key.IsEqual(Biome->BiomeName))
 				BiomeRooms = &RoomsIDsByBiome.Value;
+		int32 CachedBiomeRoomsSize = BiomeRooms->Num();
 
 		for (auto Room : Biome->Rooms)
 			if (Room.bIsFlat && Room.SpawnType == SpawnRate)
 			{
-				int32 SpawnAmount = BiomeRooms->Num() * Room.SpawnRate / 100;
+				int32 SpawnAmount = CachedBiomeRoomsSize * Room.SpawnRate / 100;
 				for (int32 i = 0; i < SpawnAmount; i++)
 					GenerateRoom(Room, Biome, BiomeRooms, ShuffleStream, MazeStateSubsystem, 100);
 			}
@@ -990,41 +989,166 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 		for (auto& RoomsIDsByBiome : RoomsIDsByBiomes)
 			if (RoomsIDsByBiome.Key.IsEqual(Biome->BiomeName))
 				BiomeRooms = &RoomsIDsByBiome.Value;
+		int32 CachedBiomeRoomsSize = BiomeRooms->Num();
 
 		for (auto Room : Biome->Rooms)
 			if (!Room.bIsFlat && Room.SpawnType == SpawnRate)
 			{
-				int32 SpawnAmount = BiomeRooms->Num() * Room.SpawnRate / 100;
+				int32 SpawnAmount = CachedBiomeRoomsSize * Room.SpawnRate / 100;
 				for (int32 i = 0; i < SpawnAmount; i++)
-					GenerateRoom(Room, Biome, BiomeRooms, ShuffleStream, MazeStateSubsystem, 100);
+					GenerateRoom(Room, Biome, BiomeRooms, ShuffleStream, MazeStateSubsystem, 500);
 			}
 	}
 
-	for (auto Biome : Biomes) //плоские
+	//вспомогательные мапы по биомам
+	TMap<FName, TArray<FRoomInfo>> SpawnRateRoomsByBiomes;
+	TMap<FName, TArray<FRoomInfo>> SpawnWeightRoomsByBiomes;
+	for (auto Biome : Biomes)
+	{
+		TArray<FRoomInfo> SpawnRateRooms;
+		TArray<FRoomInfo> SpawnWeightRooms;
 		for (auto Room : Biome->Rooms)
-			if (Room.bIsFlat && Room.SpawnType == SpawnWeight)
-			{
-			}
-	for (auto Biome : Biomes) //не плоские
-		for (auto Room : Biome->Rooms)
-			if (!Room.bIsFlat && Room.SpawnType == SpawnWeight)
-			{
-			}
-
+			if (Room.SpawnType == SpawnRate) SpawnRateRooms.Add(Room);
+			else if (Room.SpawnType == SpawnWeight) SpawnWeightRooms.Add(Room);
+		SpawnRateRoomsByBiomes.Add({Biome->BiomeName, SpawnRateRooms});
+		SpawnWeightRoomsByBiomes.Add({Biome->BiomeName, SpawnWeightRooms});
+	}
 	//зачекать на наличие дырок и заполнить их
 	for (auto RoomState : MazeStateSubsystem->RoomsStates)
 	{
 		if (RoomState.Value.Level.IsNull())
 		{
+			//заполнить дырку комнатой с SpawnWeight
+			TArray<FRoomInfo> SpawnWeightCandidates = SpawnWeightRoomsByBiomes.FindRef(RoomState.Value.BiomeName);
+			bool SpawnWeightRoomSpawned = false;
+			while (!SpawnWeightCandidates.IsEmpty() && !SpawnWeightRoomSpawned)
+			{
+				TArray<FRoomInfo> SpawnWeightCandidates_Copy = SpawnWeightCandidates;
+				int32 Random = ShuffleStream.RandRange(0, 100);
+				SpawnWeightCandidates_Copy.RemoveAll([Random](const FRoomInfo RoomInfo)
+				{
+					return RoomInfo.SpawnWeight < Random;
+				});
+
+				float MinDistance = INFINITY;
+				int32 MinOrRandomIndex = -1;
+				for (int32 i = 0; i < SpawnWeightCandidates_Copy.Num(); i++)
+				{
+					float Distance = 0.0f;
+					for (auto& OptionalWeight : SpawnWeightCandidates_Copy[i].OptionalWeights)
+					{
+						switch (OptionalWeight.Key)
+						{
+						case Height:
+							Distance += FMath::Abs(OptionalWeight.Value - RoomState.Value.Height);
+							break;
+						case Heat:
+							Distance += FMath::Abs(OptionalWeight.Value - RoomState.Value.Heat);
+							break;
+						case Moisture:
+							Distance += FMath::Abs(OptionalWeight.Value - RoomState.Value.Moisture);
+							break;
+						default:
+							break;
+						}
+					}
+					if (Distance < MinDistance)
+					{
+						MinDistance = Distance;
+						MinOrRandomIndex = i;
+					}
+				}
+				if (MinOrRandomIndex != -1)
+				{
+					if (MinDistance == 0.0f)
+						MinOrRandomIndex = ShuffleStream.RandRange(0, SpawnWeightCandidates_Copy.Num() - 1);
+
+					double Angle = 0.0f;
+					// TODO добавить попробовать заспавнить все повороты
+					if (SpawnWeightCandidates_Copy[MinOrRandomIndex].bRandomizeRotation) Angle = ShuffleStream.RandRange(0, 3) * 90.0f;
+					TArray<TPair<int32, FRoomState>> Plug;
+					Plug.Add({RoomState.Key, RoomState.Value});
+					if (MazeStateSubsystem->TryToSpawn(SpawnWeightCandidates_Copy[MinOrRandomIndex], Angle, &Plug, 0))
+					{
+						SpawnWeightRoomSpawned = true;
+					}
+					SpawnWeightCandidates.Remove(SpawnWeightCandidates_Copy[MinOrRandomIndex]);
+				}
+			}
+
+			//если SpawnWeight не получилось, использовать комнаты SpawnRate для спавна
+			bool SpawnRateRoomSpawned = false;
+			if (!SpawnWeightRoomSpawned)
+			{
+				TArray<FRoomInfo> SpawnRateCandidates = SpawnRateRoomsByBiomes.FindRef(RoomState.Value.BiomeName);
+				ShuffleArray(SpawnRateCandidates, ShuffleStream);
+				for (int32 i = 0; i < SpawnRateCandidates.Num(); i++)
+				{
+					float MinDistance = INFINITY;
+					int32 MinOrRandomIndex = -1;
+					for (int32 j = 0; j < SpawnRateCandidates.Num(); j++)
+					{
+						float Distance = 0.0f;
+						for (auto& OptionalWeight : SpawnRateCandidates[j].OptionalWeights)
+						{
+							switch (OptionalWeight.Key)
+							{
+							case Height:
+								Distance += FMath::Abs(OptionalWeight.Value - RoomState.Value.Height);
+								break;
+							case Heat:
+								Distance += FMath::Abs(OptionalWeight.Value - RoomState.Value.Heat);
+								break;
+							case Moisture:
+								Distance += FMath::Abs(OptionalWeight.Value - RoomState.Value.Moisture);
+								break;
+							default:
+								break;
+							}
+						}
+						if (Distance < MinDistance)
+						{
+							MinDistance = Distance;
+							MinOrRandomIndex = j;
+						}
+					}
+					if (MinDistance == 0.0f)
+						MinOrRandomIndex = ShuffleStream.RandRange(0, SpawnRateCandidates.Num() - 1);
+
+					double Angle = 0.0f;
+					// TODO добавить попробовать заспавнить все повороты
+					if (SpawnRateCandidates[MinOrRandomIndex].bRandomizeRotation) Angle = ShuffleStream.RandRange(0, 3) * 90.0f;
+					TArray<TPair<int32, FRoomState>> Plug;
+					Plug.Add({RoomState.Key, RoomState.Value});
+					if (MazeStateSubsystem->TryToSpawn(SpawnRateCandidates[MinOrRandomIndex], Angle, &Plug, 0))
+					{
+						SpawnRateRoomSpawned = true;
+						break;
+					}
+					SpawnRateCandidates.RemoveAt(MinOrRandomIndex);
+				}
+			}
+
+			if (!SpawnWeightRoomSpawned && !SpawnRateRoomSpawned)
+			{
+				if (GEngine)
+					GEngine->AddOnScreenDebugMessage(-1, 20.0f, FColor::Cyan,
+					                                 FString::Printf(TEXT("The hole at coordinates (%f,%f) is not filled! Generation cancelled"),
+					                                                 RoomState.Value.Coords.X, RoomState.Value.Coords.Y));
+				UE_LOG(LogTemp, Display, TEXT("The hole at coordinates (%f,%f) is not filled! Generation cancelled"), RoomState.Value.Coords.X, RoomState.Value.Coords.Y);
+				MazeStateSubsystem->RoomsStates.Empty();
+				return Returnable;
+			}
 		}
 	}
 
-	InitializeOrSpawnMazeRoomActors();
-
-	//назначить комнаты (чанки)
-
 	//рассчитать углы для комнат (и тупики)
+	for (auto RoomState : MazeStateSubsystem->RoomsStates)
+	{
+		
+	}
 
+	InitializeOrSpawnMazeRoomActors();
 	return Returnable;
 }
 
@@ -1079,10 +1203,10 @@ void AMGMazeGenerator::GenerateRoom(FRoomInfo& Room, UMGBiomeData* Biome, TArray
 			WeightTryingIDIgnoreList.Emplace(MinHash);
 		}
 
-		FRotator RoomRotation = {0.0f, 0.0f, 0.0f};
+		double Angle = 0.0f;
 		// TODO добавить попробовать заспавнить все повороты
-		if (Room.bRandomizeRotation) RoomRotation = {0.0f, ShuffleStream.RandRange(0, 3) * 90.0f, 0.0f };
-		if (MazeStateSubsystem->TryToSpawn(Room, RoomRotation, BiomeRooms, RandOrWeightIndex))
+		if (Room.bRandomizeRotation) Angle = ShuffleStream.RandRange(0, 3) * 90.0f;
+		if (MazeStateSubsystem->TryToSpawn(Room, Angle, BiomeRooms, RandOrWeightIndex))
 		{
 			RoomChosenSuccessfully = true;
 		}
@@ -1116,7 +1240,8 @@ void AMGMazeGenerator::InitializeOrSpawnMazeRoomActors()
 			MazeActor->LevelToLoad = RoomState.Value.Level;
 			MazeActor->SetActorLocationAndRotation(
 				FVector(RoomState.Value.Coords.X * 2.5f/*MazeStateSubsystem->GridSize*/, RoomState.Value.Coords.Y * 2.5f/*MazeStateSubsystem->GridSize*/,
-				        0.0f/*(RoomState.Value.Height + RoomState.Value.Heat + RoomState.Value.Moisture) / 3 * 250.0f * 250.0f*/) + RoomState.Value.Offset, RoomState.Value.Rotation);
+				        0.0f/*(RoomState.Value.Height + RoomState.Value.Heat + RoomState.Value.Moisture) / 3 * 250.0f * 250.0f*/) + RoomState.Value.Offset,
+				RoomState.Value.Rotation);
 		}
 		else
 		{
@@ -1124,7 +1249,8 @@ void AMGMazeGenerator::InitializeOrSpawnMazeRoomActors()
 				AMGMazeRoomActor::StaticClass(), FTransform(RoomState.Value.Rotation,
 				                                            FVector(RoomState.Value.Coords.X * MazeStateSubsystem->GridSize,
 				                                                    RoomState.Value.Coords.Y * MazeStateSubsystem->GridSize,
-				                                                    (RoomState.Value.Height +RoomState.Value.Heat + RoomState.Value.Moisture)/3 * MazeStateSubsystem->GridSize) + RoomState.Value.Offset,
+				                                                    (RoomState.Value.Height + RoomState.Value.Heat + RoomState.Value.Moisture) / 3 * MazeStateSubsystem->GridSize) +
+				                                            RoomState.Value.Offset,
 				                                            FVector(1.0f, 1.0f, 1.0f))));
 			if (MazeActor)
 			{

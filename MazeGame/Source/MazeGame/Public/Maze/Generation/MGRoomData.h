@@ -23,9 +23,9 @@ public:
 	UStaticMesh* DistanceMesh;
 	/*
 	 * Room Chunks coordinates:
-	 *			+Y
-	 * -X					+X
-	 *			-Y
+	 *			+X
+	 * -Y					+Y
+	 *			-X
 	 * The first element is the root chunk and should be equal to 0.0f, 0.0f
 	 * In a common room there will be only one chunk with coordinates 0.0f, 0.0f
 	 */

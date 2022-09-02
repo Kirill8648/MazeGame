@@ -38,15 +38,15 @@ struct FRoomChunk
 	{
 	}
 
-	FRoomChunk(const FVector2D Coords) : ChunkLocalCoords(Coords), UpAngle(0), DownAngle(0), RightAngle(0), LeftAngle(0)
+	FRoomChunk(const FVector2D ChunkLocalCoords) : ChunkLocalCoords(ChunkLocalCoords), UpAngle(0), DownAngle(0), RightAngle(0), LeftAngle(0)
 	{
 	}
 
 	/*
 	 * Room Chunks coordinates:
-	 *			+Y
-	 * -X					+X
-	 *			-Y
+	 *			+X
+	 * -Y					+Y
+	 *			-X
 	 * The first element is the root chunk and should be equal to 0, 0
 	 * In a common room there will be only one chunk with coordinates 0, 0
 	 */
@@ -75,7 +75,7 @@ struct FRoomState
 	{
 	}
 
-	explicit FRoomState(const FVector2D GridCoords) : DistanceMesh(nullptr), Coords(GridCoords), Height(-1), Heat(-1), Moisture(-1)
+	explicit FRoomState(const FVector2D Coords) : DistanceMesh(nullptr), Coords(Coords), Height(-1), Heat(-1), Moisture(-1)
 	{
 	}
 
@@ -86,6 +86,7 @@ struct FRoomState
 
 	UPROPERTY(BlueprintReadOnly)
 	FName BiomeName;
+	// Real coordinates. NOT GRID COORDINATES
 	UPROPERTY(BlueprintReadOnly)
 	FVector2D Coords;
 	UPROPERTY(BlueprintReadOnly)
@@ -127,8 +128,8 @@ public:
 	UFUNCTION(BlueprintPure, meta = (WorldContext = WorldContextObject))
 	static int32 GetRoomHash(UObject* WorldContextObject, float X, float Y);
 
-	bool TryToSpawn(FRoomInfo RoomToSpawn, FRotator Rotation, TArray<TPair<int32, FRoomState>>* BiomeRoomsToRemoveFrom, int32 RootIndexInBiomeRooms);
+	bool TryToSpawn(FRoomInfo RoomToSpawn, double Angle, TArray<TPair<int32, FRoomState>>* BiomeRoomsToRemoveFrom, int32 RootIndexInBiomeRooms, bool bCanOverride = true);
 
 private:
-	static TArray<FVector2D> GetRotatedChunksArray(TArray<FVector2D> ChunksToRotate, FRotator Rotator);
+	static TArray<FVector2D> GetRotatedChunksArray(TArray<FVector2D>& ChunksToRotate, double Angle);
 };

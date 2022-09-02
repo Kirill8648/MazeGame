@@ -50,11 +50,11 @@ struct FRoomInfo
 	float SpawnRate = 0.0f;
 	UPROPERTY(EditAnywhere, meta = (EditCondition = "SpawnType==ERoomSpawnType::NumberOfRooms", EditConditionHides, Units="times"))
 	int32 NumberOfRooms = 0;
-	UPROPERTY(EditAnywhere, meta = (EditCondition = "SpawnType==ERoomSpawnType::SpawnWeight", EditConditionHides))
+	UPROPERTY(EditAnywhere, meta = (ClampMin = 0, ClampMax = 100, EditCondition = "SpawnType==ERoomSpawnType::SpawnWeight", EditConditionHides))
 	int32 SpawnWeight = 0;
 	UPROPERTY(EditAnywhere)
 	TEnumAsByte<ERoomSpawnType> SpawnType = ERoomSpawnType::SpawnRate;
-	
+
 	UPROPERTY(EditAnywhere)
 	bool bShowOptionalProperties = false;
 	UPROPERTY(EditAnywhere, meta = (EditCondition = bShowOptionalProperties, EditConditionHides))
@@ -67,6 +67,8 @@ struct FRoomInfo
 	bool bIsFlat = false;
 	UPROPERTY(EditAnywhere, meta = (EditCondition = bShowOptionalProperties, EditConditionHides))
 	bool bRandomizeRotation = false;
+	
+	bool operator==(const FRoomInfo& Other) const;
 };
 
 
@@ -84,9 +86,14 @@ public:
 	TMap<TEnumAsByte<ENoiseMapTypes>, float> Weights;
 	UPROPERTY(EditAnywhere, Category = "BiomeInfo", meta = (HideAlphaChannel))
 	FColor DebugColor = FColor(0, 0, 0, 255);
-	UPROPERTY(EditAnywhere, Category = "Rooms",
-		meta = (TitleProperty = "{SpawnType}; SpawnRate: {SpawnRate} %, NumberOfRooms: {NumberOfRooms} x, SpawnWeight: {SpawnWeight}"))
+	// It is necessary to add at least one single (with one chunk at 0,0 coordinates) room with SpawnType != NumberOfRooms, that will be used to fill the holes.
+	UPROPERTY(EditAnywhere, Category = "Rooms", meta = (TitleProperty = "{SpawnType}; SpawnRate: {SpawnRate} %, NumberOfRooms: {NumberOfRooms} x, SpawnWeight: {SpawnWeight}"))
 	TArray<FRoomInfo> Rooms;
 
 	static UMGBiomeData* GetBiomeByName(const FName BiomeName, TArray<UMGBiomeData*>& Biomes);
 };
+
+FORCEINLINE bool FRoomInfo::operator==(const FRoomInfo& Other) const
+{
+	return Room == Other.Room && bIsFlat == Other.bIsFlat;
+}
