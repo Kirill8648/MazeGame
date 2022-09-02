@@ -16,7 +16,7 @@ class MAZEGAME_API UMGRoomData : public UDataAsset
 
 public:
 	UMGRoomData();
-	
+
 	UPROPERTY(EditAnywhere)
 	TSoftObjectPtr<UWorld> Level;
 	UPROPERTY(EditAnywhere)

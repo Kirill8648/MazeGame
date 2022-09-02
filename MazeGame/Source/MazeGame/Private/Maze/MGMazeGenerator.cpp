@@ -778,11 +778,11 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 	// TODO добавить проверку чтобы была хотя бы одна одиночная комната для каждого биома (с SpawnType != NumberOfRooms)
 	//----------------------
 
-	MazeStateSubsystem->GridSize = 250.0f;
+	MazeStateSubsystem->GridSize = 250.0f; //TODO ВРЕМЕННОЕ, УДАЛИТЬ КАК МОЖНО БЫСТРЕЕ
 	UGameInstance* GI = UGameplayStatics::GetGameInstance(this);
 	UMGPlayerDataSubsystem* PDS = GI->GetSubsystem<UMGPlayerDataSubsystem>();
 	PDS->CurrentMazeCellSize = MazeStateSubsystem->GridSize;
-	MazeStateSubsystem->RoomsStates.Empty(); //TODO ВРЕМЕННОЕ, УДАЛИТЬ КАК МОЖНО БЫСТРЕЕ
+	MazeStateSubsystem->RoomsStates.Empty(); //
 
 	for (int32 IndexY = 0; IndexY != MazeMatrix.Num(); ++IndexY)
 		for (int32 IndexX = 0; IndexX != MazeMatrix[IndexY].Num(); ++IndexX)
@@ -967,6 +967,11 @@ TArray<UTexture2D*> AMGMazeGenerator::GenerateBiomes()
 					GenerateRoom(Room, Biome, BiomeRooms, ShuffleStream, MazeStateSubsystem, 500);
 	}
 
+	TMap<FName, int32> AmountOfCellsByBiome;
+	for (auto Biome : Biomes)
+		for (auto& RoomsIDsByBiome : RoomsIDsByBiomes)
+			if (RoomsIDsByBiome.Key.IsEqual(Biome->BiomeName))
+				AmountOfCellsByBiome.Add(Biome->BiomeName, RoomsIDsByBiome.Value.Num());
 	for (auto Biome : Biomes) //плоские
 	{
 		TArray<TPair<int32, FRoomState>>* BiomeRooms = nullptr;
@@ -1245,6 +1250,7 @@ void AMGMazeGenerator::InitializeOrSpawnMazeRoomActors()
 		}
 		else
 		{
+			GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, "Spawning Actor");
 			AMGMazeRoomActor* MazeActor = Cast<AMGMazeRoomActor>(GetWorld()->SpawnActor<AActor>(
 				AMGMazeRoomActor::StaticClass(), FTransform(RoomState.Value.Rotation,
 				                                            FVector(RoomState.Value.Coords.X * MazeStateSubsystem->GridSize,
@@ -1259,8 +1265,7 @@ void AMGMazeGenerator::InitializeOrSpawnMazeRoomActors()
 					                                 FString::Printf(
 						                                 TEXT("Room actor with coords (X: %f,Y: %f) was not spawned!"), RoomState.Value.Coords.X,
 						                                 RoomState.Value.Coords.Y));
-				UE_LOG(LogTemp, Error, TEXT("Room actor with coords (X: %f,Y: %f) was not spawned!"), RoomState.Value.Coords.X,
-				       RoomState.Value.Coords.Y);
+				UE_LOG(LogTemp, Error, TEXT("Room actor with coords (X: %f,Y: %f) was not spawned!"), RoomState.Value.Coords.X, RoomState.Value.Coords.Y);
 			}
 		}
 		Index++;

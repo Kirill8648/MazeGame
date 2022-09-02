@@ -55,6 +55,10 @@ int32 UMGMazeStateSubsystem::GetRoomHash(UObject* WorldContextObject, const floa
 bool UMGMazeStateSubsystem::TryToSpawn(FRoomInfo RoomToSpawn, double Angle, TArray<TPair<int32, FRoomState>>* BiomeRoomsToRemoveFrom, int32 RootIndexInBiomeRooms,
                                        bool bCanOverride)
 {
+	if (BiomeRoomsToRemoveFrom->IsEmpty())
+	{
+		return true;
+	}
 	bool bSuccessfullySpawned = false;
 	int32 RoomPlaceHash = BiomeRoomsToRemoveFrom->Last(BiomeRoomsToRemoveFrom->Num() - 1 - RootIndexInBiomeRooms).Key;
 	TArray<FVector2D> RotatedChunks_Temp = GetRotatedChunksArray(RoomToSpawn.Room->RoomChunks, Angle);
